@@ -33,17 +33,5 @@ void RunManager::changeStatus(RunState state){
         case STOP:
             status = new Stop();
             break;
-        case GAME: 
-            status = new Game();
-            break;
-        case AIBLOCKMOVE:
-            status = new AiBlockMove();
-            break;
-        case AI_RUN:
-            status = new AIRun();
-            break;
-        case WAIT:
-            status = new Wait();
-            break;
     }
 }

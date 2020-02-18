@@ -3,8 +3,6 @@
 #include "Clock.h"
 #include "UI.h"
 #include "RunManager.h"
-#include "Block.h"
-#include "Answer.h"
 
 using namespace ev3api;
 
@@ -17,15 +15,12 @@ using namespace ev3api;
 #endif
 
 /* Bluetooth */
-static int32_t bt_cmd = 0; /* Bluetooth�R�}���h 1:�����[�g�X�^�[�g */
-static FILE *bt = NULL;    /* Bluetooth�t�@�C���n���h�� */
+static int32_t bt_cmd = 0; /* Bluetoothコマンド 1:リモートスタート */
+static FILE *bt = NULL;    /* Bluetoothファイルハンドル */
 
-/* ���L�̃}�N���͌�/���ɍ��킹�ĕύX����K�v������܂� */
-//#define DEVICE_NAME     "ET0"  /* Bluetooth�� hrp2/target/ev3.h BLUETOOTH_LOCAL_NAME�Őݒ� */
-//#define PASS_KEY        "1234" /* �p�X�L�[    hrp2/target/ev3.h BLUETOOTH_PIN_CODE�Őݒ� */
-#define CMD_START '1' /* �����[�g�X�^�[�g�R�}���h */
+#define CMD_START '1' /* リモートスタートコマンド */
 
-/* �I�u�W�F�N�g�ւ̃|�C���^��` */
+/* 関数宣言 */
 Clock *clock;
 UI *ui;
 RunManager *runManager;
@@ -37,11 +32,11 @@ int analogAnswer = 8;
 
 const Course course = L;
 
-/* ���C���^�X�N */
+/* メインタスク */
 void main_task(intptr_t unused)
 {
 
-    /* �e�I�u�W�F�N�g�𐶐��E���������� */
+    /* 各オブジェクトを生成・初期化する */
     clock = new Clock();
     ui = new UI();
     runManager = new RunManager(course);
@@ -51,14 +46,14 @@ void main_task(intptr_t unused)
     bt = ev3_serial_open_file(EV3_SERIAL_BT);
     assert(bt != NULL);
 
-    /* Bluetooth�ʐM�^�X�N�̋N�� */
+    /* Bluetooth通信タスクの起動 */
     act_tsk(BT_TASK);
 
     armMotor->calibration();
 
-    ev3_led_set_color(LED_ORANGE); /* �����������ʒm */
+    ev3_led_set_color(LED_ORANGE); /* 初期化完了通知 */
 
-    /* �X�^�[�g�ҋ@ */
+    /* スタート待機 */
     while (1)
     {
         armMotor->rotateDefault();
@@ -69,44 +64,24 @@ void main_task(intptr_t unused)
             if(course == R){
                 fprintf(bt, "%d\n", 5);
             }
-            break; /* �^�b�`�Z���T�������ꂽ */
+            break; /* タッチセンサが押された */
         }
 
         clock->sleep(10);
     }
 
-    ev3_led_set_color(LED_GREEN); /* �X�^�[�g�ʒm */
+    ev3_led_set_color(LED_GREEN); /* スタート通知 */
 
-    /**
-    * Main loop
-    */
+    /* Main loop */
     while (1)
     {
 
         if (ev3_button_is_pressed(BACK_BUTTON))
             break;
 
-        if (bt_cmd == 1)
-        {
-            if(course == R){
-                Block &block = Block::singleton();
-                block.red = color[0];
-                block.yellow = color[1];
-                block.green = color[2];
-                block.blue = color[3];
-                block.black1 = black[0];
-                block.black2 = black[1];
-            }else if(course == L){
-                Answer &answer = Answer::singleton();
-                answer.analog = analogAnswer;
-                answer.hasAnswer = true;
-            }
-            bt_cmd = -1;
-        }
-
         runManager->run();
 
-        clock->sleep(4); /* 4msec�����N�� */
+        clock->sleep(4); /* 4msec周期 */
     }
 
     ter_tsk(BT_TASK);
@@ -138,13 +113,6 @@ void get_black(int black_pos[2], char all_pos[256])
     }
 }
 
-//*****************************************************************************
-// �֐��� : bt_task
-// ���� : unused
-// �Ԃ�l : �Ȃ�
-// �T�v : Bluetooth�ʐM�ɂ�郊���[�g�X�^�[�g�B Tera Term�Ȃǂ̃^�[�~�i���\�t�g����A
-//       ASCII�R�[�h��1�𑗐M����ƁA�����[�g�X�^�[�g����B
-//*****************************************************************************
 void bt_task(intptr_t unused)
 {
     char tmp[256];
