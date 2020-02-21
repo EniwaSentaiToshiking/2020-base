@@ -9,7 +9,7 @@ class PIDController
 {
   private:
 	int diff[2];
-	float integral;
+	float integral; /* 積分 */
 
   public:
 	PIDController();
