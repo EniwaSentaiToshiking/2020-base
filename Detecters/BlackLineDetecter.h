@@ -9,7 +9,7 @@
 #define BLACK 25 //黒値判断基準閾値
 
 typedef enum {
-    DISCERN_WHITE1,
+    DISCERN_WHITE1, /* WHITE1を見分ける */
     DISCERN_BLACK,
     DISCERN_WHITE2
 } discernLine_enum;
@@ -17,7 +17,7 @@ typedef enum {
 class BlackLineDetecter : public Detecter
 {
   private:
-    CourceMonitor *courceMonitor;
+    CourceMonitor *courceMonitor; /* courseやろがい！*/
     int threshold;
     discernLine_enum discernLine_state = DISCERN_WHITE1;
 
