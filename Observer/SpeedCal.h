@@ -6,7 +6,7 @@
 
 class SpeedCal {
 	private:
-		Localization * localization;
+		Localization *localization;
 	public:
 		SpeedCal();
 		/*///////////////////
@@ -30,6 +30,7 @@ class SpeedCal {
 		float cur_dis = 0.0; //サンプリングの現在値
 		//サンプリング待機時間計測用変数
 		int intervalTimer = (int)(SAMPLING_INTERVAL / TASK_INTERVAL);
+		/* C++って $//$演算子なかったっけ？ */
 
 		virtual ~SpeedCal();
 };
