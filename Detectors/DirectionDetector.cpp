@@ -1,24 +1,24 @@
-#include "DirectionDetecter.h"
+#include "DirectionDetector.h"
 
 
-DirectionDetecter::DirectionDetecter(int threshold, TurningDirection turningDirection)
+DirectionDetector::DirectionDetector(int threshold, TurningDirection turningDirection)
 {
     local = new Localization();
     this->threshold = threshold;
     this->turningDirection = turningDirection;
 }
 
-DirectionDetecter::~DirectionDetecter()
+DirectionDetector::~DirectionDetector()
 {
     delete local;
 }
 
-void DirectionDetecter::init(){
+void DirectionDetector::init(){
     local->update();
     prev_direction = local->getCurrentDirection();
 }
 
-bool DirectionDetecter::detect()
+bool DirectionDetector::detect()
 {
     local->update();
     if(this->threshold >= 0 && this->turningDirection == DIRECTION_LEFT){

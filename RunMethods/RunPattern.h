@@ -15,18 +15,26 @@
 #ifndef RUNPATTERN_H
 #define RUNPATTERN_H
 
-enum Pattern {
-    LINE_TRACE, STRAIGHT, TURNING, SPIN, BRAKE, CLOTHOID, ARM,
+enum Pattern
+{
+    LINE_TRACE,
+    STRAIGHT,
+    TURNING,
+    SPIN,
+    BRAKE,
+    CLOTHOID, // クロソイド曲線 (緩和曲線だったら車輪の制御に使われている？？)
+    ARM, // アーム
 };
 
-class RunPattern {
+class RunPattern
+{
 
 private:
     RunCommander *runCommander;
     ArmCommander *armCommander;
     TailCommander *tailCommander;
     RunStyle *runStyle;
-    Detecter *detecter;
+    Detector *detector;
     Pattern pattern;
     DetectType detectType;
     PID *pid;
@@ -38,10 +46,10 @@ private:
     Edge edge = LEFT;
     TurningDirection direction = DIRECTION_LEFT;
 
-    bool isInitializeDetecter = false;
+    bool isInitializeDetector = false;
 
     void createRunStyle();
-    void createDetecter();
+    void createDetector();
 
 public:
     //ライントレース or 直進走行
@@ -51,7 +59,7 @@ public:
     //旋回走行
     RunPattern(Pattern pattern, int speed, DetectType type, float threshold, TurningDirection direction);
     //アームのみ移動
-    RunPattern(Pattern Pattern, int arm, int thereshold);
+    RunPattern(Pattern Pattern, int arm, int threshold); //threshold???
 
     void init();
 

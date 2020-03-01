@@ -1,22 +1,22 @@
-#include "ColorDetecter.h"
+#include "ColorDetector.h"
 
-ColorDetecter::ColorDetecter(int threshold)
+ColorDetector::ColorDetector(int threshold)
 {
-    courceMonitor = new CourceMonitor();
+    courseMonitor = new CourseMonitor();
     this->threshold = threshold;
 }
 
-ColorDetecter::~ColorDetecter()
+ColorDetector::~ColorDetector()
 {
-    delete courceMonitor;
+    delete courseMonitor;
 }
 
-void ColorDetecter::init(){
+void ColorDetector::init(){
 }
 
-bool ColorDetecter::detect()
+bool ColorDetector::detect()
 {
-    int currentColor = courceMonitor->getColorNumber();
+    int currentColor = courseMonitor->getColorNumber();
 
     color_buffer[color_buffer_num] = currentColor;
 

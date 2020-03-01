@@ -1,21 +1,21 @@
-#include "ClockDetecter.h"
+#include "ClockDetector.h"
 
-ClockDetecter::ClockDetecter(int threshold)
+ClockDetector::ClockDetector(int threshold)
 {
     clock = new Clock();
     this->threshold = threshold;
 }
 
-ClockDetecter::~ClockDetecter()
+ClockDetector::~ClockDetector()
 {
     delete clock;
 }
 
-void ClockDetecter::init(){
+void ClockDetector::init(){
     prev_clock = clock->now();
 }
 
-bool ClockDetecter::detect()
+bool ClockDetector::detect()
 {
     if(clock->now() - prev_clock >= threshold) return true;
     return false;

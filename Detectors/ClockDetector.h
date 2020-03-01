@@ -1,4 +1,4 @@
-#include "Detecter.h"
+#include "Detector.h"
 #include "ev3api.h"
 #include "Clock.h"
 
@@ -7,7 +7,7 @@ using namespace ev3api;
 #ifndef CLOCKDETECTER_H
 #define CLOCKDETECTER_H
 
-class ClockDetecter : public Detecter
+class ClockDetector : public Detector
 {
   private:
     Clock *clock;
@@ -15,7 +15,7 @@ class ClockDetecter : public Detecter
     int prev_clock;
 
   public:
-    ClockDetecter(int threshold);
+    ClockDetector(int threshold);
 
     void init();
     /**
@@ -25,7 +25,7 @@ class ClockDetecter : public Detecter
      * @return {bool}         true 検出した, false 検出しなかった 
      */
     bool detect();
-    virtual ~ClockDetecter();
+    virtual ~ClockDetector();
 };
 
 #endif

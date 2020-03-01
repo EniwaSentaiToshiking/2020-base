@@ -5,7 +5,7 @@
 
 using namespace ev3api;
 
-class CourceMonitor
+class CourseMonitor
 {
 
   private:
@@ -19,7 +19,7 @@ class CourceMonitor
     int getColorBlue();
 
   public:
-    CourceMonitor();
+    CourseMonitor();
     int getCurrentBrightness();
     /**
      * getColorNumber - RGBを測定する 
@@ -28,7 +28,7 @@ class CourceMonitor
      * @return {colorid_t}      
      */
     colorid_t getColorNumber(); 
-    virtual ~CourceMonitor();
+    virtual ~CourseMonitor();
 };
 
 #endif

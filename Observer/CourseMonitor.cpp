@@ -1,16 +1,16 @@
-#include "CourceMonitor.h"
+#include "CourseMonitor.h"
 
-CourceMonitor::CourceMonitor()
+CourseMonitor::CourseMonitor()
 {
     colorSensor = new ColorSensorDriver();
 }
 
-CourceMonitor::~CourceMonitor()
+CourseMonitor::~CourseMonitor()
 {
     delete colorSensor;
 }
 
-int CourceMonitor::getCurrentBrightness()
+int CourseMonitor::getCurrentBrightness()
 {
     getRawColor();
     int red = getColorRed();
@@ -19,23 +19,23 @@ int CourceMonitor::getCurrentBrightness()
     return (0.299 * red) + (0.587 * green) + (0.114 * blue);
 }
 
-void CourceMonitor::getRawColor(){
+void CourseMonitor::getRawColor(){
 	colorSensor->getRawColor();
 }
 
-int CourceMonitor::getColorRed(){
+int CourseMonitor::getColorRed(){
 	return colorSensor->getColorRed();
 }
 
-int CourceMonitor::getColorGreen(){
+int CourseMonitor::getColorGreen(){
 	return colorSensor->getColorGreen();
 }
 
-int CourceMonitor::getColorBlue(){
+int CourseMonitor::getColorBlue(){
 	return colorSensor->getColorBlue();
 }
 
-colorid_t CourceMonitor::getColorNumber()
+colorid_t CourseMonitor::getColorNumber()
 {
     getRawColor();
     int red = getColorRed();

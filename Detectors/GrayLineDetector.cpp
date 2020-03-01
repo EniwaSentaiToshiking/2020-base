@@ -1,21 +1,21 @@
-#include "GrayLineDetecter.h"
+#include "GrayLineDetector.h"
 
-GrayLineDetecter::GrayLineDetecter(int threshold)
+GrayLineDetector::GrayLineDetector(int threshold)
 {
-    courceMonitor = new CourceMonitor();
+    courseMonitor = new CourseMonitor();
     this->threshold = threshold;
 }
 
-GrayLineDetecter::~GrayLineDetecter()
+GrayLineDetector::~GrayLineDetector()
 {
 }
 
-void GrayLineDetecter::init() {}
+void GrayLineDetector::init() {}
 
-bool GrayLineDetecter::detect()
+bool GrayLineDetector::detect()
 {
 
-    int current_color = courceMonitor->getCurrentBrightness();
+    int current_color = courseMonitor->getCurrentBrightness();
     gray_buffer[gray_buffer_num] = current_color;
 
     if (gray_buffer_num == gray_buffer_max - 1)

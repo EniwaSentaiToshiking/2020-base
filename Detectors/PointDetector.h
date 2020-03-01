@@ -1,4 +1,4 @@
-#include "Detecter.h"
+#include "Detector.h"
 #include "Localization.h"
 #include "Lot.h"
 #include "ev3api.h"
@@ -7,7 +7,7 @@
 #ifndef POINTDETECTER_H
 #define POINTDETECTER_H
 
-class PointDetecter : public Detecter
+class PointDetector : public Detector
 {
   private:
     Localization *local;
@@ -17,7 +17,7 @@ class PointDetecter : public Detecter
     //Logger *loggerY;
 
   public:
-    PointDetecter(Lot *threshold);
+    PointDetector(Lot *threshold);
 
     /**
      * detect - 座標の条件検知
@@ -27,7 +27,7 @@ class PointDetecter : public Detecter
      */
     bool detect();
     void init();
-    virtual ~PointDetecter();
+    virtual ~PointDetector();
 };
 
 #endif

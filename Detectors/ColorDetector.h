@@ -1,5 +1,5 @@
-#include "Detecter.h"
-#include "CourceMonitor.h"
+#include "Detector.h"
+#include "CourseMonitor.h"
 #include "ev3api.h"
 
 #ifndef COLORDETECTER_H
@@ -8,17 +8,17 @@
 
 #define color_buffer_max 50
 
-class ColorDetecter : public Detecter
+class ColorDetector : public Detector
 {
   private:
-    CourceMonitor *courceMonitor;
+    CourseMonitor *courseMonitor;
     int threshold;
     int color_count = 0;
     int color_buffer_num = 0;
     int color_buffer[color_buffer_max];
 
   public:
-    ColorDetecter(int threshold);
+    ColorDetector(int threshold);
 
     void init();
     /**
@@ -28,7 +28,7 @@ class ColorDetecter : public Detecter
      * @return {bool}         true 検出した, false 検出しなかった
      */
     bool detect();
-    virtual ~ColorDetecter();
+    virtual ~ColorDetector();
 };
 
 #endif

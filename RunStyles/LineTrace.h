@@ -1,5 +1,5 @@
 #include "RunStyle.h"
-#include "CourceMonitor.h"
+#include "CourseMonitor.h"
 
 #ifndef LINETRACE_H
 #define LINETRACE_H
@@ -11,7 +11,7 @@ enum Edge {
 class LineTrace : public RunStyle {
 
 private:
-    CourceMonitor *courceMonitor;
+    CourseMonitor *courseMonitor;
     int targetBrightness = 20;
     int speed = 0;
     Edge edge = LEFT;

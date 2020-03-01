@@ -1,22 +1,21 @@
-#include "Detecter.h"
+#include "Detector.h"
 #include "Localization.h"
-#include "RunStyle.h"
 #include "Lot.h"
 #include "ev3api.h"
+#include <cstdlib>
 
-#ifndef DIRECTIONDETECTER_H
-#define DIRECTIONDETECTER_H
+#ifndef DISTANCEDETECTER_H
+#define DISTANCEDETECTER_H
 
-class DirectionDetecter : public Detecter
+class DistanceDetector : public Detector
 {
   private:
     Localization *local;
     int threshold;
-    int prev_direction;
-    TurningDirection turningDirection;
+    int prev_distance;
 
   public:
-    DirectionDetecter(int threshold, TurningDirection turningDirection);
+    DistanceDetector(int threshold);
 
     void init();
     /**
@@ -26,7 +25,7 @@ class DirectionDetecter : public Detecter
      * @return {bool}         true 検出した, false 検出しなかった 
      */
     bool detect();
-    virtual ~DirectionDetecter();
+    virtual ~DistanceDetector();
 };
 
 #endif

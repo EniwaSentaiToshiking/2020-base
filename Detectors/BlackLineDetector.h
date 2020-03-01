@@ -1,5 +1,5 @@
-#include "Detecter.h"
-#include "CourceMonitor.h"
+#include "Detector.h"
+#include "CourseMonitor.h"
 #include "ev3api.h"
 
 #ifndef BRACKLINEDETECTER_H
@@ -14,15 +14,15 @@ typedef enum {
     DISCERN_WHITE2
 } discernLine_enum;
 
-class BlackLineDetecter : public Detecter
+class BlackLineDetector : public Detector
 {
   private:
-    CourceMonitor *courceMonitor; /* courseやろがい！*/
+    CourseMonitor *courseMonitor; /* courseやろがい！*/
     int threshold;
     discernLine_enum discernLine_state = DISCERN_WHITE1;
 
   public:
-    BlackLineDetecter(int threshold);
+    BlackLineDetector(int threshold);
 
     void init();
     /**
@@ -32,7 +32,7 @@ class BlackLineDetecter : public Detecter
      * @return {bool}         true 検出した, false 検出しなかった
      */
     bool detect();
-    virtual ~BlackLineDetecter();
+    virtual ~BlackLineDetector();
 };
 
 #endif

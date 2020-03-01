@@ -1,21 +1,21 @@
-#include "BlackLineDetecter.h"
+#include "BlackLineDetector.h"
 
-BlackLineDetecter::BlackLineDetecter(int threshold)
+BlackLineDetector::BlackLineDetector(int threshold)
 {
-    courceMonitor = new CourceMonitor();
+    courseMonitor = new CourseMonitor();
     this->threshold = threshold;
 }
 
-BlackLineDetecter::~BlackLineDetecter()
+BlackLineDetector::~BlackLineDetector()
 {
-    delete courceMonitor;
+    delete courseMonitor;
 }
 
-void BlackLineDetecter::init(){
+void BlackLineDetector::init(){
 }
 
-bool BlackLineDetecter::detect() {
-    int color_sensor_reflect = courceMonitor->getCurrentBrightness();
+bool BlackLineDetector::detect() {
+    int color_sensor_reflect = courseMonitor->getCurrentBrightness();
 
     switch (discernLine_state) {
     case DISCERN_WHITE1: // 白を検知

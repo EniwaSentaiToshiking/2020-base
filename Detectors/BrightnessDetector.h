@@ -1,18 +1,18 @@
-#include "Detecter.h"
-#include "CourceMonitor.h"
+#include "Detector.h"
+#include "CourseMonitor.h"
 #include "ev3api.h"
 
 #ifndef BRIGHTNESSDETECTER_H
 #define BRIGHTNESSDETECTER_H
 
-class BrightnessDetecter : public Detecter
+class BrightnessDetector : public Detector
 {
   private:
-    CourceMonitor *courceMonitor;
+    CourseMonitor *courseMonitor;
     int threshold;
 
   public:
-    BrightnessDetecter(int threshold);
+    BrightnessDetector(int threshold);
 
     void init();
     /**
@@ -22,7 +22,7 @@ class BrightnessDetecter : public Detecter
      * @return {bool}         true 検出した, false 検出しなかった 
      */
     bool detect();
-    virtual ~BrightnessDetecter();
+    virtual ~BrightnessDetector();
 };
 
 #endif

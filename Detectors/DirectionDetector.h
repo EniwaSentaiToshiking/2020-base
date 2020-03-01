@@ -1,25 +1,22 @@
-#include "Detecter.h"
+#include "Detector.h"
 #include "Localization.h"
+#include "RunStyle.h"
 #include "Lot.h"
 #include "ev3api.h"
-#include "Logger.h"
-#include <cmath>
 
-#ifndef ADAPTIVEDIRECTIONDETECTER_H
-#define ADAPTIVEDIRECTIONDETECTER_H
+#ifndef DIRECTIONDETECTER_H
+#define DIRECTIONDETECTER_H
 
-// 流石に検出器の英語直そｗ　(detector)
-class AdaptiveDirectionDetecter : public Detecter
+class DirectionDetector : public Detector
 {
   private:
     Localization *local;
     int threshold;
     int prev_direction;
-    int direction;
-    int absDirection(int);
+    TurningDirection turningDirection;
 
   public:
-    AdaptiveDirectionDetecter(int direction);
+    DirectionDetector(int threshold, TurningDirection turningDirection);
 
     void init();
     /**
@@ -29,7 +26,7 @@ class AdaptiveDirectionDetecter : public Detecter
      * @return {bool}         true 検出した, false 検出しなかった 
      */
     bool detect();
-    virtual ~AdaptiveDirectionDetecter();
+    virtual ~DirectionDetector();
 };
 
 #endif

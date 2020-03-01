@@ -1,6 +1,6 @@
-#include "PointDetecter.h"
+#include "PointDetector.h"
 
-PointDetecter::PointDetecter(Lot *threshold)
+PointDetector::PointDetector(Lot *threshold)
 {
     local = new Localization();
     this->threshold = threshold;
@@ -8,14 +8,14 @@ PointDetecter::PointDetecter(Lot *threshold)
     //loggerY = new Logger("point_y.txt");
 }
 
-PointDetecter::~PointDetecter()
+PointDetector::~PointDetector()
 {
     delete local;
 }
 
-void PointDetecter::init(){}
+void PointDetector::init(){}
 
-bool PointDetecter::detect()
+bool PointDetector::detect()
 {
     local->update();
 

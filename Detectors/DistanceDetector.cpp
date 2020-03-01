@@ -1,22 +1,22 @@
-#include "DistanceDetecter.h"
+#include "DistanceDetector.h"
 
-DistanceDetecter::DistanceDetecter(int threshold)
+DistanceDetector::DistanceDetector(int threshold)
 {
     local = new Localization();
     this->threshold = threshold;
 }
 
-DistanceDetecter::~DistanceDetecter()
+DistanceDetector::~DistanceDetector()
 {
     delete local;
 }
 
-void DistanceDetecter::init(){
+void DistanceDetector::init(){
     local->update();
     prev_distance = local->getCurrentDistance();
 }
 
-bool DistanceDetecter::detect()
+bool DistanceDetector::detect()
 {
     local->update();
     if(abs(local->getCurrentDistance() - prev_distance) >= threshold) return true;

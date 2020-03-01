@@ -3,12 +3,12 @@
 #ifndef DETECTER_H
 #define DETECTER_H
 
-class Detecter {
+class Detector {
 
 public:
     virtual bool detect() = 0;
     virtual void init() = 0;
-    virtual ~Detecter(){};
+    virtual ~Detector(){};
 };
 
 #endif

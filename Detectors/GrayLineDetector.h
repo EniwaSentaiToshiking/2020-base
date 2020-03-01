@@ -1,5 +1,5 @@
-#include "Detecter.h"
-#include "CourceMonitor.h"
+#include "Detector.h"
+#include "CourseMonitor.h"
 #include "ev3api.h"
 
 #define gray_buffer_max 40
@@ -7,10 +7,10 @@
 #ifndef GRAYLINEDETECTER_H
 #define GRAYLINEDETECTER_H
 
-class GrayLineDetecter : public Detecter {
+class GrayLineDetector : public Detector {
 
 private:
-    CourceMonitor *courceMonitor;
+    CourseMonitor *courseMonitor;
 
     int gray_buffer[gray_buffer_max] = {};
     int gray_buffer_num = 0;
@@ -18,7 +18,7 @@ private:
     int threshold = 4;
 
 public:
-	GrayLineDetecter(int threshold = 4);
+	GrayLineDetector(int threshold = 4);
 
     /**
      * detect - 灰色検出
@@ -28,7 +28,7 @@ public:
      */
 	bool detect();
     void init();
-    virtual ~GrayLineDetecter();
+    virtual ~GrayLineDetector();
 };
 
 #endif

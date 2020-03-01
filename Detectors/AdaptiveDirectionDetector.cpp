@@ -1,28 +1,28 @@
-#include "AdaptiveDirectionDetecter.h"
+#include "AdaptiveDirectionDetector.h"
 
-AdaptiveDirectionDetecter::AdaptiveDirectionDetecter(int direction)
+AdaptiveDirectionDetector::AdaptiveDirectionDetector(int direction)
 {
     local = new Localization();
     this->direction= direction;
 }
 
-AdaptiveDirectionDetecter::~AdaptiveDirectionDetecter()
+AdaptiveDirectionDetector::~AdaptiveDirectionDetector()
 {
     delete local;
 }
 
-void AdaptiveDirectionDetecter::init(){
+void AdaptiveDirectionDetector::init(){
     local->update();
 }
 
-bool AdaptiveDirectionDetecter::detect()
+bool AdaptiveDirectionDetector::detect()
 {
     local->update();
     int direction = absDirection(local->getCurrentDirection()*45.0/44.0);
     return (direction-1 <= this->direction) && (this->direction <= direction+1);
 }
 
-int AdaptiveDirectionDetecter::absDirection(int x) {
+int AdaptiveDirectionDetector::absDirection(int x) {
     if(x>=0) {
         x = x%360;
         if(x>=180) {

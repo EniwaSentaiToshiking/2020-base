@@ -1,4 +1,4 @@
-#include "Detecter.h"
+#include "Detector.h"
 #include "SonarSensorDriver.h"
 using namespace ev3api;
 
@@ -7,14 +7,14 @@ using namespace ev3api;
 #ifndef OBJECTDETECTER_H
 #define OBJECTDETECTER_H
 
-class ObjectDetecter : public Detecter {
+class ObjectDetector : public Detector {
 
 private:
     SonarSensorDriver *sonarSensor;
 
 
 public:
-	ObjectDetecter();
+	ObjectDetector();
 
     void init();
 
@@ -26,7 +26,7 @@ public:
      */
 	bool detect();
 
-virtual ~ObjectDetecter();
+virtual ~ObjectDetector();
 };
 
 #endif

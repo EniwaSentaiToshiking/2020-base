@@ -1,18 +1,18 @@
-#include "ObjectDetecter.h"
+#include "ObjectDetector.h"
 
-ObjectDetecter::ObjectDetecter()
+ObjectDetector::ObjectDetector()
 {
     sonarSensor = new SonarSensorDriver();
 }
 
-ObjectDetecter::~ObjectDetecter()
+ObjectDetector::~ObjectDetector()
 {
     delete sonarSensor;
 }
 
-void ObjectDetecter::init(){}
+void ObjectDetector::init(){}
 
-bool ObjectDetecter::detect()
+bool ObjectDetector::detect()
 {
     static uint32_t counter = 0;
     static int32_t alert = 0;

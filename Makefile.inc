@@ -3,16 +3,16 @@ mkfile_path := $(dir $(lastword $(MAKEFILE_LIST)))
 APPL_COBJS +=
 
 APPL_CXXOBJS += \
-    ObjectDetecter.o \
-    GrayLineDetecter.o \
-    PointDetecter.o \
-    DistanceDetecter.o \
-    DirectionDetecter.o \
-    ColorDetecter.o \
-    BlackLineDetecter.o \
-    BrightnessDetecter.o \
-    ClockDetecter.o \
-    AdaptiveDirectionDetecter.o \
+    ObjectDetector.o \
+    GrayLineDetector.o \
+    PointDetector.o \
+    DistanceDetector.o \
+    DirectionDetector.o \
+    ColorDetector.o \
+    BlackLineDetector.o \
+    BrightnessDetector.o \
+    ClockDetector.o \
+    AdaptiveDirectionDetector.o \
     SonarSensorDriver.o \
     TouchSensorDriver.o \
     ColorSensorDriver.o \
@@ -24,7 +24,7 @@ APPL_CXXOBJS += \
     TailCommander.o \
     WheelInfo.o \
     Localization.o \
-    CourceMonitor.o \
+    CourseMonitor.o \
     Lot.o \
     SpeedCal.o \
     UI.o \
@@ -57,7 +57,7 @@ include $(EV3RT_SDK_LIB_DIR)/libcpp-ev3/Makefile
 endif
 
 APPL_DIR += \
-    $(mkfile_path)/Detecters \
+    $(mkfile_path)/Detectors \
     $(mkfile_path)/Devices \
     $(mkfile_path)/Observer \
     $(mkfile_path)/UI \
@@ -68,7 +68,7 @@ APPL_DIR += \
     $(mkfile_path)/RunMethods/Status \
 
 INCLUDES += \
-    -I$(mkfile_path)/Detecters \
+    -I$(mkfile_path)/Detectors \
     -I$(mkfile_path)/Devices \
     -I$(mkfile_path)/Observer \
     -I$(mkfile_path)/UI \
