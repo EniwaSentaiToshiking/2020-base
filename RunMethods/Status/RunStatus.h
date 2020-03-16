@@ -7,6 +7,7 @@ using namespace std;
 #ifndef RUNSTATUS_H
 #define RUNSTATUS_H
 
+//これなんだろう？
 struct DeleteObject
 {
     template <typename T>
@@ -23,6 +24,7 @@ enum RunState {
     STOP,
 };
 
+// なんだこれ？
 class RunManager;
 
 class RunStatus
