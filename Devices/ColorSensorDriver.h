@@ -24,8 +24,8 @@ public:
 	int8_t getBrightness();
 
     /**
-     * getAmbient - 環境光の強さを測定する 
-     *
+     * getAmbient - 環境光の強さを測定する (ambient:周辺的なニュアンス)
+     * 
      * @param  {void}
      * @return {uint8_t}      環境光の強さ (0-100) 
      */

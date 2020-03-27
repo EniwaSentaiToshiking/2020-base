@@ -1,5 +1,8 @@
 #include <memory>
-
+/* 
+  Singletonパターン(デザインパターンの一種) 
+  クラスのインスタンスが必ず1つであることを保証する
+*/
 #ifndef SINGLETON_H
 #define SINGLETON_H
 

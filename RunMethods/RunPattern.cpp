@@ -57,7 +57,7 @@ void RunPattern::init()
     armCommander = new ArmCommander();
     tailCommander = new TailCommander();
     createRunStyle();
-    createDetecter();
+    createDetector();
 }
 
 RunPattern::~RunPattern()
@@ -66,7 +66,7 @@ RunPattern::~RunPattern()
     delete armCommander;
     delete tailCommander;
     delete runStyle;
-    delete detecter;
+    delete detector;
     delete nextLot;
 }
 
@@ -98,47 +98,47 @@ void RunPattern::createRunStyle()
     }
 }
 
-void RunPattern::createDetecter()
+void RunPattern::createDetector()
 {
     switch (this->detectType)
     {
     case POINT:
-        this->detecter = new PointDetecter(this->nextLot);
+        this->detector = new PointDetector(this->nextLot);
         break;
     case GRAYLINE:
-        this->detecter = new GrayLineDetecter(this->threshold);
+        this->detector = new GrayLineDetector(this->threshold);
         break;
     case DISTANCE:
-        this->detecter = new DistanceDetecter(this->threshold);
+        this->detector = new DistanceDetector(this->threshold);
         break;
     case DIRECTION:
-        this->detecter = new DirectionDetecter(this->threshold, this->direction);
+        this->detector = new DirectionDetector(this->threshold, this->direction);
         break;
     case ADAPTIVEDIRECTION:
-        this->detecter = new AdaptiveDirectionDetecter(this->threshold);
+        this->detector = new AdaptiveDirectionDetector(this->threshold);
         break;
     case COLOR:
-        this->detecter = new ColorDetecter(this->threshold);
+        this->detector = new ColorDetector(this->threshold);
         break;
     case BLACKLINE:
-        this->detecter = new BlackLineDetecter(this->threshold);
+        this->detector = new BlackLineDetector(this->threshold);
         break;
     case BRIGHTNESS:
-        this->detecter = new BrightnessDetecter(this->threshold);
+        this->detector = new BrightnessDetector(this->threshold);
         break;
     case CLOCK:
-        this->detecter = new ClockDetecter(this->threshold);
+        this->detector = new ClockDetector(this->threshold);
         break;
     }
 }
 
 bool RunPattern::run()
 {
-    if (!isInitializeDetecter)
+    if (!isInitializeDetector)
     {
         runStyle->init();
-        detecter->init();
-        isInitializeDetecter = true;
+        detector->init();
+        isInitializeDetector = true;
     }
 
     int turn = runStyle->getTurnValue();
@@ -166,7 +166,7 @@ bool RunPattern::run()
         armCommander->rotateDefault();
     }
 
-    if (detecter->detect())
+    if (detector->detect())
         return true;
 
     return false;
