@@ -5,7 +5,8 @@
 #ifndef RUNMANAGER_H
 #define RUNMANAGER_H
 
-class RunManager {
+class RunManager
+{
 
 private:
     Course course;

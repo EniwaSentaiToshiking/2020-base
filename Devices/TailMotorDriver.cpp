@@ -1,20 +1,24 @@
 #include "TailMotorDriver.h"
 
-TailMotorDriver::TailMotorDriver(){
+TailMotorDriver::TailMotorDriver()
+{
     motor = new Motor(PORT_A);
     reset();
 }
 
-TailMotorDriver::~TailMotorDriver(){
+TailMotorDriver::~TailMotorDriver()
+{
     reset();
     delete motor;
 }
 
-void TailMotorDriver::reset(){
+void TailMotorDriver::reset()
+{
     motor->reset();
 }
 
-int32_t TailMotorDriver::getCount(){
+int32_t TailMotorDriver::getCount()
+{
     return motor->getCount();
 }
 
@@ -34,10 +38,12 @@ void TailMotorDriver::rotate(int32_t angle)
     motor->setPWM(pwm);
 }
 
-void TailMotorDriver::rotateDefault(){
+void TailMotorDriver::rotateDefault()
+{
     rotate(DEFAULT_ANGLE);
 }
 
-void TailMotorDriver::rotateExtend(){
+void TailMotorDriver::rotateExtend()
+{
     rotate(EXTEND_ANGLE);
 }

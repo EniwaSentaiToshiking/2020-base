@@ -3,7 +3,8 @@
 #ifndef DETECTER_H
 #define DETECTER_H
 
-class Detector {
+class Detector
+{
 
 public:
     virtual bool detect() = 0;

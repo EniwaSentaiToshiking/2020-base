@@ -1,4 +1,5 @@
-#pragma once
+#ifndef WHEELINFO_H
+#define WHEELINFO_H
 /* インクルードガード(https://kaworu.jpn.org/cpp/%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%AB%E3%83%BC%E3%83%89%E3%82%AC%E3%83%BC%E3%83%89)*/
 /*(従来)
 #ifndef HOGE_H
@@ -10,10 +11,10 @@ class Hoge {
 #include "Motor.h"
 using namespace ev3api;
 
-class WheelInfo {
+class WheelInfo
+{
 
 private:
-
 public:
     Motor *left;
     Motor *right;
@@ -41,5 +42,5 @@ public:
     int32_t *getCount();
 
     virtual ~WheelInfo();
-
 };
+#endif //WHEELINFO_H

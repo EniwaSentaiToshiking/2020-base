@@ -7,7 +7,8 @@
 #ifndef GRAYLINEDETECTER_H
 #define GRAYLINEDETECTER_H
 
-class GrayLineDetector : public Detector {
+class GrayLineDetector : public Detector
+{
 
 private:
     CourseMonitor *courseMonitor;
@@ -18,7 +19,7 @@ private:
     int threshold = 4;
 
 public:
-	GrayLineDetector(int threshold = 4);
+    GrayLineDetector(int threshold = 4);
 
     /**
      * detect - 灰色検出
@@ -26,7 +27,7 @@ public:
      * @param  {void}      
      * @return {bool}         true 検出した, false 検出しなかった 
      */
-	bool detect();
+    bool detect();
     void init();
     virtual ~GrayLineDetector();
 };

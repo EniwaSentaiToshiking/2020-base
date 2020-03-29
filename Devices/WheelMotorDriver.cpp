@@ -1,27 +1,33 @@
 #include "WheelMotorDriver.h"
 
-WheelMotorDriver::WheelMotorDriver(ePortM port){
+WheelMotorDriver::WheelMotorDriver(ePortM port)
+{
     motor = new Motor(port);
     reset();
 }
 
-WheelMotorDriver::~WheelMotorDriver(){
+WheelMotorDriver::~WheelMotorDriver()
+{
     reset();
     delete motor;
 }
 
-void WheelMotorDriver::reset(){
+void WheelMotorDriver::reset()
+{
     motor->reset();
 }
 
-int32_t WheelMotorDriver::getCount(){
+int32_t WheelMotorDriver::getCount()
+{
     return motor->getCount();
 }
 
-void WheelMotorDriver::controlMotor(int pwm){
+void WheelMotorDriver::controlMotor(int pwm)
+{
     motor->setPWM(pwm);
 }
 
-void WheelMotorDriver::stop(){
+void WheelMotorDriver::stop()
+{
     motor->stop();
 }

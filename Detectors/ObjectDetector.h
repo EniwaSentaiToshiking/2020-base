@@ -2,19 +2,19 @@
 #include "SonarSensorDriver.h"
 using namespace ev3api;
 
-#define SONAR_ALERT_DISTANCE 30  /* 超音波センサによる障害物検知距離[cm] */
+#define SONAR_ALERT_DISTANCE 30 /* 超音波センサによる障害物検知距離[cm] */
 
 #ifndef OBJECTDETECTER_H
 #define OBJECTDETECTER_H
 
-class ObjectDetector : public Detector {
+class ObjectDetector : public Detector
+{
 
 private:
     SonarSensorDriver *sonarSensor;
 
-
 public:
-	ObjectDetector();
+    ObjectDetector();
 
     void init();
 
@@ -24,9 +24,9 @@ public:
      * @param  {void}      
      * @return {bool}         true 障害物を検出した, false 超音波信号を検出しなかった 
      */
-	bool detect();
+    bool detect();
 
-virtual ~ObjectDetector();
+    virtual ~ObjectDetector();
 };
 
 #endif

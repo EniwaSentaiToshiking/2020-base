@@ -1,10 +1,12 @@
 #include "RunStyle.h"
 
-RunStyle::RunStyle(){
+RunStyle::RunStyle()
+{
     this->pidController = new PIDController();
 }
 
-RunStyle::~RunStyle(){
+RunStyle::~RunStyle()
+{
     delete pidController;
     delete pid;
 }

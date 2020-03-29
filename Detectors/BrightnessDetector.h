@@ -7,22 +7,22 @@
 
 class BrightnessDetector : public Detector
 {
-  private:
-    CourseMonitor *courseMonitor;
-    int threshold;
+private:
+  CourseMonitor *courseMonitor;
+  int threshold;
 
-  public:
-    BrightnessDetector(int threshold);
+public:
+  BrightnessDetector(int threshold);
 
-    void init();
-    /**
+  void init();
+  /**
      * detect - 色の条件検知
      *
      * @param  {void}      
      * @return {bool}         true 検出した, false 検出しなかった 
      */
-    bool detect();
-    virtual ~BrightnessDetector();
+  bool detect();
+  virtual ~BrightnessDetector();
 };
 
 #endif

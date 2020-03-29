@@ -4,7 +4,8 @@
 #ifndef STRAIGHT_H
 #define STRAIGHT_H
 
-class Straight : public RunStyle {
+class Straight : public RunStyle
+{
 
 private:
     WheelInfo *wheelInfo;
@@ -16,7 +17,6 @@ public:
     void init();
     int getTurnValue();
     virtual ~Straight();
-
 };
 
 #endif

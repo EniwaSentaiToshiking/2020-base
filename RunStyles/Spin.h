@@ -4,7 +4,8 @@
 #ifndef SPIN_H
 #define SPIN_H
 
-class Spin : public RunStyle {
+class Spin : public RunStyle
+{
 
 private:
     WheelInfo *wheelInfo;

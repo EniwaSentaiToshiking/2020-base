@@ -61,7 +61,8 @@ void main_task(intptr_t unused)
 
         if (ui->isTouched())
         {
-            if(course == R){
+            if (course == R)
+            {
                 fprintf(bt, "%d\n", 5);
             }
             break; /* タッチセンサが押された */
@@ -120,11 +121,12 @@ void bt_task(intptr_t unused)
 
     while (1)
     {
-        uint8_t c = fgetc(bt); /* 受信 */
+        uint8_t c = fgetc(bt); /* 受信 bt:bluetooth */
 
         if (course == L)
         {
-            if (c - 48 >= 0 && c - 48 <= 7){
+            if (c - 48 >= 0 && c - 48 <= 7)
+            {
                 analogAnswer = c - 48;
                 bt_cmd = 1;
                 break;

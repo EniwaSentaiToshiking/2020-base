@@ -5,7 +5,8 @@ using namespace ev3api;
 #ifndef ARMMOTORDRIVER_H
 #define ARMMOTORDRIVER_H
 
-class ArmMotorDriver {
+class ArmMotorDriver
+{
 
 private:
     Motor *motor;
@@ -53,9 +54,7 @@ public:
      */
     void rotateDefault();
 
-
     virtual ~ArmMotorDriver();
-
 };
 
 #endif

@@ -3,14 +3,15 @@
 #ifndef TAILCOMMANDER_H
 #define TAILCOMMANDER_H
 
-class TailCommander {
+class TailCommander
+{
 
 private:
     TailMotorDriver *motor;
 
 public:
     TailCommander();
-    
+
     /**
      * rotate - 腕を動かす
      *
@@ -32,7 +33,7 @@ public:
      *
      * @param  {void}
      * @return {void} 
-     */    
+     */
     void rotateExtend();
 
     /**

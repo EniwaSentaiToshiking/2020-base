@@ -4,7 +4,8 @@
 #ifndef CLOTHOID_H
 #define CLOTHOID_H
 
-class Clothoid : public RunStyle {
+class Clothoid : public RunStyle
+{
 
 private:
     WheelInfo *wheelInfo;

@@ -3,14 +3,15 @@
 #ifndef ARMCOMMANDER_H
 #define ARMCOMMANDER_H
 
-class ArmCommander {
+class ArmCommander
+{
 
 private:
     ArmMotorDriver *motor;
 
 public:
     ArmCommander();
-    
+
     /**
      * rotate - 腕を動かす
      *

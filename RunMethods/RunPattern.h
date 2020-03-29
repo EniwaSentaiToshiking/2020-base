@@ -1,3 +1,6 @@
+#ifndef RUNPATTERN_H
+#define RUNPATTERN_H
+
 #include <typeinfo>
 #include "LineTrace.h"
 #include "Straight.h"
@@ -12,9 +15,6 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-#ifndef RUNPATTERN_H
-#define RUNPATTERN_H
-
 enum Pattern
 {
     LINE_TRACE,
@@ -23,7 +23,7 @@ enum Pattern
     SPIN,
     BRAKE,
     CLOTHOID, // クロソイド曲線 (緩和曲線だったら車輪の制御に使われている？？)
-    ARM, // アーム
+    ARM,      // アーム
 };
 
 class RunPattern

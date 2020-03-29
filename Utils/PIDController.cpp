@@ -33,6 +33,6 @@ int PIDController::math_limit(int pid_value, int absMax)
   if (pid_value > absMax)
     pid_value = absMax;
   else if (pid_value < absMax * -1)
-    pid_value = absMax * - 1;
+    pid_value = absMax * -1;
   return pid_value;
 }

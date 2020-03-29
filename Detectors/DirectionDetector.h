@@ -9,24 +9,24 @@
 
 class DirectionDetector : public Detector
 {
-  private:
-    Localization *local;
-    int threshold;
-    int prev_direction;
-    TurningDirection turningDirection;
+private:
+  Localization *local;
+  int threshold;
+  int prev_direction;
+  TurningDirection turningDirection;
 
-  public:
-    DirectionDetector(int threshold, TurningDirection turningDirection);
+public:
+  DirectionDetector(int threshold, TurningDirection turningDirection);
 
-    void init();
-    /**
+  void init();
+  /**
      * detect - 座標の条件検知
      *
      * @param  {void}      
      * @return {bool}         true 検出した, false 検出しなかった 
      */
-    bool detect();
-    virtual ~DirectionDetector();
+  bool detect();
+  virtual ~DirectionDetector();
 };
 
 #endif

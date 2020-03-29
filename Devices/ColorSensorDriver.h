@@ -4,7 +4,8 @@ using namespace ev3api;
 #ifndef COLORSENSORDRIVER_H
 #define COLORSENSORDRIVER_H
 
-class ColorSensorDriver {
+class ColorSensorDriver
+{
 
 private:
     ColorSensor *colorSensor;
@@ -13,7 +14,7 @@ private:
     int blue = 0;
 
 public:
-	ColorSensorDriver();
+    ColorSensorDriver();
 
     /**
      * getBrightness - 反射光の強さを測定する 
@@ -21,7 +22,7 @@ public:
      * @param  {void}
      * @return {int8_t}      反射光の強さ (0-100) 
      */
-	int8_t getBrightness();
+    int8_t getBrightness();
 
     /**
      * getAmbient - 環境光の強さを測定する (ambient:周辺的なニュアンス)
@@ -43,7 +44,7 @@ public:
     int getColorGreen();
     int getColorBlue();
 
-virtual ~ColorSensorDriver();
+    virtual ~ColorSensorDriver();
 };
 
 #endif

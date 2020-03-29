@@ -11,7 +11,8 @@ ColorDetector::~ColorDetector()
     delete courseMonitor;
 }
 
-void ColorDetector::init(){
+void ColorDetector::init()
+{
 }
 
 bool ColorDetector::detect()
@@ -36,22 +37,24 @@ bool ColorDetector::detect()
         int count = 0;
 
         for (int i = 0; i < color_buffer_max; i++)
-        {   
-            if (threshold == 8) 
+        {
+            if (threshold == 8)
             {
-                if (currentColor >= 2 && currentColor <=5) count++;
+                if (currentColor >= 2 && currentColor <= 5)
+                    count++;
             }
-            else 
+            else
             {
-                if (currentColor == threshold) count++;
+                if (currentColor == threshold)
+                    count++;
             }
         }
 
-    if (count == color_buffer_max)
-    {
-        return true;
+        if (count == color_buffer_max)
+        {
+            return true;
+        }
     }
-	}
 
     return false;
 }
