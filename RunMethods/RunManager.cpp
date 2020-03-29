@@ -19,19 +19,22 @@ void RunManager::init()
 void RunManager::run()
 {
     bool isFinish = status->run();
-    if(isFinish) status->changeNextStatus(this);
+    if (isFinish)
+        status->changeNextStatus(this);
 }
 
-void RunManager::changeStatus(RunState state){
-    switch(state){
-        case COURSE_RUN:
-            status = new CourseRun(course);
-            break;
-        case PARKING:
-            status = new Parking(course);
-            break;
-        case STOP:
-            status = new Stop();
-            break;
+void RunManager::changeStatus(RunState state)
+{
+    switch (state)
+    {
+    case COURSE_RUN:
+        status = new CourseRun(course);
+        break;
+    case PARKING:
+        status = new Parking(course);
+        break;
+    case STOP:
+        status = new Stop();
+        break;
     }
 }

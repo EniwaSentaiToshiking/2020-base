@@ -1,14 +1,13 @@
-#pragma once
-#include "Motor.h"
-using namespace ev3api;
-
 #ifndef WHEELMOTORDRIVER_H
 #define WHEELMOTORDRIVER_H
 
-class WheelMotorDriver {
+#include "Motor.h"
+using namespace ev3api;
+
+class WheelMotorDriver
+{
 
 private:
-
 public:
     Motor *motor;
 
@@ -47,7 +46,6 @@ public:
     void stop();
 
     virtual ~WheelMotorDriver();
-
 };
 
 #endif

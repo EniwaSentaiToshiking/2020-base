@@ -1,6 +1,10 @@
+#ifndef FILTER_H
+#define FILTER_H
+
 #define BUFFER_SIZE 10
 
-class Filter {
+class Filter
+{
 
 private:
     const int BAND_MAX = 50;
@@ -28,3 +32,4 @@ public:
     int band(int value, int white, int black);
     virtual ~Filter();
 };
+#endif

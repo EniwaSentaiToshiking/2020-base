@@ -1,5 +1,5 @@
-#ifndef Localization_H
-#define Localization_H
+#ifndef LOCALIZATION_H
+#define LOCALIZATION_H
 
 #include "WheelMotorDriver.h"
 #define _USE_MATH_DEFINES
@@ -53,4 +53,4 @@ public:
   virtual ~Localization();
 };
 
-#endif
+#endif // LOCALIZATION_H

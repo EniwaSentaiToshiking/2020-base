@@ -1,3 +1,6 @@
+#ifndef SPEEDCAL_H
+#define SPEEDCAL_H
+
 # include "Localization.h"
 
 //タスク周期
@@ -34,3 +37,4 @@ class SpeedCal {
 
 		virtual ~SpeedCal();
 };
+#endif // SPEEDCAL_H

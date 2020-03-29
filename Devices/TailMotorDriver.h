@@ -1,10 +1,11 @@
-#include "Motor.h"
-using namespace ev3api;
-
 #ifndef TAILMOTORDRIVER_H
 #define TAILMOTORDRIVER_H
 
-class TailMotorDriver {
+#include "Motor.h"
+using namespace ev3api;
+
+class TailMotorDriver
+{
 
 private:
     Motor *motor;
@@ -54,11 +55,10 @@ public:
      *
      * @param  {void}
      * @return {void} 
-     */    
+     */
     void rotateExtend();
 
     virtual ~TailMotorDriver();
-
 };
 
 #endif
