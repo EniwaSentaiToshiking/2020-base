@@ -4,13 +4,14 @@ using namespace ev3api;
 #ifndef TOUCHSENSORDRIVER_H
 #define TOUCHSENSORDRIVER_H
 
-class TouchSensorDriver {
+class TouchSensorDriver
+{
 
 private:
     TouchSensor *touchSensor;
 
 public:
-	TouchSensorDriver();
+    TouchSensorDriver();
 
     /**
      * isPressed - タッチセンサ状態取得 
@@ -18,9 +19,9 @@ public:
      * @param  {void}
      * @return {bool}      true	押されている状態, false	押されていない状態 
      */
-	bool isPressed();
+    bool isPressed();
 
-virtual ~TouchSensorDriver();
+    virtual ~TouchSensorDriver();
 };
 
 #endif

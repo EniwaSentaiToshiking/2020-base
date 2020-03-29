@@ -11,10 +11,10 @@ class Hoge {
 #include "Motor.h"
 using namespace ev3api;
 
-class WheelInfo {
+class WheelInfo
+{
 
 private:
-
 public:
     Motor *left;
     Motor *right;
@@ -42,6 +42,5 @@ public:
     int32_t *getCount();
 
     virtual ~WheelInfo();
-
 };
 #endif //WHEELINFO_H

@@ -19,20 +19,24 @@ int CourseMonitor::getCurrentBrightness()
     return (0.299 * red) + (0.587 * green) + (0.114 * blue);
 }
 
-void CourseMonitor::getRawColor(){
-	colorSensor->getRawColor();
+void CourseMonitor::getRawColor()
+{
+    colorSensor->getRawColor();
 }
 
-int CourseMonitor::getColorRed(){
-	return colorSensor->getColorRed();
+int CourseMonitor::getColorRed()
+{
+    return colorSensor->getColorRed();
 }
 
-int CourseMonitor::getColorGreen(){
-	return colorSensor->getColorGreen();
+int CourseMonitor::getColorGreen()
+{
+    return colorSensor->getColorGreen();
 }
 
-int CourseMonitor::getColorBlue(){
-	return colorSensor->getColorBlue();
+int CourseMonitor::getColorBlue()
+{
+    return colorSensor->getColorBlue();
 }
 
 colorid_t CourseMonitor::getColorNumber()

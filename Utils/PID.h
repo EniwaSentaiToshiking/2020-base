@@ -4,11 +4,11 @@
 
 class PID
 {
-  public:
-    float p, i, d;
+public:
+  float p, i, d;
 
-    PID(float p, float i, float d);
-    virtual ~PID();
+  PID(float p, float i, float d);
+  virtual ~PID();
 };
 
 #endif

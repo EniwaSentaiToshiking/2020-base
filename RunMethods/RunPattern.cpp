@@ -150,12 +150,12 @@ bool RunPattern::run()
         armCommander->rotateDefault();
     }
     else if (this->pattern == ARM)
-    {   
+    {
         if (this->arm == 0)
         {
             armCommander->rotateDefault();
-        } 
-        else 
+        }
+        else
         {
             armCommander->rotate(this->arm);
         }

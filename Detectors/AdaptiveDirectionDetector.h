@@ -11,25 +11,25 @@
 // 流石に検出器の英語直そｗ　(detector)
 class AdaptiveDirectionDetector : public Detector
 {
-  private:
-    Localization *local;
-    int threshold;
-    int prev_direction;
-    int direction;
-    int absDirection(int);
+private:
+  Localization *local;
+  int threshold;
+  int prev_direction;
+  int direction;
+  int absDirection(int);
 
-  public:
-    AdaptiveDirectionDetector(int direction);
+public:
+  AdaptiveDirectionDetector(int direction);
 
-    void init();
-    /**
+  void init();
+  /**
      * detect - 座標の条件検知
      *
      * @param  {void}      
      * @return {bool}         true 検出した, false 検出しなかった 
      */
-    bool detect();
-    virtual ~AdaptiveDirectionDetector();
+  bool detect();
+  virtual ~AdaptiveDirectionDetector();
 };
 
 #endif

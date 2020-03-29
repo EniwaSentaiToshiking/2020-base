@@ -10,7 +10,7 @@ ObjectDetector::~ObjectDetector()
     delete sonarSensor;
 }
 
-void ObjectDetector::init(){}
+void ObjectDetector::init() {}
 
 bool ObjectDetector::detect()
 {
@@ -19,7 +19,7 @@ bool ObjectDetector::detect()
 
     int32_t distance;
 
-    if (++counter == 40/4) /* 約40msec周期毎に障害物検知  */
+    if (++counter == 40 / 4) /* 約40msec周期毎に障害物検知  */
     {
         /*
          * 超音波センサによる距離測定周期は、超音波の減衰特性に依存します。

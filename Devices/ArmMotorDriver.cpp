@@ -1,23 +1,28 @@
 #include "ArmMotorDriver.h"
 
-ArmMotorDriver::ArmMotorDriver(){
+ArmMotorDriver::ArmMotorDriver()
+{
     motor = new Motor(PORT_D);
     clock = new Clock();
 }
 
-ArmMotorDriver::~ArmMotorDriver(){
+ArmMotorDriver::~ArmMotorDriver()
+{
     delete motor;
 }
 
-void ArmMotorDriver::reset(){
+void ArmMotorDriver::reset()
+{
     motor->reset();
 }
 
-int32_t ArmMotorDriver::getCount(){
+int32_t ArmMotorDriver::getCount()
+{
     return motor->getCount();
 }
 
-void ArmMotorDriver::setPWM(int pwm){
+void ArmMotorDriver::setPWM(int pwm)
+{
     motor->setPWM(pwm);
 }
 
@@ -50,6 +55,7 @@ void ArmMotorDriver::rotate(int32_t angle)
     motor->setPWM(pwm);
 }
 
-void ArmMotorDriver::rotateDefault(){
+void ArmMotorDriver::rotateDefault()
+{
     rotate(DEFAULT_ANGLE);
 }

@@ -1,25 +1,31 @@
 #include "TailCommander.h"
 
-TailCommander::TailCommander(){
+TailCommander::TailCommander()
+{
     motor = new TailMotorDriver();
 }
 
-TailCommander::~TailCommander(){
+TailCommander::~TailCommander()
+{
     delete motor;
 }
 
-void TailCommander::rotate(int32_t angle){
+void TailCommander::rotate(int32_t angle)
+{
     motor->rotate(angle);
 }
 
-void TailCommander::rotateDefault(){
+void TailCommander::rotateDefault()
+{
     motor->rotateDefault();
 }
 
-void TailCommander::rotateExtend(){
+void TailCommander::rotateExtend()
+{
     motor->rotateExtend();
 }
 
-void TailCommander::reset(){
+void TailCommander::reset()
+{
     motor->reset();
 }

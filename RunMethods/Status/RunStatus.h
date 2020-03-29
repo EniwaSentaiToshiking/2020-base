@@ -10,18 +10,19 @@ using namespace std;
 //これなんだろう？
 struct DeleteObject
 {
-    template <typename T>
-    void operator()(const T *ptr) const
-    {
-        delete ptr;
-    }
+  template <typename T>
+  void operator()(const T *ptr) const
+  {
+    delete ptr;
+  }
 };
 
 //走行状態
-enum RunState {
-    COURSE_RUN,
-    PARKING,
-    STOP,
+enum RunState
+{
+  COURSE_RUN,
+  PARKING,
+  STOP,
 };
 
 // なんだこれ？
@@ -29,31 +30,31 @@ class RunManager;
 
 class RunStatus
 {
-  protected:
-    vector<RunPattern *> patterns;
-    unsigned int currentPattern = 0;
-    RunState nextState;
+protected:
+  vector<RunPattern *> patterns;
+  unsigned int currentPattern = 0;
+  RunState nextState;
 
-  public:
-    /**
+public:
+  /**
      * init - 走行前の初期設定
      *
      * @param  {void}
      * @return {void}
      */
-    virtual void init() = 0;
+  virtual void init() = 0;
 
-    /**
+  /**
      * run - 走行する
      *
      * @param  {void}
      * @return {bool}
      */
-    virtual bool run();
-    virtual void setNextState() = 0;
-    virtual bool changeNextPattern();
-    virtual void changeNextStatus(RunManager *manager);
-    virtual ~RunStatus();
+  virtual bool run();
+  virtual void setNextState() = 0;
+  virtual bool changeNextPattern();
+  virtual void changeNextStatus(RunManager *manager);
+  virtual ~RunStatus();
 };
 
 #endif

@@ -1,36 +1,47 @@
 #include "CourseRun.h"
 
-CourseRun::CourseRun(Course course){
+CourseRun::CourseRun(Course course)
+{
     this->course = course;
 
-    if(this->course == L) {
+    if (this->course == L)
+    {
         createCourseL();
-    }else if(this->course == R){
+    }
+    else if (this->course == R)
+    {
         createCourseR();
     }
 
     setNextState();
 }
 
-CourseRun::~CourseRun(){
+CourseRun::~CourseRun()
+{
     for_each(lots.begin(), lots.end(), DeleteObject());
     lots.clear();
     ev3_speaker_play_tone(480, 100);
 }
 
-void CourseRun::init(){
+void CourseRun::init()
+{
 }
 
-void CourseRun::setNextState(){
-    if(this->course == L) {
+void CourseRun::setNextState()
+{
+    if (this->course == L)
+    {
         nextState = STOP;
-    }else if(this->course == R){
+    }
+    else if (this->course == R)
+    {
         nextState = STOP;
     }
 }
 
 // coruseの距離は1000 1050くらいで調整
-void CourseRun::createCourseL(){
+void CourseRun::createCourseL()
+{
     patterns.push_back(new RunPattern(LINE_TRACE, 50, DISTANCE, 20, 0.4, 0.0, 0.03, 40));
     patterns.push_back(new RunPattern(LINE_TRACE, 65, DISTANCE, 50, 0.25, 0.03, 0.03, 60));
 
@@ -44,7 +55,7 @@ void CourseRun::createCourseL(){
 
     // GATE1からの円
     patterns.push_back(new RunPattern(LINE_TRACE, 55, DISTANCE, 120, 0.45, 0.015, 0.035, 60)); // 適切な値 ふらつく
-    patterns.push_back(new RunPattern(LINE_TRACE, 55, DISTANCE, 20, 0.25, 0.03, 0.03, 60)); // 500
+    patterns.push_back(new RunPattern(LINE_TRACE, 55, DISTANCE, 20, 0.25, 0.03, 0.03, 60));    // 500
 
     patterns.push_back(new RunPattern(LINE_TRACE, 55, DISTANCE, 90, 0.35, 0.01, 0.03, 60));
 
@@ -63,7 +74,8 @@ void CourseRun::createCourseL(){
     patterns.push_back(new RunPattern(LINE_TRACE, 25, COLOR, 8, 0.5, 0.1, 0.03, 80)); // ゲームエリアの黄色
 }
 
-void CourseRun::createCourseR(){
+void CourseRun::createCourseR()
+{
     patterns.push_back(new RunPattern(LINE_TRACE, 50, DISTANCE, 20, 0.4, 0.0, 0.03, 40, RIGHT));
     patterns.push_back(new RunPattern(LINE_TRACE, 60, DISTANCE, 50, 0.25, 0.03, 0.03, 60, RIGHT));
 
@@ -77,7 +89,7 @@ void CourseRun::createCourseR(){
 
     // GATE1からの円
     patterns.push_back(new RunPattern(LINE_TRACE, 50, DISTANCE, 120, 0.45, 0.015, 0.035, 60, RIGHT)); // 適切な値 ふらつく
-    patterns.push_back(new RunPattern(LINE_TRACE, 50, DISTANCE, 20, 0.25, 0.03, 0.03, 60, RIGHT)); // 500
+    patterns.push_back(new RunPattern(LINE_TRACE, 50, DISTANCE, 20, 0.25, 0.03, 0.03, 60, RIGHT));    // 500
 
     patterns.push_back(new RunPattern(LINE_TRACE, 50, DISTANCE, 90, 0.35, 0.01, 0.03, 60, RIGHT));
 

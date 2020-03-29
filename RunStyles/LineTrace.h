@@ -4,11 +4,14 @@
 #ifndef LINETRACE_H
 #define LINETRACE_H
 
-enum Edge {
-    LEFT, RIGHT,
+enum Edge
+{
+    LEFT,
+    RIGHT,
 };
 
-class LineTrace : public RunStyle {
+class LineTrace : public RunStyle
+{
 
 private:
     CourseMonitor *courseMonitor;
@@ -36,7 +39,6 @@ public:
      */
     int getTurnValueByOnOFF();
     virtual ~LineTrace();
-
 };
 
 #endif

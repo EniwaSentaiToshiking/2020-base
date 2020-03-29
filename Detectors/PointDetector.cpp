@@ -13,7 +13,7 @@ PointDetector::~PointDetector()
     delete local;
 }
 
-void PointDetector::init(){}
+void PointDetector::init() {}
 
 bool PointDetector::detect()
 {

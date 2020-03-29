@@ -4,7 +4,8 @@
 #ifndef TURNING_H
 #define TURNING_H
 
-class Turning : public RunStyle {
+class Turning : public RunStyle
+{
 
 private:
     WheelInfo *wheelInfo;

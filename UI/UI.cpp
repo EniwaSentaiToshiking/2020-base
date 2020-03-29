@@ -1,21 +1,25 @@
 #include "UI.h"
 
-UI::UI(){
+UI::UI()
+{
     touchSensor = new TouchSensorDriver();
     initLCD();
 }
 
-UI::~UI(){
+UI::~UI()
+{
     delete touchSensor;
 }
 
-bool UI::isTouched(){
+bool UI::isTouched()
+{
     return touchSensor->isPressed();
 }
 
-void UI::initLCD(){
+void UI::initLCD()
+{
     ev3_lcd_fill_rect(0, 0, EV3_LCD_WIDTH, EV3_LCD_HEIGHT, EV3_LCD_WHITE);
-    ev3_lcd_draw_string("HackEV app", 0, CALIB_FONT_HEIGHT*1);
+    ev3_lcd_draw_string("HackEV app", 0, CALIB_FONT_HEIGHT * 1);
     drawRowCount = 2;
 }
 

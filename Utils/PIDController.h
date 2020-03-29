@@ -7,11 +7,11 @@
 
 class PIDController
 {
-  private:
+private:
 	int diff[2];
 	float integral; /* 積分 */
 
-  public:
+public:
 	PIDController();
 	int getTurn(PID *pid, unsigned int sensor_val, unsigned int target_val, int absMax);
 	int math_limit(int pid_value, int absMax);

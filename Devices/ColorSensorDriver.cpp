@@ -2,40 +2,47 @@
 
 ColorSensorDriver::ColorSensorDriver()
 {
-    colorSensor = new ColorSensor(PORT_2);
+	colorSensor = new ColorSensor(PORT_2);
 }
 
 ColorSensorDriver::~ColorSensorDriver()
 {
-    delete colorSensor;
+	delete colorSensor;
 }
 
-int8_t ColorSensorDriver::getBrightness() {
-    return colorSensor->getBrightness();
+int8_t ColorSensorDriver::getBrightness()
+{
+	return colorSensor->getBrightness();
 }
 
-uint8_t ColorSensorDriver::getAmbient() {
-    return colorSensor->getAmbient();
+uint8_t ColorSensorDriver::getAmbient()
+{
+	return colorSensor->getAmbient();
 }
-colorid_t ColorSensorDriver::getColorNumber(){
+colorid_t ColorSensorDriver::getColorNumber()
+{
 	return colorSensor->getColorNumber();
 }
 
-void ColorSensorDriver::getRawColor(){
- 	rgb_raw_t rgb;
+void ColorSensorDriver::getRawColor()
+{
+	rgb_raw_t rgb;
 	colorSensor->getRawColor(rgb);
 	red = rgb.r;
 	green = rgb.g;
 	blue = rgb.b;
 }
 
-int ColorSensorDriver::getColorRed(){
+int ColorSensorDriver::getColorRed()
+{
 	return red;
 }
 
-int ColorSensorDriver::getColorGreen(){
+int ColorSensorDriver::getColorGreen()
+{
 	return green;
 }
-int ColorSensorDriver::getColorBlue(){
+int ColorSensorDriver::getColorBlue()
+{
 	return blue;
 }

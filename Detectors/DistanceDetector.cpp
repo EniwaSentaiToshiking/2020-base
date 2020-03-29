@@ -11,7 +11,8 @@ DistanceDetector::~DistanceDetector()
     delete local;
 }
 
-void DistanceDetector::init(){
+void DistanceDetector::init()
+{
     local->update();
     prev_distance = local->getCurrentDistance();
 }
@@ -19,6 +20,7 @@ void DistanceDetector::init(){
 bool DistanceDetector::detect()
 {
     local->update();
-    if(abs(local->getCurrentDistance() - prev_distance) >= threshold) return true;
+    if (abs(local->getCurrentDistance() - prev_distance) >= threshold)
+        return true;
     return false;
 }
