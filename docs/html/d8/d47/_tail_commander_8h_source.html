@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EniwaSentaiToshiking: RunMethods/Commanders/TailCommander.h ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EniwaSentaiToshiking
+   &#160;<span id="projectnumber">0000</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_fe8ad9ea2ddb100f7687cb2a032d14c7.html">RunMethods</a></li><li class="navelem"><a class="el" href="../../dir_7f182ce065ebb979a6eac5f35d4b560c.html">Commanders</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">TailCommander.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;TailMotorDriver.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef TAILCOMMANDER_H</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define TAILCOMMANDER_H</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d6/df8/class_tail_commander.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/df8/class_tail_commander.html">TailCommander</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../db/ddf/class_tail_motor_driver.html">TailMotorDriver</a> *motor;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../d6/df8/class_tail_commander.html">TailCommander</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/df8/class_tail_commander.html#aae6841f8fd48e86a099c3c6b09cd860a">rotate</a>(int32_t angle);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/df8/class_tail_commander.html#a96563691dd095a24ab749ed87681612f">rotateDefault</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/df8/class_tail_commander.html#aa8992c2b4a2239987e44f9edb954b280">rotateExtend</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/df8/class_tail_commander.html#ac191e1b63f5bc1c119a0298d184c8f5c">reset</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="../../d6/df8/class_tail_commander.html">TailCommander</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_tail_commander_html_ac191e1b63f5bc1c119a0298d184c8f5c"><div class="ttname"><a href="../../d6/df8/class_tail_commander.html#ac191e1b63f5bc1c119a0298d184c8f5c">TailCommander::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> TailCommander.cpp:28</div></div>
+<div class="ttc" id="aclass_tail_motor_driver_html_a9f59fc70ab4c1f4165ed1f2eccd6712d"><div class="ttname"><a href="../../db/ddf/class_tail_motor_driver.html#a9f59fc70ab4c1f4165ed1f2eccd6712d">TailMotorDriver::rotateExtend</a></div><div class="ttdeci">void rotateExtend()</div><div class="ttdef"><b>Definition:</b> TailMotorDriver.cpp:46</div></div>
+<div class="ttc" id="aclass_tail_commander_html_aa8992c2b4a2239987e44f9edb954b280"><div class="ttname"><a href="../../d6/df8/class_tail_commander.html#aa8992c2b4a2239987e44f9edb954b280">TailCommander::rotateExtend</a></div><div class="ttdeci">void rotateExtend()</div><div class="ttdef"><b>Definition:</b> TailCommander.cpp:23</div></div>
+<div class="ttc" id="aclass_tail_commander_html"><div class="ttname"><a href="../../d6/df8/class_tail_commander.html">TailCommander</a></div><div class="ttdef"><b>Definition:</b> TailCommander.h:7</div></div>
+<div class="ttc" id="aclass_tail_commander_html_a96563691dd095a24ab749ed87681612f"><div class="ttname"><a href="../../d6/df8/class_tail_commander.html#a96563691dd095a24ab749ed87681612f">TailCommander::rotateDefault</a></div><div class="ttdeci">void rotateDefault()</div><div class="ttdef"><b>Definition:</b> TailCommander.cpp:18</div></div>
+<div class="ttc" id="aclass_tail_commander_html_aae6841f8fd48e86a099c3c6b09cd860a"><div class="ttname"><a href="../../d6/df8/class_tail_commander.html#aae6841f8fd48e86a099c3c6b09cd860a">TailCommander::rotate</a></div><div class="ttdeci">void rotate(int32_t angle)</div><div class="ttdef"><b>Definition:</b> TailCommander.cpp:13</div></div>
+<div class="ttc" id="aclass_tail_motor_driver_html_a60ddfda8d1187d02887ff00f8c3cdedb"><div class="ttname"><a href="../../db/ddf/class_tail_motor_driver.html#a60ddfda8d1187d02887ff00f8c3cdedb">TailMotorDriver::rotateDefault</a></div><div class="ttdeci">void rotateDefault()</div><div class="ttdef"><b>Definition:</b> TailMotorDriver.cpp:41</div></div>
+<div class="ttc" id="aclass_tail_motor_driver_html_a9ab8c2bdb5a106585597394be946942e"><div class="ttname"><a href="../../db/ddf/class_tail_motor_driver.html#a9ab8c2bdb5a106585597394be946942e">TailMotorDriver::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> TailMotorDriver.cpp:15</div></div>
+<div class="ttc" id="aclass_tail_motor_driver_html_aa0faea7e0a084862a17925d8f2fb11d4"><div class="ttname"><a href="../../db/ddf/class_tail_motor_driver.html#aa0faea7e0a084862a17925d8f2fb11d4">TailMotorDriver::rotate</a></div><div class="ttdeci">void rotate(int32_t angle)</div><div class="ttdef"><b>Definition:</b> TailMotorDriver.cpp:25</div></div>
+<div class="ttc" id="aclass_tail_motor_driver_html"><div class="ttname"><a href="../../db/ddf/class_tail_motor_driver.html">TailMotorDriver</a></div><div class="ttdef"><b>Definition:</b> TailMotorDriver.h:8</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>
