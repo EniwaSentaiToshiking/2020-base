@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EniwaSentaiToshiking: RunMethods/RunManager.h ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EniwaSentaiToshiking
+   &#160;<span id="projectnumber">0000</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_fe8ad9ea2ddb100f7687cb2a032d14c7.html">RunMethods</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">RunManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;CourseRun.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;Parking.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;Stop.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;SampleCourseRun.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef RUNMANAGER_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define RUNMANAGER_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d8/dfa/class_run_manager.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/dfa/class_run_manager.html">RunManager</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    Course course;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    RunState state = SAMPLECOUSERUN;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d3/dca/class_run_status.html">RunStatus</a> *status;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../d8/dfa/class_run_manager.html">RunManager</a>(Course course);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d8/dfa/class_run_manager.html#aef8899dbea1c43870b8159852a9937df">init</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d8/dfa/class_run_manager.html#a90a843cf56dc58cc89ce920f60fcfe1a">run</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> changeStatus(RunState state);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="../../d8/dfa/class_run_manager.html">RunManager</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_sample_course_run_html"><div class="ttname"><a href="../../d6/d86/class_sample_course_run.html">SampleCourseRun</a></div><div class="ttdef"><b>Definition:</b> SampleCourseRun.h:8</div></div>
+<div class="ttc" id="aclass_run_status_html_aeb1bcfe6c4221def8e123d0682a48989"><div class="ttname"><a href="../../d3/dca/class_run_status.html#aeb1bcfe6c4221def8e123d0682a48989">RunStatus::init</a></div><div class="ttdeci">virtual void init()=0</div></div>
+<div class="ttc" id="aclass_course_run_html"><div class="ttname"><a href="../../d0/d49/class_course_run.html">CourseRun</a></div><div class="ttdef"><b>Definition:</b> CourseRun.h:8</div></div>
+<div class="ttc" id="aclass_run_manager_html_a90a843cf56dc58cc89ce920f60fcfe1a"><div class="ttname"><a href="../../d8/dfa/class_run_manager.html#a90a843cf56dc58cc89ce920f60fcfe1a">RunManager::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> RunManager.cpp:19</div></div>
+<div class="ttc" id="aclass_run_status_html_a7405a17f5abe1a930162680295b71ff3"><div class="ttname"><a href="../../d3/dca/class_run_status.html#a7405a17f5abe1a930162680295b71ff3">RunStatus::run</a></div><div class="ttdeci">virtual bool run()</div><div class="ttdef"><b>Definition:</b> RunStatus.cpp:10</div></div>
+<div class="ttc" id="aclass_parking_html"><div class="ttname"><a href="../../d4/daf/class_parking.html">Parking</a></div><div class="ttdef"><b>Definition:</b> Parking.h:8</div></div>
+<div class="ttc" id="aclass_run_manager_html"><div class="ttname"><a href="../../d8/dfa/class_run_manager.html">RunManager</a></div><div class="ttdef"><b>Definition:</b> RunManager.h:10</div></div>
+<div class="ttc" id="aclass_run_status_html"><div class="ttname"><a href="../../d3/dca/class_run_status.html">RunStatus</a></div><div class="ttdef"><b>Definition:</b> RunStatus.h:33</div></div>
+<div class="ttc" id="aclass_stop_html"><div class="ttname"><a href="../../d5/d45/class_stop.html">Stop</a></div><div class="ttdef"><b>Definition:</b> Stop.h:7</div></div>
+<div class="ttc" id="aclass_run_manager_html_aef8899dbea1c43870b8159852a9937df"><div class="ttname"><a href="../../d8/dfa/class_run_manager.html#aef8899dbea1c43870b8159852a9937df">RunManager::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> RunManager.cpp:14</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>
