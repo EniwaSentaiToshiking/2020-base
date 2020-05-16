@@ -47,7 +47,7 @@ void main_task(intptr_t unused)
     assert(bt != NULL);
 
     /* Bluetooth通信タスクの起動 */
-    act_tsk(BT_TASK);
+    act_tsk(BLUETOOTH_TASK);
 
     armMotor->calibration();
 
@@ -73,7 +73,7 @@ void main_task(intptr_t unused)
 
     ev3_led_set_color(LED_GREEN); /* スタート通知 */
 
-    /* Main loop */
+    /* Main loop (line_trace_task)*/
     while (1)
     {
 
@@ -85,7 +85,7 @@ void main_task(intptr_t unused)
         clock->sleep(4); /* 4msec周期 */
     }
 
-    ter_tsk(BT_TASK);
+    ter_tsk(BLUETOOTH_TASK);
     fclose(bt);
 
     ext_tsk();
@@ -114,7 +114,7 @@ void get_black(int black_pos[2], char all_pos[256])
     }
 }
 
-void bt_task(intptr_t unused)
+void bluetooth_task(intptr_t unused)
 {
     char tmp[256];
     int count = 0;
