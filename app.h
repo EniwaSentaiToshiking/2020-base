@@ -36,12 +36,15 @@ extern "C"
 #endif                  /* STACK_SIZE */
 
 /*
- *  関数のプロトタイプ宣言
+ *  関数のプロトタイプ宣言 app.cfgで宣言したの入れる
  */
 #ifndef TOPPERS_MACRO_ONLY
 
     extern void main_task(intptr_t exinf);
-    extern void bt_task(intptr_t exinf);
+    extern void line_trace_task(intptr_t exinf);
+    extern void bluetooth_task(intptr_t exinf);
+    // extern void calc_block_bingo_route_task(intptr_t exinf);
+    // extern void display_ev3_task(intptr_t exinf);
 
 #endif /* TOPPERS_MACRO_ONLY */
 

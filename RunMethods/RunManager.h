@@ -1,6 +1,7 @@
 #include "CourseRun.h"
 #include "Parking.h"
 #include "Stop.h"
+#include "SampleCourseRun.h"
 
 #ifndef RUNMANAGER_H
 #define RUNMANAGER_H
@@ -10,7 +11,7 @@ class RunManager
 
 private:
     Course course;
-    RunState state = COURSE_RUN;
+    RunState state = SAMPLECOUSERUN;
     RunStatus *status;
 
 public:

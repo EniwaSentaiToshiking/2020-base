@@ -34,6 +34,7 @@ APPL_CXXOBJS += \
     Logger.o \
     RunStatus.o \
     CourseRun.o \
+    SampleCourseRun.o \
     Parking.o \
     Stop.o \
     RunStyle.o \

@@ -36,5 +36,8 @@ void RunManager::changeStatus(RunState state)
     case STOP:
         status = new Stop();
         break;
+    case SAMPLECOUSERUN: //linkerror なんで出るんだろ
+        status = new SampleCourseRun(course);
+        break;
     }
 }
