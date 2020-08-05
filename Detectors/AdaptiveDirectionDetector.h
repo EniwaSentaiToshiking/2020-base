@@ -8,7 +8,6 @@
 #ifndef ADAPTIVEDIRECTIONDETECTER_H
 #define ADAPTIVEDIRECTIONDETECTER_H
 
-// 流石に検出器の英語直そｗ　(detector)
 class AdaptiveDirectionDetector : public Detector
 {
 private:

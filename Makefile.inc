@@ -47,7 +47,6 @@ APPL_CXXOBJS += \
     RunPattern.o \
     RunManager.o \
 
-
 SRCLANG := c++
 
 ifdef CONFIG_EV3RT_APPLICATION
@@ -57,24 +56,28 @@ include $(EV3RT_SDK_LIB_DIR)/libcpp-ev3/Makefile
 
 endif
 
-APPL_DIR += \
-    $(mkfile_path)/Detectors \
-    $(mkfile_path)/Devices \
-    $(mkfile_path)/Observer \
-    $(mkfile_path)/UI \
-    $(mkfile_path)/Utils \
-    $(mkfile_path)/RunStyles \
-    $(mkfile_path)/RunMethods \
-    $(mkfile_path)/RunMethods/Commanders \
-    $(mkfile_path)/RunMethods/Status \
+APPL_DIRS += \
+	$(mkfile_path)/Detectors \
+	$(mkfile_path)/Devices \
+	$(mkfile_path)/Observer \
+	$(mkfile_path)/UI \
+	$(mkfile_path)/Utils \
+	$(mkfile_path)/RunStyles \
+	$(mkfile_path)/RunMethods \
+	$(mkfile_path)/RunMethods/Commanders \
+	$(mkfile_path)/RunMethods/Status \
+
 
 INCLUDES += \
-    -I$(mkfile_path)/Detectors \
-    -I$(mkfile_path)/Devices \
-    -I$(mkfile_path)/Observer \
-    -I$(mkfile_path)/UI \
-    -I$(mkfile_path)/Utils \
-    -I$(mkfile_path)/RunStyles \
-    -I$(mkfile_path)/RunMethods \
-    -I$(mkfile_path)/RunMethods/Commanders \
-    -I$(mkfile_path)/RunMethods/Status \
+	-I$(mkfile_path)/Detectors \
+	-I$(mkfile_path)/Devices \
+	-I$(mkfile_path)/Observer \
+	-I$(mkfile_path)/UI \
+	-I$(mkfile_path)/Utils \
+	-I$(mkfile_path)/RunStyles \
+	-I$(mkfile_path)/RunMethods \
+	-I$(mkfile_path)/RunMethods/Commanders \
+	-I$(mkfile_path)/RunMethods/Status \
+
+
+#COPTS += -fno-use-cxa-atexit
