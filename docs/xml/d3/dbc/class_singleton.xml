@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d3/dbc/class_singleton" kind="class" language="C++" prot="public">
+    <compoundname>Singleton</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="d3/dbc/class_singleton_1a792d2bfba149c19c85a2757458d9225d" prot="private" static="no">
+        <type>std::unique_ptr&lt; T &gt;</type>
+        <definition>typedef std::unique_ptr&lt;T&gt; Singleton&lt; T &gt;::singleton_pointer_type</definition>
+        <argsstring></argsstring>
+        <name>singleton_pointer_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.cpp" line="15" column="27" bodyfile="Utils/Singleton.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d3/dbc/class_singleton_1a792d2bfba149c19c85a2757458d9225d" prot="private" static="no">
+        <type>std::unique_ptr&lt; T &gt;</type>
+        <definition>typedef std::unique_ptr&lt;T&gt; Singleton&lt; T &gt;::singleton_pointer_type</definition>
+        <argsstring></argsstring>
+        <name>singleton_pointer_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.h" line="21" column="27" bodyfile="Utils/Singleton.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a4a52d67bc4ef10999dd27c18d2e0f972" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>static T&amp; Singleton&lt; T &gt;::singleton</definition>
+        <argsstring>()</argsstring>
+        <name>singleton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.cpp" line="7" column="12" bodyfile="Utils/Singleton.cpp" bodystart="7" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a4a52d67bc4ef10999dd27c18d2e0f972" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>static T&amp; Singleton&lt; T &gt;::singleton</definition>
+        <argsstring>()</argsstring>
+        <name>singleton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.h" line="13" column="12" bodyfile="Utils/Singleton.h" bodystart="13" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a8c247efa514e5531b2630bdc5bf9ac76" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>static T* Singleton&lt; T &gt;::createInstance</definition>
+        <argsstring>()</argsstring>
+        <name>createInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.cpp" line="17" column="19" bodyfile="Utils/Singleton.cpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a0ff33e21f77e369b28d32b59eec8462a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>static T&amp; Singleton&lt; T &gt;::getReference</definition>
+        <argsstring>(const singleton_pointer_type &amp;ptr)</argsstring>
+        <name>getReference</name>
+        <param>
+          <type>const singleton_pointer_type &amp;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.cpp" line="19" column="19" bodyfile="Utils/Singleton.cpp" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a8c247efa514e5531b2630bdc5bf9ac76" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>static T* Singleton&lt; T &gt;::createInstance</definition>
+        <argsstring>()</argsstring>
+        <name>createInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.h" line="23" column="19" bodyfile="Utils/Singleton.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a0ff33e21f77e369b28d32b59eec8462a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>static T&amp; Singleton&lt; T &gt;::getReference</definition>
+        <argsstring>(const singleton_pointer_type &amp;ptr)</argsstring>
+        <name>getReference</name>
+        <param>
+          <type>const singleton_pointer_type &amp;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.h" line="25" column="19" bodyfile="Utils/Singleton.h" bodystart="25" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a923b995920da9c06590adb170ab2f890" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Singleton&lt; T &gt;::Singleton</definition>
+        <argsstring>()</argsstring>
+        <name>Singleton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.cpp" line="22" column="3" bodyfile="Utils/Singleton.cpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a923b995920da9c06590adb170ab2f890" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Singleton&lt; T &gt;::Singleton</definition>
+        <argsstring>()</argsstring>
+        <name>Singleton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.h" line="28" column="3" bodyfile="Utils/Singleton.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a23b2407170cc04f6746874704b928044" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Singleton&lt; T &gt;::Singleton</definition>
+        <argsstring>(const Singleton &amp;)=delete</argsstring>
+        <name>Singleton</name>
+        <param>
+          <type>const <ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.cpp" line="25" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a0765f17c275d65bacc1aae955e9bfc95" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;</type>
+        <definition>Singleton&amp; Singleton&lt; T &gt;::operator=</definition>
+        <argsstring>(const Singleton &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.cpp" line="26" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1ad55e7dce6e55238fdfb80c980acded28" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Singleton&lt; T &gt;::Singleton</definition>
+        <argsstring>(Singleton &amp;&amp;)=delete</argsstring>
+        <name>Singleton</name>
+        <param>
+          <type><ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.cpp" line="27" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a371f260f31335a12d6a1c830f16c71c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;</type>
+        <definition>Singleton&amp; Singleton&lt; T &gt;::operator=</definition>
+        <argsstring>(Singleton &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.cpp" line="28" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a23b2407170cc04f6746874704b928044" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Singleton&lt; T &gt;::Singleton</definition>
+        <argsstring>(const Singleton &amp;)=delete</argsstring>
+        <name>Singleton</name>
+        <param>
+          <type>const <ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.h" line="31" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a0765f17c275d65bacc1aae955e9bfc95" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;</type>
+        <definition>Singleton&amp; Singleton&lt; T &gt;::operator=</definition>
+        <argsstring>(const Singleton &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.h" line="32" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1ad55e7dce6e55238fdfb80c980acded28" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Singleton&lt; T &gt;::Singleton</definition>
+        <argsstring>(Singleton &amp;&amp;)=delete</argsstring>
+        <name>Singleton</name>
+        <param>
+          <type><ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.h" line="33" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbc/class_singleton_1a371f260f31335a12d6a1c830f16c71c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;</type>
+        <definition>Singleton&amp; Singleton&lt; T &gt;::operator=</definition>
+        <argsstring>(Singleton &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="d3/dbc/class_singleton" kindref="compound">Singleton</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Singleton.h" line="34" column="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Utils/Singleton.cpp" line="4" column="1" bodyfile="Utils/Singleton.cpp" bodystart="5" bodyend="29"/>
+    <listofallmembers>
+      <member refid="d3/dbc/class_singleton_1a8c247efa514e5531b2630bdc5bf9ac76" prot="private" virt="non-virtual"><scope>Singleton</scope><name>createInstance</name></member>
+      <member refid="d3/dbc/class_singleton_1a8c247efa514e5531b2630bdc5bf9ac76" prot="private" virt="non-virtual"><scope>Singleton</scope><name>createInstance</name></member>
+      <member refid="d3/dbc/class_singleton_1a0ff33e21f77e369b28d32b59eec8462a" prot="private" virt="non-virtual"><scope>Singleton</scope><name>getReference</name></member>
+      <member refid="d3/dbc/class_singleton_1a0ff33e21f77e369b28d32b59eec8462a" prot="private" virt="non-virtual"><scope>Singleton</scope><name>getReference</name></member>
+      <member refid="d3/dbc/class_singleton_1a0765f17c275d65bacc1aae955e9bfc95" prot="private" virt="non-virtual"><scope>Singleton</scope><name>operator=</name></member>
+      <member refid="d3/dbc/class_singleton_1a371f260f31335a12d6a1c830f16c71c8" prot="private" virt="non-virtual"><scope>Singleton</scope><name>operator=</name></member>
+      <member refid="d3/dbc/class_singleton_1a0765f17c275d65bacc1aae955e9bfc95" prot="private" virt="non-virtual"><scope>Singleton</scope><name>operator=</name></member>
+      <member refid="d3/dbc/class_singleton_1a371f260f31335a12d6a1c830f16c71c8" prot="private" virt="non-virtual"><scope>Singleton</scope><name>operator=</name></member>
+      <member refid="d3/dbc/class_singleton_1a4a52d67bc4ef10999dd27c18d2e0f972" prot="public" virt="non-virtual"><scope>Singleton</scope><name>singleton</name></member>
+      <member refid="d3/dbc/class_singleton_1a4a52d67bc4ef10999dd27c18d2e0f972" prot="public" virt="non-virtual"><scope>Singleton</scope><name>singleton</name></member>
+      <member refid="d3/dbc/class_singleton_1a923b995920da9c06590adb170ab2f890" prot="protected" virt="non-virtual"><scope>Singleton</scope><name>Singleton</name></member>
+      <member refid="d3/dbc/class_singleton_1a23b2407170cc04f6746874704b928044" prot="private" virt="non-virtual"><scope>Singleton</scope><name>Singleton</name></member>
+      <member refid="d3/dbc/class_singleton_1ad55e7dce6e55238fdfb80c980acded28" prot="private" virt="non-virtual"><scope>Singleton</scope><name>Singleton</name></member>
+      <member refid="d3/dbc/class_singleton_1a923b995920da9c06590adb170ab2f890" prot="protected" virt="non-virtual"><scope>Singleton</scope><name>Singleton</name></member>
+      <member refid="d3/dbc/class_singleton_1a23b2407170cc04f6746874704b928044" prot="private" virt="non-virtual"><scope>Singleton</scope><name>Singleton</name></member>
+      <member refid="d3/dbc/class_singleton_1ad55e7dce6e55238fdfb80c980acded28" prot="private" virt="non-virtual"><scope>Singleton</scope><name>Singleton</name></member>
+      <member refid="d3/dbc/class_singleton_1a792d2bfba149c19c85a2757458d9225d" prot="private" virt="non-virtual"><scope>Singleton</scope><name>singleton_pointer_type</name></member>
+      <member refid="d3/dbc/class_singleton_1a792d2bfba149c19c85a2757458d9225d" prot="private" virt="non-virtual"><scope>Singleton</scope><name>singleton_pointer_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

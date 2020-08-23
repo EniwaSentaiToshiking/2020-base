@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d5/d30/class_color_sensor_driver" kind="class" language="C++" prot="public">
+    <compoundname>ColorSensorDriver</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/d30/class_color_sensor_driver_1a68568ee01bbfc78c4a50780b7bf1a2d3" prot="private" static="no" mutable="no">
+        <type>ColorSensor *</type>
+        <definition>ColorSensor* ColorSensorDriver::colorSensor</definition>
+        <argsstring></argsstring>
+        <name>colorSensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="11" column="17" bodyfile="Devices/ColorSensorDriver.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d30/class_color_sensor_driver_1a37ef60d7fed6818b0bd52c549529f2bd" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ColorSensorDriver::red</definition>
+        <argsstring></argsstring>
+        <name>red</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="12" column="9" bodyfile="Devices/ColorSensorDriver.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d30/class_color_sensor_driver_1a496c9883481918829f3fd1efbeda6f70" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ColorSensorDriver::green</definition>
+        <argsstring></argsstring>
+        <name>green</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="13" column="9" bodyfile="Devices/ColorSensorDriver.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d30/class_color_sensor_driver_1a04d2f43d19f4b76a9995c12e52453f06" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ColorSensorDriver::blue</definition>
+        <argsstring></argsstring>
+        <name>blue</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="14" column="9" bodyfile="Devices/ColorSensorDriver.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/d30/class_color_sensor_driver_1af469bfc3506d2316db97fe547721b31c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ColorSensorDriver::ColorSensorDriver</definition>
+        <argsstring>()</argsstring>
+        <name>ColorSensorDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="17" column="5" bodyfile="Devices/ColorSensorDriver.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d30/class_color_sensor_driver_1a19de8e721b2d3fc86b35a8d0f2901220" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t ColorSensorDriver::getBrightness</definition>
+        <argsstring>()</argsstring>
+        <name>getBrightness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getBrightness - 反射光の強さを測定する</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{int8_t} 反射光の強さ (0-100) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="25" column="12" bodyfile="Devices/ColorSensorDriver.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d30/class_color_sensor_driver_1ae109978cc583e41b59f3828efaa8723b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t ColorSensorDriver::getAmbient</definition>
+        <argsstring>()</argsstring>
+        <name>getAmbient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getAmbient - 環境光の強さを測定する (ambient:周辺的なニュアンス)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{uint8_t} 環境光の強さ (0-100) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="33" column="13" bodyfile="Devices/ColorSensorDriver.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d30/class_color_sensor_driver_1a1ce1fb3b545af207cb5383e0778461a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>colorid_t</type>
+        <definition>colorid_t ColorSensorDriver::getColorNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getColorNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getColorNumber - RGBを測定する</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{colorid_t} <linebreak/>
+ </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="41" column="15" bodyfile="Devices/ColorSensorDriver.cpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d30/class_color_sensor_driver_1a7e3b127313439fc442f19ef53b8861b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ColorSensorDriver::getRawColor</definition>
+        <argsstring>()</argsstring>
+        <name>getRawColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="42" column="10" bodyfile="Devices/ColorSensorDriver.cpp" bodystart="27" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d30/class_color_sensor_driver_1a749c84d8e6635eb10e88398d0c3c71b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ColorSensorDriver::getColorRed</definition>
+        <argsstring>()</argsstring>
+        <name>getColorRed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="43" column="9" bodyfile="Devices/ColorSensorDriver.cpp" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d30/class_color_sensor_driver_1a2f6a1f2e87b68f1b55d8590226ee3428" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ColorSensorDriver::getColorGreen</definition>
+        <argsstring>()</argsstring>
+        <name>getColorGreen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="44" column="9" bodyfile="Devices/ColorSensorDriver.cpp" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d30/class_color_sensor_driver_1a212e10a6d30193dbc8e33b3bfeb3973f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ColorSensorDriver::getColorBlue</definition>
+        <argsstring>()</argsstring>
+        <name>getColorBlue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="45" column="9" bodyfile="Devices/ColorSensorDriver.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d30/class_color_sensor_driver_1a731d05eb4faa7f9c6241c5374dcf31d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ColorSensorDriver::~ColorSensorDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~ColorSensorDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ColorSensorDriver.h" line="47" column="13" bodyfile="Devices/ColorSensorDriver.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Devices/ColorSensorDriver.h" line="7" column="1" bodyfile="Devices/ColorSensorDriver.h" bodystart="8" bodyend="48"/>
+    <listofallmembers>
+      <member refid="d5/d30/class_color_sensor_driver_1a04d2f43d19f4b76a9995c12e52453f06" prot="private" virt="non-virtual"><scope>ColorSensorDriver</scope><name>blue</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1a68568ee01bbfc78c4a50780b7bf1a2d3" prot="private" virt="non-virtual"><scope>ColorSensorDriver</scope><name>colorSensor</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1af469bfc3506d2316db97fe547721b31c" prot="public" virt="non-virtual"><scope>ColorSensorDriver</scope><name>ColorSensorDriver</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1ae109978cc583e41b59f3828efaa8723b" prot="public" virt="non-virtual"><scope>ColorSensorDriver</scope><name>getAmbient</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1a19de8e721b2d3fc86b35a8d0f2901220" prot="public" virt="non-virtual"><scope>ColorSensorDriver</scope><name>getBrightness</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1a212e10a6d30193dbc8e33b3bfeb3973f" prot="public" virt="non-virtual"><scope>ColorSensorDriver</scope><name>getColorBlue</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1a2f6a1f2e87b68f1b55d8590226ee3428" prot="public" virt="non-virtual"><scope>ColorSensorDriver</scope><name>getColorGreen</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1a1ce1fb3b545af207cb5383e0778461a1" prot="public" virt="non-virtual"><scope>ColorSensorDriver</scope><name>getColorNumber</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1a749c84d8e6635eb10e88398d0c3c71b2" prot="public" virt="non-virtual"><scope>ColorSensorDriver</scope><name>getColorRed</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1a7e3b127313439fc442f19ef53b8861b8" prot="public" virt="non-virtual"><scope>ColorSensorDriver</scope><name>getRawColor</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1a496c9883481918829f3fd1efbeda6f70" prot="private" virt="non-virtual"><scope>ColorSensorDriver</scope><name>green</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1a37ef60d7fed6818b0bd52c549529f2bd" prot="private" virt="non-virtual"><scope>ColorSensorDriver</scope><name>red</name></member>
+      <member refid="d5/d30/class_color_sensor_driver_1a731d05eb4faa7f9c6241c5374dcf31d1" prot="public" virt="virtual"><scope>ColorSensorDriver</scope><name>~ColorSensorDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

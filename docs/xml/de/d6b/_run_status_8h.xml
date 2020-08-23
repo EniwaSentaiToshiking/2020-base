@@ -1,0 +1,512 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="de/d6b/_run_status_8h" kind="file" language="C++">
+    <compoundname>RunStatus.h</compoundname>
+    <includes refid="d0/d26/_run_pattern_8h" local="yes">RunPattern.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">algorithm</includes>
+    <includedby refid="d3/d8e/_course_run_8h" local="yes">RunMethods/Status/CourseRun.h</includedby>
+    <includedby refid="d8/daa/_parking_8h" local="yes">RunMethods/Status/Parking.h</includedby>
+    <includedby refid="d9/dc9/_run_status_8cpp" local="yes">RunMethods/Status/RunStatus.cpp</includedby>
+    <includedby refid="db/d28/_sample_course_run_8h" local="yes">RunMethods/Status/SampleCourseRun.h</includedby>
+    <includedby refid="d2/d49/_stop_8h" local="yes">RunMethods/Status/Stop.h</includedby>
+    <incdepgraph>
+      <node id="16">
+        <label>Clothoid.h</label>
+        <link refid="dd/de6/_clothoid_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Turning.h</label>
+        <link refid="da/d06/_turning_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RunMethods/Status/RunStatus.h</label>
+        <link refid="de/d6b/_run_status_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Detector.h</label>
+        <link refid="d0/d46/_detector_8h_source"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>DistanceDetector.h</label>
+        <link refid="d3/db5/_distance_detector_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>Steering.h</label>
+      </node>
+      <node id="37">
+        <label>Clock.h</label>
+      </node>
+      <node id="44">
+        <label>TailMotorDriver.h</label>
+        <link refid="db/d77/_tail_motor_driver_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>LineTrace.h</label>
+        <link refid="d0/d63/_line_trace_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>cmath</label>
+      </node>
+      <node id="30">
+        <label>DirectionDetector.h</label>
+        <link refid="de/d6f/_direction_detector_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Straight.h</label>
+        <link refid="d5/d58/_straight_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>BlackLineDetector.h</label>
+        <link refid="d0/dda/_black_line_detector_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>ClockDetector.h</label>
+        <link refid="dd/d46/_clock_detector_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>AdaptiveDirectionDetector.h</label>
+        <link refid="d4/d6f/_adaptive_direction_detector_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>WheelInfo.h</label>
+        <link refid="dc/db4/_wheel_info_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ColorSensor.h</label>
+      </node>
+      <node id="20">
+        <label>GrayLineDetector.h</label>
+        <link refid="df/dac/_gray_line_detector_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>PointDetector.h</label>
+        <link refid="d3/dcd/_point_detector_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>BrightnessDetector.h</label>
+        <link refid="db/d82/_brightness_detector_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Lot.h</label>
+        <link refid="dc/df5/_lot_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>DetectType.h</label>
+        <link refid="d6/de5/_detect_type_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>PID.h</label>
+        <link refid="d7/d92/_p_i_d_8h_source"/>
+      </node>
+      <node id="3">
+        <label>typeinfo</label>
+      </node>
+      <node id="38">
+        <label>RunCommander.h</label>
+        <link refid="d9/d5d/_run_commander_8h_source"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RunPattern.h</label>
+        <link refid="d0/d26/_run_pattern_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>vector</label>
+      </node>
+      <node id="7">
+        <label>PIDController.h</label>
+        <link refid="d5/df9/_p_i_d_controller_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>ArmCommander.h</label>
+        <link refid="d8/d01/_arm_commander_8h_source"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>ArmMotorDriver.h</label>
+        <link refid="d9/d65/_arm_motor_driver_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Logger.h</label>
+        <link refid="d6/dec/_logger_8h_source"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>math.h</label>
+      </node>
+      <node id="33">
+        <label>ColorDetector.h</label>
+        <link refid="d2/d42/_color_detector_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Motor.h</label>
+      </node>
+      <node id="15">
+        <label>Spin.h</label>
+        <link refid="d7/d4a/_spin_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>CourseMonitor.h</label>
+        <link refid="da/da6/_course_monitor_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>cstdlib</label>
+      </node>
+      <node id="21">
+        <label>ev3api.h</label>
+      </node>
+      <node id="5">
+        <label>RunStyle.h</label>
+        <link refid="df/db4/_run_style_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>WheelMotorDriver.h</label>
+        <link refid="d6/df4/_wheel_motor_driver_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>Localization.h</label>
+        <link refid="d3/d03/_localization_8h_source"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ColorSensorDriver.h</label>
+        <link refid="dc/d5c/_color_sensor_driver_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>algorithm</label>
+      </node>
+      <node id="43">
+        <label>TailCommander.h</label>
+        <link refid="d8/d47/_tail_commander_8h_source"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>stdio.h</label>
+      </node>
+      <node id="40">
+        <label>Grid.h</label>
+        <link refid="d8/dea/_grid_8h_source"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>RunMethods/Status/Parking.h</label>
+        <link refid="d8/daa/_parking_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RunMethods/Status/RunStatus.h</label>
+        <link refid="de/d6b/_run_status_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>RunMethods/Status/SampleCourseRun.h</label>
+        <link refid="db/d28/_sample_course_run_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>RunMethods/Status/Stop.h</label>
+        <link refid="d2/d49/_stop_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>RunMethods/RunManager.h</label>
+        <link refid="da/dba/_run_manager_8h_source"/>
+      </node>
+      <node id="2">
+        <label>RunMethods/Status/CourseRun.h</label>
+        <link refid="d3/d8e/_course_run_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="df/de3/struct_delete_object" prot="public">DeleteObject</innerclass>
+    <innerclass refid="d3/dca/class_run_status" prot="public">RunStatus</innerclass>
+    <innernamespace refid="d8/dcc/namespacestd">std</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="de/d6b/_run_status_8h_1a86567c2b79a1ea4b5bc908d49665a16e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RunState</name>
+        <enumvalue id="de/d6b/_run_status_8h_1a86567c2b79a1ea4b5bc908d49665a16ea45b86b3242b52eb646a41a475f02b501" prot="public">
+          <name>SAMPLECOUSERUN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d6b/_run_status_8h_1a86567c2b79a1ea4b5bc908d49665a16ea21126d73e03a94cb5055aec12dabf5ac" prot="public">
+          <name>COURSE_RUN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d6b/_run_status_8h_1a86567c2b79a1ea4b5bc908d49665a16ea8db0a86f11645af94e2d24ac302576a7" prot="public">
+          <name>PARKING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d6b/_run_status_8h_1a86567c2b79a1ea4b5bc908d49665a16ea679ee5320d66c8322e310daeb2ee99b8" prot="public">
+          <name>STOP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/RunStatus.h" line="21" column="1" bodyfile="RunMethods/Status/RunStatus.h" bodystart="22" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;RunPattern.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>RUNSTATUS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RUNSTATUS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//これなんだろう？</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="df/de3/struct_delete_object" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="df/de3/struct_delete_object" kindref="compound">DeleteObject</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator()(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>*ptr)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="15"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>ptr;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//走行状態</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>RunState</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>SAMPLECOUSERUN,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>COURSE_RUN,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>PARKING,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>STOP,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>なんだこれ？</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d8/dfa/class_run_manager" kindref="compound">RunManager</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="d3/dca/class_run_status" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d3/dca/class_run_status" kindref="compound">RunStatus</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>vector&lt;RunPattern<sp/>*&gt;<sp/>patterns;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>currentPattern<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>RunState<sp/>nextState;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46" refid="d3/dca/class_run_status_1aeb1bcfe6c4221def8e123d0682a48989" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d3/dca/class_run_status_1aeb1bcfe6c4221def8e123d0682a48989" kindref="member">init</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>run();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setNextState()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>changeNextPattern();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>changeNextStatus(<ref refid="d8/dfa/class_run_manager" kindref="compound">RunManager</ref><sp/>*manager);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="d3/dca/class_run_status" kindref="compound">RunStatus</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="RunMethods/Status/RunStatus.h"/>
+  </compounddef>
+</doxygen>

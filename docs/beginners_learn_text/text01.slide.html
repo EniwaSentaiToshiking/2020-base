@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta content="Asciidoctor 2.0.10" name="generator" />
+<meta content="この文書は、技術教育「要素技術とモデルを開発に使おう」に使用するETロボコン公式トレーニングのテキストです。" name="description" />
+<meta content="ETロボコン実行委員会" name="author" />
+<title>要素技術とモデルを開発に使おう: コードとモデル図を対応づけてみよう</title>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" />
+<style>
+.conum { display: inline-block; color: white !important; background-color: #222222; -webkit-border-radius: 100px; border-radius: 100px; text-align: center; width: 1.2em; height: 1.2em; font-size: 0.9em; font-weight: bold; line-height: 1.2; font-family: Arial, sans-serif; font-style: normal; position: relative; top: -0.1em; }
+.conum * { color: white !important; }
+.conum + b { display: none; }
+.conum:after { content: attr(data-value); }
+.conum:not([data-value]):empty { display: none; }
+.colist table td:first-of-type { padding-right: 0.25em; }
+</style>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" rel="stylesheet" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<script>document.addEventListener('DOMContentLoaded', prettyPrint)</script>
+<link href="deck.js/core/deck.core.css" rel="stylesheet" />
+<link href="deck.js/extensions/scale/deck.scale.css" media="screen" rel="stylesheet" />
+<link href="deck.js/extensions/goto/deck.goto.css" media="screen" rel="stylesheet" />
+<link href="deck.js/extensions/menu/deck.menu.css" media="screen" rel="stylesheet" />
+<link href="deck.js/extensions/navigation/deck.navigation.css" media="screen" rel="stylesheet" />
+<link href="deck.js/extensions/status/deck.status.css" media="screen" rel="stylesheet" />
+<link href="deck.js/themes/style/mystyle.css" media="screen" rel="stylesheet" />
+<link href="deck.js/themes/transition/fade.css" media="screen" rel="stylesheet" />
+<link href="deck.js/core/print.css" media="print" rel="stylesheet" />
+<script src="deck.js/modernizr.custom.js"></script>
+</head>
+<body class="article">
+<div class="deck-container">
+<section class="slide" id="title-slide">
+<h1>要素技術とモデルを開発に使おう: コードとモデル図を対応づけてみよう</h1>
+<span id="author">ETロボコン実行委員会</span>
+<br />
+<span id="email"><a href="mailto:er-info@etrobo.jp">er-info@etrobo.jp</a></span>
+<br />
+<span id="revnumber"> 3.0,</span>
+<span id="revdate">2020-07-05 12:06:08</span>
+<br />
+<span id="revremark">2020年用</span>
+</section>
+<section class="slide" id="_sample00ウォーカーを動かしてみよう">
+<h2>sample00（ウォーカー）を動かしてみよう</h2>
+<div class="paragraph"><p><code>sample00</code> をビルドして動かしてみましょう。</p></div>
+<div class="paragraph"><p>どんな動きをするプログラムでしょうか。</p></div>
+<div class="listingblock">
+<div class="title">リスト 1. <code>sample00/app.cpp</code> から抜粋</div>
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">void main_task(intptr_t unused) {&#x000A;&#x000A;  Motor leftWheel(PORT_C);&#x000A;  Motor rightWheel(PORT_B);&#x000A;  Clock clock;&#x000A;&#x000A;  const int8_t pwm = (Motor::PWM_MAX) / 6;&#x000A;  const uint32_t duration = 2000;&#x000A;&#x000A;  init_f(__FILE__);&#x000A;  while(1) {&#x000A;    msg_f("Forwarding...", 1);&#x000A;    leftWheel.setPWM(pwm);&#x000A;    rightWheel.setPWM(pwm);&#x000A;    clock.sleep(duration);</code></pre>
+</div>
+</div>
+<div style="page-break-after: always"></div>
+<div class="listingblock">
+<div class="title">リスト 2. <code>sample00/app.cpp</code> から抜粋（続き）</div>
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">msg_f("Backwarding...", 1);&#x000A;    leftWheel.setPWM(-pwm);&#x000A;    rightWheel.setPWM(-pwm);&#x000A;    clock.sleep(duration);&#x000A;&#x000A;    // 左ボタンを長押し、それを捕捉する&#x000A;    if (ev3_button_is_pressed(LEFT_BUTTON)) {&#x000A;      break;&#x000A;    }&#x000A;  }&#x000A;&#x000A;  msg_f("Stopped.", 1);&#x000A;  leftWheel.stop();&#x000A;  rightWheel.stop();&#x000A;  while(ev3_button_is_pressed(LEFT_BUTTON)) {&#x000A;    ;&#x000A;  }&#x000A;&#x000A;  ext_tsk();&#x000A;}</code></pre>
+</div>
+</div>
+</section>
+<section class="slide" id="_動かしてみましょう">
+<h2>動かしてみましょう</h2>
+<div class="paragraph"><p>ビルドをして、シミュレータを動かしてみましょう。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="console language-console">~/etrobo:$&#x000A;~/etrobo:$ make app=sample00 sim up</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>これでシミュレータが上がります。２回目以降は</p></div>
+<div class="paragraph"><p><code>make sim up</code></p></div>
+<div class="paragraph"><p>で大丈夫です。</p></div>
+<div class="paragraph"><p>ロボットは、次のような動きをします。</p></div>
+<div class="ulist">
+<ul>
+<li>2000ms(=2秒)ごとに、前進と後退を繰り返す</li>
+<li>左ボタンをしばらく押し続けていると、そのうち押されたことが捕捉され、停止する</li>
+</ul>
+</div>
+<div class="paragraph"><p>シミュレータ上でのロボットのボタンを押すと止めることができます。</p></div>
+<section class="slide" id="_プログラムを見てみましょう">
+<h2>プログラムを見てみましょう</h2>
+<div class="paragraph"><p>以下のようなポイントを押さえながら、プログラムを見てみましょう</p></div>
+<div class="ulist">
+<ul>
+<li>この動作をさせるために必要な要素は何で、どのように使われているでしょうか</li>
+<li>前進する、後退するという処理はどれですか</li>
+<li>ボタンが押されるという処理はどれですか</li>
+<li>どうやってプログラムは終わっているでしょう</li>
+</ul>
+</div>
+</section>
+<section class="slide" id="_このプログラムで使用している要素">
+<h2>このプログラムで使用している要素</h2>
+<div class="paragraph"><p>このプログラムでは大きく「モーター」、「時計（クロック）」という要素を使っています。
+モーターを動かすことで前進したり、後退したりしています。
+また、時計を使って2000msec(=2秒)を計測しています。
+これらの要素を使うための準備をしているところを見てみましょう。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">void main_task(intptr_t unused) {&#x000A;&#x000A;  Motor leftWheel(PORT_C);&#x000A;  Motor rightWheel(PORT_B);&#x000A;  Clock clock;</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>ここでMotorとClockという要素を使うための変数を定義しています。</p></div>
+<div class="literalblock">
+<div class="content">
+<pre>Motor leftWheel(PORT_C);</pre>
+</div>
+</div>
+<div class="paragraph"><p>はMotor要素を具体的にleftWheel（左車輪）という名前（変数）で使用することを意味しています。
+(PORT_C)はPORT_Cにつながったモーターであることを指定しています。同様に</p></div>
+<div class="literalblock">
+<div class="content">
+<pre>Motor rightWheel(PORT_B);</pre>
+</div>
+</div>
+<div class="paragraph"><p>はPORT_BにつながったモーターをrightWheel(右車輪)として使用することになります。</p></div>
+<div class="paragraph"><p>また、</p></div>
+<div class="literalblock">
+<div class="content">
+<pre>Clock clock;</pre>
+</div>
+</div>
+<div class="paragraph"><p>はClockという要素をclockという名前で使用することを示しています。</p></div>
+<div class="paragraph"><p>後でも出てきますが、ここで出てきたMotorやClockはクラス、それを具体的に扱えるようにしたleftWheelやrightWheel、clockはインスタンスまたはオブジェクトと呼びます。
+leftWheel、rightWheelはどちらもMotorクラスのインスタンス（オブジェクト）であり、clockはClockクラスのインスタンス（オブジェクト）というような言い方をします</p></div>
+</section>
+<section class="slide" id="_要素の読み込み">
+<h2>要素の読み込み</h2>
+<div class="paragraph"><p>では、このMotorというのはどこからきているのでしょうか。
+このMotorという要素は他のプログラムでも共通で使用できるライブラリとしてETロボコン実行委員会から提供しているものです。
+この定義を読み込んでいる部分が</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">#include "Motor.h"&#x000A;#include "Clock.h"</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>となります。#includeというのはこの部分に指定されたファイルを読み込むという命令です。</p></div>
+</section>
+</section>
+<section class="slide" id="_クラスとメソッド">
+<h2>クラスとメソッド</h2>
+<div class="paragraph"><p>では、読み込まれる要素を定義しているファイル（ヘッダーファイル）を少し見てみましょう。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">/**&#x000A; * EV3 モータクラス&#x000A; */&#x000A;class Motor&#x000A;{&#x000A;public:&#x000A;    friend class Steering;</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>中略</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">/**&#x000A;     * コンストラクタ&#x000A;     * @param port  モータポート番号&#x000A;     * @param brake true:ブレーキモード/false:フロートモード&#x000A;     * @param type  モータタイプ&#x000A;     * @return -&#x000A;     */&#x000A;    explicit Motor(ePortM port, bool brake = true, motor_type_t type = LARGE_MOTOR);</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>classというのは要素を宣言するためのものです（クラスと呼びます）。ここではMotorというクラスを
+定義しています。
+そして、39行目の部分が先ほどのleftWheel/rightWheelを宣言した際にポート番号を指定した部分と
+関連するところです。
+クラスが提供している操作をそのクラスの「メソッド」と呼びます。さらにメソッドのうち クラス名と
+同じ名前を持つメソッドはそのクラスのコンストラクタと呼ばれた特殊なものです。
+詳細は省きますが、先ほどのleftWheel,rightWheelを定義した場所で、ポートを指定した初期化が
+行われています。</p></div>
+<div class="literalblock">
+<div class="content">
+<pre>Clockも同様の定義を持っていますので、Clock.hを確認してみましょう。</pre>
+</div>
+</div>
+</section>
+<section class="slide" id="_固定値の定義">
+<h2>固定値の定義</h2>
+<div class="paragraph"><p>次に以下の定義について説明します。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">const int8_t pwm = (Motor::PWM_MAX) / 6;&#x000A;  const uint32_t duration = 2000;</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>ここではそのあとで使用する固定の値を定義しています。例えばこのサンプルでは前進後退を切り替える
+時間を2000msecとしています。
+この値を直接プログラムの中に数字で書いても良いのですが、あとでこの値を3000msecにしたいと
+思った場合、使っている場所全て（この例では27行目と33行目）に書き換えが必要となります。
+また、プログラムを読んだときに2000が何を意味しているかわからなくなることもあります。このように
+プログラム内で使用する固定値は直接書かず、書き換えできない変数として定義すると良いでしょう。
+「const」という定義はこの変数が書き換えできないということを示します。</p></div>
+<div class="ulist">
+<ul>
+<li><p>
+やってみよう<div class="literalblock">
+<div class="content">
+<pre>pwmやdurationの値を変えて、動きがどう変わるかやってみましょう</pre>
+</div>
+</div></p></li>
+</ul>
+</div>
+</section>
+<section class="slide" id="_中心となる処理">
+<h2>中心となる処理</h2>
+<div class="paragraph"><p>このプログラムの中心となるのは以下の部分です。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">while(1) {&#x000A;    msg_f("Forwarding...", 1);&#x000A;    leftWheel.setPWM(pwm);&#x000A;    rightWheel.setPWM(pwm);&#x000A;    clock.sleep(duration);&#x000A;// end::main_task_1[]&#x000A;// tag::main_task_2[]&#x000A;    msg_f("Backwarding...", 1);&#x000A;    leftWheel.setPWM(-pwm);&#x000A;    rightWheel.setPWM(-pwm);&#x000A;    clock.sleep(duration);&#x000A;&#x000A;    // 左ボタンを長押し、それを捕捉する&#x000A;    if (ev3_button_is_pressed(LEFT_BUTTON)) {&#x000A;      break;&#x000A;    }&#x000A;  }</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>順に説明します。</p></div>
+</section>
+<section class="slide" id="_前進する">
+<h2>前進する</h2>
+<div class="paragraph"><p>以下の部分で左車輪、右車輪に対して前進を行う指示をしています。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">leftWheel.setPWM(pwm);&#x000A;    rightWheel.setPWM(pwm);</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>leftWheel.setPWM(pwm)はleftWheelで示されるモーター（つまりPORT_Cにつながったモーター）に
+対してpwmをPWM値として設定しています。組み方にもよりますが、今回の組み方では正の値を設定すると
+前進を行います。
+左車輪と右車輪に同じ値を設定しているので、ロボットは前進することになります。</p></div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note"></i>
+</td>
+<td class="content">
+ロボットは設定されたPWM値を覚えているので、明示的に停止させない限り進み続けることに注意してください。
+</td>
+</tr>
+</table>
+</div>
+</section>
+<section class="slide" id="_時間を待つ指定時間処理を待たせる">
+<h2>時間を待つ（指定時間処理を待たせる）</h2>
+<div class="paragraph"><p>今回のサンプルでは、前進をさせて2000msec=２秒間経ってから後進を行います。時間によって処理を
+切り替えるやり方はいくつかありますが、ここでは「２秒間何も処理しないで待つ」というやり方を
+取っています。それが以下の部分です。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">clock.sleep(duration);</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>時間に関する処理を持つClockクラスの操作であるsleep()というメソッドを呼び出しています。
+sleepは指定された時間（単位はmsec)処理を停止し、時間が立つと処理を進めます。
+このサンプルでは2秒処理を止めています。処理を止めている間もモーターは設定した値にしたがって
+動作を続けるため、前進を続けることになります。</p></div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note"></i>
+</td>
+<td class="content">
+sleep()で待っている間、処理が停止されているため、その間は左ボタンの受付もされないことに注意が必要です。
+</td>
+</tr>
+</table>
+</div>
+</section>
+<section class="slide" id="_後進する">
+<h2>後進する</h2>
+<div class="paragraph"><p>前進と後進はモーターに設定する値を変えることで実現しています。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">leftWheel.setPWM(-pwm);&#x000A;    rightWheel.setPWM(-pwm);&#x000A;    clock.sleep(duration);</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>setPWMで設定する値を-pwmのようにマイナスの値を設定することで、逆方向にモーターを動作させるように
+なっています。また、前進の時と同じようにsleep()で2秒を待たせています。</p></div>
+<div class="ulist">
+<ul>
+<li><p>
+やってみよう<div class="literalblock">
+<div class="content">
+<pre>setPWMに設定する値の符号を変えてみて、その場で右回り、左回りを2秒毎に切り替えてみましょう。</pre>
+</div>
+</div></p></li>
+</ul>
+</div>
+</section>
+<section class="slide" id="_繰り返し">
+<h2>繰り返し</h2>
+<div class="paragraph"><p>前進、後進の繰り返しを行っているのが以下のwhile文です。繰り返しはループとも呼ばれます。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">while(1) {</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>whileは()内で指定された式、値がfalse(数字では0)以外の場合、繰り返しを行います。while(1)は
+無条件で繰り返しを行う場合によく使われる記述方法です。繰り返しの範囲は
+{　}で示されるブロックになります。このサンプルでは以下までとなります。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">}</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>この繰り返しにより、前進後進がずっと繰り返されます。</p></div>
+</section>
+<section class="slide" id="_ボタンの受付とループからの脱出">
+<h2>ボタンの受付とループからの脱出</h2>
+<div class="paragraph"><p>while(1)では永遠に処理が繰り返されてしまうため、左ボタンを押した際にループを抜けてモーターを
+止める処理が以下です。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">if (ev3_button_is_pressed(LEFT_BUTTON)) {&#x000A;      break;&#x000A;    }</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>if文では()内の条件がtrue(つまり0以外)になった場合、続くブロック内の処理を行います。</p></div>
+<div class="literalblock">
+<div class="content">
+<pre>ev_button_is_pressed(LEFT_BUTTON)</pre>
+</div>
+</div>
+<div class="paragraph"><p>は本体の左ボタンが押された場合にtrueとなる関数です。ボタンが押された場合、ブロック内の</p></div>
+<div class="literalblock">
+<div class="content">
+<pre>break;</pre>
+</div>
+</div>
+<div class="paragraph"><p>が実行されます。breakはループを抜けるための命令です。23行目のwhile(1)は永遠に繰り返される
+ループですが、ボタンが押された場合はこのループを抜けて、41行目からの処理に移ります。</p></div>
+</section>
+<section class="slide" id="_モーターの停止">
+<h2>モーターの停止</h2>
+<div class="paragraph"><p>左ボタンを押して、ループを脱出したらモーターを止めます。また、今度はボタンが離されるまでループが
+続きます。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">leftWheel.stop();&#x000A;  rightWheel.stop();&#x000A;  while(ev3_button_is_pressed(LEFT_BUTTON)) {&#x000A;    ;&#x000A;  }</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>44行目のwhile()によって、何もしないループが繰り返されます。</p></div>
+</section>
+<section class="slide" id="_タスクの終了">
+<h2>タスクの終了</h2>
+<div class="paragraph"><p>これまでの処理はタスクという実行単位で行われています。処理が終わったので、タスクの動作を終了します。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">ext_tsk();</code></pre>
+</div>
+</div>
+</section>
+<section class="slide" id="_プログラムをモデル図面にしてみる">
+<h2>プログラムをモデル（図面）にしてみる</h2>
+<div class="paragraph"><p>これまで見てきたプログラムをモデル（図面）として表現してみましょう。今回のプログラムは小さいので全体を
+理解するのは難しくありません。しかし、実際のプログラムはもっと大きくなります。その場合、プログラム
+だけだと全体を俯瞰することが難しくなっていきます。モデルとして図にすることで、プログラムが大きくなっても
+全体像を把握しやすくなります。</p></div>
+<div class="paragraph"><p>モデルの記述には主に</p></div>
+<div class="ulist">
+<ul>
+<li>機能の側面</li>
+<li>構造の側面</li>
+<li>振舞いの側面</li>
+</ul>
+</div>
+<div class="paragraph"><p>があります。ここでは構造のモデルについて説明します。</p></div>
+</section>
+<section class="slide" id="_構造のモデルオブジェクト図1">
+<h2>構造のモデル（オブジェクト図）1</h2>
+<div class="paragraph"><p>構造のモデルは、使われている要素と、その要素間の繋がりを表現します。
+今回のプログラムでは要素として「モーター」と「時計」、そしてそれを使っているmain_task()があります。
+オブジェクト図では使用している具体的なオブジェクトとその関係を示したものです。main_task()はオブジェクトでは
+ありませんが、関係を示すためにオブジェクトとして表現することにします。</p></div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img alt="sample00のオブジェクト図.png" src="images/sample00のオブジェクト図.png" width="100%" />
+</div>
+<div class="title">図 1. <code>sample00</code> のオブジェクト図</div>
+</div>
+<div class="paragraph"><p>オブジェクト図ではオブジェクトを四角で、オブジェクトの名前には下線を引きます（これにより後で出てくる
+クラス図と区別できます）。
+オブジェクト間に引かれている線は「リンク」です。オブジェクト間での呼び出しなどの繋がりを示しています。
+この図により、このプログラムで使われている要素を把握することができます。</p></div>
+<div style="page-break-after: always"></div>
+</section>
+<section class="slide" id="_構造のモデルオブジェクト図２">
+<h2>構造のモデル（オブジェクト図)２</h2>
+<div class="paragraph"><p>このオブジェクト図をもう少し手直しします。leftWheel、rightWheel、clockはMotorクラスやClockクラスの
+オブジェクトです。これを明確にするため、オブジェクト名の横にそのクラス名を書くことができます。</p></div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img alt="sample00のオブジェクト図クラス名あり" src="images/sample00のオブジェクト図クラス名あり.png" width="100%" />
+</div>
+<div class="title">図 2. <code>sample00</code> のオブジェクト図（クラスと関連づけ後）</div>
+</div>
+<div class="paragraph"><p>このように、「オブジェクト名:クラス名」という書き方をします。
+これにより、leftWheelとrightWheelがどちらもMotorクラスのオブジェクトであることがわかります。</p></div>
+<div class="paragraph"><p>オブジェクト図は具体的な要素を表しているので、比較的書きやすい図でもあります。
+モデリング初級者はオブジェクトを洗い出してみることから始めると良いでしょう。</p></div>
+<div style="page-break-after: always"></div>
+</section>
+<section class="slide" id="_構造のモデルクラス図">
+<h2>構造のモデル（クラス図）</h2>
+<div class="paragraph"><p>クラス図はオブジェクトではなく、クラスのレベルで要素とその関係を示した図になります。今回のプログラムを
+クラス図にしてみたものが以下です。</p></div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img alt="sample00のクラス図" src="images/sample00のクラス図.png" width="75%" />
+</div>
+<div class="title">図 3. <code>sample00</code> のクラス図</div>
+</div>
+<div class="paragraph"><p>クラス図でもクラス間の関係を線で表現します。ただし、クラス図での線は「関連」と呼びます。
+関連の端には「関連端名」を付けます。この図ではmain_taskからモータークラスへの関連端名として
+leftWheel、rightWheelという「ロール名」が付けられています。
+同じクラスに対して異なる役割を持って使っているということが読み取れます。
+オブジェクト図とも比較してみましょう。</p></div>
+<div class="paragraph"><p>クラス図ではそのクラスが持つ属性やメソッドを表現できます。これにより各要素がどのような役割を
+持っているかが分かりやすくなります。
+プログラムと対応させる図としてはこうしたクラス図を使います。</p></div>
+<div style="page-break-after: always"></div>
+</section>
+<section class="slide" id="_クラス図を読み取ろう">
+<h2>クラス図を読み取ろう</h2>
+<div class="paragraph"><p>では、一度プログラムを忘れてこのクラス図を考えてみましょう。</p></div>
+<div class="ulist">
+<ul>
+<li>どんなクラスを使っているかわかりますか</li>
+<li>どんなクラスのインスタンス（オブジェクト）を使っているかわかりますか</li>
+<li>どんなことがやりたいシステムかわかりますか</li>
+<li>どんな処理をするシステムかわかりますか</li>
+</ul>
+</div>
+<div class="paragraph"><p>こうしてみると、これだけではMotor クラスと Clock クラスを使っているアプリケーションである
+というほかは、どのようなことをやりたいのかが分かりません。</p></div>
+<div class="paragraph"><p>もしかしたら時間になったらモーターを動かして金魚に餌をあげるというアプリケーションかもしれません</p></div>
+<div class="paragraph"><p>このように、図面でどのようなアプリケーションかがわからないということは、役割がきちんと分担されていなかったり、それにより一部の要素に役割が集中していることが考えられます。
+こうした作り方だと、プログラムとして分かりにくかったり、修正が難しくなります。構造の図により、役割が適切に分割できているかどうかを確認しましょう。</p></div>
+<div style="page-break-after: always"></div>
+</section>
+<section class="slide" id="_クラス図を見直す">
+<h2>クラス図を見直す</h2>
+<div class="paragraph"><p>このプログラムでは決まった走行（前進・後退を繰り返す）をロボットにさせたいのに、 <code>sample00</code> には
+そのことがわかるクラスがありません。</p></div>
+<div class="literalblock">
+<div class="content">
+<pre>このロボットがやる仕事を担当するクラスを作って、仕事の担当者としての名前をつけてみましょう。</pre>
+</div>
+</div>
+<div class="paragraph"><p>ここでは、前後に走行する役割をもつ「Walker」というクラスを作ることにしましょう。</p></div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img alt="sample01のクラス図" src="images/sample01のクラス図.png" width="75%" />
+</div>
+<div class="title">図 4. <code>sample01</code> のクラス図</div>
+</div>
+<div class="paragraph"><p>Walkerを定義するにあたり、main_taskで持っていたpwmとdurationをWalkerクラスの属性としました。
+このように必要なデータを表現することはそのクラスの持つ役割を明確にすることに繋がります。
+また、このWalkerが備える操作としてrun()を定義します。main_taskはWalkerクラスのオブジェクトに対して
+run()を呼び出すことで全体の動作を行わせることになります。
+また、Motor、ClockはWalkerができた時に一緒に使われるので、コンポジション（黒菱形の表記）を使っています。</p></div>
+<div class="paragraph"><p>Walkerというクラスを定義したことで、ロボットを動かすという意味が明確になりました。金魚の餌やりアプリケーションであればどんな名前のクラスを用意すると良いでしょうか？</p></div>
+</section>
+<section class="slide" id="_sample01のコードを作成する">
+<h2>sample01のコードを作成する</h2>
+<div class="paragraph"><p>モデル図に合わせて、コードを変更しましょう。</p></div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+サンプルコードの <code>sample00</code> ディレクトリをそっくりコピーして <code>sample01</code> ディレクトリを作りましょう
+</li>
+<li>
+ファイルは分割しないで、 <code>app.cpp</code> の中に <code>Walker</code> クラスを作成しましょう
+</li>
+<li>
+クラス図に従って <code>Walker</code> クラスを作成します
+</li>
+<li>
+<code>Walker</code> クラスの <code>run</code> メソッドに <code>main_task</code> の処理を移動します
+</li>
+<li>
+<code>main_task</code> は <code>Walker</code> クラスのインスタンスの作成と <code>run</code> メソッドの呼び出しを担当します
+</li>
+</ol>
+</div>
+<div class="paragraph"><p>作成したコードは次ページ以降に掲載してあります。</p></div>
+<div class="paragraph"><p>コードが作成できたら、ビルドして、動作を確認しましょう。コンパイルする対象のディレクトリが変わるので、再度appでディレクトリを指定する点に注意しましょう。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="console language-console">~/etrobo:$ make app=sample01 sim up</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>こちらもこの後は</p></div>
+<div class="paragraph"><p><code>make sim up</code></p></div>
+<div class="paragraph"><p>だけで起動できます。</p></div>
+<div style="page-break-after: always"></div>
+<div class="listingblock">
+<div class="title">リスト 3. <code>sample01/app.cpp</code> （その１）</div>
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">#include "app.h"&#x000A;#include "util.h"&#x000A;&#x000A;#include "Motor.h"&#x000A;#include "Clock.h"&#x000A;&#x000A;using namespace ev3api;&#x000A;&#x000A;class Walker {&#x000A;public:&#x000A;  Walker();&#x000A;  void run();&#x000A;&#x000A;private:&#x000A;  Motor leftWheel;              <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;  Motor rightWheel;             <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;  Clock clock;                  <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;&#x000A;  const int8_t pwm = (Motor::PWM_MAX) / 6;&#x000A;  const uint32_t duration = 2000;&#x000A;};</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>Motor</code> クラスと <code>Clock</code> クラスのインスタンスは、 <code>Walker</code> のインスタンスと共に作成・破棄する</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always"></div>
+<div class="listingblock">
+<div class="title">リスト 4. <code>sample01/app.cpp</code> （その２）</div>
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">Walker::Walker():&#x000A;  leftWheel(PORT_C), rightWheel(PORT_B) {&#x000A;}&#x000A;&#x000A;void Walker::run() {&#x000A;  init_f(__FILE__);&#x000A;  while(1) {&#x000A;    msg_f("Forwarding...", 1);&#x000A;    leftWheel.setPWM(pwm);&#x000A;    rightWheel.setPWM(pwm);&#x000A;    clock.sleep(duration);&#x000A;&#x000A;    msg_f("Backwarding...", 1);&#x000A;    leftWheel.setPWM(-pwm);&#x000A;    rightWheel.setPWM(-pwm);&#x000A;    clock.sleep(duration);&#x000A;&#x000A;    // 左ボタンを長押し、それを捕捉する&#x000A;    if (ev3_button_is_pressed(LEFT_BUTTON)) {&#x000A;      break;&#x000A;    }&#x000A;  }&#x000A;&#x000A;  msg_f("Stopped.", 1);&#x000A;  leftWheel.stop();&#x000A;  rightWheel.stop();&#x000A;  while(ev3_button_is_pressed(LEFT_BUTTON)) {&#x000A;    ;&#x000A;  }&#x000A;}</code></pre>
+</div>
+</div>
+<div style="page-break-after: always"></div>
+<div class="listingblock">
+<div class="title">リスト 5. <code>sample01/app.cpp</code> （その３）</div>
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">void main_task(intptr_t unused) {&#x000A;&#x000A;  Walker walker;                <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;&#x000A;  walker.run();                 <i class="conum" data-value="2"></i><b>(2)</b>&#x000A;&#x000A;  ext_tsk();&#x000A;}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>Walker</code> クラスのインスタンスを作成</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>run</code> メソッドを実行</td>
+</tr>
+</table>
+</div>
+</section>
+<section class="slide" id="_ここまでのまとめ">
+<h2>ここまでのまとめ</h2>
+<div class="paragraph"><p><code>sample01</code> のコードとモデル図を作成しました。</p></div>
+<div class="paragraph"><p>この演習から何が言えるでしょうか。</p></div>
+<div class="ulist">
+<ul>
+<li><p>
+ロボットがやりたいことを担当するクラスを追加しました<div class="ulist">
+<ul>
+<li>図やコードを読んだ時に、何がしたいのかわかるようになりました</li>
+<li>やりたいことに「名前」がつきました</li>
+<li><code>Walker</code> クラスの <code>run</code> メソッドに処理を走行の詳細を閉じ込めることができました</li>
+</ul>
+</div></p></li>
+<li><code>main_task</code> は <code>Walker</code> クラスを使うだけになりました</li>
+<li><p>
+クラス図を変更し、それに合わせてコードを作成しました<div class="ulist">
+<ul>
+<li>クラス図とコードが対応していて、どちらで検討しても他方でも辻褄が合うようになりました</li>
+</ul>
+</div></p></li>
+</ul>
+</div>
+<div class="openblock">
+<div class="title"><code>Walker</code> クラスを別ファイルに分割してみよう:</div>
+<div class="content">
+<div class="paragraph"><p><code>sample01</code> では、演習を簡便に済ませるために、 <code>app.c</code> ファイルの中に <code>Walker</code> クラスを作りました。
+さらに進めて、 <code>Walker</code> クラスを別ファイルに分割した場合のサンプル <code>sample01_01</code> を用意してあります。参考にしてみてください。</p></div>
+</div>
+</div>
+</section>
+<section class="slide" id="_walkerクラスの課題を考えよう">
+<h2>Walkerクラスの課題を考えよう</h2>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note"></i>
+</td>
+<td class="content">
+<div class="paragraph"><p>この節は、技術教育の中では紹介だけにします。演習時間に余裕があるときに実施してください。<br />
+ <a href="#end_of_chapter">この章（ <code>text01</code> ）の終わりへ</a></p></div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph"><p><code>sample01</code> では、決まった走行（前進・後退を繰り返す）をロボットにさせるために、その動作を担当する <code>Walker</code> クラスを作成し、決まった走行をするという動作を担当する <code>run</code> メソッドを用意しました。</p></div>
+<div class="paragraph"><p>それでは、 <code>sample01</code> のクラス図とコードをもう一度よく見てみましょう。決まった走行としてやりたかったこと（前進・後退を繰り返す）がわかるでしょうか。</p></div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img alt="sample01のWalkerのクラス図" src="images/sample01のWalkerのクラス図.png" width="50%" />
+</div>
+<div class="title">図 5. <code>sample01</code> のクラス図（ <code>Walker</code> クラス部分の抜粋）</div>
+</div>
+<div class="paragraph"><p>このクラス図を見ても、「前進する」「後退する」といった動作があるとは分からないですね。</p></div>
+<div style="page-break-after: always"></div>
+<div class="listingblock">
+<div class="title">リスト 6. <code>sample01/app.cpp</code> （ <code>run</code> メソッドの冒頭部分の抜粋）</div>
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">void Walker::run() {&#x000A;  init_f(__FILE__);&#x000A;  while(1) {&#x000A;    msg_f("Forwarding...", 1);&#x000A;    leftWheel.setPWM(pwm);&#x000A;    rightWheel.setPWM(pwm);&#x000A;    clock.sleep(duration);&#x000A;&#x000A;    msg_f("Backwarding...", 1);&#x000A;    leftWheel.setPWM(-pwm);&#x000A;    rightWheel.setPWM(-pwm);&#x000A;    clock.sleep(duration);&#x000A;&#x000A;    // 左ボタンを長押し、それを捕捉する</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>このコードを見ても、メッセージはあるものの、「前進する」「後退する」といった動作がどの部分なのかわからないですね。</p></div>
+<div style="page-break-after: always"></div>
+</section>
+<section class="slide" id="_walkerクラスに操作を追加する">
+<h2>Walkerクラスに操作を追加する</h2>
+<div class="paragraph"><p><code>sample01</code> の <code>Walker</code> クラスでは、「前進する」「後退する」といった動作がわかりませんでした。
+動作がわかるようにするには、該当する処理を「前進する」など <strong>動作の名前</strong> で呼ぶことができればよい、つまり <strong>メソッド</strong> にすればよいですね。</p></div>
+<div class="paragraph"><p><code>sample01</code> のクラス図を元に、 <code>Walker</code> クラスに <code>forward</code> メソッドなどを追加した <code>sample02</code> のクラス図を作成します。</p></div>
+<div class="paragraph"><p>下図は、 <code>Motor</code> クラスと <code>Clock</code> クラスの詳細を非表示にしてあります。モデリングツールを使うと必要に応じてこうした表示の設定が容易にできます。</p></div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img alt="sample02のクラス図 sub" src="images/sample02のクラス図_sub.png" width="75%" />
+</div>
+<div class="title">図 6. <code>sample02</code> のクラス図</div>
+</div>
+<div class="paragraph"><p>この図では</p></div>
+<div class="ulist">
+<ul>
+<li>「前進する」forwardメソッド、「後退する」backメソッド、「停止する」stopメソッドを用意しました。</li>
+<li>これらのメソッドの先頭についている「#」はこのメソッドがprotectedという可視性であることを示します。
+protected なメソッドは Walker クラスの外部からは呼び出せませんが、Walker クラスを継承したクラ スは利用できるメソッドになります</li>
+</ul>
+</div>
+<div style="page-break-after: always"></div>
+</section>
+<section class="slide" id="_sample02のコードを作成する">
+<h2>sample02のコードを作成する</h2>
+<div class="paragraph"><p>モデル図に合わせて、コードを変更しましょう。</p></div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+サンプルコードの <code>sample01</code> ディレクトリをそっくりコピーして <code>sample02</code> ディレクトリを作りましょう
+</li>
+<li>
+ファイルは分割しないで、 <code>app.cpp</code> の中に <code>Walker</code> クラスを作成しましょう
+</li>
+<li>
+クラス図に従って <code>Walker</code> クラスを修正します
+</li>
+<li>
+<code>run</code> メソッドの前進している処理を抜き出して <code>forward</code> メソッドを作ります
+</li>
+<li>
+同様にして、 <code>back</code> メソッド、 <code>stop</code> メソッドを作ります
+</li>
+<li>
+追加した操作を使って <code>run</code> メソッドを修正します
+</li>
+</ol>
+</div>
+<div class="paragraph"><p>作成したコードは次ページ以降に掲載してあります。</p></div>
+<div class="paragraph"><p>コードが作成できたら、ビルドして、動作を確認しましょう。</p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="console language-console">~/etrobo:$ make app=sample02 sim up</code></pre>
+</div>
+</div>
+<div style="page-break-after: always"></div>
+<div class="paragraph"><p>冒頭は、 <code>sample01</code> と同じです。</p></div>
+<div class="listingblock">
+<div class="title">リスト 7. <code>sample02/app.cpp</code> （その１）</div>
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">class Walker {&#x000A;public:&#x000A;  Walker();&#x000A;  void run();&#x000A;&#x000A;private:&#x000A;  Motor leftWheel;&#x000A;  Motor rightWheel;&#x000A;  Clock clock;&#x000A;&#x000A;  const int8_t pwm = (Motor::PWM_MAX) / 6;&#x000A;  const uint32_t duration = 2000;&#x000A;&#x000A;protected:             <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;  void forward(void);  <i class="conum" data-value="2"></i><b>(2)</b>&#x000A;  void back(void);     <i class="conum" data-value="2"></i><b>(2)</b>&#x000A;  void stop(void);     <i class="conum" data-value="2"></i><b>(2)</b>&#x000A;};</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>protected</code> な属性や操作は、 <code>protected:</code> アクセス指定子から始まる領域に宣言します</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>forward</code> 、 <code>back</code> 、 <code>stop</code>  メソッドを宣言しています</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always"></div>
+<div class="listingblock">
+<div class="title">リスト 8. <code>sample02/app.cpp</code> （その２）</div>
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">Walker::Walker():&#x000A;  leftWheel(PORT_C), rightWheel(PORT_B) {&#x000A;}&#x000A;&#x000A;void Walker::forward(void) {  <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;  msg_f("Forwarding...", 1);&#x000A;  leftWheel.setPWM(pwm);&#x000A;  rightWheel.setPWM(pwm);&#x000A;}&#x000A;&#x000A;void Walker::back(void) {  <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;  msg_f("Backwarding...", 1);&#x000A;  leftWheel.setPWM(-pwm);&#x000A;  rightWheel.setPWM(-pwm);&#x000A;}&#x000A;&#x000A;void Walker::stop(void) {  <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;  msg_f("Stopped.", 1);&#x000A;  leftWheel.stop();&#x000A;  rightWheel.stop();&#x000A;}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>forward</code> 、 <code>back</code> 、 <code>stop</code>  メソッドを実装しています</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always"></div>
+<div class="listingblock">
+<div class="title">リスト 9. <code>sample02/app.cpp</code> （その３）</div>
+<div class="content">
+<pre class="highlight"><code class="cpp language-cpp">void Walker::run() {&#x000A;  init_f(__FILE__);&#x000A;  while(1) {&#x000A;    forward();             <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;    clock.sleep(duration);&#x000A;    back();                <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;    clock.sleep(duration);&#x000A;&#x000A;    // 左ボタンを長押し、それを捕捉する&#x000A;    if (ev3_button_is_pressed(LEFT_BUTTON)) {&#x000A;      break;&#x000A;    }&#x000A;  }&#x000A;&#x000A;  stop();                <i class="conum" data-value="1"></i><b>(1)</b>&#x000A;  while(ev3_button_is_pressed(LEFT_BUTTON)) {&#x000A;    ;&#x000A;  }&#x000A;}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>forward</code> 、 <code>back</code> 、 <code>stop</code>  メソッドを使って <code>run</code> メソッドを実装しています</td>
+</tr>
+</table>
+</div>
+<div class="paragraph"><p><code>main_task</code> は <code>sample01</code> と同じです。</p></div>
+</section>
+<section class="slide" id="_ここまでのまとめ_2">
+<h2>ここまでのまとめ</h2>
+<div class="paragraph"><p><code>sample02</code> のコードとモデル図を作成しました。</p></div>
+<div class="paragraph"><p>この演習から何が言えるでしょうか。</p></div>
+<div class="ulist">
+<ul>
+<li><p>
+ロボットの動作の詳細をクラスのメソッドとして追加しました<div class="ulist">
+<ul>
+<li>詳細な動作に「名前」がついて、目に見えるようになり、その名前で呼べるようにしました</li>
+</ul>
+</div></p></li>
+<li><p>
+<code>run</code> メソッドの処理が、追加したメソッドによって、よりわかりやすくなりました<div class="ulist">
+<ul>
+<li>図やコードを読んだ時に、どのような動作があるかが、 <code>sample01</code> よりも明確になりました</li>
+</ul>
+</div></p></li>
+<li><p>
+クラス図を変更し、それに合わせてコードを作成しました<div class="ulist">
+<ul>
+<li><code>sample01</code> から <code>sample02</code> へ修正しても、クラス図とコードが対応していて、どちらで検討しても他方でも辻褄が合うことがわかります</li>
+</ul>
+</div></p></li>
+</ul>
+</div>
+</section>
+<section class="slide" id="end_of_chapter">
+<h2>本資料について</h2>
+<div class="paragraph"><p>資料名： 要素技術とモデルを開発に使おう: コードとモデル図を対応づけてみよう （技術教育資料）<br />
+作成者： &#169; 2016,2017,2018,2019,2020 by ETロボコン実行委員会<br />
+この文書は、技術教育「要素技術とモデルを開発に使おう」に使用するETロボコン公式トレーニングのテキストです。</p></div>
+<div class="paragraph"><p>3.0, 2020-07-05 12:06:08, 2020年用</p></div>
+</section>
+<div aria-role="navigation">
+<a class="deck-prev-link" href="#" title="Previous">&#8592;</a>
+<a class="deck-next-link" href="#" title="Next">&#8594;</a>
+</div>
+<p aria-role="status" class="deck-status">
+<span class="deck-status-current"></span>
+/
+<span class="deck-status-total"></span>
+</p>
+<form action="." class="goto-form" method="get">
+<label for="goto-slide">Go to Slide:</label>
+<input id="goto-slide" list="goto-datalist" name="slidenum" type="text" />
+<datalist id="goto-data-list"></datalist>
+<input type="submit" value="Go" />
+</form>
+</div>
+<script src="deck.js/jquery.min.js"></script>
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/scale/deck.scale.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/split/deck.split.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+<script type="text/javascript">
+  //<![CDATA[
+    (function($, deck, undefined) {
+      $.deck.defaults.keys['previous'] = [8, 33, 37, 39];
+      $.deck.defaults.keys['next'] = [13, 32, 34, 39];
+    
+      $.extend(true, $[deck].defaults, {
+          countNested: false
+      });
+    
+      $.deck('.slide');
+    })(jQuery, 'deck');
+  //]]>
+</script>
+<style type="text/css">
+  /*<![CDATA[*/
+    .slide.canvas-image {
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-box;
+    display: box;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    -moz-box-align: start;
+    -webkit-box-align: start;
+    -ms-box-align: start;
+    box-align: start;
+    -moz-box-pack: start;
+    -webkit-box-pack: start;
+    -ms-box-pack: start;
+    box-pack: start;}
+    
+    .bottom-left {
+      left: 1%;
+      bottom: 20%; }
+    
+    .top-left {
+      left: 1%;
+      top: 20%; }
+    
+    .bottom-right {
+      right: 1%;
+      bottom: 20%; }
+    
+    .top-right {
+      right: 1%;
+      top: 20%; }
+    
+    .center-up {
+      right: 50%;
+      top: 1%;
+    }
+    
+    .center-down {
+      right: 50%;
+      bottom: 1%;
+    }
+    .canvas-image .canvas-caption p {
+      text-align: center;
+      padding-top: 0;
+      padding: 0;
+      -moz-transform: none;
+      -webkit-transform: none;
+      -o-transform: none;
+      -ms-transform: none;
+      transform: none;
+      display: inline;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.7);
+      font-weight: bold;
+      font-size: 58px;
+      -webkit-box-shadow: 2px 2px 2px #000;
+      -moz-box-shadow: 2px 2px 2px #000;
+      box-shadow: 2px 2px 2px #000;
+      padding: 1rem;
+      color: white; }
+    kbd.keyseq { color: #555555; }
+    kbd:not(.keyseq) {
+      display: inline-block;
+      color: #222222;
+      font-size: 0.7em;
+      line-height: 1.4;
+      background-color: #F7F7F7;
+      border: 1px solid #ccc;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+      margin: -0.15em 0.15em 0 0.15em;
+      padding: 0.2em 0.6em;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    kbd kbd:first-child { margin-left: 0; }
+    kbd kbd:last-child { margin-right: 0; }
+  /*]]>*/
+</style>
+</body>
+</html>

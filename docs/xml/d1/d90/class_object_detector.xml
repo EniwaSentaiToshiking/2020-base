@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d1/d90/class_object_detector" kind="class" language="C++" prot="public">
+    <compoundname>ObjectDetector</compoundname>
+    <basecompoundref refid="d2/d27/class_detector" prot="public" virt="non-virtual">Detector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d1/d90/class_object_detector_1a22d8969f383485354906e222b7d4e8fe" prot="private" static="no" mutable="no">
+        <type><ref refid="d5/d5f/class_sonar_sensor_driver" kindref="compound">SonarSensorDriver</ref> *</type>
+        <definition>SonarSensorDriver* ObjectDetector::sonarSensor</definition>
+        <argsstring></argsstring>
+        <name>sonarSensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ObjectDetector.h" line="14" column="23" bodyfile="Detectors/ObjectDetector.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/d90/class_object_detector_1a604cad611c81493d4e376b3d1fe186f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ObjectDetector::ObjectDetector</definition>
+        <argsstring>()</argsstring>
+        <name>ObjectDetector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ObjectDetector.h" line="17" column="5" bodyfile="Detectors/ObjectDetector.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d90/class_object_detector_1a7b186002f173cd5fcdd0e7c972932778" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ObjectDetector::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d2/d27/class_detector_1a6f1d2ad924e8e19d124fe76ee3793234">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ObjectDetector.h" line="19" column="10" bodyfile="Detectors/ObjectDetector.cpp" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d90/class_object_detector_1a3fbafc2ca5a8e340d4ea1a58c7517160" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ObjectDetector::detect</definition>
+        <argsstring>()</argsstring>
+        <name>detect</name>
+        <reimplements refid="d2/d27/class_detector_1a4ff803e7bcbcd245ac5a84a68fff3230">detect</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>detect - 障害物を検出</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{bool} true 障害物を検出した, false 超音波信号を検出しなかった </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ObjectDetector.h" line="27" column="10" bodyfile="Detectors/ObjectDetector.cpp" bodystart="15" bodyend="42"/>
+        <references refid="d5/d5f/class_sonar_sensor_driver_1a04353698fb7db06c16f1567a497287a3" compoundref="d2/dc2/_sonar_sensor_driver_8cpp" startline="13" endline="16">SonarSensorDriver::getDistance</references>
+      </memberdef>
+      <memberdef kind="function" id="d1/d90/class_object_detector_1abb6cdeb1969ccb681c424663fb687fe8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ObjectDetector::~ObjectDetector</definition>
+        <argsstring>()</argsstring>
+        <name>~ObjectDetector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ObjectDetector.h" line="29" column="13" bodyfile="Detectors/ObjectDetector.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>ObjectDetector</label>
+        <link refid="d1/d90/class_object_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>ObjectDetector</label>
+        <link refid="d1/d90/class_object_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Detectors/ObjectDetector.h" line="10" column="1" bodyfile="Detectors/ObjectDetector.h" bodystart="11" bodyend="30"/>
+    <listofallmembers>
+      <member refid="d1/d90/class_object_detector_1a3fbafc2ca5a8e340d4ea1a58c7517160" prot="public" virt="virtual"><scope>ObjectDetector</scope><name>detect</name></member>
+      <member refid="d1/d90/class_object_detector_1a7b186002f173cd5fcdd0e7c972932778" prot="public" virt="virtual"><scope>ObjectDetector</scope><name>init</name></member>
+      <member refid="d1/d90/class_object_detector_1a604cad611c81493d4e376b3d1fe186f3" prot="public" virt="non-virtual"><scope>ObjectDetector</scope><name>ObjectDetector</name></member>
+      <member refid="d1/d90/class_object_detector_1a22d8969f383485354906e222b7d4e8fe" prot="private" virt="non-virtual"><scope>ObjectDetector</scope><name>sonarSensor</name></member>
+      <member refid="d2/d27/class_detector_1a715d6c1e56c623a189c5257289a69d44" prot="public" virt="virtual"><scope>ObjectDetector</scope><name>~Detector</name></member>
+      <member refid="d1/d90/class_object_detector_1abb6cdeb1969ccb681c424663fb687fe8" prot="public" virt="virtual"><scope>ObjectDetector</scope><name>~ObjectDetector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

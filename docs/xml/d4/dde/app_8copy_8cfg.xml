@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d4/dde/app_8copy_8cfg" kind="file" language="C++">
+    <compoundname>app.copy.cfg</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">INCLUDE(&quot;app_common.cfg&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;app.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/>タスクを依頼されたら実行するプラットフォームの役割を設定するところ</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/>detail<sp/>(https://github.com/EniwaSentaiToshiking/2020-base/issues/11#issuecomment-590038088)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>E.G.</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>DOMAIN(TDOM_APP){</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/>CRE_TSK(MAIN_TASK,<sp/>{<sp/>TA_ACT<sp/>,<sp/>0,<sp/>main_task,<sp/>TMIN_APP_TPRI<sp/>+<sp/>1,<sp/>STACK_SIZE,<sp/>NULL<sp/>});</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/>CRE_CYC(MAIN_TASK,<sp/>{<sp/>TA_STA,<sp/>{<sp/>TNFY_HANDLER,<sp/>0,<sp/>main_task},<sp/>100,<sp/>0U<sp/>});</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">DOMAIN(TDOM_APP)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CRE_TSK(MAIN_TASK,<sp/>{<sp/>TA_ACT<sp/>,<sp/>0,<sp/>main_task,<sp/>TMIN_APP_TPRI<sp/>+<sp/>1,<sp/>STACK_SIZE,<sp/>NULL<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>CRE_TSK(LINE_TRACE_TASK,<sp/>{<sp/>TA_NULL<sp/>,<sp/>0,<sp/>line_trace_task,<sp/>TMIN_APP_TPRI<sp/>+<sp/>2,<sp/>STACK_SIZE,<sp/>NULL<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CRE_TSK(BLUETOOTH_TASK<sp/><sp/>,<sp/>{<sp/>TA_NULL,<sp/>0,<sp/>bluetooth_task<sp/><sp/>,<sp/>TMIN_APP_TPRI<sp/>+<sp/>3,<sp/>STACK_SIZE,<sp/>NULL<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>CRE_TSK(CALC_BLOCK_BINGO_ROUTE_TASK<sp/><sp/>,<sp/>{<sp/>TA_NULL,<sp/>0,<sp/>calc_block_bingo_route_task<sp/><sp/>,<sp/>TMIN_APP_TPRI<sp/>+<sp/>4,<sp/>STACK_SIZE,<sp/>NULL<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>CRE_TSK(DISPLAY_EV3_TASK<sp/><sp/>,<sp/>{<sp/>TA_NULL,<sp/>0,<sp/>display_ev3_task<sp/><sp/>,<sp/>TMIN_APP_TPRI<sp/>+<sp/>5,<sp/>STACK_SIZE,<sp/>NULL<sp/>});</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>CRE_CYC(MAIN_TASK,<sp/>{<sp/>TA_STA,<sp/>{<sp/>TNFY_HANDLER,<sp/>0,<sp/>main_task},<sp/>500,<sp/>0U<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>CRE_CYC(LINE_TRACE_TASK,<sp/>{<sp/>TA_NULL,<sp/>{<sp/>TNFY_HANDLER,<sp/>0,<sp/>line_trace_task},<sp/>20,<sp/>0U<sp/>});</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">ATT_MOD(&quot;app.o&quot;);</highlight></codeline>
+    </programlisting>
+    <location file="app.copy.cfg"/>
+  </compounddef>
+</doxygen>

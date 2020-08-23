@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d4/d20/class_distance_detector" kind="class" language="C++" prot="public">
+    <compoundname>DistanceDetector</compoundname>
+    <basecompoundref refid="d2/d27/class_detector" prot="public" virt="non-virtual">Detector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/d20/class_distance_detector_1a7b775e30af8ff5e89bbe99011a2a842e" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/d88/class_localization" kindref="compound">Localization</ref> *</type>
+        <definition>Localization* DistanceDetector::local</definition>
+        <argsstring></argsstring>
+        <name>local</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/DistanceDetector.h" line="13" column="16" bodyfile="Detectors/DistanceDetector.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d20/class_distance_detector_1ac911cad1a336e180b842350f89035d6f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DistanceDetector::threshold</definition>
+        <argsstring></argsstring>
+        <name>threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/DistanceDetector.h" line="14" column="7" bodyfile="Detectors/DistanceDetector.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d20/class_distance_detector_1a10a3b4c92baed707add17f1ecd2e78e3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DistanceDetector::prev_distance</definition>
+        <argsstring></argsstring>
+        <name>prev_distance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/DistanceDetector.h" line="15" column="7" bodyfile="Detectors/DistanceDetector.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/d20/class_distance_detector_1a96e81cab4930100bac1b1047016d2ed1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DistanceDetector::DistanceDetector</definition>
+        <argsstring>(int threshold)</argsstring>
+        <name>DistanceDetector</name>
+        <param>
+          <type>int</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/DistanceDetector.h" line="18" column="3" bodyfile="Detectors/DistanceDetector.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d20/class_distance_detector_1aadf1aca37d67d2f5bde653b336c27b87" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void DistanceDetector::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d2/d27/class_detector_1a6f1d2ad924e8e19d124fe76ee3793234">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/DistanceDetector.h" line="20" column="8" bodyfile="Detectors/DistanceDetector.cpp" bodystart="14" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d20/class_distance_detector_1a28262f1cb0399a6dcbbc1cd4435a0ef6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool DistanceDetector::detect</definition>
+        <argsstring>()</argsstring>
+        <name>detect</name>
+        <reimplements refid="d2/d27/class_detector_1a4ff803e7bcbcd245ac5a84a68fff3230">detect</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>detect - 座標の条件検知</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{bool} true 検出した, false 検出しなかった </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/DistanceDetector.h" line="27" column="8" bodyfile="Detectors/DistanceDetector.cpp" bodystart="20" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d20/class_distance_detector_1a761ebbd49e4552a71b5cd96ed23b45a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>DistanceDetector::~DistanceDetector</definition>
+        <argsstring>()</argsstring>
+        <name>~DistanceDetector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/DistanceDetector.h" line="28" column="11" bodyfile="Detectors/DistanceDetector.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>DistanceDetector</label>
+        <link refid="d4/d20/class_distance_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>DistanceDetector</label>
+        <link refid="d4/d20/class_distance_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Detectors/DistanceDetector.h" line="10" column="1" bodyfile="Detectors/DistanceDetector.h" bodystart="11" bodyend="29"/>
+    <listofallmembers>
+      <member refid="d4/d20/class_distance_detector_1a28262f1cb0399a6dcbbc1cd4435a0ef6" prot="public" virt="virtual"><scope>DistanceDetector</scope><name>detect</name></member>
+      <member refid="d4/d20/class_distance_detector_1a96e81cab4930100bac1b1047016d2ed1" prot="public" virt="non-virtual"><scope>DistanceDetector</scope><name>DistanceDetector</name></member>
+      <member refid="d4/d20/class_distance_detector_1aadf1aca37d67d2f5bde653b336c27b87" prot="public" virt="virtual"><scope>DistanceDetector</scope><name>init</name></member>
+      <member refid="d4/d20/class_distance_detector_1a7b775e30af8ff5e89bbe99011a2a842e" prot="private" virt="non-virtual"><scope>DistanceDetector</scope><name>local</name></member>
+      <member refid="d4/d20/class_distance_detector_1a10a3b4c92baed707add17f1ecd2e78e3" prot="private" virt="non-virtual"><scope>DistanceDetector</scope><name>prev_distance</name></member>
+      <member refid="d4/d20/class_distance_detector_1ac911cad1a336e180b842350f89035d6f" prot="private" virt="non-virtual"><scope>DistanceDetector</scope><name>threshold</name></member>
+      <member refid="d2/d27/class_detector_1a715d6c1e56c623a189c5257289a69d44" prot="public" virt="virtual"><scope>DistanceDetector</scope><name>~Detector</name></member>
+      <member refid="d4/d20/class_distance_detector_1a761ebbd49e4552a71b5cd96ed23b45a3" prot="public" virt="virtual"><scope>DistanceDetector</scope><name>~DistanceDetector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="da/da6/_course_monitor_8h" kind="file" language="C++">
+    <compoundname>CourseMonitor.h</compoundname>
+    <includes refid="dc/d5c/_color_sensor_driver_8h" local="yes">ColorSensorDriver.h</includes>
+    <includedby refid="d0/dda/_black_line_detector_8h" local="yes">Detectors/BlackLineDetector.h</includedby>
+    <includedby refid="db/d82/_brightness_detector_8h" local="yes">Detectors/BrightnessDetector.h</includedby>
+    <includedby refid="d2/d42/_color_detector_8h" local="yes">Detectors/ColorDetector.h</includedby>
+    <includedby refid="df/dac/_gray_line_detector_8h" local="yes">Detectors/GrayLineDetector.h</includedby>
+    <includedby refid="dd/da5/_course_monitor_8cpp" local="yes">Observer/CourseMonitor.cpp</includedby>
+    <includedby refid="d0/d63/_line_trace_8h" local="yes">RunStyles/LineTrace.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>ColorSensor.h</label>
+      </node>
+      <node id="1">
+        <label>Observer/CourseMonitor.h</label>
+        <link refid="da/da6/_course_monitor_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ColorSensorDriver.h</label>
+        <link refid="dc/d5c/_color_sensor_driver_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>RunMethods/Status/Parking.h</label>
+        <link refid="d8/daa/_parking_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>RunMethods/Status/RunStatus.h</label>
+        <link refid="de/d6b/_run_status_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>RunMethods/Status/SampleCourseRun.h</label>
+        <link refid="db/d28/_sample_course_run_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>RunStyles/LineTrace.h</label>
+        <link refid="d0/d63/_line_trace_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Detectors/BlackLineDetector.h</label>
+        <link refid="d0/dda/_black_line_detector_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Detectors/GrayLineDetector.h</label>
+        <link refid="df/dac/_gray_line_detector_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Detectors/BrightnessDetector.h</label>
+        <link refid="db/d82/_brightness_detector_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Detectors/DetectType.h</label>
+        <link refid="d6/de5/_detect_type_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>RunMethods/RunPattern.h</label>
+        <link refid="d0/d26/_run_pattern_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Detectors/ColorDetector.h</label>
+        <link refid="d2/d42/_color_detector_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Observer/CourseMonitor.h</label>
+        <link refid="da/da6/_course_monitor_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>RunMethods/Status/Stop.h</label>
+        <link refid="d2/d49/_stop_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>RunMethods/RunManager.h</label>
+        <link refid="da/dba/_run_manager_8h_source"/>
+      </node>
+      <node id="6">
+        <label>RunMethods/Status/CourseRun.h</label>
+        <link refid="d3/d8e/_course_run_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="de/dc2/class_course_monitor" prot="public">CourseMonitor</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>COURCEMONITOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COURCEMONITOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ColorSensorDriver.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">ev3api;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="de/dc2/class_course_monitor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="de/dc2/class_course_monitor" kindref="compound">CourseMonitor</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><ref refid="d5/d30/class_color_sensor_driver" kindref="compound">ColorSensorDriver</ref><sp/>*colorSensor;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getRawColor();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getColorRed();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getColorGreen();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getColorBlue();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><ref refid="de/dc2/class_course_monitor" kindref="compound">CourseMonitor</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getCurrentBrightness();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>colorid_t<sp/>getColorNumber();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="de/dc2/class_course_monitor" kindref="compound">CourseMonitor</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Observer/CourseMonitor.h"/>
+  </compounddef>
+</doxygen>

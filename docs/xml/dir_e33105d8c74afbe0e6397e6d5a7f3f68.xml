@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dir_e33105d8c74afbe0e6397e6d5a7f3f68" kind="dir">
+    <compoundname>RunStyles</compoundname>
+    <innerfile refid="d5/d75/_clothoid_8cpp">Clothoid.cpp</innerfile>
+    <innerfile refid="dd/de6/_clothoid_8h">Clothoid.h</innerfile>
+    <innerfile refid="df/de5/_grid_8cpp">Grid.cpp</innerfile>
+    <innerfile refid="d8/dea/_grid_8h">Grid.h</innerfile>
+    <innerfile refid="de/db6/_line_trace_8cpp">LineTrace.cpp</innerfile>
+    <innerfile refid="d0/d63/_line_trace_8h">LineTrace.h</innerfile>
+    <innerfile refid="d4/dad/_run_style_8cpp">RunStyle.cpp</innerfile>
+    <innerfile refid="df/db4/_run_style_8h">RunStyle.h</innerfile>
+    <innerfile refid="dc/d5a/_spin_8cpp">Spin.cpp</innerfile>
+    <innerfile refid="d7/d4a/_spin_8h">Spin.h</innerfile>
+    <innerfile refid="d0/d08/_straight_8cpp">Straight.cpp</innerfile>
+    <innerfile refid="d5/d58/_straight_8h">Straight.h</innerfile>
+    <innerfile refid="dc/d52/_turning_8cpp">Turning.cpp</innerfile>
+    <innerfile refid="da/d06/_turning_8h">Turning.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="RunStyles/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="description" content="この文書は、技術教育「要素技術とモデルを開発に使おう」に使用するETロボコン公式トレーニングのテキストです。">
+<meta name="author" content="ETロボコン実行委員会">
+<title>要素技術とモデルを開発に使おう: 背景と準備</title>
+<link rel="stylesheet" href="css/mystyle.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>要素技術とモデルを開発に使おう: 背景と準備</h1>
+<div class="details">
+<span id="author" class="author">ETロボコン実行委員会</span><br>
+<span id="email" class="email"><a href="mailto:er-info@etrobo.jp">er-info@etrobo.jp</a></span><br>
+<span id="revnumber"> 3.0,</span>
+<span id="revdate">2020-07-05 11:59:54</span>
+<br><span id="revremark">2020年用</span>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_この教材について"><a class="anchor" href="#_この教材について"></a>この教材について</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_目的"><a class="anchor" href="#_目的"></a>目的</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>この教材は、ETロボコンに参加されるみなさんに、モデル作成に必要となる知識やスキル取得の機会を提供することを目的に作成しています</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_著作"><a class="anchor" href="#_著作"></a>著作</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>この教材はETロボコン実行委員会が作成したものです</p>
+</li>
+<li>
+<p>この教材の著作権は、ETロボコン実行委員会に帰属します</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用について"><a class="anchor" href="#_使用について"></a>使用について</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>ETロボコンの参加資格（企業・大学・個人）の範囲内に限り、ご自由に活用していただいてかまいません</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_はじめに"><a class="anchor" href="#_はじめに"></a>はじめに</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_本コースの想定する受講者"><a class="anchor" href="#_本コースの想定する受講者"></a>本コースの想定する受講者</h3>
+<div class="paragraph">
+<p>C言語/C&#43;&#43;言語、あるいはこれらに類似の言語のプログラミング経験はあるが、モデルを使った開発経験のないエンジニア</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_トレーニングのゴール"><a class="anchor" href="#_トレーニングのゴール"></a>トレーニングのゴール</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>モデルとコードのつながりを知っている</p>
+</li>
+<li>
+<p>要素技術をモデルに組込んで使える</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_トレーニングの進め方"><a class="anchor" href="#_トレーニングの進め方"></a>トレーニングの進め方</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>コードの状況をモデルで表すことで、モデルが表すものを実感します</p>
+</li>
+<li>
+<p>モデルとコードを並行して編集し、モデルとコードの対応づけを学びます</p>
+</li>
+<li>
+<p>要素技術を実験してからモデルに組込み、そのモデルからコードを作成します</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_このコースの背景"><a class="anchor" href="#_このコースの背景"></a>このコースの背景</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>このコース「要素技術とモデルを開発に使おう」は、次のことを主眼に作成してあります。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>コードを書くのにモデル図が役に立つことを実感してもらうこと</p>
+</li>
+<li>
+<p>要素技術をモデル図に反映する方法について学ぶこと</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_このコースで学んでほしいことはなにか"><a class="anchor" href="#_このコースで学んでほしいことはなにか"></a>このコースで学んでほしいことはなにか</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>モデリング演習を通じて学んでほしいのは、次のようなことです。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>課題があったとき、それをモデルで表現する、モデルで考える</p>
+</li>
+<li>
+<p>コードはモデルに合わせて書く</p>
+</li>
+<li>
+<p>要素技術をモデルに組込むことで結びつける</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>このようなことを学んでもらうため、以下のような演習を提供します。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>コードを書くのに図が使えることを実感する</p>
+</li>
+<li>
+<p>要素技術の実験結果をモデル図に組込む方法を使ってみる</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>以下のことは、コースでコードを書くのに図が使えることを知った上で、技術教育2の <strong>「開発プロセスに沿って開発する」</strong> で学ぶことにします。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>オブジェクト指向の考え方</p>
+</li>
+<li>
+<p>UMLの記法について解説する</p>
+</li>
+<li>
+<p>開発プロセス</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>演習は以下のように進めます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>コードのやっていることを表すのにモデル図が使えることを実感する</p>
+<div class="ulist">
+<ul>
+<li>
+<p>サンプルのコードを元にモデル図で表してみる</p>
+</li>
+<li>
+<p>モデル図を使って現状を見直し、それに合わせてコードの構造も見直す</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>要素技術を実験し、アプリケーションに組込んでみる</p>
+<div class="ulist">
+<ul>
+<li>
+<p>簡単なライントレーサーで、要素技術の必要性を感じる</p>
+</li>
+<li>
+<p>要素技術として、比例制御を使えるかどうか実験する</p>
+</li>
+<li>
+<p>実験した結果をモデル図に反映し、それに合わせてコードにも反映する</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>このコース <strong>「要素技術とモデルを開発に使おう」</strong> は、以上のように構成されています。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_目次"><a class="anchor" href="#_目次"></a>目次</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">背景と準備（ <code>text00</code> ）</div>
+<ul>
+<li>
+<p>背景</p>
+</li>
+<li>
+<p>準備</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">コードとモデル図を対応づけてみよう（ <code>text01</code> ）</div>
+<ul>
+<li>
+<p><code>sample00</code> （ウォーカー）を動かしてみよう</p>
+</li>
+<li>
+<p><code>sample01</code> ：システムの処理を担当するクラスを追加する</p>
+</li>
+<li>
+<p><code>sample01</code> の構造をクラス図に表す</p>
+</li>
+<li>
+<p><code>sample01</code> のコードを作成する</p>
+</li>
+<li>
+<p>ここまでのまとめ</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">要素技術をシステムに組込もう（ <code>text02</code> ）</div>
+<ul>
+<li>
+<p><code>sample03</code> （ライントレーサー）を動かしてみよう</p>
+</li>
+<li>
+<p><code>sample03</code> の振舞いの図を描いてみよう</p>
+</li>
+<li>
+<p><code>sample03</code> の課題を検討しよう</p>
+</li>
+<li>
+<p><code>sample04</code> ：比例制御の実験をやろう</p>
+</li>
+<li>
+<p><code>sample05</code> ：検討結果をモデル図に反映する</p>
+</li>
+<li>
+<p><code>sample05</code> の構造をクラス図に表す</p>
+</li>
+<li>
+<p><code>sample05</code> のコードを作成する</p>
+</li>
+<li>
+<p>ここまでのまとめ</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_準備1ev3用の環境構築"><a class="anchor" href="#_準備1ev3用の環境構築"></a>準備1：EV3用の環境構築</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以下を参照して環境を構築してください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ETロボコン EV3開発環境構築ガイド</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ETrobocon/etroboEV3/wiki" class="bare">https://github.com/ETrobocon/etroboEV3/wiki</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>EV3RTについてより詳しく知りたい場合は下記を参照してください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>TOPPERS/EV3RT とは？</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://dev.toppers.jp/trac_user/ev3pf/wiki/WhatsEV3RT" class="bare">http://dev.toppers.jp/trac_user/ev3pf/wiki/WhatsEV3RT</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_準備2visual_studio_codeの使い方の確認"><a class="anchor" href="#_準備2visual_studio_codeの使い方の確認"></a>準備2：Visual Studio Codeの使い方の確認</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>本年度の環境としては、Visual Studio Codeを標準開発環境として利用します。
+EV3開発環境構築ガイドに従って環境を構築するとインストールされます。</p>
+</div>
+<div class="paragraph">
+<p>インストールした後はデスクトップ（Windowsの場合、OneDriveなどとファイル共有されている場合は c:¥Users¥(ユーザ名)¥Desktop）にある
+<code>Start ETrobo.cmd</code>(Windows) または  <code>Start ETrobo.command</code>(Mac)アイコンをダブルクリックすると、必要なセットアップを行ってVisual Studio Codeが起動されます。</p>
+</div>
+<div class="imageblock center text-center">
+<div class="content">
+<img src="images/VisualStudioCode画面.png" alt="visualstudiocode_window" width="75%">
+</div>
+<div class="title">図 1. Visual Studio Codeの画面</div>
+</div>
+<div class="paragraph">
+<p>Visual Studio Codeの使い方については検索すると多く出てきます。
+ターミナル（コマンドシェル）はメニューから「新しいターミナルを開く」か、Ctrl+@ (Windows/Linux)、Ctrl+Shift+@(Mac)で開きます。</p>
+</div>
+<div class="sect2">
+<h3 id="_unix_のコマンドに慣れておきましょう"><a class="anchor" href="#_unix_のコマンドに慣れておきましょう"></a>Unix のコマンドに慣れておきましょう</h3>
+<div class="paragraph">
+<p>Unixの基本コマンド（ <code>cd</code>, <code>ls</code>, <code>cp</code>, <code>make</code> など）、ディレクトリやファイルの表記や操作方法を確認しておきましょう。
+「Unix コマンド 練習」などと検索するといろいろ出てきますので、そういったサイトを使うと良いでしょう。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_モデリングツールを用意する"><a class="anchor" href="#_モデリングツールを用意する"></a>モデリングツールを用意する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>モデリングツールはUMLなどのモデルを書く際に使用するツールです。
+モデルはモデリングツールがなくても記述することができますが、ツールを使うことで記法にあった表現ができたり、複数の図の間で一貫性を取りやすくなります。
+本演習では <strong>astah* Professional </strong> を使います。<br>
+演習で展開するモデルのファイルもastah*形式となります。参加者のみなさんは無料のviewerを使用して参照することが可能です。
+可能であれば期間ライセンスなどを購入すると良いでしょう。
+本演習だけの用途であれば評価版（一週間利用可能）を使用することもできます。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>astah* viewer</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://astah.change-vision.com/ja/product/astah-viewer.html" class="bare">https://astah.change-vision.com/ja/product/astah-viewer.html</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>astah* 各種ライセンス</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://astah.change-vision.com/ja/shopping/price.html" class="bare">https://astah.change-vision.com/ja/shopping/price.html</a>
+ETロボコンでは<strong>astah* professional </strong> または<strong>astah* UML </strong>が良いでしょう</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Windows PCだけでなく、MacやLinuxでも利用できます。
+. 参加者向けの入手方法に従ってツールをダウンロードします
+. インストール手順に沿ってインストールします
+** Windows PCの場合、ライセンスの設定時だけは「管理者で実行」で起動する必要があります</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">提出するモデル図をどのツールで描くのかは参加チームの自由です</div>
+<div class="paragraph">
+<p>同じモデリングツールで演習するのは演習を円滑にするためです。<br>
+提出モデルの作成に使用するツールを強制しているわけではないことに注意しましょう。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="images/astah_pro_start_splash_for_etrobo.png" alt="astah* Professionalの起動時の画面" width="50%">
+</div>
+<div class="title">図 2. <strong>astah* Professional </strong> の起動時の画面（一部）</div>
+</div>
+<div class="sect2">
+<h3 id="_基本操作を確認しましょう"><a class="anchor" href="#_基本操作を確認しましょう"></a>基本操作を確認しましょう</h3>
+<div class="paragraph">
+<p>みなさんのテキストエディターの使い方を確認しておきましょう。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ファイルの作成、削除、保存、別名での保存、扱えるファイル拡張子の確認</p>
+</li>
+<li>
+<p>文字単位、単語単位、行頭・行末、文頭・文末などへのカーソルの移動</p>
+</li>
+<li>
+<p>テキストの入力、削除、コピーやペースト、検索、置換</p>
+</li>
+<li>
+<p>その他提供されているコマンドの使い方</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>プログラムの中ではコメント以外で全角の文字は使えません。特に全角スペースなどは間違って入りやすいので注意しましょう。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_作業用場所の確認"><a class="anchor" href="#_作業用場所の確認"></a>作業用場所の確認</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>開発環境の手順に従って環境を構築すると、ターミナル上では~/etroboで作業ができます。
+技術教育で使用するサンプルプログラムや参加者が作成するプログラムは~/etrobo/workspace内に格納します。</p>
+</div>
+<div class="paragraph">
+<p>Visual Studio Codeのターミナルで、workspace以下のファイルを確認してください。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="console">(ユーザ名)@(PC名):~/etrobo$ ls -1 workspace <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>~</code>はホームディレクトリを示します</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>ls</code> はファイルリストの表示コマンド、 <code>-1</code> （ハイフン・イチ）は、縦1列に出力表示するオプションです</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_サンプルコードの準備"><a class="anchor" href="#_サンプルコードの準備"></a>サンプルコードの準備</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>サンプルコードは、 <code>beginners.zip</code> の中の <code>sample_cpp</code> ディレクトリに含まれています。
+作業用環境のworkspaceディレクトリにsample_cpp内のディレクトリをコピーします。</p>
+</div>
+<div class="sect2">
+<h3 id="_windows特有の事項"><a class="anchor" href="#_windows特有の事項"></a>Windows特有の事項</h3>
+<div class="paragraph">
+<p>Windowsの場合、Visual Studio Code内のターミナルはUbuntuというLinuxのOSで動作しています。Ubuntu側からWindowsのファイルは</p>
+</div>
+<div class="paragraph">
+<p><code>/mnt/c</code></p>
+</div>
+<div class="paragraph">
+<p>がCドライブとして認識されています。
+標準では「ドキュメントフォルダ」は</p>
+</div>
+<div class="paragraph">
+<p><code>/mnt/c/Users/(ユーザー名)/Documents</code></p>
+</div>
+<div class="paragraph">
+<p>にあります。ダウンロードフォルダは</p>
+</div>
+<div class="paragraph">
+<p><code>/mnt/c/Users/(ユーザー名)/Downloads</code></p>
+</div>
+<div class="paragraph">
+<p>となります。この点に注意してください。また、Visual Studio Codeのディレクトリーツリーに対してドラッグ＆ドロップでコピーすることも可能です。
+慣れていなければこちらの方法を使いましょう。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_サンプルコードのコピー"><a class="anchor" href="#_サンプルコードのコピー"></a>サンプルコードのコピー</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="console">(ユーザ名)@(PC名):~/etrobo$ cp -r (sample_cppを展開したディレクトリ)/sample_cpp/* workspace/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>とすることでコピーできます。
+コピーしたら、コピー先のディレクトリの内容を確認しましょう。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="console">(ユーザ名)@(PC名):~/etrobo$ ls -1 workspace
+sample00
+sample01
+sample02
+   :
+
+(ユーザ名)@(PC名):~/etrobo$ ls workspace/sample00
+Makefile.inc  app.cfg  app.cpp  app.h  util.cpp  util.h</code></pre>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect2">
+<h3 id="_ディレクトリ構成"><a class="anchor" href="#_ディレクトリ構成"></a>ディレクトリ構成</h3>
+<div class="paragraph">
+<p>ディレクトリ構成は以下のようになります。</p>
+</div>
+(Homeディレクトリ)/etrobo   (コンパイルのためのルートディレクトリ)
+                    |---workspace　（コードを格納するディレクトリを置く場所）
+                            |---sample00
+                            |      |---app.cfg
+                            |      |---app.cpp
+                            |              :
+                            |---sample01
+                                   :
+</div>
+<div class="sect2">
+<h3 id="_visual_studio_codeでファイルを開く"><a class="anchor" href="#_visual_studio_codeでファイルを開く"></a>Visual Studio Codeでファイルを開く</h3>
+<div class="paragraph">
+<p>練習のため、sample00の下のapp.cppを開いてみましょう。左のディレクトリツリーからファイルをダブルクリックすれば開きます。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_モデル図作成の準備"><a class="anchor" href="#_モデル図作成の準備"></a>モデル図作成の準備</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>モデル作成に使うクラスが定義されているテンプレートは、 <code>beginners.zip</code> の中の <code>asta-template</code> ディレクトリに含まれています。</p>
+</div>
+<div class="paragraph">
+<p>内容を確認しておきましょう。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="console">$ cd (beginners.zip を展開した場所）
+$ ls asta-template/
+README.md
+ev3rt.asta  <i class="conum" data-value="1"></i><b>(1)</b>
+テンプレートの使い方について.md
+JudeP.properties <i class="conum" data-value="2"></i><b>(2)</b>
+JudeP.propertiesについて.md</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>EV3RT用 C&#43;&#43; ライブラリのテンプレートファイル</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><strong>astah* </strong> を C&#43;&#43; 用に設定するためのプロパティファイル
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>演習で作成するモデルの保存用に、デスクトップに <code>beginners</code> ディレクトリを作成します</p>
+<div class="ulist">
+<ul>
+<li>
+<p>エクスプローラーやFinderで作成してかまいません</p>
+</li>
+<li>
+<p>Windowsでは <code>c:￥Users￥ユーザ名￥Desktop￥beginners</code> になります（円記号は半角です）</p>
+</li>
+<li>
+<p>Macでは <code>/Users/ユーザ名/Desktop/beginners</code> になります</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div></td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>テンプレートファイルをモデル保存用ディレクトリにコピーします</p>
+</li>
+<li>
+<p>コピーできたかどうか確認します</p>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="console">$ cd (モデル保存用ディレクトリ）
+$ ls
+ev3rt.asta</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>モデル図を保存する場所が準備できました。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境の使い方に慣れておく"><a class="anchor" href="#_環境の使い方に慣れておく"></a>環境の使い方に慣れておく</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">Visual Studio Codeの操作方法:</div>
+<ul>
+<li>
+<p>ファイルやディレクトリの配置の理解</p>
+</li>
+<li>
+<p>Unixのシェルとコマンドの使い方</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">テキストエディターの操作方法:</div>
+<ul>
+<li>
+<p>ファイルを作る、開く、保存する、閉じる</p>
+</li>
+<li>
+<p>文章やコードを入力する、削除する、コピー＆ペーストする</p>
+</li>
+<li>
+<p>文字列を検索、置換する</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">モデリングツールの操作方法:(viewerでは参照だけです)</div>
+<ul>
+<li>
+<p>プロジェクトファイルの作成、保存</p>
+</li>
+<li>
+<p>モデル図を追加、複製、削除する</p>
+</li>
+<li>
+<p>モデル図の要素の追加、移動、修正、削除</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">モデリング言語の基本:</div>
+<ul>
+<li>
+<p>UMLのよく使う図や構成要素の名前や役割</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_プログラムのコンパイルと実行シミュレータ"><a class="anchor" href="#_プログラムのコンパイルと実行シミュレータ"></a>プログラムのコンパイルと実行（シミュレータ）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>コンパイルを行うにはworkspace内のどのディレクトリをコンパイルするかを指定します。</p>
+</div>
+<div class="paragraph">
+<p><code>$ make app=(workspaceのディレクトリ名) sim up</code></p>
+</div>
+<div class="paragraph">
+<p>とすると、コンパイルを行ってシミュレータが起動します。試しに</p>
+</div>
+<div class="paragraph">
+<p><code>$ make app=sample00 sim up</code></p>
+</div>
+<div class="paragraph">
+<p>と打ってみましょう。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>（途中略）
+brick_dri initialized.
+   _____   ______ ___  ______
+  / __/ | / /_  // _ \/_  __/
+ / _/ | |/ //_ &lt;/ , _/ / /
+/___/ |___/____/_/|_| /_/
+
+====================&gt;Beta 7&lt;=
+
+Powered by TOPPERS/ASP3 RTOS of Hakoniwa
+Initialization is completed..
+System logging task is started.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>が出ればプログラムは起動しています。simに加えてupを指定することで、シミュレータも起動します。</p>
+</div>
+<div class="imageblock center text-center">
+<div class="content">
+<img src="images/シミュレータ画面.png" alt="simulator_window" width="75%">
+</div>
+<div class="title">図 3. ETロボコンシミュレータの画面</div>
+</div>
+<div class="paragraph">
+<p>以下、対象とするディレクトリを変更しない限りは
+<code>make sim up</code>
+を実行するだけで良いです。対象となるディレクトリを切り替える場合は再度
+<code>$ make app=(workspaceのディレクトリ名) sim up</code>
+を実行してください。</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_appendix_実機を動かす場合"><a class="anchor" href="#_appendix_実機を動かす場合"></a>Appendix. 実機を動かす場合</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>同じ環境で同じプログラムを実機のロボットに入れることができます。
+ただし、シミュレータと実機では特性が異なるため、同じように走るわけではない点に注意してください。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_プログラムの実行形式について"><a class="anchor" href="#_プログラムの実行形式について"></a>プログラムの実行形式について</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>EV3のプログラムをビルド・実行する方法は２つあります。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>動的ローディング形式（ローダを使って指定したプログラムを起動する方式）</p>
+</li>
+<li>
+<p>スタンドアローン形式（プログラム自身がブートイメージとなる方式）</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ここでは「動的ローディング形式」を紹介します。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_動的ローディング形式の特徴"><a class="anchor" href="#_動的ローディング形式の特徴"></a>動的ローディング形式の特徴</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>EV3をリセットすることなく、アプリケーションプログラムを更新・追加できます</p>
+<div class="ulist">
+<ul>
+<li>
+<p>加えて、USBケーブルを使って転送すれば、Bluetoothの再接続やSDカードの抜き差しなしに転送できます</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1枚のSDカードに複数のアプリケーションが登録できます</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ファイル名を変えて転送しておけば、実行時に選択して実行できます</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>短時間でビルドできます</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OSやライブラリを一緒にビルドしないので、その分ビルド時間が短くなります</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_動的ローディング形式のビルド手順"><a class="anchor" href="#_動的ローディング形式のビルド手順"></a>動的ローディング形式のビルド手順</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_準備"><a class="anchor" href="#_準備"></a>準備</h3>
+<div class="paragraph">
+<p>SDカードのボリューム名を「EV3RT」としてください。PCに挿して、WindowsのエクスプローラやMacのFinderからSDカードを指定して、ボリューム名を変更しましょう。
+これは一度やればOKです。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_アプリケーションローダの準備"><a class="anchor" href="#_アプリケーションローダの準備"></a>アプリケーションローダの準備</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>動的ローディング形式のプログラムはアプリケーションローダを使って実行します。<br>
+みなさんの使っているEV3RTの開発環境が提供するアプリケーションローダでないとプログラムは起動しません。</p>
+</div>
+<div class="paragraph">
+<p>micro SDカード（以降、短くSDカードと書きます）を使いまわすときなどは、SDカード上のアプリケーションローダを1度書き換えておいたほうがよいでしょう。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>SDカードにアプリケーションローダを書き込みます</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>EV3RTインストールディレクトリの <code>sdcard</code> ディレクトリにある <code>uImage</code> を探します<br>
+これがアプリケーションローダのファイルです</p>
+</li>
+<li>
+<p>SDカードをPCに接続（挿入）します</p>
+</li>
+<li>
+<p><code>uImage</code> を、SDカードのルートディレクトリにコピーします</p>
+</li>
+<li>
+<p>SDカードをPCと切断（抜出）します</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>EV3本体をEV3RTを使って起動します</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>SDカードをEV3本体に差し込んで、EV3本体の電源を入れます</p>
+</li>
+<li>
+<p>EV3RTのアプリケーションローダの画面が表示されたら起動は成功です</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usbを使ったプログラムの転送実行手順"><a class="anchor" href="#_usbを使ったプログラムの転送実行手順"></a>USBを使ったプログラムの転送・実行手順</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>SDカードをEV3本体に差し込んで、EV3本体の電源を入れます</p>
+</li>
+<li>
+<p>アプリケーションをSDカードに転送します</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>USBケーブルでPCとEV3本体を接続します</p>
+</li>
+<li>
+<p>PCがSDカードを認識するのを待ちます（USBメモリのような外部ドライブに見えるでしょう）</p>
+</li>
+<li>
+<p>etroboディレクトリの下で、<code>make app=(ディレクトリ名) up</code>と打つとコンパイルと転送が行われます。</p>
+</li>
+<li>
+<p>以後はコンパイルするディレクトリが変わらない限りは<code>make up</code>だけでよいです</p>
+</li>
+<li>
+<p>コピーが終わったら、SDカードとPCの接続を解除します</p>
+</li>
+<li>
+<p>解除を確認したら、EV3本体側のUSBケーブルを取り外します</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>アプリケーションを動かします</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>アプリケーションローダの画面に「Load App」が表示されたら中央ボタンでローダのメニューに切替えます</p>
+</li>
+<li>
+<p>ロード元デバイスのリストが表示されたら、上下ボタンで「SD Card」に移動し、中央ボタンで選択します</p>
+</li>
+<li>
+<p>転送したファイルリストが表示されたら、 <code>app</code> （や自分が変えたファイル名）を中央ボタンで選択します</p>
+</li>
+<li>
+<p>アプリケーションが起動します</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="end_of_chapter"><a class="anchor" href="#end_of_chapter"></a>本資料について</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>資料名： 要素技術とモデルを開発に使おう: 背景と準備 （技術教育資料）<br>
+作成者： &#169; 2016,2017,2018,2019,2020 by ETロボコン実行委員会<br>
+この文書は、技術教育「要素技術とモデルを開発に使おう」に使用するETロボコン公式トレーニングのテキストです。</p>
+</div>
+<div class="paragraph">
+<p>3.0, 2020-07-05 11:59:54, 2020年用</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+ 3.0<br>
+Last updated 2020-07-05 11:59:49 +0900
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
+</body>
+</html>

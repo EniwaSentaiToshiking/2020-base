@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="db/d0b/_p_i_d_controller_8cpp" kind="file" language="C++">
+    <compoundname>PIDController.cpp</compoundname>
+    <includes refid="d5/df9/_p_i_d_controller_8h" local="yes">PIDController.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>PID.h</label>
+        <link refid="d7/d92/_p_i_d_8h_source"/>
+      </node>
+      <node id="1">
+        <label>Utils/PIDController.cpp</label>
+        <link refid="db/d0b/_p_i_d_controller_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>PIDController.h</label>
+        <link refid="d5/df9/_p_i_d_controller_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;PIDController.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">PIDController::PIDController()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">PIDController::~PIDController()</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PIDController::getTurn(<ref refid="d6/d5a/class_p_i_d" kindref="compound">PID</ref><sp/>*pid,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sensor_val,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>target_val,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>absMax)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p,<sp/>i,<sp/>d;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>KP,<sp/>KI,<sp/>KD;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>KP<sp/>=<sp/>pid-&gt;p;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>KI<sp/>=<sp/>pid-&gt;i;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>KD<sp/>=<sp/>pid-&gt;d;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>diff[0]<sp/>=<sp/>diff[1];</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>diff[1]<sp/>=<sp/>sensor_val<sp/>-<sp/>target_val;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>integral<sp/>+=<sp/>(diff[1]<sp/>+<sp/>diff[0])<sp/>/<sp/>2.0<sp/>*<sp/>DELTA_T;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>p<sp/>=<sp/>KP<sp/>*<sp/>diff[1];</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>i<sp/>=<sp/>KI<sp/>*<sp/>integral;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>d<sp/>=<sp/>KD<sp/>*<sp/>(diff[1]<sp/>-<sp/>diff[0])<sp/>/<sp/>DELTA_T;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>math_limit(p<sp/>+<sp/>i<sp/>+<sp/>d,<sp/>absMax);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PIDController::math_limit(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pid_value,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>absMax)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid_value<sp/>&gt;<sp/>absMax)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>pid_value<sp/>=<sp/>absMax;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid_value<sp/>&lt;<sp/>absMax<sp/>*<sp/>-1)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>pid_value<sp/>=<sp/>absMax<sp/>*<sp/>-1;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pid_value;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Utils/PIDController.cpp"/>
+  </compounddef>
+</doxygen>

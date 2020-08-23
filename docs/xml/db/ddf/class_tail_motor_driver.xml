@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="db/ddf/class_tail_motor_driver" kind="class" language="C++" prot="public">
+    <compoundname>TailMotorDriver</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="db/ddf/class_tail_motor_driver_1a23e48db799c8a616eace1a57a9931292" prot="private" static="no" mutable="no">
+        <type>Motor *</type>
+        <definition>Motor* TailMotorDriver::motor</definition>
+        <argsstring></argsstring>
+        <name>motor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="11" column="11" bodyfile="Devices/TailMotorDriver.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/ddf/class_tail_motor_driver_1adfdc6da20cd6bb254c4b04319a355b8e" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int TailMotorDriver::DEFAULT_ANGLE</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_ANGLE</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="12" column="15" bodyfile="Devices/TailMotorDriver.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/ddf/class_tail_motor_driver_1a3105eced7f028e7635aedee45ef73c42" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int TailMotorDriver::EXTEND_ANGLE</definition>
+        <argsstring></argsstring>
+        <name>EXTEND_ANGLE</name>
+        <initializer>= 4800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="13" column="15" bodyfile="Devices/TailMotorDriver.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/ddf/class_tail_motor_driver_1ac38e8b8a4e87e3cf2b94025e62c56928" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int TailMotorDriver::KP</definition>
+        <argsstring></argsstring>
+        <name>KP</name>
+        <initializer>= 2.5F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="15" column="15" bodyfile="Devices/TailMotorDriver.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/ddf/class_tail_motor_driver_1a2c1aa0affc83ce0181becaaca57f406f" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int TailMotorDriver::PWM_ABS_MAX</definition>
+        <argsstring></argsstring>
+        <name>PWM_ABS_MAX</name>
+        <initializer>= 60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="16" column="15" bodyfile="Devices/TailMotorDriver.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="db/ddf/class_tail_motor_driver_1a795766a95f34bf815b42099954d3e04c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TailMotorDriver::TailMotorDriver</definition>
+        <argsstring>()</argsstring>
+        <name>TailMotorDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="19" column="5" bodyfile="Devices/TailMotorDriver.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="db/ddf/class_tail_motor_driver_1a9ab8c2bdb5a106585597394be946942e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TailMotorDriver::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>reset - モータリセット モータ停止および角位置の0リセット、オフセット初期化を行う <linebreak/>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="27" column="10" bodyfile="Devices/TailMotorDriver.cpp" bodystart="15" bodyend="18"/>
+        <referencedby refid="d6/df8/class_tail_commander_1ac191e1b63f5bc1c119a0298d184c8f5c" compoundref="d6/d85/_tail_commander_8cpp" startline="28" endline="31">TailCommander::reset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/ddf/class_tail_motor_driver_1a20229d01f52cc48da868ada8abd8c7b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t TailMotorDriver::getCount</definition>
+        <argsstring>()</argsstring>
+        <name>getCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getCount - オフセット付き角位置取得</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{int32_t} モータ角位置 [deg] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="35" column="13" bodyfile="Devices/TailMotorDriver.cpp" bodystart="20" bodyend="23"/>
+        <referencedby refid="db/ddf/class_tail_motor_driver_1aa0faea7e0a084862a17925d8f2fb11d4" compoundref="d6/dd5/_tail_motor_driver_8cpp" startline="25" endline="39">rotate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/ddf/class_tail_motor_driver_1aa0faea7e0a084862a17925d8f2fb11d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TailMotorDriver::rotate</definition>
+        <argsstring>(int32_t angle)</argsstring>
+        <name>rotate</name>
+        <param>
+          <type>int32_t</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>rotate - 尻尾を動かす</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{int32_t}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>angle 角度 [deg] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="43" column="10" bodyfile="Devices/TailMotorDriver.cpp" bodystart="25" bodyend="39"/>
+        <references refid="db/ddf/class_tail_motor_driver_1a20229d01f52cc48da868ada8abd8c7b7" compoundref="d6/dd5/_tail_motor_driver_8cpp" startline="20" endline="23">getCount</references>
+        <referencedby refid="db/ddf/class_tail_motor_driver_1a60ddfda8d1187d02887ff00f8c3cdedb" compoundref="d6/dd5/_tail_motor_driver_8cpp" startline="41" endline="44">rotateDefault</referencedby>
+        <referencedby refid="db/ddf/class_tail_motor_driver_1a9f59fc70ab4c1f4165ed1f2eccd6712d" compoundref="d6/dd5/_tail_motor_driver_8cpp" startline="46" endline="49">rotateExtend</referencedby>
+        <referencedby refid="d6/df8/class_tail_commander_1aae6841f8fd48e86a099c3c6b09cd860a" compoundref="d6/d85/_tail_commander_8cpp" startline="13" endline="16">TailCommander::rotate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/ddf/class_tail_motor_driver_1a60ddfda8d1187d02887ff00f8c3cdedb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TailMotorDriver::rotateDefault</definition>
+        <argsstring>()</argsstring>
+        <name>rotateDefault</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>rotateDefault - 尻尾を動かす</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="51" column="10" bodyfile="Devices/TailMotorDriver.cpp" bodystart="41" bodyend="44"/>
+        <references refid="db/ddf/class_tail_motor_driver_1aa0faea7e0a084862a17925d8f2fb11d4" compoundref="d6/dd5/_tail_motor_driver_8cpp" startline="25" endline="39">rotate</references>
+        <referencedby refid="d6/df8/class_tail_commander_1a96563691dd095a24ab749ed87681612f" compoundref="d6/d85/_tail_commander_8cpp" startline="18" endline="21">TailCommander::rotateDefault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/ddf/class_tail_motor_driver_1a9f59fc70ab4c1f4165ed1f2eccd6712d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TailMotorDriver::rotateExtend</definition>
+        <argsstring>()</argsstring>
+        <name>rotateExtend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>rotateExtend - 尻尾を動かす</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="59" column="10" bodyfile="Devices/TailMotorDriver.cpp" bodystart="46" bodyend="49"/>
+        <references refid="db/ddf/class_tail_motor_driver_1aa0faea7e0a084862a17925d8f2fb11d4" compoundref="d6/dd5/_tail_motor_driver_8cpp" startline="25" endline="39">rotate</references>
+        <referencedby refid="d6/df8/class_tail_commander_1aa8992c2b4a2239987e44f9edb954b280" compoundref="d6/d85/_tail_commander_8cpp" startline="23" endline="26">TailCommander::rotateExtend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="db/ddf/class_tail_motor_driver_1ac643e093e05ddeeb2634a670cad28576" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>TailMotorDriver::~TailMotorDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~TailMotorDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TailMotorDriver.h" line="61" column="13" bodyfile="Devices/TailMotorDriver.cpp" bodystart="9" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Devices/TailMotorDriver.h" line="7" column="1" bodyfile="Devices/TailMotorDriver.h" bodystart="8" bodyend="62"/>
+    <listofallmembers>
+      <member refid="db/ddf/class_tail_motor_driver_1adfdc6da20cd6bb254c4b04319a355b8e" prot="private" virt="non-virtual"><scope>TailMotorDriver</scope><name>DEFAULT_ANGLE</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1a3105eced7f028e7635aedee45ef73c42" prot="private" virt="non-virtual"><scope>TailMotorDriver</scope><name>EXTEND_ANGLE</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1a20229d01f52cc48da868ada8abd8c7b7" prot="public" virt="non-virtual"><scope>TailMotorDriver</scope><name>getCount</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1ac38e8b8a4e87e3cf2b94025e62c56928" prot="private" virt="non-virtual"><scope>TailMotorDriver</scope><name>KP</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1a23e48db799c8a616eace1a57a9931292" prot="private" virt="non-virtual"><scope>TailMotorDriver</scope><name>motor</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1a2c1aa0affc83ce0181becaaca57f406f" prot="private" virt="non-virtual"><scope>TailMotorDriver</scope><name>PWM_ABS_MAX</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1a9ab8c2bdb5a106585597394be946942e" prot="public" virt="non-virtual"><scope>TailMotorDriver</scope><name>reset</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1aa0faea7e0a084862a17925d8f2fb11d4" prot="public" virt="non-virtual"><scope>TailMotorDriver</scope><name>rotate</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1a60ddfda8d1187d02887ff00f8c3cdedb" prot="public" virt="non-virtual"><scope>TailMotorDriver</scope><name>rotateDefault</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1a9f59fc70ab4c1f4165ed1f2eccd6712d" prot="public" virt="non-virtual"><scope>TailMotorDriver</scope><name>rotateExtend</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1a795766a95f34bf815b42099954d3e04c" prot="public" virt="non-virtual"><scope>TailMotorDriver</scope><name>TailMotorDriver</name></member>
+      <member refid="db/ddf/class_tail_motor_driver_1ac643e093e05ddeeb2634a670cad28576" prot="public" virt="virtual"><scope>TailMotorDriver</scope><name>~TailMotorDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

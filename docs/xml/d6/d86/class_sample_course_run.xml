@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d6/d86/class_sample_course_run" kind="class" language="C++" prot="public">
+    <compoundname>SampleCourseRun</compoundname>
+    <basecompoundref refid="d3/dca/class_run_status" prot="public" virt="non-virtual">RunStatus</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/d86/class_sample_course_run_1aa24340886f1c394478e29c1d928f3ab0" prot="private" static="no" mutable="no">
+        <type>Course</type>
+        <definition>Course SampleCourseRun::course</definition>
+        <argsstring></argsstring>
+        <name>course</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/SampleCourseRun.h" line="10" column="12" bodyfile="RunMethods/Status/SampleCourseRun.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d86/class_sample_course_run_1a456e065acc9f0657d8e8945868b144c7" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="da/d40/class_lot" kindref="compound">Lot</ref> * &gt;</type>
+        <definition>vector&lt;Lot *&gt; SampleCourseRun::lots</definition>
+        <argsstring></argsstring>
+        <name>lots</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/SampleCourseRun.h" line="11" column="12" bodyfile="RunMethods/Status/SampleCourseRun.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d6/d86/class_sample_course_run_1a1544d596e8ed88b2af5b9c0a54669548" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SampleCourseRun::createCourseL</definition>
+        <argsstring>()</argsstring>
+        <name>createCourseL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/SampleCourseRun.h" line="13" column="10" bodyfile="RunMethods/Status/SampleCourseRun.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d86/class_sample_course_run_1a3f43668185e3797e67fc393d0a5970bc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SampleCourseRun::createCourseR</definition>
+        <argsstring>()</argsstring>
+        <name>createCourseR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/SampleCourseRun.h" line="14" column="10" bodyfile="RunMethods/Status/SampleCourseRun.cpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/d86/class_sample_course_run_1a3ec5740f36911b0c62ba2922d6f94945" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SampleCourseRun::SampleCourseRun</definition>
+        <argsstring>(Course course)</argsstring>
+        <name>SampleCourseRun</name>
+        <param>
+          <type>Course</type>
+          <declname>course</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/SampleCourseRun.h" line="17" column="5" bodyfile="RunMethods/Status/SampleCourseRun.cpp" bodystart="3" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d86/class_sample_course_run_1aa77a149ba6a52fe2320ae47e73138d2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SampleCourseRun::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d3/dca/class_run_status_1aeb1bcfe6c4221def8e123d0682a48989">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>init - 走行前の初期設定</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/SampleCourseRun.h" line="18" column="10" bodyfile="RunMethods/Status/SampleCourseRun.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d86/class_sample_course_run_1a99f47721e853b3a07313688a927c5f84" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SampleCourseRun::setNextState</definition>
+        <argsstring>()</argsstring>
+        <name>setNextState</name>
+        <reimplements refid="d3/dca/class_run_status_1a690c67ad8d6568ede9fd90be9377bf22">setNextState</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/SampleCourseRun.h" line="19" column="10" bodyfile="RunMethods/Status/SampleCourseRun.cpp" bodystart="30" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d86/class_sample_course_run_1a6a86396b950452e37f120945466c8140" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>SampleCourseRun::~SampleCourseRun</definition>
+        <argsstring>()</argsstring>
+        <name>~SampleCourseRun</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/SampleCourseRun.h" line="20" column="13" bodyfile="RunMethods/Status/SampleCourseRun.cpp" bodystart="19" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>SampleCourseRun</label>
+        <link refid="d6/d86/class_sample_course_run"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RunStatus</label>
+        <link refid="d3/dca/class_run_status"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>SampleCourseRun</label>
+        <link refid="d6/d86/class_sample_course_run"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RunStatus</label>
+        <link refid="d3/dca/class_run_status"/>
+      </node>
+    </collaborationgraph>
+    <location file="RunMethods/Status/SampleCourseRun.h" line="7" column="1" bodyfile="RunMethods/Status/SampleCourseRun.h" bodystart="8" bodyend="21"/>
+    <listofallmembers>
+      <member refid="d3/dca/class_run_status_1a3ca4bac91c07442f0198f6f3cb3f3463" prot="public" virt="virtual"><scope>SampleCourseRun</scope><name>changeNextPattern</name></member>
+      <member refid="d3/dca/class_run_status_1a97cd2ab1883cd357be039d17a709c87f" prot="public" virt="virtual"><scope>SampleCourseRun</scope><name>changeNextStatus</name></member>
+      <member refid="d6/d86/class_sample_course_run_1aa24340886f1c394478e29c1d928f3ab0" prot="private" virt="non-virtual"><scope>SampleCourseRun</scope><name>course</name></member>
+      <member refid="d6/d86/class_sample_course_run_1a1544d596e8ed88b2af5b9c0a54669548" prot="private" virt="non-virtual"><scope>SampleCourseRun</scope><name>createCourseL</name></member>
+      <member refid="d6/d86/class_sample_course_run_1a3f43668185e3797e67fc393d0a5970bc" prot="private" virt="non-virtual"><scope>SampleCourseRun</scope><name>createCourseR</name></member>
+      <member refid="d3/dca/class_run_status_1aa74912d164292be5069b867942254191" prot="protected" virt="non-virtual"><scope>SampleCourseRun</scope><name>currentPattern</name></member>
+      <member refid="d6/d86/class_sample_course_run_1aa77a149ba6a52fe2320ae47e73138d2f" prot="public" virt="virtual"><scope>SampleCourseRun</scope><name>init</name></member>
+      <member refid="d6/d86/class_sample_course_run_1a456e065acc9f0657d8e8945868b144c7" prot="private" virt="non-virtual"><scope>SampleCourseRun</scope><name>lots</name></member>
+      <member refid="d3/dca/class_run_status_1a3ca796ac991f25f73f40f167236dc6d5" prot="protected" virt="non-virtual"><scope>SampleCourseRun</scope><name>nextState</name></member>
+      <member refid="d3/dca/class_run_status_1a6d2fd7753c66bcdc655f2ce25fe089eb" prot="protected" virt="non-virtual"><scope>SampleCourseRun</scope><name>patterns</name></member>
+      <member refid="d3/dca/class_run_status_1a7405a17f5abe1a930162680295b71ff3" prot="public" virt="virtual"><scope>SampleCourseRun</scope><name>run</name></member>
+      <member refid="d6/d86/class_sample_course_run_1a3ec5740f36911b0c62ba2922d6f94945" prot="public" virt="non-virtual"><scope>SampleCourseRun</scope><name>SampleCourseRun</name></member>
+      <member refid="d6/d86/class_sample_course_run_1a99f47721e853b3a07313688a927c5f84" prot="public" virt="virtual"><scope>SampleCourseRun</scope><name>setNextState</name></member>
+      <member refid="d3/dca/class_run_status_1ac0b3f7c82f317dddced7f41644b6c60e" prot="public" virt="virtual"><scope>SampleCourseRun</scope><name>~RunStatus</name></member>
+      <member refid="d6/d86/class_sample_course_run_1a6a86396b950452e37f120945466c8140" prot="public" virt="virtual"><scope>SampleCourseRun</scope><name>~SampleCourseRun</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

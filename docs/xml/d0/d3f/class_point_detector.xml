@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d0/d3f/class_point_detector" kind="class" language="C++" prot="public">
+    <compoundname>PointDetector</compoundname>
+    <basecompoundref refid="d2/d27/class_detector" prot="public" virt="non-virtual">Detector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/d3f/class_point_detector_1a72b3a636f243d9156b8a1eb2865be9a4" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/d88/class_localization" kindref="compound">Localization</ref> *</type>
+        <definition>Localization* PointDetector::local</definition>
+        <argsstring></argsstring>
+        <name>local</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/PointDetector.h" line="13" column="16" bodyfile="Detectors/PointDetector.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d3f/class_point_detector_1a85ae92bf29a4d5bead48533762803e85" prot="private" static="no" mutable="no">
+        <type><ref refid="da/d40/class_lot" kindref="compound">Lot</ref> *</type>
+        <definition>Lot* PointDetector::threshold</definition>
+        <argsstring></argsstring>
+        <name>threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/PointDetector.h" line="14" column="7" bodyfile="Detectors/PointDetector.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/d3f/class_point_detector_1a243ba0d39bb757e5a5d3bbab81f9bf39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PointDetector::PointDetector</definition>
+        <argsstring>(Lot *threshold)</argsstring>
+        <name>PointDetector</name>
+        <param>
+          <type><ref refid="da/d40/class_lot" kindref="compound">Lot</ref> *</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/PointDetector.h" line="20" column="3" bodyfile="Detectors/PointDetector.cpp" bodystart="3" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d3f/class_point_detector_1a75e1e0f974e122cc1588ad4a60f60416" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool PointDetector::detect</definition>
+        <argsstring>()</argsstring>
+        <name>detect</name>
+        <reimplements refid="d2/d27/class_detector_1a4ff803e7bcbcd245ac5a84a68fff3230">detect</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>detect - 座標の条件検知</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{bool} true 検出した, false 検出しなかった </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/PointDetector.h" line="28" column="8" bodyfile="Detectors/PointDetector.cpp" bodystart="18" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d3f/class_point_detector_1a66b2984ac44c79909f04665c976ffc9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void PointDetector::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d2/d27/class_detector_1a6f1d2ad924e8e19d124fe76ee3793234">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/PointDetector.h" line="29" column="8" bodyfile="Detectors/PointDetector.cpp" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d3f/class_point_detector_1aaec77d60973d232fca48eabd742ca750" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>PointDetector::~PointDetector</definition>
+        <argsstring>()</argsstring>
+        <name>~PointDetector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/PointDetector.h" line="30" column="11" bodyfile="Detectors/PointDetector.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>PointDetector</label>
+        <link refid="d0/d3f/class_point_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>PointDetector</label>
+        <link refid="d0/d3f/class_point_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Detectors/PointDetector.h" line="10" column="1" bodyfile="Detectors/PointDetector.h" bodystart="11" bodyend="31"/>
+    <listofallmembers>
+      <member refid="d0/d3f/class_point_detector_1a75e1e0f974e122cc1588ad4a60f60416" prot="public" virt="virtual"><scope>PointDetector</scope><name>detect</name></member>
+      <member refid="d0/d3f/class_point_detector_1a66b2984ac44c79909f04665c976ffc9c" prot="public" virt="virtual"><scope>PointDetector</scope><name>init</name></member>
+      <member refid="d0/d3f/class_point_detector_1a72b3a636f243d9156b8a1eb2865be9a4" prot="private" virt="non-virtual"><scope>PointDetector</scope><name>local</name></member>
+      <member refid="d0/d3f/class_point_detector_1a243ba0d39bb757e5a5d3bbab81f9bf39" prot="public" virt="non-virtual"><scope>PointDetector</scope><name>PointDetector</name></member>
+      <member refid="d0/d3f/class_point_detector_1a85ae92bf29a4d5bead48533762803e85" prot="private" virt="non-virtual"><scope>PointDetector</scope><name>threshold</name></member>
+      <member refid="d2/d27/class_detector_1a715d6c1e56c623a189c5257289a69d44" prot="public" virt="virtual"><scope>PointDetector</scope><name>~Detector</name></member>
+      <member refid="d0/d3f/class_point_detector_1aaec77d60973d232fca48eabd742ca750" prot="public" virt="virtual"><scope>PointDetector</scope><name>~PointDetector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

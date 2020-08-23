@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d4/d4d/_lot_8cpp" kind="file" language="C++">
+    <compoundname>Lot.cpp</compoundname>
+    <includes refid="dc/df5/_lot_8h" local="yes">Lot.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>Lot.h</label>
+        <link refid="dc/df5/_lot_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>PID.h</label>
+        <link refid="d7/d92/_p_i_d_8h_source"/>
+      </node>
+      <node id="1">
+        <label>Observer/Lot.cpp</label>
+        <link refid="d4/d4d/_lot_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Lot.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">Lot::Lot(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x0,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y0,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y1)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;x0<sp/>=<sp/>x0;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;x1<sp/>=<sp/>x1;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;y0<sp/>=<sp/>y0;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;y1<sp/>=<sp/>y1;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">Lot::~Lot()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Observer/Lot.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d6/de5/_detect_type_8h" kind="file" language="C++">
+    <compoundname>DetectType.h</compoundname>
+    <includes refid="d0/d46/_detector_8h" local="yes">Detector.h</includes>
+    <includes refid="df/dac/_gray_line_detector_8h" local="yes">GrayLineDetector.h</includes>
+    <includes refid="d3/dcd/_point_detector_8h" local="yes">PointDetector.h</includes>
+    <includes refid="d3/db5/_distance_detector_8h" local="yes">DistanceDetector.h</includes>
+    <includes refid="de/d6f/_direction_detector_8h" local="yes">DirectionDetector.h</includes>
+    <includes refid="d4/d6f/_adaptive_direction_detector_8h" local="yes">AdaptiveDirectionDetector.h</includes>
+    <includes refid="d2/d42/_color_detector_8h" local="yes">ColorDetector.h</includes>
+    <includes refid="d0/dda/_black_line_detector_8h" local="yes">BlackLineDetector.h</includes>
+    <includes refid="db/d82/_brightness_detector_8h" local="yes">BrightnessDetector.h</includes>
+    <includes refid="dd/d46/_clock_detector_8h" local="yes">ClockDetector.h</includes>
+    <includedby refid="d0/d26/_run_pattern_8h" local="yes">RunMethods/RunPattern.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Detector.h</label>
+        <link refid="d0/d46/_detector_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>DistanceDetector.h</label>
+        <link refid="d3/db5/_distance_detector_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>Clock.h</label>
+      </node>
+      <node id="23">
+        <label>cmath</label>
+      </node>
+      <node id="19">
+        <label>DirectionDetector.h</label>
+        <link refid="de/d6f/_direction_detector_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>BlackLineDetector.h</label>
+        <link refid="d0/dda/_black_line_detector_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ClockDetector.h</label>
+        <link refid="dd/d46/_clock_detector_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>AdaptiveDirectionDetector.h</label>
+        <link refid="d4/d6f/_adaptive_direction_detector_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ColorSensor.h</label>
+      </node>
+      <node id="5">
+        <label>GrayLineDetector.h</label>
+        <link refid="df/dac/_gray_line_detector_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>PointDetector.h</label>
+        <link refid="d3/dcd/_point_detector_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>BrightnessDetector.h</label>
+        <link refid="db/d82/_brightness_detector_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Lot.h</label>
+        <link refid="dc/df5/_lot_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Detectors/DetectType.h</label>
+        <link refid="d6/de5/_detect_type_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>PID.h</label>
+        <link refid="d7/d92/_p_i_d_8h_source"/>
+      </node>
+      <node id="21">
+        <label>PIDController.h</label>
+        <link refid="d5/df9/_p_i_d_controller_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Logger.h</label>
+        <link refid="d6/dec/_logger_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>math.h</label>
+      </node>
+      <node id="24">
+        <label>ColorDetector.h</label>
+        <link refid="d2/d42/_color_detector_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Motor.h</label>
+      </node>
+      <node id="6">
+        <label>CourseMonitor.h</label>
+        <link refid="da/da6/_course_monitor_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>cstdlib</label>
+      </node>
+      <node id="9">
+        <label>ev3api.h</label>
+      </node>
+      <node id="20">
+        <label>RunStyle.h</label>
+        <link refid="df/db4/_run_style_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>WheelMotorDriver.h</label>
+        <link refid="d6/df4/_wheel_motor_driver_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Localization.h</label>
+        <link refid="d3/d03/_localization_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ColorSensorDriver.h</label>
+        <link refid="dc/d5c/_color_sensor_driver_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>RunMethods/Status/Parking.h</label>
+        <link refid="d8/daa/_parking_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>RunMethods/Status/RunStatus.h</label>
+        <link refid="de/d6b/_run_status_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>RunMethods/Status/SampleCourseRun.h</label>
+        <link refid="db/d28/_sample_course_run_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Detectors/DetectType.h</label>
+        <link refid="d6/de5/_detect_type_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RunMethods/RunPattern.h</label>
+        <link refid="d0/d26/_run_pattern_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>RunMethods/Status/Stop.h</label>
+        <link refid="d2/d49/_stop_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>RunMethods/RunManager.h</label>
+        <link refid="da/dba/_run_manager_8h_source"/>
+      </node>
+      <node id="4">
+        <label>RunMethods/Status/CourseRun.h</label>
+        <link refid="d3/d8e/_course_run_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="d6/de5/_detect_type_8h_1acd92635fd8fcac69e7d3bb2581fe2f0c" prot="public" static="no">
+        <name>DETECTTYPE_H</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/DetectType.h" line="13" column="9" bodyfile="Detectors/DetectType.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="d6/de5/_detect_type_8h_1ac636780e0beb6e182a57d65fb92b0b6e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>DetectType</name>
+        <enumvalue id="d6/de5/_detect_type_8h_1ac636780e0beb6e182a57d65fb92b0b6ea15108ccafa3232b9067f889b6156f565" prot="public">
+          <name>POINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/de5/_detect_type_8h_1ac636780e0beb6e182a57d65fb92b0b6ea6946678ccf758a01f83208528d582d2b" prot="public">
+          <name>GRAYLINE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/de5/_detect_type_8h_1ac636780e0beb6e182a57d65fb92b0b6ea2ad72f168181763513d7793c13bf2a91" prot="public">
+          <name>DISTANCE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/de5/_detect_type_8h_1ac636780e0beb6e182a57d65fb92b0b6ea29e2c300ecd12ceecf4ab3fb87bbdafc" prot="public">
+          <name>DIRECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/de5/_detect_type_8h_1ac636780e0beb6e182a57d65fb92b0b6ea69e6112a7beea07aad47470b8b2647b6" prot="public">
+          <name>ADAPTIVEDIRECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/de5/_detect_type_8h_1ac636780e0beb6e182a57d65fb92b0b6ea7a5ecb5193db2d5f258ae1abd33714b9" prot="public">
+          <name>COLOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/de5/_detect_type_8h_1ac636780e0beb6e182a57d65fb92b0b6ea7f78b0ded8149f53d114cabd4a4beac6" prot="public">
+          <name>BLACKLINE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/de5/_detect_type_8h_1ac636780e0beb6e182a57d65fb92b0b6ea46b1a1705dc1e975e82422901b8ecdf2" prot="public">
+          <name>BRIGHTNESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/de5/_detect_type_8h_1ac636780e0beb6e182a57d65fb92b0b6ea4bd5179222344db99fe845d6d039f4a3" prot="public">
+          <name>CLOCK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/DetectType.h" line="15" column="1" bodyfile="Detectors/DetectType.h" bodystart="16" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Detector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GrayLineDetector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;PointDetector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;DistanceDetector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;DirectionDetector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;AdaptiveDirectionDetector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ColorDetector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BlackLineDetector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BrightnessDetector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ClockDetector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DETECTTYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DETECTTYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>DetectType</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>POINT,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>GRAYLINE,<sp/></highlight><highlight class="comment">/*2018は灰色の線だったけど2019年は青色の線になりました*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>DISTANCE,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>DIRECTION,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>ADAPTIVEDIRECTION,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>COLOR,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>BLACKLINE,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>BRIGHTNESS,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>CLOCK,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Detectors/DetectType.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d8/dfa/class_run_manager" kind="class" language="C++" prot="public">
+    <compoundname>RunManager</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d8/dfa/class_run_manager_1a10deb78a357b5d08944b3d0fde629119" prot="private" static="no" mutable="no">
+        <type>Course</type>
+        <definition>Course RunManager::course</definition>
+        <argsstring></argsstring>
+        <name>course</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/RunManager.h" line="13" column="12" bodyfile="RunMethods/RunManager.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/dfa/class_run_manager_1a1ab9f5d51e367f6dcf41d8377ef8d45c" prot="private" static="no" mutable="no">
+        <type>RunState</type>
+        <definition>RunState RunManager::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <initializer>= SAMPLECOUSERUN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/RunManager.h" line="14" column="14" bodyfile="RunMethods/RunManager.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/dfa/class_run_manager_1aef8099d07966889bd5bdf734bd6e6dcf" prot="private" static="no" mutable="no">
+        <type><ref refid="d3/dca/class_run_status" kindref="compound">RunStatus</ref> *</type>
+        <definition>RunStatus* RunManager::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/RunManager.h" line="15" column="15" bodyfile="RunMethods/RunManager.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/dfa/class_run_manager_1aecaa48e300169ee5a8838a066b1a5a6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RunManager::RunManager</definition>
+        <argsstring>(Course course)</argsstring>
+        <name>RunManager</name>
+        <param>
+          <type>Course</type>
+          <declname>course</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/RunManager.h" line="18" column="5" bodyfile="RunMethods/RunManager.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dfa/class_run_manager_1aef8899dbea1c43870b8159852a9937df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RunManager::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>init - 走行前の初期設定</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/RunManager.h" line="26" column="10" bodyfile="RunMethods/RunManager.cpp" bodystart="14" bodyend="17"/>
+        <references refid="d3/dca/class_run_status_1aeb1bcfe6c4221def8e123d0682a48989">RunStatus::init</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/dfa/class_run_manager_1a90a843cf56dc58cc89ce920f60fcfe1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RunManager::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>run - 走行する</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/RunManager.h" line="34" column="10" bodyfile="RunMethods/RunManager.cpp" bodystart="19" bodyend="24"/>
+        <references refid="d3/dca/class_run_status_1a7405a17f5abe1a930162680295b71ff3" compoundref="d9/dc9/_run_status_8cpp" startline="10" endline="20">RunStatus::run</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/dfa/class_run_manager_1ad2ba9b7b353163d9d61af1ea45ac948e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RunManager::changeStatus</definition>
+        <argsstring>(RunState state)</argsstring>
+        <name>changeStatus</name>
+        <param>
+          <type>RunState</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/RunManager.h" line="35" column="10" bodyfile="RunMethods/RunManager.cpp" bodystart="26" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dfa/class_run_manager_1ac292d7284bcb3bfa1e0603431e2b868c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RunManager::~RunManager</definition>
+        <argsstring>()</argsstring>
+        <name>~RunManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/RunManager.h" line="36" column="13" bodyfile="RunMethods/RunManager.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="RunMethods/RunManager.h" line="9" column="1" bodyfile="RunMethods/RunManager.h" bodystart="10" bodyend="37"/>
+    <listofallmembers>
+      <member refid="d8/dfa/class_run_manager_1ad2ba9b7b353163d9d61af1ea45ac948e" prot="public" virt="non-virtual"><scope>RunManager</scope><name>changeStatus</name></member>
+      <member refid="d8/dfa/class_run_manager_1a10deb78a357b5d08944b3d0fde629119" prot="private" virt="non-virtual"><scope>RunManager</scope><name>course</name></member>
+      <member refid="d8/dfa/class_run_manager_1aef8899dbea1c43870b8159852a9937df" prot="public" virt="non-virtual"><scope>RunManager</scope><name>init</name></member>
+      <member refid="d8/dfa/class_run_manager_1a90a843cf56dc58cc89ce920f60fcfe1a" prot="public" virt="non-virtual"><scope>RunManager</scope><name>run</name></member>
+      <member refid="d8/dfa/class_run_manager_1aecaa48e300169ee5a8838a066b1a5a6a" prot="public" virt="non-virtual"><scope>RunManager</scope><name>RunManager</name></member>
+      <member refid="d8/dfa/class_run_manager_1a1ab9f5d51e367f6dcf41d8377ef8d45c" prot="private" virt="non-virtual"><scope>RunManager</scope><name>state</name></member>
+      <member refid="d8/dfa/class_run_manager_1aef8099d07966889bd5bdf734bd6e6dcf" prot="private" virt="non-virtual"><scope>RunManager</scope><name>status</name></member>
+      <member refid="d8/dfa/class_run_manager_1ac292d7284bcb3bfa1e0603431e2b868c" prot="public" virt="virtual"><scope>RunManager</scope><name>~RunManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

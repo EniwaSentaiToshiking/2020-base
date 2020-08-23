@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dd/d7f/class_arm_commander" kind="class" language="C++" prot="public">
+    <compoundname>ArmCommander</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dd/d7f/class_arm_commander_1a2aabbde7c36c26b552b1d89bf2447f00" prot="private" static="no" mutable="no">
+        <type><ref refid="d8/dae/class_arm_motor_driver" kindref="compound">ArmMotorDriver</ref> *</type>
+        <definition>ArmMotorDriver* ArmCommander::motor</definition>
+        <argsstring></argsstring>
+        <name>motor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/ArmCommander.h" line="10" column="20" bodyfile="RunMethods/Commanders/ArmCommander.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d7f/class_arm_commander_1a8a5fdae0386cc41a87753274db81bd7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ArmCommander::ArmCommander</definition>
+        <argsstring>()</argsstring>
+        <name>ArmCommander</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/ArmCommander.h" line="13" column="5" bodyfile="RunMethods/Commanders/ArmCommander.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7f/class_arm_commander_1ab9bfae02bd27fe18af6c255589cd573f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmCommander::rotate</definition>
+        <argsstring>(int32_t angle)</argsstring>
+        <name>rotate</name>
+        <param>
+          <type>int32_t</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>rotate - 腕を動かす</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{int32_t}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>angle 角度 [deg] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/ArmCommander.h" line="21" column="10" bodyfile="RunMethods/Commanders/ArmCommander.cpp" bodystart="13" bodyend="16"/>
+        <references refid="d8/dae/class_arm_motor_driver_1aec3cd22dc41163b873fc63ca1d0cd9d3" compoundref="dd/db6/_arm_motor_driver_8cpp" startline="42" endline="56">ArmMotorDriver::rotate</references>
+        <referencedby refid="dc/de3/class_run_pattern_1a02ea3232be2946cbca87bc1f74a7beab" compoundref="d3/d35/_run_pattern_8cpp" startline="135" endline="173">RunPattern::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7f/class_arm_commander_1a4cb31e855ea6bc8144962e3807be99be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmCommander::rotateDefault</definition>
+        <argsstring>()</argsstring>
+        <name>rotateDefault</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>rotateDefault - デフォルトの角度(ライントレースする角度)にする</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/ArmCommander.h" line="29" column="10" bodyfile="RunMethods/Commanders/ArmCommander.cpp" bodystart="18" bodyend="21"/>
+        <references refid="d8/dae/class_arm_motor_driver_1af10c0b0e78baa2ae8d0cd0f9c7d70dfe" compoundref="dd/db6/_arm_motor_driver_8cpp" startline="58" endline="61">ArmMotorDriver::rotateDefault</references>
+        <referencedby refid="dc/de3/class_run_pattern_1a02ea3232be2946cbca87bc1f74a7beab" compoundref="d3/d35/_run_pattern_8cpp" startline="135" endline="173">RunPattern::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7f/class_arm_commander_1a744eece43e9a3144779e43e080e98e17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmCommander::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>reset - モータリセット <linebreak/>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/ArmCommander.h" line="37" column="10" bodyfile="RunMethods/Commanders/ArmCommander.cpp" bodystart="23" bodyend="26"/>
+        <references refid="d8/dae/class_arm_motor_driver_1a9670fbb6f1365f67a887531f65fdcd9e" compoundref="dd/db6/_arm_motor_driver_8cpp" startline="14" endline="17">ArmMotorDriver::reset</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d7f/class_arm_commander_1ab611c3fcb09970df3309eae4bf198bdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ArmCommander::~ArmCommander</definition>
+        <argsstring>()</argsstring>
+        <name>~ArmCommander</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/ArmCommander.h" line="38" column="13" bodyfile="RunMethods/Commanders/ArmCommander.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="RunMethods/Commanders/ArmCommander.h" line="6" column="1" bodyfile="RunMethods/Commanders/ArmCommander.h" bodystart="7" bodyend="39"/>
+    <listofallmembers>
+      <member refid="dd/d7f/class_arm_commander_1a8a5fdae0386cc41a87753274db81bd7e" prot="public" virt="non-virtual"><scope>ArmCommander</scope><name>ArmCommander</name></member>
+      <member refid="dd/d7f/class_arm_commander_1a2aabbde7c36c26b552b1d89bf2447f00" prot="private" virt="non-virtual"><scope>ArmCommander</scope><name>motor</name></member>
+      <member refid="dd/d7f/class_arm_commander_1a744eece43e9a3144779e43e080e98e17" prot="public" virt="non-virtual"><scope>ArmCommander</scope><name>reset</name></member>
+      <member refid="dd/d7f/class_arm_commander_1ab9bfae02bd27fe18af6c255589cd573f" prot="public" virt="non-virtual"><scope>ArmCommander</scope><name>rotate</name></member>
+      <member refid="dd/d7f/class_arm_commander_1a4cb31e855ea6bc8144962e3807be99be" prot="public" virt="non-virtual"><scope>ArmCommander</scope><name>rotateDefault</name></member>
+      <member refid="dd/d7f/class_arm_commander_1ab611c3fcb09970df3309eae4bf198bdd" prot="public" virt="virtual"><scope>ArmCommander</scope><name>~ArmCommander</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

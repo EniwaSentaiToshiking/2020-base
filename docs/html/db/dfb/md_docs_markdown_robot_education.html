@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EniwaSentaiToshiking: PID制御の基本</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EniwaSentaiToshiking
+   &#160;<span id="projectnumber">0000</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">PID制御の基本 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><ul>
+<li>ラインの目標値設定</li>
+<li>当日にカラーセンサーを使って黒と白の輝度値を取得する</li>
+<li>PID制御<ul>
+<li>光センサーの輝度値：カラーセンサーで反射光の強さを測る</li>
+<li>目標の輝度値：ロボットが通りたい道．道は自分たちで決める</li>
+<li>ズレ：光センサーの輝度値と目標の輝度値の差．目標とした道からどっちにどれだけ離れているか．</li>
+<li>ステアリングの値：どっちにどれだけ曲がるかを設定する．</li>
+<li>ゲイン</li>
+<li>P:ズレが大きいほどステアリングの値を大きくする．ステアリングの強さはゲインで調整<ul>
+<li>$[ステアリング値] = ([光センサーの輝度値] - [目標の輝度値])*[ゲイン]$</li>
+<li>滑らかに動く</li>
+<li>急カーブは機体がふらつく</li>
+<li>安定走行までに時間がかかる</li>
+<li>速度をあげると目標にたどり着けないことがある</li>
+</ul>
+</li>
+<li>I:ズレを足し合わせた面積が大きほどステアリング値を大きくする(積分)<ul>
+<li>$[ステアリング値] = integral([光センサーの輝度値] - [目標の輝度値])dt*[ゲイン](tは時間)$</li>
+<li>Pよりも少し遅れてステアリングの値が更新される</li>
+<li>ゲインを大きくすると急な変化になる</li>
+<li>Iだけでは目標に戻れなくなる</li>
+<li>PIとすると急カーブなどで目標に戻れなくなることを防ぐ</li>
+</ul>
+</li>
+<li>D:直前のズレと現在のズレの差(ズレの変化)が大きいほどステアリング値を大きくする(微分)<ul>
+<li>$[ステアリング値] = d/dt([光センサーの輝度値] - [目標の輝度値])*[ゲイン](tは時間)$</li>
+<li>ズレの変化に反応が速い</li>
+<li>目標値に近く機能がないため，単体では機能しない</li>
+<li>急な変化に対してふらつきをなくすことができる</li>
+</ul>
+</li>
+<li>ゲイン調整ポイント<ul>
+<li>Pゲイン，Iゲインは機体が暴れない程度の範囲で大きく</li>
+<li>Iゲインはとても小さいことが多い(0.001 &lt; I Gain &lt; 0.003)</li>
+<li>Dゲインは機体が小刻みに震えない程度に大きくする(10&lt;D gain&lt;30)</li>
+<li>PIDは互いに影響し合うため随時調整が必要</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1"></a>
+PWM(Pulse Width Modulation)の役割</h1>
+<p><a href="https://monoist.atmarkit.co.jp/mn/articles/0706/06/news132.html">参考1</a> <a href="http://www.sist.ac.jp/club/mcf/Umeta_lecture/PWM.html">参考2</a></p>
+<ul>
+<li>モータの回転数を制御するのに使う方法</li>
+<li>PWMは一定の時間内でどの程度Highを出力するかをコントロールする制御方式</li>
+<li>ON・OFFを繰り返す周期に対するONの時間の割合を，デューティー比と呼びます．<ul>
+<li>デューティー比が大きいとONの時間が長い</li>
+<li>デューティー比が$1$だと最大速で前進し$-1$だと最大速で後退する． </li>
+</ul>
+</li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

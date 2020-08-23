@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d5/d8e/class_wheel_motor_driver" kind="class" language="C++" prot="public">
+    <compoundname>WheelMotorDriver</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d5/d8e/class_wheel_motor_driver_1a461a0b3a6ed97fb96dbe74284f16558b" prot="public" static="no" mutable="no">
+        <type>Motor *</type>
+        <definition>Motor* WheelMotorDriver::motor</definition>
+        <argsstring></argsstring>
+        <name>motor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/WheelMotorDriver.h" line="12" column="11" bodyfile="Devices/WheelMotorDriver.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/d8e/class_wheel_motor_driver_1a550b5cdd2945eb36ea731ced574cde3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WheelMotorDriver::WheelMotorDriver</definition>
+        <argsstring>(ePortM port)</argsstring>
+        <name>WheelMotorDriver</name>
+        <param>
+          <type>ePortM</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/WheelMotorDriver.h" line="14" column="5" bodyfile="Devices/WheelMotorDriver.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d8e/class_wheel_motor_driver_1a802fc07a3133fa6d71cef584a310aaaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WheelMotorDriver::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>reset - モータリセット モータ停止および角位置の0リセット、オフセット初期化を行う <linebreak/>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/WheelMotorDriver.h" line="22" column="10" bodyfile="Devices/WheelMotorDriver.cpp" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d8e/class_wheel_motor_driver_1ab0319498c25645f0c703a05c60813f43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t WheelMotorDriver::getCount</definition>
+        <argsstring>()</argsstring>
+        <name>getCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getCount - オフセット付き角位置取得</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{int32_t} モータ角位置 [deg] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/WheelMotorDriver.h" line="30" column="13" bodyfile="Devices/WheelMotorDriver.cpp" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WheelMotorDriver::controlMotor</definition>
+        <argsstring>(int pwm)</argsstring>
+        <name>controlMotor</name>
+        <param>
+          <type>int</type>
+          <declname>pwm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>controlMotor - モータPWM値設定 ブレーキモードでPWM値が0の場合、モータを停止する</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{int}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pwm PWM値 (-100 - 100) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{int32_t} モータ角位置 [deg] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/WheelMotorDriver.h" line="38" column="10" bodyfile="Devices/WheelMotorDriver.cpp" bodystart="25" bodyend="28"/>
+        <referencedby refid="d7/d17/class_run_commander_1af8b87fd45e35cd8122371de8332b1826" compoundref="db/d4c/_run_commander_8cpp" startline="23" endline="27">RunCommander::steerStop</referencedby>
+        <referencedby refid="d7/d17/class_run_commander_1a46bf3c2b53274301f9904e12e006215a" compoundref="db/d4c/_run_commander_8cpp" startline="29" endline="33">RunCommander::run</referencedby>
+        <referencedby refid="d7/d17/class_run_commander_1a6289e38fcc8788c6894bc1eba273bbbb" compoundref="db/d4c/_run_commander_8cpp" startline="35" endline="84">RunCommander::gridRun</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d5/d8e/class_wheel_motor_driver_1a852e5d043854e1f7a1f411dc72c52d47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WheelMotorDriver::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>stop - モータの回転を止める</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/WheelMotorDriver.h" line="46" column="10" bodyfile="Devices/WheelMotorDriver.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d8e/class_wheel_motor_driver_1a0a30bef3be830e7e97acde3ff14bb2bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>WheelMotorDriver::~WheelMotorDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~WheelMotorDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/WheelMotorDriver.h" line="48" column="13" bodyfile="Devices/WheelMotorDriver.cpp" bodystart="9" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Devices/WheelMotorDriver.h" line="7" column="1" bodyfile="Devices/WheelMotorDriver.h" bodystart="8" bodyend="49"/>
+    <listofallmembers>
+      <member refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" prot="public" virt="non-virtual"><scope>WheelMotorDriver</scope><name>controlMotor</name></member>
+      <member refid="d5/d8e/class_wheel_motor_driver_1ab0319498c25645f0c703a05c60813f43" prot="public" virt="non-virtual"><scope>WheelMotorDriver</scope><name>getCount</name></member>
+      <member refid="d5/d8e/class_wheel_motor_driver_1a461a0b3a6ed97fb96dbe74284f16558b" prot="public" virt="non-virtual"><scope>WheelMotorDriver</scope><name>motor</name></member>
+      <member refid="d5/d8e/class_wheel_motor_driver_1a802fc07a3133fa6d71cef584a310aaaf" prot="public" virt="non-virtual"><scope>WheelMotorDriver</scope><name>reset</name></member>
+      <member refid="d5/d8e/class_wheel_motor_driver_1a852e5d043854e1f7a1f411dc72c52d47" prot="public" virt="non-virtual"><scope>WheelMotorDriver</scope><name>stop</name></member>
+      <member refid="d5/d8e/class_wheel_motor_driver_1a550b5cdd2945eb36ea731ced574cde3c" prot="public" virt="non-virtual"><scope>WheelMotorDriver</scope><name>WheelMotorDriver</name></member>
+      <member refid="d5/d8e/class_wheel_motor_driver_1a0a30bef3be830e7e97acde3ff14bb2bf" prot="public" virt="virtual"><scope>WheelMotorDriver</scope><name>~WheelMotorDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

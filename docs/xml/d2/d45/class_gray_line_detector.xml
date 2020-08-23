@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d2/d45/class_gray_line_detector" kind="class" language="C++" prot="public">
+    <compoundname>GrayLineDetector</compoundname>
+    <basecompoundref refid="d2/d27/class_detector" prot="public" virt="non-virtual">Detector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/d45/class_gray_line_detector_1aed0749891e4644042c0d396101f5919e" prot="private" static="no" mutable="no">
+        <type><ref refid="de/dc2/class_course_monitor" kindref="compound">CourseMonitor</ref> *</type>
+        <definition>CourseMonitor* GrayLineDetector::courseMonitor</definition>
+        <argsstring></argsstring>
+        <name>courseMonitor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/GrayLineDetector.h" line="14" column="19" bodyfile="Detectors/GrayLineDetector.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d45/class_gray_line_detector_1a9f8856e89a1d5b2e0484632b88246e9e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GrayLineDetector::gray_buffer[gray_buffer_max]</definition>
+        <argsstring>[gray_buffer_max]</argsstring>
+        <name>gray_buffer</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/GrayLineDetector.h" line="16" column="9" bodyfile="Detectors/GrayLineDetector.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d45/class_gray_line_detector_1adae0d0448408de276cedc1f144fdec02" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GrayLineDetector::gray_buffer_num</definition>
+        <argsstring></argsstring>
+        <name>gray_buffer_num</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/GrayLineDetector.h" line="17" column="9" bodyfile="Detectors/GrayLineDetector.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d45/class_gray_line_detector_1a4f7801273cf31ac5ae0b8b0afffbe2a7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GrayLineDetector::gray_count</definition>
+        <argsstring></argsstring>
+        <name>gray_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/GrayLineDetector.h" line="18" column="9" bodyfile="Detectors/GrayLineDetector.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d45/class_gray_line_detector_1a4bfd2fbf085fcf7974701c2b6abc70f5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GrayLineDetector::threshold</definition>
+        <argsstring></argsstring>
+        <name>threshold</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/GrayLineDetector.h" line="19" column="9" bodyfile="Detectors/GrayLineDetector.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d45/class_gray_line_detector_1ac2edf29339bc4431e288f6096d65db85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GrayLineDetector::GrayLineDetector</definition>
+        <argsstring>(int threshold=4)</argsstring>
+        <name>GrayLineDetector</name>
+        <param>
+          <type>int</type>
+          <declname>threshold</declname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/GrayLineDetector.h" line="22" column="5" bodyfile="Detectors/GrayLineDetector.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d45/class_gray_line_detector_1a5b70452543a69a9b877cfc3f6b24ffb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool GrayLineDetector::detect</definition>
+        <argsstring>()</argsstring>
+        <name>detect</name>
+        <reimplements refid="d2/d27/class_detector_1a4ff803e7bcbcd245ac5a84a68fff3230">detect</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>detect - 灰色検出</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{bool} true 検出した, false 検出しなかった </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/GrayLineDetector.h" line="30" column="10" bodyfile="Detectors/GrayLineDetector.cpp" bodystart="15" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d45/class_gray_line_detector_1a968db5a55d326bdea3a035c1286d9ce2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void GrayLineDetector::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d2/d27/class_detector_1a6f1d2ad924e8e19d124fe76ee3793234">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/GrayLineDetector.h" line="31" column="10" bodyfile="Detectors/GrayLineDetector.cpp" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d45/class_gray_line_detector_1a962707c31d0b667e46634a8ff8221c60" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>GrayLineDetector::~GrayLineDetector</definition>
+        <argsstring>()</argsstring>
+        <name>~GrayLineDetector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/GrayLineDetector.h" line="32" column="13" bodyfile="Detectors/GrayLineDetector.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>GrayLineDetector</label>
+        <link refid="d2/d45/class_gray_line_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>GrayLineDetector</label>
+        <link refid="d2/d45/class_gray_line_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Detectors/GrayLineDetector.h" line="10" column="1" bodyfile="Detectors/GrayLineDetector.h" bodystart="11" bodyend="33"/>
+    <listofallmembers>
+      <member refid="d2/d45/class_gray_line_detector_1aed0749891e4644042c0d396101f5919e" prot="private" virt="non-virtual"><scope>GrayLineDetector</scope><name>courseMonitor</name></member>
+      <member refid="d2/d45/class_gray_line_detector_1a5b70452543a69a9b877cfc3f6b24ffb6" prot="public" virt="virtual"><scope>GrayLineDetector</scope><name>detect</name></member>
+      <member refid="d2/d45/class_gray_line_detector_1a9f8856e89a1d5b2e0484632b88246e9e" prot="private" virt="non-virtual"><scope>GrayLineDetector</scope><name>gray_buffer</name></member>
+      <member refid="d2/d45/class_gray_line_detector_1adae0d0448408de276cedc1f144fdec02" prot="private" virt="non-virtual"><scope>GrayLineDetector</scope><name>gray_buffer_num</name></member>
+      <member refid="d2/d45/class_gray_line_detector_1a4f7801273cf31ac5ae0b8b0afffbe2a7" prot="private" virt="non-virtual"><scope>GrayLineDetector</scope><name>gray_count</name></member>
+      <member refid="d2/d45/class_gray_line_detector_1ac2edf29339bc4431e288f6096d65db85" prot="public" virt="non-virtual"><scope>GrayLineDetector</scope><name>GrayLineDetector</name></member>
+      <member refid="d2/d45/class_gray_line_detector_1a968db5a55d326bdea3a035c1286d9ce2" prot="public" virt="virtual"><scope>GrayLineDetector</scope><name>init</name></member>
+      <member refid="d2/d45/class_gray_line_detector_1a4bfd2fbf085fcf7974701c2b6abc70f5" prot="private" virt="non-virtual"><scope>GrayLineDetector</scope><name>threshold</name></member>
+      <member refid="d2/d27/class_detector_1a715d6c1e56c623a189c5257289a69d44" prot="public" virt="virtual"><scope>GrayLineDetector</scope><name>~Detector</name></member>
+      <member refid="d2/d45/class_gray_line_detector_1a962707c31d0b667e46634a8ff8221c60" prot="public" virt="virtual"><scope>GrayLineDetector</scope><name>~GrayLineDetector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

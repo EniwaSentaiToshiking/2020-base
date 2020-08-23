@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="da/d40/class_lot" kind="class" language="C++" prot="public">
+    <compoundname>Lot</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="da/d40/class_lot_1aa570516dac2e6c39b8fa597731582417" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Lot::x0</definition>
+        <argsstring></argsstring>
+        <name>x0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Lot.h" line="9" column="9" bodyfile="Observer/Lot.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d40/class_lot_1a41e074e39121127281f34216c08317f5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Lot::y0</definition>
+        <argsstring></argsstring>
+        <name>y0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Lot.h" line="9" column="12" bodyfile="Observer/Lot.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d40/class_lot_1ae2eb55a9f07b570570785525d2e46443" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Lot::x1</definition>
+        <argsstring></argsstring>
+        <name>x1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Lot.h" line="10" column="9" bodyfile="Observer/Lot.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d40/class_lot_1afbf45ab9c0838492667ba8ad8a3089df" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Lot::y1</definition>
+        <argsstring></argsstring>
+        <name>y1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Lot.h" line="10" column="12" bodyfile="Observer/Lot.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/d40/class_lot_1a8c3423f41581ea19f22c49c4add3d784" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Lot::Lot</definition>
+        <argsstring>(float x0, float x1, float y0, float y1)</argsstring>
+        <name>Lot</name>
+        <param>
+          <type>float</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Lot.h" line="12" column="3" bodyfile="Observer/Lot.cpp" bodystart="3" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d40/class_lot_1aeac7d93542df69b168c3f73c0e628831" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Lot::~Lot</definition>
+        <argsstring>()</argsstring>
+        <name>~Lot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Lot.h" line="13" column="11" bodyfile="Observer/Lot.cpp" bodystart="11" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Observer/Lot.h" line="6" column="1" bodyfile="Observer/Lot.h" bodystart="7" bodyend="14"/>
+    <listofallmembers>
+      <member refid="da/d40/class_lot_1a8c3423f41581ea19f22c49c4add3d784" prot="public" virt="non-virtual"><scope>Lot</scope><name>Lot</name></member>
+      <member refid="da/d40/class_lot_1aa570516dac2e6c39b8fa597731582417" prot="public" virt="non-virtual"><scope>Lot</scope><name>x0</name></member>
+      <member refid="da/d40/class_lot_1ae2eb55a9f07b570570785525d2e46443" prot="public" virt="non-virtual"><scope>Lot</scope><name>x1</name></member>
+      <member refid="da/d40/class_lot_1a41e074e39121127281f34216c08317f5" prot="public" virt="non-virtual"><scope>Lot</scope><name>y0</name></member>
+      <member refid="da/d40/class_lot_1afbf45ab9c0838492667ba8ad8a3089df" prot="public" virt="non-virtual"><scope>Lot</scope><name>y1</name></member>
+      <member refid="da/d40/class_lot_1aeac7d93542df69b168c3f73c0e628831" prot="public" virt="virtual"><scope>Lot</scope><name>~Lot</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d2/d27/class_detector" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Detector</compoundname>
+    <derivedcompoundref refid="d1/d20/class_adaptive_direction_detector" prot="public" virt="non-virtual">AdaptiveDirectionDetector</derivedcompoundref>
+    <derivedcompoundref refid="d5/d4d/class_black_line_detector" prot="public" virt="non-virtual">BlackLineDetector</derivedcompoundref>
+    <derivedcompoundref refid="d3/d31/class_brightness_detector" prot="public" virt="non-virtual">BrightnessDetector</derivedcompoundref>
+    <derivedcompoundref refid="d0/db6/class_clock_detector" prot="public" virt="non-virtual">ClockDetector</derivedcompoundref>
+    <derivedcompoundref refid="d8/dc6/class_color_detector" prot="public" virt="non-virtual">ColorDetector</derivedcompoundref>
+    <derivedcompoundref refid="d7/de3/class_direction_detector" prot="public" virt="non-virtual">DirectionDetector</derivedcompoundref>
+    <derivedcompoundref refid="d4/d20/class_distance_detector" prot="public" virt="non-virtual">DistanceDetector</derivedcompoundref>
+    <derivedcompoundref refid="d2/d45/class_gray_line_detector" prot="public" virt="non-virtual">GrayLineDetector</derivedcompoundref>
+    <derivedcompoundref refid="d1/d90/class_object_detector" prot="public" virt="non-virtual">ObjectDetector</derivedcompoundref>
+    <derivedcompoundref refid="d0/d3f/class_point_detector" prot="public" virt="non-virtual">PointDetector</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d27/class_detector_1a4ff803e7bcbcd245ac5a84a68fff3230" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Detector::detect</definition>
+        <argsstring>()=0</argsstring>
+        <name>detect</name>
+        <reimplementedby refid="d3/d31/class_brightness_detector_1a2972b9a07c7a9bb7f0108cf54e06a4eb">detect</reimplementedby>
+        <reimplementedby refid="d1/d90/class_object_detector_1a3fbafc2ca5a8e340d4ea1a58c7517160">detect</reimplementedby>
+        <reimplementedby refid="d4/d20/class_distance_detector_1a28262f1cb0399a6dcbbc1cd4435a0ef6">detect</reimplementedby>
+        <reimplementedby refid="d0/db6/class_clock_detector_1a5d53873321d4a9717f0dff204dc74ac9">detect</reimplementedby>
+        <reimplementedby refid="d0/d3f/class_point_detector_1a75e1e0f974e122cc1588ad4a60f60416">detect</reimplementedby>
+        <reimplementedby refid="d7/de3/class_direction_detector_1a3a43cc84f5965a2e180cc464aa74f8ed">detect</reimplementedby>
+        <reimplementedby refid="d8/dc6/class_color_detector_1a250a268a45020c54f4a242a271b59985">detect</reimplementedby>
+        <reimplementedby refid="d2/d45/class_gray_line_detector_1a5b70452543a69a9b877cfc3f6b24ffb6">detect</reimplementedby>
+        <reimplementedby refid="d1/d20/class_adaptive_direction_detector_1adf10e46b6592674570c221a571760b36">detect</reimplementedby>
+        <reimplementedby refid="d5/d4d/class_black_line_detector_1ad94ab7498b79bb544e3ace5268b7cf32">detect</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/Detector.h" line="10" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d27/class_detector_1a6f1d2ad924e8e19d124fe76ee3793234" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Detector::init</definition>
+        <argsstring>()=0</argsstring>
+        <name>init</name>
+        <reimplementedby refid="d3/d31/class_brightness_detector_1a3fd097d0e11339a3345f93e59b315717">init</reimplementedby>
+        <reimplementedby refid="d1/d90/class_object_detector_1a7b186002f173cd5fcdd0e7c972932778">init</reimplementedby>
+        <reimplementedby refid="d4/d20/class_distance_detector_1aadf1aca37d67d2f5bde653b336c27b87">init</reimplementedby>
+        <reimplementedby refid="d0/db6/class_clock_detector_1ae1036a25796b908a6aab5117c100c403">init</reimplementedby>
+        <reimplementedby refid="d7/de3/class_direction_detector_1a6c8f1e8d051d7cce58326f78c0c989cc">init</reimplementedby>
+        <reimplementedby refid="d8/dc6/class_color_detector_1a2ebcfb8c5b4010b54decc0186bdfcd4b">init</reimplementedby>
+        <reimplementedby refid="d1/d20/class_adaptive_direction_detector_1aa55a12b64ee2d84883a4dba34dc67ae4">init</reimplementedby>
+        <reimplementedby refid="d5/d4d/class_black_line_detector_1a236cce09491959c5cca8e6ed1575e596">init</reimplementedby>
+        <reimplementedby refid="d0/d3f/class_point_detector_1a66b2984ac44c79909f04665c976ffc9c">init</reimplementedby>
+        <reimplementedby refid="d2/d45/class_gray_line_detector_1a968db5a55d326bdea3a035c1286d9ce2">init</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/Detector.h" line="11" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d27/class_detector_1a715d6c1e56c623a189c5257289a69d44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Detector::~Detector</definition>
+        <argsstring>()</argsstring>
+        <name>~Detector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/Detector.h" line="12" column="13" bodyfile="Detectors/Detector.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="11">
+        <label>PointDetector</label>
+        <link refid="d0/d3f/class_point_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ObjectDetector</label>
+        <link refid="d1/d90/class_object_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AdaptiveDirectionDetector</label>
+        <link refid="d1/d20/class_adaptive_direction_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ClockDetector</label>
+        <link refid="d0/db6/class_clock_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>GrayLineDetector</label>
+        <link refid="d2/d45/class_gray_line_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>DirectionDetector</label>
+        <link refid="d7/de3/class_direction_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>BrightnessDetector</label>
+        <link refid="d3/d31/class_brightness_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ColorDetector</label>
+        <link refid="d8/dc6/class_color_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>DistanceDetector</label>
+        <link refid="d4/d20/class_distance_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>BlackLineDetector</label>
+        <link refid="d5/d4d/class_black_line_detector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Detectors/Detector.h" line="6" column="1" bodyfile="Detectors/Detector.h" bodystart="7" bodyend="13"/>
+    <listofallmembers>
+      <member refid="d2/d27/class_detector_1a4ff803e7bcbcd245ac5a84a68fff3230" prot="public" virt="pure-virtual"><scope>Detector</scope><name>detect</name></member>
+      <member refid="d2/d27/class_detector_1a6f1d2ad924e8e19d124fe76ee3793234" prot="public" virt="pure-virtual"><scope>Detector</scope><name>init</name></member>
+      <member refid="d2/d27/class_detector_1a715d6c1e56c623a189c5257289a69d44" prot="public" virt="virtual"><scope>Detector</scope><name>~Detector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

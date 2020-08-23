@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="da/d73/class_touch_sensor_driver" kind="class" language="C++" prot="public">
+    <compoundname>TouchSensorDriver</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="da/d73/class_touch_sensor_driver_1a841cee196f5218fff3f771ff57995a33" prot="private" static="no" mutable="no">
+        <type>TouchSensor *</type>
+        <definition>TouchSensor* TouchSensorDriver::touchSensor</definition>
+        <argsstring></argsstring>
+        <name>touchSensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TouchSensorDriver.h" line="11" column="17" bodyfile="Devices/TouchSensorDriver.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/d73/class_touch_sensor_driver_1ab86f55b56458c08691f804311fb8acde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TouchSensorDriver::TouchSensorDriver</definition>
+        <argsstring>()</argsstring>
+        <name>TouchSensorDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TouchSensorDriver.h" line="14" column="5" bodyfile="Devices/TouchSensorDriver.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d73/class_touch_sensor_driver_1ae566b84ca01a94828e154c8469270cf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TouchSensorDriver::isPressed</definition>
+        <argsstring>()</argsstring>
+        <name>isPressed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>isPressed - タッチセンサ状態取得</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{bool} true 押されている状態, false 押されていない状態 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TouchSensorDriver.h" line="22" column="10" bodyfile="Devices/TouchSensorDriver.cpp" bodystart="13" bodyend="16"/>
+        <referencedby refid="d8/de6/class_u_i_1abb8bea9c7b2fd4e520dc37dcfb7b60df" compoundref="de/d6b/_u_i_8cpp" startline="14" endline="17">UI::isTouched</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="da/d73/class_touch_sensor_driver_1a3cd7d92a28ea2728b8324f7d27804936" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>TouchSensorDriver::~TouchSensorDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~TouchSensorDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/TouchSensorDriver.h" line="24" column="13" bodyfile="Devices/TouchSensorDriver.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Devices/TouchSensorDriver.h" line="7" column="1" bodyfile="Devices/TouchSensorDriver.h" bodystart="8" bodyend="25"/>
+    <listofallmembers>
+      <member refid="da/d73/class_touch_sensor_driver_1ae566b84ca01a94828e154c8469270cf0" prot="public" virt="non-virtual"><scope>TouchSensorDriver</scope><name>isPressed</name></member>
+      <member refid="da/d73/class_touch_sensor_driver_1a841cee196f5218fff3f771ff57995a33" prot="private" virt="non-virtual"><scope>TouchSensorDriver</scope><name>touchSensor</name></member>
+      <member refid="da/d73/class_touch_sensor_driver_1ab86f55b56458c08691f804311fb8acde" prot="public" virt="non-virtual"><scope>TouchSensorDriver</scope><name>TouchSensorDriver</name></member>
+      <member refid="da/d73/class_touch_sensor_driver_1a3cd7d92a28ea2728b8324f7d27804936" prot="public" virt="virtual"><scope>TouchSensorDriver</scope><name>~TouchSensorDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

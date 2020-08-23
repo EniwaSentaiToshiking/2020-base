@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EniwaSentaiToshiking: 基本ルール (wip)</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EniwaSentaiToshiking
+   &#160;<span id="projectnumber">0000</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">基本ルール (wip) </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>大きな課題は全部で二つ</p>
+<ul>
+<li>ロボットができること<ul>
+<li>各車輪をPWM制御で動かすことができる</li>
+<li>タッチセンサーから値を取得できる</li>
+<li>カラーセンサーから輝度値を取得できる<ul>
+<li>色を取得することができる</li>
+</ul>
+</li>
+<li>アームをPWM制御で動かすことができる</li>
+<li>超音波センサーで距離を測ることができる</li>
+<li>周期ハンドラが設定できる</li>
+</ul>
+</li>
+<li>ライントレース競技<ol type="1">
+<li>スタートのやり方<ul>
+<li>ボタンをタッチしてスタートの信号を受信</li>
+<li>bluetooth経由でスタートの信号を受信</li>
+</ul>
+</li>
+<li>ライントレースのやり方<ol type="a">
+<li>ロボットが通る道<ul>
+<li>Lコース：ラインの右端(右エッジ)</li>
+<li>Rコース：ラインの左端(左エッジ)</li>
+</ul>
+</li>
+<li>ロボットの速度制御<ul>
+<li>ロボットが通る目標ラインの輝度値の設定</li>
+<li>モータの制御はPWM</li>
+<li>PWMの値をPIDで制御</li>
+</ul>
+</li>
+<li>カラーセンサーの制御<ul>
+<li>周期ハンドラ<ul>
+<li>機体の速度をあげればあげるほど周期を短く設定しないとコースアウトに繋がる</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>難所攻略</li>
+<li>ブロックビンゴエリア<ul>
+<li><a href="https://youtu.be/i57_8L75vPg?t=12435">参考動画</a></li>
+<li>ロボットの基本動作(7動作を組み合わせる)<ul>
+<li>前進，後退</li>
+<li>右折・左折<ul>
+<li>90度曲がる(エッジは同じ{例：右(外)エッジ -&gt; 右(外)エッジ})</li>
+<li>45度曲がる(エッジは反転{例：右(外)エッジ -&gt; 左(内)エッジ})</li>
+</ul>
+</li>
+<li>アームでブロックの押し出し</li>
+</ul>
+</li>
+<li>カメラを使ったブロックのカラー認識<ol type="1">
+<li>24個のカラーサークルと数字カードの位置をグリット線で分ける</li>
+<li>キャリブレーションの時間でカラーサークルとグリッドの位置合わせをする</li>
+<li>24枚 + 数字カードのグリッドをトリミング</li>
+<li>24枚の画像からブロックが置かれている場所のみを指定してカラー分類</li>
+<li>数字カードのみの画像で分類する</li>
+<li>EV3との通信方法を決めて送る(Json or 配列)？<ol type="a">
+<li><a href="https://github.com/ETrobocon/etroboEV3">カメラシステム構築・サンプルコード</a></li>
+<li>bluetooth通信<ol type="i">
+<li><a href="https://afrel.co.jp/archives/24426">Java</a></li>
+<li><a href="https://github.com/EniwaSentaiToshiking/2019-Camera/blob/034a72ccc000051c5ca777def3b876137150e31e/serial_protocol.py#L8:7">Python</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>ブロックにぶつからないブロック搬送順序のアルゴリズム<ol type="1">
+<li>カラーブロックと数字カードの値をbluetooth経由で受け取る</li>
+<li>ブロック搬送アルゴリズムでルート計算する<ol type="a">
+<li>注意：仮想ルートを作るかどうかで計算量の変化</li>
+</ol>
+</li>
+<li>ルートの結果からロボットの動作を決定する</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>ガレージ<ul>
+<li>ガレージ前ラインまで移動<ol type="1">
+<li>ビンゴエリアにある頂点のイエローサークルまで移動</li>
+<li>ガレージ前のラインまでの角度を決める(例：15度)</li>
+<li>イエローサークルからガレージ前ラインまで直線の仮想ラインを作成</li>
+</ol>
+</li>
+<li>ガレージにぶつからない様に距離の計測<ol type="1">
+<li>ガレージ前ライン先端から超音波センサーで距離を取得する</li>
+<li>任意位置(例10cm)の距離になったら任意時間停止 </li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

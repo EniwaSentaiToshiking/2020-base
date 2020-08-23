@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d0/d4d/md_docs_markdown_rule_summary" kind="page">
+    <compoundname>md_docs_markdown_rule_summary</compoundname>
+    <title>基本ルール (wip)</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>大きな課題は全部で二つ</para>
+<para><itemizedlist>
+<listitem><para>ロボットができること<itemizedlist>
+<listitem><para>各車輪をPWM制御で動かすことができる</para>
+</listitem><listitem><para>タッチセンサーから値を取得できる</para>
+</listitem><listitem><para>カラーセンサーから輝度値を取得できる<itemizedlist>
+<listitem><para>色を取得することができる</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>アームをPWM制御で動かすことができる</para>
+</listitem><listitem><para>超音波センサーで距離を測ることができる</para>
+</listitem><listitem><para>周期ハンドラが設定できる</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>ライントレース競技<orderedlist>
+<listitem><para>スタートのやり方<itemizedlist>
+<listitem><para>ボタンをタッチしてスタートの信号を受信</para>
+</listitem><listitem><para>bluetooth経由でスタートの信号を受信</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>ライントレースのやり方<orderedlist>
+<listitem><para>ロボットが通る道<itemizedlist>
+<listitem><para>Lコース：ラインの右端(右エッジ)</para>
+</listitem><listitem><para>Rコース：ラインの左端(左エッジ)</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>ロボットの速度制御<itemizedlist>
+<listitem><para>ロボットが通る目標ラインの輝度値の設定</para>
+</listitem><listitem><para>モータの制御はPWM</para>
+</listitem><listitem><para>PWMの値をPIDで制御</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>カラーセンサーの制御<itemizedlist>
+<listitem><para>周期ハンドラ<itemizedlist>
+<listitem><para>機体の速度をあげればあげるほど周期を短く設定しないとコースアウトに繋がる</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</listitem><listitem><para>難所攻略</para>
+</listitem><listitem><para>ブロックビンゴエリア<itemizedlist>
+<listitem><para><ulink url="https://youtu.be/i57_8L75vPg?t=12435">参考動画</ulink></para>
+</listitem><listitem><para>ロボットの基本動作(7動作を組み合わせる)<itemizedlist>
+<listitem><para>前進，後退</para>
+</listitem><listitem><para>右折・左折<itemizedlist>
+<listitem><para>90度曲がる(エッジは同じ{例：右(外)エッジ -&gt; 右(外)エッジ})</para>
+</listitem><listitem><para>45度曲がる(エッジは反転{例：右(外)エッジ -&gt; 左(内)エッジ})</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>アームでブロックの押し出し</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>カメラを使ったブロックのカラー認識<orderedlist>
+<listitem><para>24個のカラーサークルと数字カードの位置をグリット線で分ける</para>
+</listitem><listitem><para>キャリブレーションの時間でカラーサークルとグリッドの位置合わせをする</para>
+</listitem><listitem><para>24枚 + 数字カードのグリッドをトリミング</para>
+</listitem><listitem><para>24枚の画像からブロックが置かれている場所のみを指定してカラー分類</para>
+</listitem><listitem><para>数字カードのみの画像で分類する</para>
+</listitem><listitem><para>EV3との通信方法を決めて送る(Json or 配列)？<orderedlist>
+<listitem><para><ulink url="https://github.com/ETrobocon/etroboEV3">カメラシステム構築・サンプルコード</ulink></para>
+</listitem><listitem><para>bluetooth通信<orderedlist>
+<listitem><para><ulink url="https://afrel.co.jp/archives/24426">Java</ulink></para>
+</listitem><listitem><para><ulink url="https://github.com/EniwaSentaiToshiking/2019-Camera/blob/034a72ccc000051c5ca777def3b876137150e31e/serial_protocol.py#L8:7">Python</ulink></para>
+</listitem></orderedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</listitem><listitem><para>ブロックにぶつからないブロック搬送順序のアルゴリズム<orderedlist>
+<listitem><para>カラーブロックと数字カードの値をbluetooth経由で受け取る</para>
+</listitem><listitem><para>ブロック搬送アルゴリズムでルート計算する<orderedlist>
+<listitem><para>注意：仮想ルートを作るかどうかで計算量の変化</para>
+</listitem></orderedlist>
+</para>
+</listitem><listitem><para>ルートの結果からロボットの動作を決定する</para>
+</listitem></orderedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>ガレージ<itemizedlist>
+<listitem><para>ガレージ前ラインまで移動<orderedlist>
+<listitem><para>ビンゴエリアにある頂点のイエローサークルまで移動</para>
+</listitem><listitem><para>ガレージ前のラインまでの角度を決める(例：15度)</para>
+</listitem><listitem><para>イエローサークルからガレージ前ラインまで直線の仮想ラインを作成</para>
+</listitem></orderedlist>
+</para>
+</listitem><listitem><para>ガレージにぶつからない様に距離の計測<orderedlist>
+<listitem><para>ガレージ前ライン先端から超音波センサーで距離を取得する</para>
+</listitem><listitem><para>任意位置(例10cm)の距離になったら任意時間停止 </para>
+</listitem></orderedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dir_53ff6e473d46d4e442ba5a7ce9f895e3" kind="dir">
+    <compoundname>UI</compoundname>
+    <innerfile refid="de/d6b/_u_i_8cpp">UI.cpp</innerfile>
+    <innerfile refid="d0/d72/_u_i_8h">UI.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="UI/"/>
+  </compounddef>
+</doxygen>

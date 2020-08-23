@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="db/d4c/_run_commander_8cpp" kind="file" language="C++">
+    <compoundname>RunCommander.cpp</compoundname>
+    <includes refid="d9/d5d/_run_commander_8h" local="yes">RunCommander.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>Steering.h</label>
+      </node>
+      <node id="1">
+        <label>RunMethods/Commanders/RunCommander.cpp</label>
+        <link refid="db/d4c/_run_commander_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RunCommander.h</label>
+        <link refid="d9/d5d/_run_commander_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>math.h</label>
+      </node>
+      <node id="4">
+        <label>Motor.h</label>
+      </node>
+      <node id="3">
+        <label>WheelMotorDriver.h</label>
+        <link refid="d6/df4/_wheel_motor_driver_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Grid.h</label>
+        <link refid="d8/dea/_grid_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;RunCommander.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">RunCommander::RunCommander()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>leftMotor<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="d5/d8e/class_wheel_motor_driver" kindref="compound">WheelMotorDriver</ref>(PORT_C);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>rightMotor<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="d5/d8e/class_wheel_motor_driver" kindref="compound">WheelMotorDriver</ref>(PORT_B);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>steering<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Steering(*leftMotor-&gt;motor,<sp/>*rightMotor-&gt;motor);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>grid<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="da/d74/class_grid" kindref="compound">Grid</ref>();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">RunCommander::~RunCommander()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>leftMotor;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>rightMotor;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>grid;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="d7/d17/class_run_commander_1a7456cc0e3ed2763e1c0c3693ce8206a9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d7/d17/class_run_commander_1a7456cc0e3ed2763e1c0c3693ce8206a9" kindref="member">RunCommander::steer</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>power,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>turn)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>steering-&gt;setPower(power,<sp/>turn);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="d7/d17/class_run_commander_1af8b87fd45e35cd8122371de8332b1826" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d7/d17/class_run_commander_1af8b87fd45e35cd8122371de8332b1826" kindref="member">RunCommander::steerStop</ref>()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>leftMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(0);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>rightMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(0);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="d7/d17/class_run_commander_1a46bf3c2b53274301f9904e12e006215a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d7/d17/class_run_commander_1a46bf3c2b53274301f9904e12e006215a" kindref="member">RunCommander::run</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pwmL,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pwmR)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>leftMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(pwmL);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>rightMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(pwmR);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="d7/d17/class_run_commander_1a6289e38fcc8788c6894bc1eba273bbbb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d7/d17/class_run_commander_1a6289e38fcc8788c6894bc1eba273bbbb" kindref="member">RunCommander::gridRun</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>aX,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>aY,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bX,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bY,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pwm,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>direction,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(grid_flag<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid_direction<sp/>=<sp/>grid-&gt;getDirection(aX,<sp/>aY,<sp/>bX,<sp/>bY);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid_distance<sp/>=<sp/>grid-&gt;getDistance(aX,<sp/>aY,<sp/>bX,<sp/>bY);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid_flag<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(grid-&gt;state)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>TURN:</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(grid_direction<sp/>-<sp/>direction<sp/>&lt;<sp/>-0.1)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leftMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(20);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(20<sp/>*<sp/>-1);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(grid_direction<sp/>-<sp/>direction<sp/>&gt;<sp/>0.1)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leftMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(20<sp/>*<sp/>-1);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(20);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid-&gt;state<sp/>=<sp/>MOVE;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MOVE:</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid_direction<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(grid_distance<sp/>-<sp/>distance<sp/>&lt;<sp/>-1.0)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leftMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(pwm<sp/>*<sp/>-1);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(pwm<sp/>*<sp/>-1);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(grid_distance<sp/>-<sp/>distance<sp/>&gt;<sp/>1.0)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leftMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(pwm);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(pwm);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid-&gt;state<sp/>=<sp/>END;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>END:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leftMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(0);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightMotor-&gt;<ref refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" kindref="member">controlMotor</ref>(0);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid_flag<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="RunMethods/Commanders/RunCommander.cpp"/>
+  </compounddef>
+</doxygen>

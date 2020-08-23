@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d6/df4/_wheel_motor_driver_8h" kind="file" language="C++">
+    <compoundname>WheelMotorDriver.h</compoundname>
+    <includes local="yes">Motor.h</includes>
+    <includedby refid="da/daa/_wheel_motor_driver_8cpp" local="yes">Devices/WheelMotorDriver.cpp</includedby>
+    <includedby refid="d3/d03/_localization_8h" local="yes">Observer/Localization.h</includedby>
+    <includedby refid="d9/d5d/_run_commander_8h" local="yes">RunMethods/Commanders/RunCommander.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Motor.h</label>
+      </node>
+      <node id="1">
+        <label>Devices/WheelMotorDriver.h</label>
+        <link refid="d6/df4/_wheel_motor_driver_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="9">
+        <label>RunMethods/Status/Parking.h</label>
+        <link refid="d8/daa/_parking_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>RunMethods/Status/RunStatus.h</label>
+        <link refid="de/d6b/_run_status_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>RunMethods/Status/SampleCourseRun.h</label>
+        <link refid="db/d28/_sample_course_run_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Detectors/DistanceDetector.h</label>
+        <link refid="d3/db5/_distance_detector_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Observer/SpeedCal.h</label>
+        <link refid="d2/df3/_speed_cal_8h_source"/>
+      </node>
+      <node id="14">
+        <label>Detectors/DirectionDetector.h</label>
+        <link refid="de/d6f/_direction_detector_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Detectors/AdaptiveDirectionDetector.h</label>
+        <link refid="d4/d6f/_adaptive_direction_detector_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Detectors/PointDetector.h</label>
+        <link refid="d3/dcd/_point_detector_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Detectors/DetectType.h</label>
+        <link refid="d6/de5/_detect_type_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>RunMethods/Commanders/RunCommander.h</label>
+        <link refid="d9/d5d/_run_commander_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>RunMethods/RunPattern.h</label>
+        <link refid="d0/d26/_run_pattern_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>RunMethods/Status/Stop.h</label>
+        <link refid="d2/d49/_stop_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>RunMethods/RunManager.h</label>
+        <link refid="da/dba/_run_manager_8h_source"/>
+      </node>
+      <node id="2">
+        <label>Observer/Localization.h</label>
+        <link refid="d3/d03/_localization_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Devices/WheelMotorDriver.h</label>
+        <link refid="d6/df4/_wheel_motor_driver_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>RunMethods/Status/CourseRun.h</label>
+        <link refid="d3/d8e/_course_run_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d5/d8e/class_wheel_motor_driver" prot="public">WheelMotorDriver</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>WHEELMOTORDRIVER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WHEELMOTORDRIVER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Motor.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">ev3api;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="d5/d8e/class_wheel_motor_driver" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d5/d8e/class_wheel_motor_driver" kindref="compound">WheelMotorDriver</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>Motor<sp/>*motor;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d8e/class_wheel_motor_driver" kindref="compound">WheelMotorDriver</ref>(ePortM<sp/>port);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>reset();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>getCount();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>controlMotor(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pwm);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>stop();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="d5/d8e/class_wheel_motor_driver" kindref="compound">WheelMotorDriver</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Devices/WheelMotorDriver.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dir_ba92baaf72c88f15dbbb6c3d8c2c3d3d" kind="dir">
+    <compoundname>Observer</compoundname>
+    <innerfile refid="dd/da5/_course_monitor_8cpp">CourseMonitor.cpp</innerfile>
+    <innerfile refid="da/da6/_course_monitor_8h">CourseMonitor.h</innerfile>
+    <innerfile refid="dd/d8c/_localization_8cpp">Localization.cpp</innerfile>
+    <innerfile refid="d3/d03/_localization_8h">Localization.h</innerfile>
+    <innerfile refid="d4/d4d/_lot_8cpp">Lot.cpp</innerfile>
+    <innerfile refid="dc/df5/_lot_8h">Lot.h</innerfile>
+    <innerfile refid="d6/df6/_speed_cal_8cpp">SpeedCal.cpp</innerfile>
+    <innerfile refid="d2/df3/_speed_cal_8h">SpeedCal.h</innerfile>
+    <innerfile refid="da/d8e/_wheel_info_8cpp">WheelInfo.cpp</innerfile>
+    <innerfile refid="dc/db4/_wheel_info_8h">WheelInfo.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Observer/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d6/df8/class_tail_commander" kind="class" language="C++" prot="public">
+    <compoundname>TailCommander</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/df8/class_tail_commander_1ae9d74651587b7306f19c99b6f4ad075a" prot="private" static="no" mutable="no">
+        <type><ref refid="db/ddf/class_tail_motor_driver" kindref="compound">TailMotorDriver</ref> *</type>
+        <definition>TailMotorDriver* TailCommander::motor</definition>
+        <argsstring></argsstring>
+        <name>motor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/TailCommander.h" line="10" column="21" bodyfile="RunMethods/Commanders/TailCommander.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/df8/class_tail_commander_1a20832f4bd6d7b39a810bbbce05f29752" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TailCommander::TailCommander</definition>
+        <argsstring>()</argsstring>
+        <name>TailCommander</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/TailCommander.h" line="13" column="5" bodyfile="RunMethods/Commanders/TailCommander.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/df8/class_tail_commander_1aae6841f8fd48e86a099c3c6b09cd860a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TailCommander::rotate</definition>
+        <argsstring>(int32_t angle)</argsstring>
+        <name>rotate</name>
+        <param>
+          <type>int32_t</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>rotate - 腕を動かす</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{int32_t}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>angle 角度 [deg] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/TailCommander.h" line="21" column="10" bodyfile="RunMethods/Commanders/TailCommander.cpp" bodystart="13" bodyend="16"/>
+        <references refid="db/ddf/class_tail_motor_driver_1aa0faea7e0a084862a17925d8f2fb11d4" compoundref="d6/dd5/_tail_motor_driver_8cpp" startline="25" endline="39">TailMotorDriver::rotate</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/df8/class_tail_commander_1a96563691dd095a24ab749ed87681612f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TailCommander::rotateDefault</definition>
+        <argsstring>()</argsstring>
+        <name>rotateDefault</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>rotateDefault - デフォルトの角度(コース走行する角度)にする</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/TailCommander.h" line="29" column="10" bodyfile="RunMethods/Commanders/TailCommander.cpp" bodystart="18" bodyend="21"/>
+        <references refid="db/ddf/class_tail_motor_driver_1a60ddfda8d1187d02887ff00f8c3cdedb" compoundref="d6/dd5/_tail_motor_driver_8cpp" startline="41" endline="44">TailMotorDriver::rotateDefault</references>
+        <referencedby refid="dc/de3/class_run_pattern_1a02ea3232be2946cbca87bc1f74a7beab" compoundref="d3/d35/_run_pattern_8cpp" startline="135" endline="173">RunPattern::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/df8/class_tail_commander_1aa8992c2b4a2239987e44f9edb954b280" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TailCommander::rotateExtend</definition>
+        <argsstring>()</argsstring>
+        <name>rotateExtend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>rotateExtend - 尻尾を伸ばす</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/TailCommander.h" line="37" column="10" bodyfile="RunMethods/Commanders/TailCommander.cpp" bodystart="23" bodyend="26"/>
+        <references refid="db/ddf/class_tail_motor_driver_1a9f59fc70ab4c1f4165ed1f2eccd6712d" compoundref="d6/dd5/_tail_motor_driver_8cpp" startline="46" endline="49">TailMotorDriver::rotateExtend</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/df8/class_tail_commander_1ac191e1b63f5bc1c119a0298d184c8f5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TailCommander::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>reset - モータリセット <linebreak/>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/TailCommander.h" line="45" column="10" bodyfile="RunMethods/Commanders/TailCommander.cpp" bodystart="28" bodyend="31"/>
+        <references refid="db/ddf/class_tail_motor_driver_1a9ab8c2bdb5a106585597394be946942e" compoundref="d6/dd5/_tail_motor_driver_8cpp" startline="15" endline="18">TailMotorDriver::reset</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/df8/class_tail_commander_1a0d4eaf47abcb584f6ddc1a36ba5f78f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>TailCommander::~TailCommander</definition>
+        <argsstring>()</argsstring>
+        <name>~TailCommander</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/TailCommander.h" line="46" column="13" bodyfile="RunMethods/Commanders/TailCommander.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="RunMethods/Commanders/TailCommander.h" line="6" column="1" bodyfile="RunMethods/Commanders/TailCommander.h" bodystart="7" bodyend="47"/>
+    <listofallmembers>
+      <member refid="d6/df8/class_tail_commander_1ae9d74651587b7306f19c99b6f4ad075a" prot="private" virt="non-virtual"><scope>TailCommander</scope><name>motor</name></member>
+      <member refid="d6/df8/class_tail_commander_1ac191e1b63f5bc1c119a0298d184c8f5c" prot="public" virt="non-virtual"><scope>TailCommander</scope><name>reset</name></member>
+      <member refid="d6/df8/class_tail_commander_1aae6841f8fd48e86a099c3c6b09cd860a" prot="public" virt="non-virtual"><scope>TailCommander</scope><name>rotate</name></member>
+      <member refid="d6/df8/class_tail_commander_1a96563691dd095a24ab749ed87681612f" prot="public" virt="non-virtual"><scope>TailCommander</scope><name>rotateDefault</name></member>
+      <member refid="d6/df8/class_tail_commander_1aa8992c2b4a2239987e44f9edb954b280" prot="public" virt="non-virtual"><scope>TailCommander</scope><name>rotateExtend</name></member>
+      <member refid="d6/df8/class_tail_commander_1a20832f4bd6d7b39a810bbbce05f29752" prot="public" virt="non-virtual"><scope>TailCommander</scope><name>TailCommander</name></member>
+      <member refid="d6/df8/class_tail_commander_1a0d4eaf47abcb584f6ddc1a36ba5f78f3" prot="public" virt="virtual"><scope>TailCommander</scope><name>~TailCommander</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

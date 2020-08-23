@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d2/d70/class_filter" kind="class" language="C++" prot="public">
+    <compoundname>Filter</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/d70/class_filter_1a93c2e3a8bfc5a5ecde72758b448062bd" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Filter::BAND_MAX</definition>
+        <argsstring></argsstring>
+        <name>BAND_MAX</name>
+        <initializer>= 50</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Filter.h" line="10" column="15" bodyfile="Utils/Filter.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d70/class_filter_1aaa2c754ae2318e24a8398b523bfb37d6" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Filter::BAND_MIN</definition>
+        <argsstring></argsstring>
+        <name>BAND_MIN</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Filter.h" line="11" column="15" bodyfile="Utils/Filter.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d70/class_filter_1ad68c2c9f89ed9178f4fa7ced653e54ab" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Filter::buffer[BUFFER_SIZE]</definition>
+        <argsstring>[BUFFER_SIZE]</argsstring>
+        <name>buffer</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Filter.h" line="12" column="9" bodyfile="Utils/Filter.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d70/class_filter_1a936f1b468415c9f73965b962d2966df4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Filter::bufferSubscript</definition>
+        <argsstring></argsstring>
+        <name>bufferSubscript</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Filter.h" line="13" column="9" bodyfile="Utils/Filter.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d70/class_filter_1ad15994c30d497afd567a6445446a249e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Filter::Filter</definition>
+        <argsstring>()</argsstring>
+        <name>Filter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Filter.h" line="16" column="5" bodyfile="Utils/Filter.cpp" bodystart="3" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d70/class_filter_1a7dec8484bb5f210104e757930ad782aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Filter::lowpass</definition>
+        <argsstring>(int value)</argsstring>
+        <name>lowpass</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>lowpass - ローパスフィルター</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{int}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value センサ値 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{int} 計算結果 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Filter.h" line="24" column="9" bodyfile="Utils/Filter.cpp" bodystart="11" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d70/class_filter_1ae20cabd529ce6ee64466a6f084d88d78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Filter::band</definition>
+        <argsstring>(int value, int white, int black)</argsstring>
+        <name>band</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>white</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>black</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>band - バンド幅補正</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} 計算結果 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Filter.h" line="32" column="9" bodyfile="Utils/Filter.cpp" bodystart="33" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d70/class_filter_1a502ee334d42eac3edbaf32b599f9c35e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Filter::~Filter</definition>
+        <argsstring>()</argsstring>
+        <name>~Filter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Utils/Filter.h" line="33" column="13" bodyfile="Utils/Filter.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Utils/Filter.h" line="6" column="1" bodyfile="Utils/Filter.h" bodystart="7" bodyend="34"/>
+    <listofallmembers>
+      <member refid="d2/d70/class_filter_1ae20cabd529ce6ee64466a6f084d88d78" prot="public" virt="non-virtual"><scope>Filter</scope><name>band</name></member>
+      <member refid="d2/d70/class_filter_1a93c2e3a8bfc5a5ecde72758b448062bd" prot="private" virt="non-virtual"><scope>Filter</scope><name>BAND_MAX</name></member>
+      <member refid="d2/d70/class_filter_1aaa2c754ae2318e24a8398b523bfb37d6" prot="private" virt="non-virtual"><scope>Filter</scope><name>BAND_MIN</name></member>
+      <member refid="d2/d70/class_filter_1ad68c2c9f89ed9178f4fa7ced653e54ab" prot="private" virt="non-virtual"><scope>Filter</scope><name>buffer</name></member>
+      <member refid="d2/d70/class_filter_1a936f1b468415c9f73965b962d2966df4" prot="private" virt="non-virtual"><scope>Filter</scope><name>bufferSubscript</name></member>
+      <member refid="d2/d70/class_filter_1ad15994c30d497afd567a6445446a249e" prot="public" virt="non-virtual"><scope>Filter</scope><name>Filter</name></member>
+      <member refid="d2/d70/class_filter_1a7dec8484bb5f210104e757930ad782aa" prot="public" virt="non-virtual"><scope>Filter</scope><name>lowpass</name></member>
+      <member refid="d2/d70/class_filter_1a502ee334d42eac3edbaf32b599f9c35e" prot="public" virt="virtual"><scope>Filter</scope><name>~Filter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

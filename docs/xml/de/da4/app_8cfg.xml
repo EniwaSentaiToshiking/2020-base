@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="de/da4/app_8cfg" kind="file" language="C++">
+    <compoundname>app.cfg</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">INCLUDE(&quot;app_common.cfg&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;app.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">DOMAIN(TDOM_APP)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CRE_TSK(MAIN_TASK,<sp/>{<sp/>TA_ACT<sp/>,<sp/>0,<sp/>main_task,<sp/>TMIN_APP_TPRI<sp/>+<sp/>1,<sp/>STACK_SIZE,<sp/>NULL<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CRE_TSK(BLUETOOTH_TASK<sp/><sp/>,<sp/>{<sp/>TA_NULL,<sp/>0,<sp/>bluetooth_task<sp/><sp/>,<sp/>TMIN_APP_TPRI<sp/>+<sp/>3,<sp/>STACK_SIZE,<sp/>NULL<sp/>});</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">ATT_MOD(&quot;app.o&quot;);</highlight></codeline>
+    </programlisting>
+    <location file="app.cfg"/>
+  </compounddef>
+</doxygen>

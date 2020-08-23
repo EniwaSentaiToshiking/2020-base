@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d8/d18/rule__summary_8md" kind="file" language="Markdown">
+    <compoundname>rule_summary.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">##<sp/>基本ルール<sp/>(wip)</highlight></codeline>
+<codeline><highlight class="normal">大きな課題は全部で二つ</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>ロボットができること</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>各車輪をPWM制御で動かすことができる</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>タッチセンサーから値を取得できる</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>カラーセンサーから輝度値を取得できる</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>色を取得することができる</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>アームをPWM制御で動かすことができる</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>超音波センサーで距離を測ることができる</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>周期ハンドラが設定できる</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>ライントレース競技</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>1.<sp/>スタートのやり方</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>ボタンをタッチしてスタートの信号を受信</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>bluetooth経由でスタートの信号を受信</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>2.<sp/>ライントレースのやり方</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>1.<sp/>ロボットが通る道</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Lコース：ラインの右端(右エッジ)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Rコース：ラインの左端(左エッジ)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>2.<sp/>ロボットの速度制御</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>ロボットが通る目標ラインの輝度値の設定</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>モータの制御はPWM</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>PWMの値をPIDで制御</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>3.<sp/>カラーセンサーの制御</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>周期ハンドラ</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>機体の速度をあげればあげるほど周期を短く設定しないとコースアウトに繋がる</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>難所攻略</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>ブロックビンゴエリア</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[参考動画](https://youtu.be/i57_8L75vPg?t=12435)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>ロボットの基本動作(7動作を組み合わせる)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>前進，後退</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>右折・左折</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>90度曲がる(エッジは同じ{例：右(外)エッジ<sp/>-&gt;<sp/>右(外)エッジ})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>45度曲がる(エッジは反転{例：右(外)エッジ<sp/>-&gt;<sp/>左(内)エッジ})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>アームでブロックの押し出し</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>カメラを使ったブロックのカラー認識</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>1.<sp/>24個のカラーサークルと数字カードの位置をグリット線で分ける</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>2.<sp/>キャリブレーションの時間でカラーサークルとグリッドの位置合わせをする</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>3.<sp/>24枚<sp/>+<sp/>数字カードのグリッドをトリミング</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>4.<sp/>24枚の画像からブロックが置かれている場所のみを指定してカラー分類</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>5.<sp/>数字カードのみの画像で分類する</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>6.<sp/>EV3との通信方法を決めて送る(Json<sp/>or<sp/>配列)？<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.<sp/>[カメラシステム構築・サンプルコード](https://github.com/ETrobocon/etroboEV3)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2.<sp/>bluetooth通信</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.<sp/>[Java](https://afrel.co.jp/archives/24426)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2.<sp/>[Python](https://github.com/EniwaSentaiToshiking/2019-Camera/blob/034a72ccc000051c5ca777def3b876137150e31e/serial_protocol.py#L8:7)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>ブロックにぶつからないブロック搬送順序のアルゴリズム</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>1.<sp/>カラーブロックと数字カードの値をbluetooth経由で受け取る</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>2.<sp/>ブロック搬送アルゴリズムでルート計算する</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.<sp/>注意：仮想ルートを作るかどうかで計算量の変化</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>3.<sp/>ルートの結果からロボットの動作を決定する</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>ガレージ</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>ガレージ前ラインまで移動</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>1.<sp/>ビンゴエリアにある頂点のイエローサークルまで移動</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>2.<sp/>ガレージ前のラインまでの角度を決める(例：15度)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>3.<sp/>イエローサークルからガレージ前ラインまで直線の仮想ラインを作成</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>ガレージにぶつからない様に距離の計測</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>1.<sp/>ガレージ前ライン先端から超音波センサーで距離を取得する</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>2.<sp/>任意位置(例10cm)の距離になったら任意時間停止</highlight></codeline>
+    </programlisting>
+    <location file="docs/markdown/rule_summary.md"/>
+  </compounddef>
+</doxygen>

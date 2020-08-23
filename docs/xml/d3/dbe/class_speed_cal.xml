@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d3/dbe/class_speed_cal" kind="class" language="C++" prot="public">
+    <compoundname>SpeedCal</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/dbe/class_speed_cal_1a409ff97bed27df02603da8179590394f" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/d88/class_localization" kindref="compound">Localization</ref> *</type>
+        <definition>Localization* SpeedCal::localization</definition>
+        <argsstring></argsstring>
+        <name>localization</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/SpeedCal.h" line="13" column="14" bodyfile="Observer/SpeedCal.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d3/dbe/class_speed_cal_1a77ff487c5636ebe8d2fb9b8ba99002fe" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SpeedCal::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/SpeedCal.h" line="36" column="7" bodyfile="Observer/SpeedCal.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/class_speed_cal_1a61a906620763eb6fb4b30f5715b94691" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SpeedCal::pre_dis</definition>
+        <argsstring></argsstring>
+        <name>pre_dis</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/SpeedCal.h" line="37" column="7" bodyfile="Observer/SpeedCal.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/class_speed_cal_1a6133260e3919c7eb4dbf2d355686ebb5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SpeedCal::cur_dis</definition>
+        <argsstring></argsstring>
+        <name>cur_dis</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/SpeedCal.h" line="38" column="7" bodyfile="Observer/SpeedCal.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dbe/class_speed_cal_1a074ff3d4310dc311b326c733da0fd2ea" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SpeedCal::intervalTimer</definition>
+        <argsstring></argsstring>
+        <name>intervalTimer</name>
+        <initializer>= (int)(SAMPLING_INTERVAL / TASK_INTERVAL)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/SpeedCal.h" line="40" column="5" bodyfile="Observer/SpeedCal.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/dbe/class_speed_cal_1a0f09b9e12b42dfc2d9caa45ac5f0e9c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SpeedCal::SpeedCal</definition>
+        <argsstring>()</argsstring>
+        <name>SpeedCal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/SpeedCal.h" line="16" column="1" bodyfile="Observer/SpeedCal.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/class_speed_cal_1a53f070117c435724173100bde8c8b7dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SpeedCal::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/SpeedCal.h" line="21" column="6" bodyfile="Observer/SpeedCal.cpp" bodystart="13" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/class_speed_cal_1af6980d9aa6f2c2714f7ceb39592f9106" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SpeedCal::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/SpeedCal.h" line="28" column="6" bodyfile="Observer/SpeedCal.cpp" bodystart="22" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/class_speed_cal_1ade6eca647b0ccdfe1ae1a7718a77620b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float SpeedCal::getSpeed</definition>
+        <argsstring>()</argsstring>
+        <name>getSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/SpeedCal.h" line="34" column="7" bodyfile="Observer/SpeedCal.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dbe/class_speed_cal_1a69191602b25d2fde9a9d4c02780ff64e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>SpeedCal::~SpeedCal</definition>
+        <argsstring>()</argsstring>
+        <name>~SpeedCal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/SpeedCal.h" line="43" column="9" bodyfile="Observer/SpeedCal.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Observer/SpeedCal.h" line="10" column="1" bodyfile="Observer/SpeedCal.h" bodystart="11" bodyend="44"/>
+    <listofallmembers>
+      <member refid="d3/dbe/class_speed_cal_1a6133260e3919c7eb4dbf2d355686ebb5" prot="public" virt="non-virtual"><scope>SpeedCal</scope><name>cur_dis</name></member>
+      <member refid="d3/dbe/class_speed_cal_1ade6eca647b0ccdfe1ae1a7718a77620b" prot="public" virt="non-virtual"><scope>SpeedCal</scope><name>getSpeed</name></member>
+      <member refid="d3/dbe/class_speed_cal_1a53f070117c435724173100bde8c8b7dc" prot="public" virt="non-virtual"><scope>SpeedCal</scope><name>init</name></member>
+      <member refid="d3/dbe/class_speed_cal_1a074ff3d4310dc311b326c733da0fd2ea" prot="public" virt="non-virtual"><scope>SpeedCal</scope><name>intervalTimer</name></member>
+      <member refid="d3/dbe/class_speed_cal_1a409ff97bed27df02603da8179590394f" prot="private" virt="non-virtual"><scope>SpeedCal</scope><name>localization</name></member>
+      <member refid="d3/dbe/class_speed_cal_1a61a906620763eb6fb4b30f5715b94691" prot="public" virt="non-virtual"><scope>SpeedCal</scope><name>pre_dis</name></member>
+      <member refid="d3/dbe/class_speed_cal_1a77ff487c5636ebe8d2fb9b8ba99002fe" prot="public" virt="non-virtual"><scope>SpeedCal</scope><name>speed</name></member>
+      <member refid="d3/dbe/class_speed_cal_1a0f09b9e12b42dfc2d9caa45ac5f0e9c9" prot="public" virt="non-virtual"><scope>SpeedCal</scope><name>SpeedCal</name></member>
+      <member refid="d3/dbe/class_speed_cal_1af6980d9aa6f2c2714f7ceb39592f9106" prot="public" virt="non-virtual"><scope>SpeedCal</scope><name>update</name></member>
+      <member refid="d3/dbe/class_speed_cal_1a69191602b25d2fde9a9d4c02780ff64e" prot="public" virt="virtual"><scope>SpeedCal</scope><name>~SpeedCal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

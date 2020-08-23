@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d3/d31/class_brightness_detector" kind="class" language="C++" prot="public">
+    <compoundname>BrightnessDetector</compoundname>
+    <basecompoundref refid="d2/d27/class_detector" prot="public" virt="non-virtual">Detector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/d31/class_brightness_detector_1a52fedef909c43fcd34cf085484df650b" prot="private" static="no" mutable="no">
+        <type><ref refid="de/dc2/class_course_monitor" kindref="compound">CourseMonitor</ref> *</type>
+        <definition>CourseMonitor* BrightnessDetector::courseMonitor</definition>
+        <argsstring></argsstring>
+        <name>courseMonitor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/BrightnessDetector.h" line="11" column="17" bodyfile="Detectors/BrightnessDetector.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d31/class_brightness_detector_1a5618fff16ef6575151e47b25893d74bb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int BrightnessDetector::threshold</definition>
+        <argsstring></argsstring>
+        <name>threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/BrightnessDetector.h" line="12" column="7" bodyfile="Detectors/BrightnessDetector.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/d31/class_brightness_detector_1a97a0f1651170e95f1af95f68fa9560a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BrightnessDetector::BrightnessDetector</definition>
+        <argsstring>(int threshold)</argsstring>
+        <name>BrightnessDetector</name>
+        <param>
+          <type>int</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/BrightnessDetector.h" line="15" column="3" bodyfile="Detectors/BrightnessDetector.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d31/class_brightness_detector_1a3fd097d0e11339a3345f93e59b315717" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BrightnessDetector::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d2/d27/class_detector_1a6f1d2ad924e8e19d124fe76ee3793234">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/BrightnessDetector.h" line="17" column="8" bodyfile="Detectors/BrightnessDetector.cpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d31/class_brightness_detector_1a2972b9a07c7a9bb7f0108cf54e06a4eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool BrightnessDetector::detect</definition>
+        <argsstring>()</argsstring>
+        <name>detect</name>
+        <reimplements refid="d2/d27/class_detector_1a4ff803e7bcbcd245ac5a84a68fff3230">detect</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>detect - 色の条件検知</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{bool} true 検出した, false 検出しなかった </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/BrightnessDetector.h" line="24" column="8" bodyfile="Detectors/BrightnessDetector.cpp" bodystart="18" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d31/class_brightness_detector_1a5ce2188088602b9eec2b9ea484fc5d66" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>BrightnessDetector::~BrightnessDetector</definition>
+        <argsstring>()</argsstring>
+        <name>~BrightnessDetector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/BrightnessDetector.h" line="25" column="11" bodyfile="Detectors/BrightnessDetector.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>BrightnessDetector</label>
+        <link refid="d3/d31/class_brightness_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>BrightnessDetector</label>
+        <link refid="d3/d31/class_brightness_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Detectors/BrightnessDetector.h" line="8" column="1" bodyfile="Detectors/BrightnessDetector.h" bodystart="9" bodyend="26"/>
+    <listofallmembers>
+      <member refid="d3/d31/class_brightness_detector_1a97a0f1651170e95f1af95f68fa9560a7" prot="public" virt="non-virtual"><scope>BrightnessDetector</scope><name>BrightnessDetector</name></member>
+      <member refid="d3/d31/class_brightness_detector_1a52fedef909c43fcd34cf085484df650b" prot="private" virt="non-virtual"><scope>BrightnessDetector</scope><name>courseMonitor</name></member>
+      <member refid="d3/d31/class_brightness_detector_1a2972b9a07c7a9bb7f0108cf54e06a4eb" prot="public" virt="virtual"><scope>BrightnessDetector</scope><name>detect</name></member>
+      <member refid="d3/d31/class_brightness_detector_1a3fd097d0e11339a3345f93e59b315717" prot="public" virt="virtual"><scope>BrightnessDetector</scope><name>init</name></member>
+      <member refid="d3/d31/class_brightness_detector_1a5618fff16ef6575151e47b25893d74bb" prot="private" virt="non-virtual"><scope>BrightnessDetector</scope><name>threshold</name></member>
+      <member refid="d3/d31/class_brightness_detector_1a5ce2188088602b9eec2b9ea484fc5d66" prot="public" virt="virtual"><scope>BrightnessDetector</scope><name>~BrightnessDetector</name></member>
+      <member refid="d2/d27/class_detector_1a715d6c1e56c623a189c5257289a69d44" prot="public" virt="virtual"><scope>BrightnessDetector</scope><name>~Detector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

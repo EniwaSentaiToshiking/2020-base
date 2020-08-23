@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d1/d20/class_adaptive_direction_detector" kind="class" language="C++" prot="public">
+    <compoundname>AdaptiveDirectionDetector</compoundname>
+    <basecompoundref refid="d2/d27/class_detector" prot="public" virt="non-virtual">Detector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d1/d20/class_adaptive_direction_detector_1a1547b3d5b7b7bfe095ddfa7512e8dc70" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/d88/class_localization" kindref="compound">Localization</ref> *</type>
+        <definition>Localization* AdaptiveDirectionDetector::local</definition>
+        <argsstring></argsstring>
+        <name>local</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/AdaptiveDirectionDetector.h" line="15" column="16" bodyfile="Detectors/AdaptiveDirectionDetector.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d20/class_adaptive_direction_detector_1ace985a101b62b0c70e234b62e7c4da06" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AdaptiveDirectionDetector::threshold</definition>
+        <argsstring></argsstring>
+        <name>threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/AdaptiveDirectionDetector.h" line="16" column="7" bodyfile="Detectors/AdaptiveDirectionDetector.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d20/class_adaptive_direction_detector_1aaa2722dec55466198fd119e25905b81e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AdaptiveDirectionDetector::prev_direction</definition>
+        <argsstring></argsstring>
+        <name>prev_direction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/AdaptiveDirectionDetector.h" line="17" column="7" bodyfile="Detectors/AdaptiveDirectionDetector.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d20/class_adaptive_direction_detector_1af37225fa970c9207363bb0f228fd14e3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AdaptiveDirectionDetector::direction</definition>
+        <argsstring></argsstring>
+        <name>direction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/AdaptiveDirectionDetector.h" line="18" column="7" bodyfile="Detectors/AdaptiveDirectionDetector.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d1/d20/class_adaptive_direction_detector_1a2457ada8f477ebf7fbf2f836fadfca68" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int AdaptiveDirectionDetector::absDirection</definition>
+        <argsstring>(int)</argsstring>
+        <name>absDirection</name>
+        <param>
+          <type>int</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/AdaptiveDirectionDetector.h" line="19" column="7" bodyfile="Detectors/AdaptiveDirectionDetector.cpp" bodystart="26" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/d20/class_adaptive_direction_detector_1a7918abbf0d4bb0003bd9a79aa48ea016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AdaptiveDirectionDetector::AdaptiveDirectionDetector</definition>
+        <argsstring>(int direction)</argsstring>
+        <name>AdaptiveDirectionDetector</name>
+        <param>
+          <type>int</type>
+          <declname>direction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/AdaptiveDirectionDetector.h" line="22" column="3" bodyfile="Detectors/AdaptiveDirectionDetector.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d20/class_adaptive_direction_detector_1aa55a12b64ee2d84883a4dba34dc67ae4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void AdaptiveDirectionDetector::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d2/d27/class_detector_1a6f1d2ad924e8e19d124fe76ee3793234">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/AdaptiveDirectionDetector.h" line="24" column="8" bodyfile="Detectors/AdaptiveDirectionDetector.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d20/class_adaptive_direction_detector_1adf10e46b6592674570c221a571760b36" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool AdaptiveDirectionDetector::detect</definition>
+        <argsstring>()</argsstring>
+        <name>detect</name>
+        <reimplements refid="d2/d27/class_detector_1a4ff803e7bcbcd245ac5a84a68fff3230">detect</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>detect - 座標の条件検知</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{bool} true 検出した, false 検出しなかった </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/AdaptiveDirectionDetector.h" line="31" column="8" bodyfile="Detectors/AdaptiveDirectionDetector.cpp" bodystart="19" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d20/class_adaptive_direction_detector_1a1ee7fc40f2a9457fecb5c458f12698dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>AdaptiveDirectionDetector::~AdaptiveDirectionDetector</definition>
+        <argsstring>()</argsstring>
+        <name>~AdaptiveDirectionDetector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/AdaptiveDirectionDetector.h" line="32" column="11" bodyfile="Detectors/AdaptiveDirectionDetector.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>AdaptiveDirectionDetector</label>
+        <link refid="d1/d20/class_adaptive_direction_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>AdaptiveDirectionDetector</label>
+        <link refid="d1/d20/class_adaptive_direction_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Detectors/AdaptiveDirectionDetector.h" line="12" column="1" bodyfile="Detectors/AdaptiveDirectionDetector.h" bodystart="13" bodyend="33"/>
+    <listofallmembers>
+      <member refid="d1/d20/class_adaptive_direction_detector_1a2457ada8f477ebf7fbf2f836fadfca68" prot="private" virt="non-virtual"><scope>AdaptiveDirectionDetector</scope><name>absDirection</name></member>
+      <member refid="d1/d20/class_adaptive_direction_detector_1a7918abbf0d4bb0003bd9a79aa48ea016" prot="public" virt="non-virtual"><scope>AdaptiveDirectionDetector</scope><name>AdaptiveDirectionDetector</name></member>
+      <member refid="d1/d20/class_adaptive_direction_detector_1adf10e46b6592674570c221a571760b36" prot="public" virt="virtual"><scope>AdaptiveDirectionDetector</scope><name>detect</name></member>
+      <member refid="d1/d20/class_adaptive_direction_detector_1af37225fa970c9207363bb0f228fd14e3" prot="private" virt="non-virtual"><scope>AdaptiveDirectionDetector</scope><name>direction</name></member>
+      <member refid="d1/d20/class_adaptive_direction_detector_1aa55a12b64ee2d84883a4dba34dc67ae4" prot="public" virt="virtual"><scope>AdaptiveDirectionDetector</scope><name>init</name></member>
+      <member refid="d1/d20/class_adaptive_direction_detector_1a1547b3d5b7b7bfe095ddfa7512e8dc70" prot="private" virt="non-virtual"><scope>AdaptiveDirectionDetector</scope><name>local</name></member>
+      <member refid="d1/d20/class_adaptive_direction_detector_1aaa2722dec55466198fd119e25905b81e" prot="private" virt="non-virtual"><scope>AdaptiveDirectionDetector</scope><name>prev_direction</name></member>
+      <member refid="d1/d20/class_adaptive_direction_detector_1ace985a101b62b0c70e234b62e7c4da06" prot="private" virt="non-virtual"><scope>AdaptiveDirectionDetector</scope><name>threshold</name></member>
+      <member refid="d1/d20/class_adaptive_direction_detector_1a1ee7fc40f2a9457fecb5c458f12698dd" prot="public" virt="virtual"><scope>AdaptiveDirectionDetector</scope><name>~AdaptiveDirectionDetector</name></member>
+      <member refid="d2/d27/class_detector_1a715d6c1e56c623a189c5257289a69d44" prot="public" virt="virtual"><scope>AdaptiveDirectionDetector</scope><name>~Detector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

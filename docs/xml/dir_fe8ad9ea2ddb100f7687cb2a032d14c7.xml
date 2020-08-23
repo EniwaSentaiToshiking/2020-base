@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dir_fe8ad9ea2ddb100f7687cb2a032d14c7" kind="dir">
+    <compoundname>RunMethods</compoundname>
+    <innerdir refid="dir_7f182ce065ebb979a6eac5f35d4b560c">RunMethods/Commanders</innerdir>
+    <innerdir refid="dir_a234c432ed461fdad544521aab28f561">RunMethods/Status</innerdir>
+    <innerfile refid="d5/de1/_run_manager_8cpp">RunManager.cpp</innerfile>
+    <innerfile refid="da/dba/_run_manager_8h">RunManager.h</innerfile>
+    <innerfile refid="d3/d35/_run_pattern_8cpp">RunPattern.cpp</innerfile>
+    <innerfile refid="d0/d26/_run_pattern_8h">RunPattern.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="RunMethods/"/>
+  </compounddef>
+</doxygen>

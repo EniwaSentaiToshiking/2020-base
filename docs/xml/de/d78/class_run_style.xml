@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="de/d78/class_run_style" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>RunStyle</compoundname>
+    <derivedcompoundref refid="da/d1b/class_clothoid" prot="public" virt="non-virtual">Clothoid</derivedcompoundref>
+    <derivedcompoundref refid="da/df3/class_line_trace" prot="public" virt="non-virtual">LineTrace</derivedcompoundref>
+    <derivedcompoundref refid="d2/df0/class_spin" prot="public" virt="non-virtual">Spin</derivedcompoundref>
+    <derivedcompoundref refid="d1/d56/class_straight" prot="public" virt="non-virtual">Straight</derivedcompoundref>
+    <derivedcompoundref refid="d0/d20/class_turning" prot="public" virt="non-virtual">Turning</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="de/d78/class_run_style_1a5dfb21129af182d5e120a023059f3151" prot="protected" static="no" mutable="no">
+        <type><ref refid="d4/d73/class_p_i_d_controller" kindref="compound">PIDController</ref> *</type>
+        <definition>PIDController* RunStyle::pidController</definition>
+        <argsstring></argsstring>
+        <name>pidController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/RunStyle.h" line="17" column="19" bodyfile="RunStyles/RunStyle.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d78/class_run_style_1a0bae5789b759b2f828becea96c48e679" prot="protected" static="no" mutable="no">
+        <type><ref refid="d6/d5a/class_p_i_d" kindref="compound">PID</ref> *</type>
+        <definition>PID* RunStyle::pid</definition>
+        <argsstring></argsstring>
+        <name>pid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/RunStyle.h" line="18" column="9" bodyfile="RunStyles/RunStyle.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/d78/class_run_style_1ac2aef7e8a7618b02c2c83a45b5256a2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RunStyle::RunStyle</definition>
+        <argsstring>()</argsstring>
+        <name>RunStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/RunStyle.h" line="21" column="5" bodyfile="RunStyles/RunStyle.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d78/class_run_style_1a05e6e416432e8ffe700d126e2961d9eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void RunStyle::init</definition>
+        <argsstring>()=0</argsstring>
+        <name>init</name>
+        <reimplementedby refid="d1/d56/class_straight_1abe197ac9ee113c3d428258c6ce88ce88">init</reimplementedby>
+        <reimplementedby refid="d0/d20/class_turning_1a07b5de7cf70ec3764375b795d9ac7218">init</reimplementedby>
+        <reimplementedby refid="d2/df0/class_spin_1af15d64d2a916bf485d8d50f6a19e9395">init</reimplementedby>
+        <reimplementedby refid="da/d1b/class_clothoid_1a356987653ad6fd65ac2ab1b489156967">init</reimplementedby>
+        <reimplementedby refid="da/df3/class_line_trace_1a667a7e8091ad510b768975129257263a">init</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/RunStyle.h" line="22" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d78/class_run_style_1afe583b1acb7f65a3b8e51d2311b821ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int RunStyle::getTurnValue</definition>
+        <argsstring>()=0</argsstring>
+        <name>getTurnValue</name>
+        <reimplementedby refid="d1/d56/class_straight_1a45e4138ccb429eed0086d15a4aa0669c">getTurnValue</reimplementedby>
+        <reimplementedby refid="d0/d20/class_turning_1afb7e350992d50af6a000ece564b6e71b">getTurnValue</reimplementedby>
+        <reimplementedby refid="d2/df0/class_spin_1a275329c1ce3f0d6cf09c252dcc631cd3">getTurnValue</reimplementedby>
+        <reimplementedby refid="da/d1b/class_clothoid_1ad07e7de1f8119f604dee888f403b18b1">getTurnValue</reimplementedby>
+        <reimplementedby refid="da/df3/class_line_trace_1a96b8de743d2c4b20c623e23a8062fde2">getTurnValue</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/RunStyle.h" line="23" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d78/class_run_style_1a17bc88d4beb9afc2700da9d99b54d3eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RunStyle::~RunStyle</definition>
+        <argsstring>()</argsstring>
+        <name>~RunStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/RunStyle.h" line="24" column="13" bodyfile="RunStyles/RunStyle.cpp" bodystart="8" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>Spin</label>
+        <link refid="d2/df0/class_spin"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RunStyle</label>
+        <link refid="de/d78/class_run_style"/>
+      </node>
+      <node id="5">
+        <label>Straight</label>
+        <link refid="d1/d56/class_straight"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Clothoid</label>
+        <link refid="da/d1b/class_clothoid"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Turning</label>
+        <link refid="d0/d20/class_turning"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>LineTrace</label>
+        <link refid="da/df3/class_line_trace"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>PID</label>
+        <link refid="d6/d5a/class_p_i_d"/>
+      </node>
+      <node id="1">
+        <label>RunStyle</label>
+        <link refid="de/d78/class_run_style"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>pid</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pidController</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>PIDController</label>
+        <link refid="d4/d73/class_p_i_d_controller"/>
+      </node>
+    </collaborationgraph>
+    <location file="RunStyles/RunStyle.h" line="13" column="1" bodyfile="RunStyles/RunStyle.h" bodystart="14" bodyend="25"/>
+    <listofallmembers>
+      <member refid="de/d78/class_run_style_1afe583b1acb7f65a3b8e51d2311b821ef" prot="public" virt="pure-virtual"><scope>RunStyle</scope><name>getTurnValue</name></member>
+      <member refid="de/d78/class_run_style_1a05e6e416432e8ffe700d126e2961d9eb" prot="public" virt="pure-virtual"><scope>RunStyle</scope><name>init</name></member>
+      <member refid="de/d78/class_run_style_1a0bae5789b759b2f828becea96c48e679" prot="protected" virt="non-virtual"><scope>RunStyle</scope><name>pid</name></member>
+      <member refid="de/d78/class_run_style_1a5dfb21129af182d5e120a023059f3151" prot="protected" virt="non-virtual"><scope>RunStyle</scope><name>pidController</name></member>
+      <member refid="de/d78/class_run_style_1ac2aef7e8a7618b02c2c83a45b5256a2c" prot="public" virt="non-virtual"><scope>RunStyle</scope><name>RunStyle</name></member>
+      <member refid="de/d78/class_run_style_1a17bc88d4beb9afc2700da9d99b54d3eb" prot="public" virt="virtual"><scope>RunStyle</scope><name>~RunStyle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
