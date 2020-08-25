@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d7/d17/class_run_commander" kind="class" language="C++" prot="public">
+    <compoundname>RunCommander</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d7/d17/class_run_commander_1ad1fb5edc94edff58b5fe6ef386e7cf3d" prot="private" static="no" mutable="no">
+        <type><ref refid="d5/d8e/class_wheel_motor_driver" kindref="compound">WheelMotorDriver</ref> *</type>
+        <definition>WheelMotorDriver* RunCommander::leftMotor</definition>
+        <argsstring></argsstring>
+        <name>leftMotor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="14" column="22" bodyfile="RunMethods/Commanders/RunCommander.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d17/class_run_commander_1aba41f7b6d8ba37badb55bdcf0657744e" prot="private" static="no" mutable="no">
+        <type><ref refid="d5/d8e/class_wheel_motor_driver" kindref="compound">WheelMotorDriver</ref> *</type>
+        <definition>WheelMotorDriver* RunCommander::rightMotor</definition>
+        <argsstring></argsstring>
+        <name>rightMotor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="15" column="22" bodyfile="RunMethods/Commanders/RunCommander.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d17/class_run_commander_1a66159dfa25fd35f13bb2778eaf358192" prot="private" static="no" mutable="no">
+        <type>Steering *</type>
+        <definition>Steering* RunCommander::steering</definition>
+        <argsstring></argsstring>
+        <name>steering</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="16" column="14" bodyfile="RunMethods/Commanders/RunCommander.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d17/class_run_commander_1a63da4c6d6e090a393c31bedb88be6c4b" prot="private" static="no" mutable="no">
+        <type><ref refid="da/d74/class_grid" kindref="compound">Grid</ref> *</type>
+        <definition>Grid* RunCommander::grid</definition>
+        <argsstring></argsstring>
+        <name>grid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="17" column="10" bodyfile="RunMethods/Commanders/RunCommander.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d7/d17/class_run_commander_1ab9869adfc2afdab1adbf259f24dc27d5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RunCommander::grid_flag</definition>
+        <argsstring></argsstring>
+        <name>grid_flag</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="55" column="9" bodyfile="RunMethods/Commanders/RunCommander.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d17/class_run_commander_1aabf86aa129fc4f2928052ba4895d4000" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float RunCommander::grid_direction</definition>
+        <argsstring></argsstring>
+        <name>grid_direction</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="56" column="11" bodyfile="RunMethods/Commanders/RunCommander.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d17/class_run_commander_1a692cb16e6fe313fba7e660d19d76a9fa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float RunCommander::grid_distance</definition>
+        <argsstring></argsstring>
+        <name>grid_distance</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="57" column="11" bodyfile="RunMethods/Commanders/RunCommander.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d7/d17/class_run_commander_1a1980d5ce61132944212abf7489a19c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RunCommander::RunCommander</definition>
+        <argsstring>()</argsstring>
+        <name>RunCommander</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="20" column="5" bodyfile="RunMethods/Commanders/RunCommander.cpp" bodystart="3" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d17/class_run_commander_1a7456cc0e3ed2763e1c0c3693ce8206a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RunCommander::steer</definition>
+        <argsstring>(int power, int turn)</argsstring>
+        <name>steer</name>
+        <param>
+          <type>int</type>
+          <declname>power</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>turn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>steer - ステアリング走行をする turnが+25である場合、左モータのパワーは power で，右モータのパワーは power の75になり、 車体は右へ転回する</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{int</parametername>
+<parametername>int}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>power モータのパワー [-100..+100] マイナスの値は後退 turn ステアリングの度合い [-100..100] マイナスの値は左への転回、プラスの値は右への転回 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="29" column="10" bodyfile="RunMethods/Commanders/RunCommander.cpp" bodystart="18" bodyend="21"/>
+        <referencedby refid="dc/de3/class_run_pattern_1a02ea3232be2946cbca87bc1f74a7beab" compoundref="d3/d35/_run_pattern_8cpp" startline="135" endline="173">RunPattern::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d7/d17/class_run_commander_1af8b87fd45e35cd8122371de8332b1826" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RunCommander::steerStop</definition>
+        <argsstring>()</argsstring>
+        <name>steerStop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>steerStop - ステアリング走行を止める</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="37" column="10" bodyfile="RunMethods/Commanders/RunCommander.cpp" bodystart="23" bodyend="27"/>
+        <references refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" compoundref="da/daa/_wheel_motor_driver_8cpp" startline="25" endline="28">WheelMotorDriver::controlMotor</references>
+        <referencedby refid="dc/de3/class_run_pattern_1a02ea3232be2946cbca87bc1f74a7beab" compoundref="d3/d35/_run_pattern_8cpp" startline="135" endline="173">RunPattern::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d7/d17/class_run_commander_1a46bf3c2b53274301f9904e12e006215a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RunCommander::run</definition>
+        <argsstring>(int pwmL, int pwmR)</argsstring>
+        <name>run</name>
+        <param>
+          <type>int</type>
+          <declname>pwmL</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pwmR</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>run - 左右モータを動かす</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{int</parametername>
+<parametername>int}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pwmL 左モータのPWM, pwmR 右モータのPWM </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="45" column="10" bodyfile="RunMethods/Commanders/RunCommander.cpp" bodystart="29" bodyend="33"/>
+        <references refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" compoundref="da/daa/_wheel_motor_driver_8cpp" startline="25" endline="28">WheelMotorDriver::controlMotor</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d17/class_run_commander_1a6289e38fcc8788c6894bc1eba273bbbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RunCommander::gridRun</definition>
+        <argsstring>(int aX, int aY, int bX, int bY, int pwm, float direction, float distance)</argsstring>
+        <name>gridRun</name>
+        <param>
+          <type>int</type>
+          <declname>aX</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>aY</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bX</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bY</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pwm</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>distance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>gridRun - 目標の座標まで移動する</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aX</parametername>
+<parametername>aY(現在座標)</parametername>
+<parametername>bX</parametername>
+<parametername>bY(目標座標)</parametername>
+<parametername>方向、距離</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="53" column="10" bodyfile="RunMethods/Commanders/RunCommander.cpp" bodystart="35" bodyend="84"/>
+        <references refid="d5/d8e/class_wheel_motor_driver_1a4de4f27c0b7d40e0d796fe3925049f1c" compoundref="da/daa/_wheel_motor_driver_8cpp" startline="25" endline="28">WheelMotorDriver::controlMotor</references>
+      </memberdef>
+      <memberdef kind="function" id="d7/d17/class_run_commander_1a6b6c9a482ad5ceb9c870e18f1faa63d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RunCommander::~RunCommander</definition>
+        <argsstring>()</argsstring>
+        <name>~RunCommander</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Commanders/RunCommander.h" line="59" column="13" bodyfile="RunMethods/Commanders/RunCommander.cpp" bodystart="11" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="RunMethods/Commanders/RunCommander.h" line="10" column="1" bodyfile="RunMethods/Commanders/RunCommander.h" bodystart="11" bodyend="60"/>
+    <listofallmembers>
+      <member refid="d7/d17/class_run_commander_1a63da4c6d6e090a393c31bedb88be6c4b" prot="private" virt="non-virtual"><scope>RunCommander</scope><name>grid</name></member>
+      <member refid="d7/d17/class_run_commander_1aabf86aa129fc4f2928052ba4895d4000" prot="public" virt="non-virtual"><scope>RunCommander</scope><name>grid_direction</name></member>
+      <member refid="d7/d17/class_run_commander_1a692cb16e6fe313fba7e660d19d76a9fa" prot="public" virt="non-virtual"><scope>RunCommander</scope><name>grid_distance</name></member>
+      <member refid="d7/d17/class_run_commander_1ab9869adfc2afdab1adbf259f24dc27d5" prot="public" virt="non-virtual"><scope>RunCommander</scope><name>grid_flag</name></member>
+      <member refid="d7/d17/class_run_commander_1a6289e38fcc8788c6894bc1eba273bbbb" prot="public" virt="non-virtual"><scope>RunCommander</scope><name>gridRun</name></member>
+      <member refid="d7/d17/class_run_commander_1ad1fb5edc94edff58b5fe6ef386e7cf3d" prot="private" virt="non-virtual"><scope>RunCommander</scope><name>leftMotor</name></member>
+      <member refid="d7/d17/class_run_commander_1aba41f7b6d8ba37badb55bdcf0657744e" prot="private" virt="non-virtual"><scope>RunCommander</scope><name>rightMotor</name></member>
+      <member refid="d7/d17/class_run_commander_1a46bf3c2b53274301f9904e12e006215a" prot="public" virt="non-virtual"><scope>RunCommander</scope><name>run</name></member>
+      <member refid="d7/d17/class_run_commander_1a1980d5ce61132944212abf7489a19c1a" prot="public" virt="non-virtual"><scope>RunCommander</scope><name>RunCommander</name></member>
+      <member refid="d7/d17/class_run_commander_1a7456cc0e3ed2763e1c0c3693ce8206a9" prot="public" virt="non-virtual"><scope>RunCommander</scope><name>steer</name></member>
+      <member refid="d7/d17/class_run_commander_1a66159dfa25fd35f13bb2778eaf358192" prot="private" virt="non-virtual"><scope>RunCommander</scope><name>steering</name></member>
+      <member refid="d7/d17/class_run_commander_1af8b87fd45e35cd8122371de8332b1826" prot="public" virt="non-virtual"><scope>RunCommander</scope><name>steerStop</name></member>
+      <member refid="d7/d17/class_run_commander_1a6b6c9a482ad5ceb9c870e18f1faa63d5" prot="public" virt="virtual"><scope>RunCommander</scope><name>~RunCommander</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

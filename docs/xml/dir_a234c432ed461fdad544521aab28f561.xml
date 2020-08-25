@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dir_a234c432ed461fdad544521aab28f561" kind="dir">
+    <compoundname>RunMethods/Status</compoundname>
+    <innerfile refid="d6/d7f/_course_8h">Course.h</innerfile>
+    <innerfile refid="de/d36/_course_run_8cpp">CourseRun.cpp</innerfile>
+    <innerfile refid="d3/d8e/_course_run_8h">CourseRun.h</innerfile>
+    <innerfile refid="dd/d34/_parking_8cpp">Parking.cpp</innerfile>
+    <innerfile refid="d8/daa/_parking_8h">Parking.h</innerfile>
+    <innerfile refid="d9/dc9/_run_status_8cpp">RunStatus.cpp</innerfile>
+    <innerfile refid="de/d6b/_run_status_8h">RunStatus.h</innerfile>
+    <innerfile refid="d0/d32/_sample_course_run_8cpp">SampleCourseRun.cpp</innerfile>
+    <innerfile refid="db/d28/_sample_course_run_8h">SampleCourseRun.h</innerfile>
+    <innerfile refid="dd/d37/_stop_8cpp">Stop.cpp</innerfile>
+    <innerfile refid="d2/d49/_stop_8h">Stop.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="RunMethods/Status/"/>
+  </compounddef>
+</doxygen>

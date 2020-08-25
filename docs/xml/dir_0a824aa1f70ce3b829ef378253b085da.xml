@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dir_0a824aa1f70ce3b829ef378253b085da" kind="dir">
+    <compoundname>Utils</compoundname>
+    <innerfile refid="d0/dc1/_filter_8cpp">Filter.cpp</innerfile>
+    <innerfile refid="da/d2d/_filter_8h">Filter.h</innerfile>
+    <innerfile refid="de/d27/_logger_8cpp">Logger.cpp</innerfile>
+    <innerfile refid="d6/dec/_logger_8h">Logger.h</innerfile>
+    <innerfile refid="d2/d66/_p_i_d_8cpp">PID.cpp</innerfile>
+    <innerfile refid="d7/d92/_p_i_d_8h">PID.h</innerfile>
+    <innerfile refid="db/d0b/_p_i_d_controller_8cpp">PIDController.cpp</innerfile>
+    <innerfile refid="d5/df9/_p_i_d_controller_8h">PIDController.h</innerfile>
+    <innerfile refid="d9/dba/_singleton_8cpp">Singleton.cpp</innerfile>
+    <innerfile refid="de/dec/_singleton_8h">Singleton.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Utils/"/>
+  </compounddef>
+</doxygen>

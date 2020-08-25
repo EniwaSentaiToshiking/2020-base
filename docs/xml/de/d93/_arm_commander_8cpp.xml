@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="de/d93/_arm_commander_8cpp" kind="file" language="C++">
+    <compoundname>ArmCommander.cpp</compoundname>
+    <includes refid="d8/d01/_arm_commander_8h" local="yes">ArmCommander.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>Clock.h</label>
+      </node>
+      <node id="1">
+        <label>RunMethods/Commanders/ArmCommander.cpp</label>
+        <link refid="de/d93/_arm_commander_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ArmCommander.h</label>
+        <link refid="d8/d01/_arm_commander_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ArmMotorDriver.h</label>
+        <link refid="d9/d65/_arm_motor_driver_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Motor.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;ArmCommander.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">ArmCommander::ArmCommander()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>motor<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="d8/dae/class_arm_motor_driver" kindref="compound">ArmMotorDriver</ref>();</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">ArmCommander::~ArmCommander()</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>motor;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="dd/d7f/class_arm_commander_1ab9bfae02bd27fe18af6c255589cd573f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d7f/class_arm_commander_1ab9bfae02bd27fe18af6c255589cd573f" kindref="member">ArmCommander::rotate</ref>(int32_t<sp/>angle)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>motor-&gt;<ref refid="d8/dae/class_arm_motor_driver_1aec3cd22dc41163b873fc63ca1d0cd9d3" kindref="member">rotate</ref>(angle);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="dd/d7f/class_arm_commander_1a4cb31e855ea6bc8144962e3807be99be" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d7f/class_arm_commander_1a4cb31e855ea6bc8144962e3807be99be" kindref="member">ArmCommander::rotateDefault</ref>()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>motor-&gt;<ref refid="d8/dae/class_arm_motor_driver_1af10c0b0e78baa2ae8d0cd0f9c7d70dfe" kindref="member">rotateDefault</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="dd/d7f/class_arm_commander_1a744eece43e9a3144779e43e080e98e17" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="dd/d7f/class_arm_commander_1a744eece43e9a3144779e43e080e98e17" kindref="member">ArmCommander::reset</ref>()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>motor-&gt;<ref refid="d8/dae/class_arm_motor_driver_1a9670fbb6f1365f67a887531f65fdcd9e" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="RunMethods/Commanders/ArmCommander.cpp"/>
+  </compounddef>
+</doxygen>

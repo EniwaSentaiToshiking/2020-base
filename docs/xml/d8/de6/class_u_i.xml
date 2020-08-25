@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d8/de6/class_u_i" kind="class" language="C++" prot="public">
+    <compoundname>UI</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d8/de6/class_u_i_1a3c66a85d079c6cda0e6b642ff928fca0" prot="private" static="no" mutable="no">
+        <type><ref refid="da/d73/class_touch_sensor_driver" kindref="compound">TouchSensorDriver</ref> *</type>
+        <definition>TouchSensorDriver* UI::touchSensor</definition>
+        <argsstring></argsstring>
+        <name>touchSensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UI/UI.h" line="16" column="23" bodyfile="UI/UI.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/de6/class_u_i_1a4c8f50ff4d29c53f2dfab05b6a4c8fdd" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int UI::drawRowCount</definition>
+        <argsstring></argsstring>
+        <name>drawRowCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UI/UI.h" line="17" column="9" bodyfile="UI/UI.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d8/de6/class_u_i_1a982198fc714d3da551e4ce8c64e2d57f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UI::initLCD</definition>
+        <argsstring>()</argsstring>
+        <name>initLCD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UI/UI.h" line="19" column="10" bodyfile="UI/UI.cpp" bodystart="19" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/de6/class_u_i_1a675985a56b5e87ebdc8e5884b9f2ee09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UI::UI</definition>
+        <argsstring>()</argsstring>
+        <name>UI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UI/UI.h" line="22" column="5" bodyfile="UI/UI.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/de6/class_u_i_1abb8bea9c7b2fd4e520dc37dcfb7b60df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool UI::isTouched</definition>
+        <argsstring>(void)</argsstring>
+        <name>isTouched</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>isTouched - タッチセンサ押下検知</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{bool} true 押された, false 押されていない </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UI/UI.h" line="30" column="10" bodyfile="UI/UI.cpp" bodystart="14" bodyend="17"/>
+        <references refid="da/d73/class_touch_sensor_driver_1ae566b84ca01a94828e154c8469270cf0" compoundref="db/d5e/_touch_sensor_driver_8cpp" startline="13" endline="16">TouchSensorDriver::isPressed</references>
+      </memberdef>
+      <memberdef kind="function" id="d8/de6/class_u_i_1ab90d7908da6bb9fe6d552534818d6843" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UI::drawStringOnLCD</definition>
+        <argsstring>(const char *string)</argsstring>
+        <name>drawStringOnLCD</name>
+        <param>
+          <type>const char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>drawStringOnLCD - LCDに文字を描画</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>char *string} *string 表示する文字列 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{bool} true 押された, false 押されていない </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UI/UI.h" line="38" column="10" bodyfile="UI/UI.cpp" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/de6/class_u_i_1a1b23d0c64c7cbb3d143d90ec532a7ccd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>UI::~UI</definition>
+        <argsstring>()</argsstring>
+        <name>~UI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UI/UI.h" line="39" column="13" bodyfile="UI/UI.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="UI/UI.h" line="12" column="1" bodyfile="UI/UI.h" bodystart="13" bodyend="40"/>
+    <listofallmembers>
+      <member refid="d8/de6/class_u_i_1a4c8f50ff4d29c53f2dfab05b6a4c8fdd" prot="private" virt="non-virtual"><scope>UI</scope><name>drawRowCount</name></member>
+      <member refid="d8/de6/class_u_i_1ab90d7908da6bb9fe6d552534818d6843" prot="public" virt="non-virtual"><scope>UI</scope><name>drawStringOnLCD</name></member>
+      <member refid="d8/de6/class_u_i_1a982198fc714d3da551e4ce8c64e2d57f" prot="private" virt="non-virtual"><scope>UI</scope><name>initLCD</name></member>
+      <member refid="d8/de6/class_u_i_1abb8bea9c7b2fd4e520dc37dcfb7b60df" prot="public" virt="non-virtual"><scope>UI</scope><name>isTouched</name></member>
+      <member refid="d8/de6/class_u_i_1a3c66a85d079c6cda0e6b642ff928fca0" prot="private" virt="non-virtual"><scope>UI</scope><name>touchSensor</name></member>
+      <member refid="d8/de6/class_u_i_1a675985a56b5e87ebdc8e5884b9f2ee09" prot="public" virt="non-virtual"><scope>UI</scope><name>UI</name></member>
+      <member refid="d8/de6/class_u_i_1a1b23d0c64c7cbb3d143d90ec532a7ccd" prot="public" virt="virtual"><scope>UI</scope><name>~UI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

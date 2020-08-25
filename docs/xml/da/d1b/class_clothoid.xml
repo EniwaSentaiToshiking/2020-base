@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="da/d1b/class_clothoid" kind="class" language="C++" prot="public">
+    <compoundname>Clothoid</compoundname>
+    <basecompoundref refid="de/d78/class_run_style" prot="public" virt="non-virtual">RunStyle</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="da/d1b/class_clothoid_1afb2ad8fa0d9c6a2a9c2a15b9a54a3531" prot="private" static="no" mutable="no">
+        <type><ref refid="d9/dbb/class_wheel_info" kindref="compound">WheelInfo</ref> *</type>
+        <definition>WheelInfo* Clothoid::wheelInfo</definition>
+        <argsstring></argsstring>
+        <name>wheelInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Clothoid.h" line="11" column="15" bodyfile="RunStyles/Clothoid.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d1b/class_clothoid_1adc09ee025d62bee4e31ceb2f40e296b5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Clothoid::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Clothoid.h" line="12" column="9" bodyfile="RunStyles/Clothoid.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d1b/class_clothoid_1a82cf7327805996fcfdda40fd5524840b" prot="private" static="no" mutable="no">
+        <type>int32_t *</type>
+        <definition>int32_t* Clothoid::beginCount</definition>
+        <argsstring></argsstring>
+        <name>beginCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Clothoid.h" line="13" column="13" bodyfile="RunStyles/Clothoid.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d1b/class_clothoid_1a9c74f39d748e2393fc5960ea5c51c7ba" prot="private" static="no" mutable="no">
+        <type>TurningDirection</type>
+        <definition>TurningDirection Clothoid::direction</definition>
+        <argsstring></argsstring>
+        <name>direction</name>
+        <initializer>= DIRECTION_LEFT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Clothoid.h" line="14" column="22" bodyfile="RunStyles/Clothoid.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d1b/class_clothoid_1a30dca7624788a8884309dd40bcc5ab1d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Clothoid::turn</definition>
+        <argsstring></argsstring>
+        <name>turn</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Clothoid.h" line="15" column="9" bodyfile="RunStyles/Clothoid.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d1b/class_clothoid_1a5edc56c2963c2fc9a442c8e291a9970c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Clothoid::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Clothoid.h" line="16" column="9" bodyfile="RunStyles/Clothoid.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/d1b/class_clothoid_1a5559d287f2206835d7e58790a2ce6eaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Clothoid::Clothoid</definition>
+        <argsstring>(TurningDirection direction, int speed)</argsstring>
+        <name>Clothoid</name>
+        <param>
+          <type>TurningDirection</type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Clothoid.h" line="19" column="5" bodyfile="RunStyles/Clothoid.cpp" bodystart="3" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d1b/class_clothoid_1a356987653ad6fd65ac2ab1b489156967" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Clothoid::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="de/d78/class_run_style_1a05e6e416432e8ffe700d126e2961d9eb">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Clothoid.h" line="20" column="10" bodyfile="RunStyles/Clothoid.cpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d1b/class_clothoid_1ad07e7de1f8119f604dee888f403b18b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int Clothoid::getTurnValue</definition>
+        <argsstring>()</argsstring>
+        <name>getTurnValue</name>
+        <reimplements refid="de/d78/class_run_style_1afe583b1acb7f65a3b8e51d2311b821ef">getTurnValue</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Clothoid.h" line="21" column="9" bodyfile="RunStyles/Clothoid.cpp" bodystart="21" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d1b/class_clothoid_1ae5a67a0c14ed9b26eb882340a1b92f7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Clothoid::~Clothoid</definition>
+        <argsstring>()</argsstring>
+        <name>~Clothoid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Clothoid.h" line="22" column="13" bodyfile="RunStyles/Clothoid.cpp" bodystart="12" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>RunStyle</label>
+        <link refid="de/d78/class_run_style"/>
+      </node>
+      <node id="1">
+        <label>Clothoid</label>
+        <link refid="da/d1b/class_clothoid"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>PID</label>
+        <link refid="d6/d5a/class_p_i_d"/>
+      </node>
+      <node id="2">
+        <label>RunStyle</label>
+        <link refid="de/d78/class_run_style"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pid</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>pidController</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Clothoid</label>
+        <link refid="da/d1b/class_clothoid"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>PIDController</label>
+        <link refid="d4/d73/class_p_i_d_controller"/>
+      </node>
+    </collaborationgraph>
+    <location file="RunStyles/Clothoid.h" line="7" column="1" bodyfile="RunStyles/Clothoid.h" bodystart="8" bodyend="23"/>
+    <listofallmembers>
+      <member refid="da/d1b/class_clothoid_1a82cf7327805996fcfdda40fd5524840b" prot="private" virt="non-virtual"><scope>Clothoid</scope><name>beginCount</name></member>
+      <member refid="da/d1b/class_clothoid_1a5559d287f2206835d7e58790a2ce6eaf" prot="public" virt="non-virtual"><scope>Clothoid</scope><name>Clothoid</name></member>
+      <member refid="da/d1b/class_clothoid_1a5edc56c2963c2fc9a442c8e291a9970c" prot="private" virt="non-virtual"><scope>Clothoid</scope><name>count</name></member>
+      <member refid="da/d1b/class_clothoid_1a9c74f39d748e2393fc5960ea5c51c7ba" prot="private" virt="non-virtual"><scope>Clothoid</scope><name>direction</name></member>
+      <member refid="da/d1b/class_clothoid_1ad07e7de1f8119f604dee888f403b18b1" prot="public" virt="virtual"><scope>Clothoid</scope><name>getTurnValue</name></member>
+      <member refid="da/d1b/class_clothoid_1a356987653ad6fd65ac2ab1b489156967" prot="public" virt="virtual"><scope>Clothoid</scope><name>init</name></member>
+      <member refid="de/d78/class_run_style_1a0bae5789b759b2f828becea96c48e679" prot="protected" virt="non-virtual"><scope>Clothoid</scope><name>pid</name></member>
+      <member refid="de/d78/class_run_style_1a5dfb21129af182d5e120a023059f3151" prot="protected" virt="non-virtual"><scope>Clothoid</scope><name>pidController</name></member>
+      <member refid="de/d78/class_run_style_1ac2aef7e8a7618b02c2c83a45b5256a2c" prot="public" virt="non-virtual"><scope>Clothoid</scope><name>RunStyle</name></member>
+      <member refid="da/d1b/class_clothoid_1adc09ee025d62bee4e31ceb2f40e296b5" prot="private" virt="non-virtual"><scope>Clothoid</scope><name>speed</name></member>
+      <member refid="da/d1b/class_clothoid_1a30dca7624788a8884309dd40bcc5ab1d" prot="private" virt="non-virtual"><scope>Clothoid</scope><name>turn</name></member>
+      <member refid="da/d1b/class_clothoid_1afb2ad8fa0d9c6a2a9c2a15b9a54a3531" prot="private" virt="non-virtual"><scope>Clothoid</scope><name>wheelInfo</name></member>
+      <member refid="da/d1b/class_clothoid_1ae5a67a0c14ed9b26eb882340a1b92f7d" prot="public" virt="virtual"><scope>Clothoid</scope><name>~Clothoid</name></member>
+      <member refid="de/d78/class_run_style_1a17bc88d4beb9afc2700da9d99b54d3eb" prot="public" virt="virtual"><scope>Clothoid</scope><name>~RunStyle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="da/d74/class_grid" kind="class" language="C++" prot="public">
+    <compoundname>Grid</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="da/d74/class_grid_1ab104153a4d830482470f27eabd37d0f6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Grid::grid_distance</definition>
+        <argsstring></argsstring>
+        <name>grid_distance</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Grid.h" line="19" column="7" bodyfile="RunStyles/Grid.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d74/class_grid_1afa728126ad22f76478a05e02a1dcda51" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Grid::grid_direction</definition>
+        <argsstring></argsstring>
+        <name>grid_direction</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Grid.h" line="20" column="7" bodyfile="RunStyles/Grid.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d74/class_grid_1a3ce550247877a856cc2b45cdc430909a" prot="public" static="no" mutable="no">
+        <type>RUN_STATE</type>
+        <definition>RUN_STATE Grid::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <initializer>= TURN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Grid.h" line="21" column="11" bodyfile="RunStyles/Grid.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/d74/class_grid_1a4ac9ff4f63552b4c61ff90fcb35ad66c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Grid::Grid</definition>
+        <argsstring>()</argsstring>
+        <name>Grid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Grid.h" line="17" column="1" bodyfile="RunStyles/Grid.cpp" bodystart="3" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d74/class_grid_1a928d54e68762b4a58714fa7278570c94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Grid::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Grid.h" line="23" column="6" bodyfile="RunStyles/Grid.cpp" bodystart="12" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d74/class_grid_1aa918de66f674160ca1be8de9c1b56d37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Grid::getDistance</definition>
+        <argsstring>(int aX, int aY, int bX, int bY)</argsstring>
+        <name>getDistance</name>
+        <param>
+          <type>int</type>
+          <declname>aX</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>aY</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bX</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Grid.h" line="26" column="7" bodyfile="RunStyles/Grid.cpp" bodystart="19" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d74/class_grid_1a6b8f09e6591ab9a083acfa6347a06712" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Grid::getDirection</definition>
+        <argsstring>(int aX, int aY, int bX, int bY)</argsstring>
+        <name>getDirection</name>
+        <param>
+          <type>int</type>
+          <declname>aX</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>aY</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bX</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Grid.h" line="29" column="7" bodyfile="RunStyles/Grid.cpp" bodystart="26" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d74/class_grid_1a3661d0a7f998caaaf8627d7a67072116" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Grid::~Grid</definition>
+        <argsstring>()</argsstring>
+        <name>~Grid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Grid.h" line="31" column="9" bodyfile="RunStyles/Grid.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="RunStyles/Grid.h" line="13" column="1" bodyfile="RunStyles/Grid.h" bodystart="14" bodyend="32"/>
+    <listofallmembers>
+      <member refid="da/d74/class_grid_1a6b8f09e6591ab9a083acfa6347a06712" prot="public" virt="non-virtual"><scope>Grid</scope><name>getDirection</name></member>
+      <member refid="da/d74/class_grid_1aa918de66f674160ca1be8de9c1b56d37" prot="public" virt="non-virtual"><scope>Grid</scope><name>getDistance</name></member>
+      <member refid="da/d74/class_grid_1a4ac9ff4f63552b4c61ff90fcb35ad66c" prot="public" virt="non-virtual"><scope>Grid</scope><name>Grid</name></member>
+      <member refid="da/d74/class_grid_1afa728126ad22f76478a05e02a1dcda51" prot="public" virt="non-virtual"><scope>Grid</scope><name>grid_direction</name></member>
+      <member refid="da/d74/class_grid_1ab104153a4d830482470f27eabd37d0f6" prot="public" virt="non-virtual"><scope>Grid</scope><name>grid_distance</name></member>
+      <member refid="da/d74/class_grid_1a928d54e68762b4a58714fa7278570c94" prot="public" virt="non-virtual"><scope>Grid</scope><name>init</name></member>
+      <member refid="da/d74/class_grid_1a3ce550247877a856cc2b45cdc430909a" prot="public" virt="non-virtual"><scope>Grid</scope><name>state</name></member>
+      <member refid="da/d74/class_grid_1a3661d0a7f998caaaf8627d7a67072116" prot="public" virt="virtual"><scope>Grid</scope><name>~Grid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

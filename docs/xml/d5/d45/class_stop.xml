@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d5/d45/class_stop" kind="class" language="C++" prot="public">
+    <compoundname>Stop</compoundname>
+    <basecompoundref refid="d3/dca/class_run_status" prot="public" virt="non-virtual">RunStatus</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/d45/class_stop_1ab8870f949c69cda03c4055524ed13c31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Stop::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/Stop.h" line="10" column="3" bodyfile="RunMethods/Status/Stop.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d45/class_stop_1aab399112820d6455db503b132be321ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Stop::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d3/dca/class_run_status_1aeb1bcfe6c4221def8e123d0682a48989">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>init - 走行前の初期設定</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/Stop.h" line="11" column="8" bodyfile="RunMethods/Status/Stop.h" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d45/class_stop_1aeb9316a8623fa3f665312bcfeed887da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Stop::setNextState</definition>
+        <argsstring>()</argsstring>
+        <name>setNextState</name>
+        <reimplements refid="d3/dca/class_run_status_1a690c67ad8d6568ede9fd90be9377bf22">setNextState</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/Stop.h" line="12" column="8" bodyfile="RunMethods/Status/Stop.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d45/class_stop_1af90c4947669fbdbe632accbf1ef7df49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Stop::~Stop</definition>
+        <argsstring>()</argsstring>
+        <name>~Stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunMethods/Status/Stop.h" line="13" column="11" bodyfile="RunMethods/Status/Stop.h" bodystart="13" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Stop</label>
+        <link refid="d5/d45/class_stop"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RunStatus</label>
+        <link refid="d3/dca/class_run_status"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Stop</label>
+        <link refid="d5/d45/class_stop"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RunStatus</label>
+        <link refid="d3/dca/class_run_status"/>
+      </node>
+    </collaborationgraph>
+    <location file="RunMethods/Status/Stop.h" line="6" column="1" bodyfile="RunMethods/Status/Stop.h" bodystart="7" bodyend="14"/>
+    <listofallmembers>
+      <member refid="d3/dca/class_run_status_1a3ca4bac91c07442f0198f6f3cb3f3463" prot="public" virt="virtual"><scope>Stop</scope><name>changeNextPattern</name></member>
+      <member refid="d3/dca/class_run_status_1a97cd2ab1883cd357be039d17a709c87f" prot="public" virt="virtual"><scope>Stop</scope><name>changeNextStatus</name></member>
+      <member refid="d3/dca/class_run_status_1aa74912d164292be5069b867942254191" prot="protected" virt="non-virtual"><scope>Stop</scope><name>currentPattern</name></member>
+      <member refid="d5/d45/class_stop_1aab399112820d6455db503b132be321ed" prot="public" virt="virtual"><scope>Stop</scope><name>init</name></member>
+      <member refid="d3/dca/class_run_status_1a3ca796ac991f25f73f40f167236dc6d5" prot="protected" virt="non-virtual"><scope>Stop</scope><name>nextState</name></member>
+      <member refid="d3/dca/class_run_status_1a6d2fd7753c66bcdc655f2ce25fe089eb" prot="protected" virt="non-virtual"><scope>Stop</scope><name>patterns</name></member>
+      <member refid="d3/dca/class_run_status_1a7405a17f5abe1a930162680295b71ff3" prot="public" virt="virtual"><scope>Stop</scope><name>run</name></member>
+      <member refid="d5/d45/class_stop_1aeb9316a8623fa3f665312bcfeed887da" prot="public" virt="virtual"><scope>Stop</scope><name>setNextState</name></member>
+      <member refid="d5/d45/class_stop_1ab8870f949c69cda03c4055524ed13c31" prot="public" virt="non-virtual"><scope>Stop</scope><name>Stop</name></member>
+      <member refid="d3/dca/class_run_status_1ac0b3f7c82f317dddced7f41644b6c60e" prot="public" virt="virtual"><scope>Stop</scope><name>~RunStatus</name></member>
+      <member refid="d5/d45/class_stop_1af90c4947669fbdbe632accbf1ef7df49" prot="public" virt="virtual"><scope>Stop</scope><name>~Stop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

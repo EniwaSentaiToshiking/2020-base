@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d9/dbb/class_wheel_info" kind="class" language="C++" prot="public">
+    <compoundname>WheelInfo</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d9/dbb/class_wheel_info_1a5d5a5e91524416ae8ae3a82de13ed0c8" prot="public" static="no" mutable="no">
+        <type>Motor *</type>
+        <definition>Motor* WheelInfo::left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/WheelInfo.h" line="19" column="11" bodyfile="Observer/WheelInfo.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/dbb/class_wheel_info_1aef3b49b2583a093e880788fa048fd67c" prot="public" static="no" mutable="no">
+        <type>Motor *</type>
+        <definition>Motor* WheelInfo::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/WheelInfo.h" line="20" column="11" bodyfile="Observer/WheelInfo.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/dbb/class_wheel_info_1ae7149671061b9c94949b62b6d6f2c4d5" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t WheelInfo::currentCount[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>currentCount</name>
+        <initializer>= {0, 0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/WheelInfo.h" line="21" column="13" bodyfile="Observer/WheelInfo.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/dbb/class_wheel_info_1a6c5d63e79594c47292952ab55332df85" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t WheelInfo::initCount[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>initCount</name>
+        <initializer>= {0, 0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/WheelInfo.h" line="22" column="13" bodyfile="Observer/WheelInfo.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/dbb/class_wheel_info_1ac1b28c2e09803496ef91493601ee59e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WheelInfo::WheelInfo</definition>
+        <argsstring>()</argsstring>
+        <name>WheelInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/WheelInfo.h" line="24" column="5" bodyfile="Observer/WheelInfo.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dbb/class_wheel_info_1a6338ed038198d42da7f4e284c282ac12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WheelInfo::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>reset - モータリセット モータ停止および角位置の0リセット、オフセット初期化を行う <linebreak/>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/WheelInfo.h" line="32" column="10" bodyfile="Observer/WheelInfo.cpp" bodystart="15" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dbb/class_wheel_info_1aee0ce68e2d4ab3f3f03d83178732ec76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t *</type>
+        <definition>int32_t * WheelInfo::getInitCount</definition>
+        <argsstring>()</argsstring>
+        <name>getInitCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/WheelInfo.h" line="34" column="13" bodyfile="Observer/WheelInfo.cpp" bodystart="21" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dbb/class_wheel_info_1a06bdae60c57755d599d82a34930895e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t *</type>
+        <definition>int32_t * WheelInfo::getCount</definition>
+        <argsstring>()</argsstring>
+        <name>getCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getCount - オフセット付き角位置取得</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{int32_t} モータ角位置 [deg] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/WheelInfo.h" line="42" column="13" bodyfile="Observer/WheelInfo.cpp" bodystart="28" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dbb/class_wheel_info_1af0082f158b675cad6bbdc07ad0058591" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>WheelInfo::~WheelInfo</definition>
+        <argsstring>()</argsstring>
+        <name>~WheelInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/WheelInfo.h" line="44" column="13" bodyfile="Observer/WheelInfo.cpp" bodystart="9" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Observer/WheelInfo.h" line="14" column="1" bodyfile="Observer/WheelInfo.h" bodystart="15" bodyend="45"/>
+    <listofallmembers>
+      <member refid="d9/dbb/class_wheel_info_1ae7149671061b9c94949b62b6d6f2c4d5" prot="public" virt="non-virtual"><scope>WheelInfo</scope><name>currentCount</name></member>
+      <member refid="d9/dbb/class_wheel_info_1a06bdae60c57755d599d82a34930895e0" prot="public" virt="non-virtual"><scope>WheelInfo</scope><name>getCount</name></member>
+      <member refid="d9/dbb/class_wheel_info_1aee0ce68e2d4ab3f3f03d83178732ec76" prot="public" virt="non-virtual"><scope>WheelInfo</scope><name>getInitCount</name></member>
+      <member refid="d9/dbb/class_wheel_info_1a6c5d63e79594c47292952ab55332df85" prot="public" virt="non-virtual"><scope>WheelInfo</scope><name>initCount</name></member>
+      <member refid="d9/dbb/class_wheel_info_1a5d5a5e91524416ae8ae3a82de13ed0c8" prot="public" virt="non-virtual"><scope>WheelInfo</scope><name>left</name></member>
+      <member refid="d9/dbb/class_wheel_info_1a6338ed038198d42da7f4e284c282ac12" prot="public" virt="non-virtual"><scope>WheelInfo</scope><name>reset</name></member>
+      <member refid="d9/dbb/class_wheel_info_1aef3b49b2583a093e880788fa048fd67c" prot="public" virt="non-virtual"><scope>WheelInfo</scope><name>right</name></member>
+      <member refid="d9/dbb/class_wheel_info_1ac1b28c2e09803496ef91493601ee59e6" prot="public" virt="non-virtual"><scope>WheelInfo</scope><name>WheelInfo</name></member>
+      <member refid="d9/dbb/class_wheel_info_1af0082f158b675cad6bbdc07ad0058591" prot="public" virt="virtual"><scope>WheelInfo</scope><name>~WheelInfo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d8/dae/class_arm_motor_driver" kind="class" language="C++" prot="public">
+    <compoundname>ArmMotorDriver</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d8/dae/class_arm_motor_driver_1a5b46ebaeaf4b310cb9d3734a9953d78d" prot="private" static="no" mutable="no">
+        <type>Motor *</type>
+        <definition>Motor* ArmMotorDriver::motor</definition>
+        <argsstring></argsstring>
+        <name>motor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="12" column="11" bodyfile="Devices/ArmMotorDriver.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/dae/class_arm_motor_driver_1aa7b05f84faab5f5086910caa506c4a85" prot="private" static="no" mutable="no">
+        <type>Clock *</type>
+        <definition>Clock* ArmMotorDriver::clock</definition>
+        <argsstring></argsstring>
+        <name>clock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="13" column="11" bodyfile="Devices/ArmMotorDriver.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/dae/class_arm_motor_driver_1abd270463af9859dc3cad6fdcdd6a29a6" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmMotorDriver::DEFAULT_ANGLE</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_ANGLE</name>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="14" column="15" bodyfile="Devices/ArmMotorDriver.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/dae/class_arm_motor_driver_1a84c101911aca17b853702be032137e02" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmMotorDriver::KP</definition>
+        <argsstring></argsstring>
+        <name>KP</name>
+        <initializer>= 2.5F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="16" column="15" bodyfile="Devices/ArmMotorDriver.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/dae/class_arm_motor_driver_1a56262dd4b710f2b3ca084af2dbbfbde5" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmMotorDriver::PWM_ABS_MAX</definition>
+        <argsstring></argsstring>
+        <name>PWM_ABS_MAX</name>
+        <initializer>= 60</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="17" column="15" bodyfile="Devices/ArmMotorDriver.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/dae/class_arm_motor_driver_1a9c03dd70cc5b695618a36e590aa87392" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ArmMotorDriver::ArmMotorDriver</definition>
+        <argsstring>()</argsstring>
+        <name>ArmMotorDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="20" column="5" bodyfile="Devices/ArmMotorDriver.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dae/class_arm_motor_driver_1a9670fbb6f1365f67a887531f65fdcd9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmMotorDriver::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>reset - モータリセット モータ停止および角位置の0リセット、オフセット初期化を行う <linebreak/>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="28" column="10" bodyfile="Devices/ArmMotorDriver.cpp" bodystart="14" bodyend="17"/>
+        <referencedby refid="dd/d7f/class_arm_commander_1a744eece43e9a3144779e43e080e98e17" compoundref="de/d93/_arm_commander_8cpp" startline="23" endline="26">ArmCommander::reset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/dae/class_arm_motor_driver_1a9440db2a866243382842bf32da598416" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmMotorDriver::calibration</definition>
+        <argsstring>()</argsstring>
+        <name>calibration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="29" column="10" bodyfile="Devices/ArmMotorDriver.cpp" bodystart="29" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dae/class_arm_motor_driver_1acc9d69476c8786d957882ad6254012fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t ArmMotorDriver::getCount</definition>
+        <argsstring>()</argsstring>
+        <name>getCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getCount - オフセット付き角位置取得</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{int32_t} モータ角位置 [deg] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="37" column="13" bodyfile="Devices/ArmMotorDriver.cpp" bodystart="19" bodyend="22"/>
+        <referencedby refid="d8/dae/class_arm_motor_driver_1aec3cd22dc41163b873fc63ca1d0cd9d3" compoundref="dd/db6/_arm_motor_driver_8cpp" startline="42" endline="56">rotate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/dae/class_arm_motor_driver_1ad55fd5e911a8fd93145084c05a756b90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmMotorDriver::setPWM</definition>
+        <argsstring>(int pwm)</argsstring>
+        <name>setPWM</name>
+        <param>
+          <type>int</type>
+          <declname>pwm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="39" column="10" bodyfile="Devices/ArmMotorDriver.cpp" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/dae/class_arm_motor_driver_1aec3cd22dc41163b873fc63ca1d0cd9d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmMotorDriver::rotate</definition>
+        <argsstring>(int32_t angle)</argsstring>
+        <name>rotate</name>
+        <param>
+          <type>int32_t</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>rotate - 腕を動かす</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{int32_t}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>angle 角度 [deg] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="47" column="10" bodyfile="Devices/ArmMotorDriver.cpp" bodystart="42" bodyend="56"/>
+        <references refid="d8/dae/class_arm_motor_driver_1acc9d69476c8786d957882ad6254012fa" compoundref="dd/db6/_arm_motor_driver_8cpp" startline="19" endline="22">getCount</references>
+        <referencedby refid="d8/dae/class_arm_motor_driver_1af10c0b0e78baa2ae8d0cd0f9c7d70dfe" compoundref="dd/db6/_arm_motor_driver_8cpp" startline="58" endline="61">rotateDefault</referencedby>
+        <referencedby refid="dd/d7f/class_arm_commander_1ab9bfae02bd27fe18af6c255589cd573f" compoundref="de/d93/_arm_commander_8cpp" startline="13" endline="16">ArmCommander::rotate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/dae/class_arm_motor_driver_1af10c0b0e78baa2ae8d0cd0f9c7d70dfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmMotorDriver::rotateDefault</definition>
+        <argsstring>()</argsstring>
+        <name>rotateDefault</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>rotateDefault - デフォルトの位置まで動かす</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{void} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="55" column="10" bodyfile="Devices/ArmMotorDriver.cpp" bodystart="58" bodyend="61"/>
+        <references refid="d8/dae/class_arm_motor_driver_1aec3cd22dc41163b873fc63ca1d0cd9d3" compoundref="dd/db6/_arm_motor_driver_8cpp" startline="42" endline="56">rotate</references>
+        <referencedby refid="dd/d7f/class_arm_commander_1a4cb31e855ea6bc8144962e3807be99be" compoundref="de/d93/_arm_commander_8cpp" startline="18" endline="21">ArmCommander::rotateDefault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/dae/class_arm_motor_driver_1a9d64bec66d8da12964b2dd4f426d705a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ArmMotorDriver::~ArmMotorDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~ArmMotorDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Devices/ArmMotorDriver.h" line="57" column="13" bodyfile="Devices/ArmMotorDriver.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Devices/ArmMotorDriver.h" line="8" column="1" bodyfile="Devices/ArmMotorDriver.h" bodystart="9" bodyend="58"/>
+    <listofallmembers>
+      <member refid="d8/dae/class_arm_motor_driver_1a9c03dd70cc5b695618a36e590aa87392" prot="public" virt="non-virtual"><scope>ArmMotorDriver</scope><name>ArmMotorDriver</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1a9440db2a866243382842bf32da598416" prot="public" virt="non-virtual"><scope>ArmMotorDriver</scope><name>calibration</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1aa7b05f84faab5f5086910caa506c4a85" prot="private" virt="non-virtual"><scope>ArmMotorDriver</scope><name>clock</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1abd270463af9859dc3cad6fdcdd6a29a6" prot="private" virt="non-virtual"><scope>ArmMotorDriver</scope><name>DEFAULT_ANGLE</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1acc9d69476c8786d957882ad6254012fa" prot="public" virt="non-virtual"><scope>ArmMotorDriver</scope><name>getCount</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1a84c101911aca17b853702be032137e02" prot="private" virt="non-virtual"><scope>ArmMotorDriver</scope><name>KP</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1a5b46ebaeaf4b310cb9d3734a9953d78d" prot="private" virt="non-virtual"><scope>ArmMotorDriver</scope><name>motor</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1a56262dd4b710f2b3ca084af2dbbfbde5" prot="private" virt="non-virtual"><scope>ArmMotorDriver</scope><name>PWM_ABS_MAX</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1a9670fbb6f1365f67a887531f65fdcd9e" prot="public" virt="non-virtual"><scope>ArmMotorDriver</scope><name>reset</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1aec3cd22dc41163b873fc63ca1d0cd9d3" prot="public" virt="non-virtual"><scope>ArmMotorDriver</scope><name>rotate</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1af10c0b0e78baa2ae8d0cd0f9c7d70dfe" prot="public" virt="non-virtual"><scope>ArmMotorDriver</scope><name>rotateDefault</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1ad55fd5e911a8fd93145084c05a756b90" prot="public" virt="non-virtual"><scope>ArmMotorDriver</scope><name>setPWM</name></member>
+      <member refid="d8/dae/class_arm_motor_driver_1a9d64bec66d8da12964b2dd4f426d705a" prot="public" virt="virtual"><scope>ArmMotorDriver</scope><name>~ArmMotorDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

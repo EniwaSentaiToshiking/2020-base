@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d0/db6/class_clock_detector" kind="class" language="C++" prot="public">
+    <compoundname>ClockDetector</compoundname>
+    <basecompoundref refid="d2/d27/class_detector" prot="public" virt="non-virtual">Detector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/db6/class_clock_detector_1acc0e928fafc05d6380d05ed2563e79a0" prot="private" static="no" mutable="no">
+        <type>Clock *</type>
+        <definition>Clock* ClockDetector::clock</definition>
+        <argsstring></argsstring>
+        <name>clock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ClockDetector.h" line="13" column="9" bodyfile="Detectors/ClockDetector.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/db6/class_clock_detector_1a9cc3b6f8f134cebebd8509af1e7fc27a" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ClockDetector::threshold</definition>
+        <argsstring></argsstring>
+        <name>threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ClockDetector.h" line="14" column="16" bodyfile="Detectors/ClockDetector.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/db6/class_clock_detector_1af7ba42de6fa356827799e49c52d4d8c3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ClockDetector::prev_clock</definition>
+        <argsstring></argsstring>
+        <name>prev_clock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ClockDetector.h" line="15" column="7" bodyfile="Detectors/ClockDetector.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/db6/class_clock_detector_1afe564fdabd512bebbd54eff5044c751b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ClockDetector::ClockDetector</definition>
+        <argsstring>(int threshold)</argsstring>
+        <name>ClockDetector</name>
+        <param>
+          <type>int</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ClockDetector.h" line="18" column="3" bodyfile="Detectors/ClockDetector.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db6/class_clock_detector_1ae1036a25796b908a6aab5117c100c403" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ClockDetector::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d2/d27/class_detector_1a6f1d2ad924e8e19d124fe76ee3793234">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ClockDetector.h" line="20" column="8" bodyfile="Detectors/ClockDetector.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db6/class_clock_detector_1a5d53873321d4a9717f0dff204dc74ac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ClockDetector::detect</definition>
+        <argsstring>()</argsstring>
+        <name>detect</name>
+        <reimplements refid="d2/d27/class_detector_1a4ff803e7bcbcd245ac5a84a68fff3230">detect</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>detect - 時間の条件検知</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{bool} true 検出した, false 検出しなかった </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ClockDetector.h" line="27" column="8" bodyfile="Detectors/ClockDetector.cpp" bodystart="19" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/db6/class_clock_detector_1abf567aa58900d627276d61d873e80cd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ClockDetector::~ClockDetector</definition>
+        <argsstring>()</argsstring>
+        <name>~ClockDetector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Detectors/ClockDetector.h" line="28" column="11" bodyfile="Detectors/ClockDetector.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>ClockDetector</label>
+        <link refid="d0/db6/class_clock_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Detector</label>
+        <link refid="d2/d27/class_detector"/>
+      </node>
+      <node id="1">
+        <label>ClockDetector</label>
+        <link refid="d0/db6/class_clock_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Detectors/ClockDetector.h" line="10" column="1" bodyfile="Detectors/ClockDetector.h" bodystart="11" bodyend="29"/>
+    <listofallmembers>
+      <member refid="d0/db6/class_clock_detector_1acc0e928fafc05d6380d05ed2563e79a0" prot="private" virt="non-virtual"><scope>ClockDetector</scope><name>clock</name></member>
+      <member refid="d0/db6/class_clock_detector_1afe564fdabd512bebbd54eff5044c751b" prot="public" virt="non-virtual"><scope>ClockDetector</scope><name>ClockDetector</name></member>
+      <member refid="d0/db6/class_clock_detector_1a5d53873321d4a9717f0dff204dc74ac9" prot="public" virt="virtual"><scope>ClockDetector</scope><name>detect</name></member>
+      <member refid="d0/db6/class_clock_detector_1ae1036a25796b908a6aab5117c100c403" prot="public" virt="virtual"><scope>ClockDetector</scope><name>init</name></member>
+      <member refid="d0/db6/class_clock_detector_1af7ba42de6fa356827799e49c52d4d8c3" prot="private" virt="non-virtual"><scope>ClockDetector</scope><name>prev_clock</name></member>
+      <member refid="d0/db6/class_clock_detector_1a9cc3b6f8f134cebebd8509af1e7fc27a" prot="private" virt="non-virtual"><scope>ClockDetector</scope><name>threshold</name></member>
+      <member refid="d0/db6/class_clock_detector_1abf567aa58900d627276d61d873e80cd9" prot="public" virt="virtual"><scope>ClockDetector</scope><name>~ClockDetector</name></member>
+      <member refid="d2/d27/class_detector_1a715d6c1e56c623a189c5257289a69d44" prot="public" virt="virtual"><scope>ClockDetector</scope><name>~Detector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

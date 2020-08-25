@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d1/d56/class_straight" kind="class" language="C++" prot="public">
+    <compoundname>Straight</compoundname>
+    <basecompoundref refid="de/d78/class_run_style" prot="public" virt="non-virtual">RunStyle</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d1/d56/class_straight_1a65bcdcf5628cf57f74aea76179314d4d" prot="private" static="no" mutable="no">
+        <type><ref refid="d9/dbb/class_wheel_info" kindref="compound">WheelInfo</ref> *</type>
+        <definition>WheelInfo* Straight::wheelInfo</definition>
+        <argsstring></argsstring>
+        <name>wheelInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Straight.h" line="11" column="15" bodyfile="RunStyles/Straight.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d56/class_straight_1a14136f8411b84e22a5d9fa360312fbb3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Straight::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Straight.h" line="12" column="9" bodyfile="RunStyles/Straight.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d56/class_straight_1ab6c2bb7b5f84caeaf455106dfffe6f23" prot="private" static="no" mutable="no">
+        <type>int32_t *</type>
+        <definition>int32_t* Straight::beginCount</definition>
+        <argsstring></argsstring>
+        <name>beginCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Straight.h" line="13" column="13" bodyfile="RunStyles/Straight.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/d56/class_straight_1a55d25f8124b17ab3d27d249508a91a36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Straight::Straight</definition>
+        <argsstring>(int speed)</argsstring>
+        <name>Straight</name>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Straight.h" line="16" column="5" bodyfile="RunStyles/Straight.cpp" bodystart="3" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/class_straight_1abe197ac9ee113c3d428258c6ce88ce88" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Straight::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="de/d78/class_run_style_1a05e6e416432e8ffe700d126e2961d9eb">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Straight.h" line="17" column="10" bodyfile="RunStyles/Straight.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/class_straight_1a45e4138ccb429eed0086d15a4aa0669c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int Straight::getTurnValue</definition>
+        <argsstring>()</argsstring>
+        <name>getTurnValue</name>
+        <reimplements refid="de/d78/class_run_style_1afe583b1acb7f65a3b8e51d2311b821ef">getTurnValue</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Straight.h" line="18" column="9" bodyfile="RunStyles/Straight.cpp" bodystart="19" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/class_straight_1a024c2757e3867967a3fec37078057659" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Straight::~Straight</definition>
+        <argsstring>()</argsstring>
+        <name>~Straight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/Straight.h" line="19" column="13" bodyfile="RunStyles/Straight.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>RunStyle</label>
+        <link refid="de/d78/class_run_style"/>
+      </node>
+      <node id="1">
+        <label>Straight</label>
+        <link refid="d1/d56/class_straight"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>PID</label>
+        <link refid="d6/d5a/class_p_i_d"/>
+      </node>
+      <node id="2">
+        <label>RunStyle</label>
+        <link refid="de/d78/class_run_style"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pid</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>pidController</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Straight</label>
+        <link refid="d1/d56/class_straight"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>PIDController</label>
+        <link refid="d4/d73/class_p_i_d_controller"/>
+      </node>
+    </collaborationgraph>
+    <location file="RunStyles/Straight.h" line="7" column="1" bodyfile="RunStyles/Straight.h" bodystart="8" bodyend="20"/>
+    <listofallmembers>
+      <member refid="d1/d56/class_straight_1ab6c2bb7b5f84caeaf455106dfffe6f23" prot="private" virt="non-virtual"><scope>Straight</scope><name>beginCount</name></member>
+      <member refid="d1/d56/class_straight_1a45e4138ccb429eed0086d15a4aa0669c" prot="public" virt="virtual"><scope>Straight</scope><name>getTurnValue</name></member>
+      <member refid="d1/d56/class_straight_1abe197ac9ee113c3d428258c6ce88ce88" prot="public" virt="virtual"><scope>Straight</scope><name>init</name></member>
+      <member refid="de/d78/class_run_style_1a0bae5789b759b2f828becea96c48e679" prot="protected" virt="non-virtual"><scope>Straight</scope><name>pid</name></member>
+      <member refid="de/d78/class_run_style_1a5dfb21129af182d5e120a023059f3151" prot="protected" virt="non-virtual"><scope>Straight</scope><name>pidController</name></member>
+      <member refid="de/d78/class_run_style_1ac2aef7e8a7618b02c2c83a45b5256a2c" prot="public" virt="non-virtual"><scope>Straight</scope><name>RunStyle</name></member>
+      <member refid="d1/d56/class_straight_1a14136f8411b84e22a5d9fa360312fbb3" prot="private" virt="non-virtual"><scope>Straight</scope><name>speed</name></member>
+      <member refid="d1/d56/class_straight_1a55d25f8124b17ab3d27d249508a91a36" prot="public" virt="non-virtual"><scope>Straight</scope><name>Straight</name></member>
+      <member refid="d1/d56/class_straight_1a65bcdcf5628cf57f74aea76179314d4d" prot="private" virt="non-virtual"><scope>Straight</scope><name>wheelInfo</name></member>
+      <member refid="de/d78/class_run_style_1a17bc88d4beb9afc2700da9d99b54d3eb" prot="public" virt="virtual"><scope>Straight</scope><name>~RunStyle</name></member>
+      <member refid="d1/d56/class_straight_1a024c2757e3867967a3fec37078057659" prot="public" virt="virtual"><scope>Straight</scope><name>~Straight</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

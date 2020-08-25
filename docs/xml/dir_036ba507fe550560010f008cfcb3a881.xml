@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dir_036ba507fe550560010f008cfcb3a881" kind="dir">
+    <compoundname>Devices</compoundname>
+    <innerfile refid="dd/db6/_arm_motor_driver_8cpp">ArmMotorDriver.cpp</innerfile>
+    <innerfile refid="d9/d65/_arm_motor_driver_8h">ArmMotorDriver.h</innerfile>
+    <innerfile refid="da/d32/_color_sensor_driver_8cpp">ColorSensorDriver.cpp</innerfile>
+    <innerfile refid="dc/d5c/_color_sensor_driver_8h">ColorSensorDriver.h</innerfile>
+    <innerfile refid="d2/dc2/_sonar_sensor_driver_8cpp">SonarSensorDriver.cpp</innerfile>
+    <innerfile refid="df/dea/_sonar_sensor_driver_8h">SonarSensorDriver.h</innerfile>
+    <innerfile refid="d6/dd5/_tail_motor_driver_8cpp">TailMotorDriver.cpp</innerfile>
+    <innerfile refid="db/d77/_tail_motor_driver_8h">TailMotorDriver.h</innerfile>
+    <innerfile refid="db/d5e/_touch_sensor_driver_8cpp">TouchSensorDriver.cpp</innerfile>
+    <innerfile refid="d3/d1f/_touch_sensor_driver_8h">TouchSensorDriver.h</innerfile>
+    <innerfile refid="da/daa/_wheel_motor_driver_8cpp">WheelMotorDriver.cpp</innerfile>
+    <innerfile refid="d6/df4/_wheel_motor_driver_8h">WheelMotorDriver.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Devices/"/>
+  </compounddef>
+</doxygen>

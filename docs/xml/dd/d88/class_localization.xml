@@ -1,0 +1,461 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dd/d88/class_localization" kind="class" language="C++" prot="public">
+    <compoundname>Localization</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dd/d88/class_localization_1acb1c7970d78805d2180bf764acaca9bb" prot="private" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t Localization::r0</definition>
+        <argsstring></argsstring>
+        <name>r0</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="12" column="11" bodyfile="Observer/Localization.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a72127eb8e608555ddfbb73aad0575db8" prot="private" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t Localization::l0</definition>
+        <argsstring></argsstring>
+        <name>l0</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="13" column="11" bodyfile="Observer/Localization.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1ae026504c3330a4b6074003c1513bd6fa" prot="private" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t Localization::r1</definition>
+        <argsstring></argsstring>
+        <name>r1</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="15" column="11" bodyfile="Observer/Localization.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a307a6b5a4c80dfb830d26b1f593b9ee6" prot="private" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t Localization::l1</definition>
+        <argsstring></argsstring>
+        <name>l1</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="16" column="11" bodyfile="Observer/Localization.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1ae78ca124bf3a296718ba7478886d34ef" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::anR</definition>
+        <argsstring></argsstring>
+        <name>anR</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="18" column="9" bodyfile="Observer/Localization.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a276eabfb919ba9fb27e7f3a9c03e4e9d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::anL</definition>
+        <argsstring></argsstring>
+        <name>anL</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="19" column="9" bodyfile="Observer/Localization.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a1c5ccbae1b30e19b8fce10dacc9bf003" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::R</definition>
+        <argsstring></argsstring>
+        <name>R</name>
+        <initializer>= 5.08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="21" column="9" bodyfile="Observer/Localization.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a92410f860e925e3d787addcb65090834" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::TR</definition>
+        <argsstring></argsstring>
+        <name>TR</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="23" column="9" bodyfile="Observer/Localization.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1ad6e7f2600f1930e03ed0abc9f7ae98f9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::TL</definition>
+        <argsstring></argsstring>
+        <name>TL</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="24" column="9" bodyfile="Observer/Localization.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1aecf1e451e909f714f685e819335ca4b0" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::D</definition>
+        <argsstring></argsstring>
+        <name>D</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="26" column="9" bodyfile="Observer/Localization.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a0fe34deebd922bd6230297438d8e0bcf" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="27" column="9" bodyfile="Observer/Localization.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1aa3117c0674ffdaa441fa36591c4a9e18" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <initializer>= 7.75</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="28" column="9" bodyfile="Observer/Localization.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a97f3906f56e4a425d8efdcd4e5f8ebcf" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::x0</definition>
+        <argsstring></argsstring>
+        <name>x0</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="30" column="9" bodyfile="Observer/Localization.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1ad66bcad6fafff3f6790e81927eab1f9c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::y0</definition>
+        <argsstring></argsstring>
+        <name>y0</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="31" column="9" bodyfile="Observer/Localization.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1ac4d6e4e1211b39c244468bafedc3b34d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::z0</definition>
+        <argsstring></argsstring>
+        <name>z0</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="32" column="9" bodyfile="Observer/Localization.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a2a300794d1918a8f431975d491450775" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::x1</definition>
+        <argsstring></argsstring>
+        <name>x1</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="34" column="9" bodyfile="Observer/Localization.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a56f18323f426d393cba6eb4059706511" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::y1</definition>
+        <argsstring></argsstring>
+        <name>y1</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="35" column="9" bodyfile="Observer/Localization.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a87653430d14a83334eed480c3ca97f52" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::z1</definition>
+        <argsstring></argsstring>
+        <name>z1</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="36" column="9" bodyfile="Observer/Localization.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a46b0060a9df46331e3247307ea4cd8db" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::current_distance</definition>
+        <argsstring></argsstring>
+        <name>current_distance</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="38" column="9" bodyfile="Observer/Localization.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1ad92ab12af469ea98d6d1f1dea2aebf63" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::current_direction</definition>
+        <argsstring></argsstring>
+        <name>current_direction</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="39" column="9" bodyfile="Observer/Localization.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a6823159094050b135a70d1a06defd5e1" prot="private" static="no" mutable="no">
+        <type><ref refid="d5/d8e/class_wheel_motor_driver" kindref="compound">WheelMotorDriver</ref> *</type>
+        <definition>WheelMotorDriver* Localization::leftMotor</definition>
+        <argsstring></argsstring>
+        <name>leftMotor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="41" column="20" bodyfile="Observer/Localization.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a222e2d53a0efd4cc5e8725352103eebc" prot="private" static="no" mutable="no">
+        <type><ref refid="d5/d8e/class_wheel_motor_driver" kindref="compound">WheelMotorDriver</ref> *</type>
+        <definition>WheelMotorDriver* Localization::rightMotor</definition>
+        <argsstring></argsstring>
+        <name>rightMotor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="42" column="20" bodyfile="Observer/Localization.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="dd/d88/class_localization_1ad5db145d3f79ca062b46ae25f416d8b3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::point_x</definition>
+        <argsstring></argsstring>
+        <name>point_x</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="51" column="9" bodyfile="Observer/Localization.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d88/class_localization_1a5dd32672e16b819449d4cd1c17ad7d20" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Localization::point_y</definition>
+        <argsstring></argsstring>
+        <name>point_y</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="52" column="9" bodyfile="Observer/Localization.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d88/class_localization_1a17b47f8c1361c43fd73465c832ce68f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Localization::Localization</definition>
+        <argsstring>()</argsstring>
+        <name>Localization</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="45" column="3" bodyfile="Observer/Localization.cpp" bodystart="3" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d88/class_localization_1a6b936fc3bf5cea4c671d9c21efa3cfed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Localization::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="46" column="8" bodyfile="Observer/Localization.cpp" bodystart="14" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d88/class_localization_1aef4dc0b3514eec2a4d4e42eb713ecf69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Localization::distance_reset</definition>
+        <argsstring>()</argsstring>
+        <name>distance_reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="47" column="8" bodyfile="Observer/Localization.cpp" bodystart="45" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d88/class_localization_1a82febd5ef5c201907f7f95169770907b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Localization::getCurrentDirection</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentDirection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="48" column="9" bodyfile="Observer/Localization.cpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d88/class_localization_1a519cf91bcb30f9bc516c6ae0a0f004e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Localization::getCurrentDistance</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentDistance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="49" column="9" bodyfile="Observer/Localization.cpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d88/class_localization_1a67c9ced99f05c944defd751f0a67f60f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Localization::~Localization</definition>
+        <argsstring>()</argsstring>
+        <name>~Localization</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Observer/Localization.h" line="53" column="11" bodyfile="Observer/Localization.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Observer/Localization.h" line="9" column="1" bodyfile="Observer/Localization.h" bodystart="10" bodyend="54"/>
+    <listofallmembers>
+      <member refid="dd/d88/class_localization_1a276eabfb919ba9fb27e7f3a9c03e4e9d" prot="private" virt="non-virtual"><scope>Localization</scope><name>anL</name></member>
+      <member refid="dd/d88/class_localization_1ae78ca124bf3a296718ba7478886d34ef" prot="private" virt="non-virtual"><scope>Localization</scope><name>anR</name></member>
+      <member refid="dd/d88/class_localization_1ad92ab12af469ea98d6d1f1dea2aebf63" prot="private" virt="non-virtual"><scope>Localization</scope><name>current_direction</name></member>
+      <member refid="dd/d88/class_localization_1a46b0060a9df46331e3247307ea4cd8db" prot="private" virt="non-virtual"><scope>Localization</scope><name>current_distance</name></member>
+      <member refid="dd/d88/class_localization_1aecf1e451e909f714f685e819335ca4b0" prot="private" virt="non-virtual"><scope>Localization</scope><name>D</name></member>
+      <member refid="dd/d88/class_localization_1aa3117c0674ffdaa441fa36591c4a9e18" prot="private" virt="non-virtual"><scope>Localization</scope><name>d</name></member>
+      <member refid="dd/d88/class_localization_1aef4dc0b3514eec2a4d4e42eb713ecf69" prot="public" virt="non-virtual"><scope>Localization</scope><name>distance_reset</name></member>
+      <member refid="dd/d88/class_localization_1a82febd5ef5c201907f7f95169770907b" prot="public" virt="non-virtual"><scope>Localization</scope><name>getCurrentDirection</name></member>
+      <member refid="dd/d88/class_localization_1a519cf91bcb30f9bc516c6ae0a0f004e5" prot="public" virt="non-virtual"><scope>Localization</scope><name>getCurrentDistance</name></member>
+      <member refid="dd/d88/class_localization_1a72127eb8e608555ddfbb73aad0575db8" prot="private" virt="non-virtual"><scope>Localization</scope><name>l0</name></member>
+      <member refid="dd/d88/class_localization_1a307a6b5a4c80dfb830d26b1f593b9ee6" prot="private" virt="non-virtual"><scope>Localization</scope><name>l1</name></member>
+      <member refid="dd/d88/class_localization_1a6823159094050b135a70d1a06defd5e1" prot="private" virt="non-virtual"><scope>Localization</scope><name>leftMotor</name></member>
+      <member refid="dd/d88/class_localization_1a17b47f8c1361c43fd73465c832ce68f0" prot="public" virt="non-virtual"><scope>Localization</scope><name>Localization</name></member>
+      <member refid="dd/d88/class_localization_1ad5db145d3f79ca062b46ae25f416d8b3" prot="public" virt="non-virtual"><scope>Localization</scope><name>point_x</name></member>
+      <member refid="dd/d88/class_localization_1a5dd32672e16b819449d4cd1c17ad7d20" prot="public" virt="non-virtual"><scope>Localization</scope><name>point_y</name></member>
+      <member refid="dd/d88/class_localization_1a1c5ccbae1b30e19b8fce10dacc9bf003" prot="private" virt="non-virtual"><scope>Localization</scope><name>R</name></member>
+      <member refid="dd/d88/class_localization_1acb1c7970d78805d2180bf764acaca9bb" prot="private" virt="non-virtual"><scope>Localization</scope><name>r0</name></member>
+      <member refid="dd/d88/class_localization_1ae026504c3330a4b6074003c1513bd6fa" prot="private" virt="non-virtual"><scope>Localization</scope><name>r1</name></member>
+      <member refid="dd/d88/class_localization_1a222e2d53a0efd4cc5e8725352103eebc" prot="private" virt="non-virtual"><scope>Localization</scope><name>rightMotor</name></member>
+      <member refid="dd/d88/class_localization_1ad6e7f2600f1930e03ed0abc9f7ae98f9" prot="private" virt="non-virtual"><scope>Localization</scope><name>TL</name></member>
+      <member refid="dd/d88/class_localization_1a92410f860e925e3d787addcb65090834" prot="private" virt="non-virtual"><scope>Localization</scope><name>TR</name></member>
+      <member refid="dd/d88/class_localization_1a6b936fc3bf5cea4c671d9c21efa3cfed" prot="public" virt="non-virtual"><scope>Localization</scope><name>update</name></member>
+      <member refid="dd/d88/class_localization_1a0fe34deebd922bd6230297438d8e0bcf" prot="private" virt="non-virtual"><scope>Localization</scope><name>w</name></member>
+      <member refid="dd/d88/class_localization_1a97f3906f56e4a425d8efdcd4e5f8ebcf" prot="private" virt="non-virtual"><scope>Localization</scope><name>x0</name></member>
+      <member refid="dd/d88/class_localization_1a2a300794d1918a8f431975d491450775" prot="private" virt="non-virtual"><scope>Localization</scope><name>x1</name></member>
+      <member refid="dd/d88/class_localization_1ad66bcad6fafff3f6790e81927eab1f9c" prot="private" virt="non-virtual"><scope>Localization</scope><name>y0</name></member>
+      <member refid="dd/d88/class_localization_1a56f18323f426d393cba6eb4059706511" prot="private" virt="non-virtual"><scope>Localization</scope><name>y1</name></member>
+      <member refid="dd/d88/class_localization_1ac4d6e4e1211b39c244468bafedc3b34d" prot="private" virt="non-virtual"><scope>Localization</scope><name>z0</name></member>
+      <member refid="dd/d88/class_localization_1a87653430d14a83334eed480c3ca97f52" prot="private" virt="non-virtual"><scope>Localization</scope><name>z1</name></member>
+      <member refid="dd/d88/class_localization_1a67c9ced99f05c944defd751f0a67f60f" prot="public" virt="virtual"><scope>Localization</scope><name>~Localization</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

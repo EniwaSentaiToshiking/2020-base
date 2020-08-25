@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="db/dfb/md_docs_markdown_robot_education" kind="page">
+    <compoundname>md_docs_markdown_robot_education</compoundname>
+    <title>PID制御の基本</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>ラインの目標値設定</para>
+</listitem><listitem><para>当日にカラーセンサーを使って黒と白の輝度値を取得する</para>
+</listitem><listitem><para>PID制御<itemizedlist>
+<listitem><para>光センサーの輝度値：カラーセンサーで反射光の強さを測る</para>
+</listitem><listitem><para>目標の輝度値：ロボットが通りたい道．道は自分たちで決める</para>
+</listitem><listitem><para>ズレ：光センサーの輝度値と目標の輝度値の差．目標とした道からどっちにどれだけ離れているか．</para>
+</listitem><listitem><para>ステアリングの値：どっちにどれだけ曲がるかを設定する．</para>
+</listitem><listitem><para>ゲイン</para>
+</listitem><listitem><para>P:ズレが大きいほどステアリングの値を大きくする．ステアリングの強さはゲインで調整<itemizedlist>
+<listitem><para>$[ステアリング値] = ([光センサーの輝度値] - [目標の輝度値])*[ゲイン]$</para>
+</listitem><listitem><para>滑らかに動く</para>
+</listitem><listitem><para>急カーブは機体がふらつく</para>
+</listitem><listitem><para>安定走行までに時間がかかる</para>
+</listitem><listitem><para>速度をあげると目標にたどり着けないことがある</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>I:ズレを足し合わせた面積が大きほどステアリング値を大きくする(積分)<itemizedlist>
+<listitem><para>$[ステアリング値] = integral([光センサーの輝度値] - [目標の輝度値])dt*[ゲイン](tは時間)$</para>
+</listitem><listitem><para>Pよりも少し遅れてステアリングの値が更新される</para>
+</listitem><listitem><para>ゲインを大きくすると急な変化になる</para>
+</listitem><listitem><para>Iだけでは目標に戻れなくなる</para>
+</listitem><listitem><para>PIとすると急カーブなどで目標に戻れなくなることを防ぐ</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>D:直前のズレと現在のズレの差(ズレの変化)が大きいほどステアリング値を大きくする(微分)<itemizedlist>
+<listitem><para>$[ステアリング値] = d/dt([光センサーの輝度値] - [目標の輝度値])*[ゲイン](tは時間)$</para>
+</listitem><listitem><para>ズレの変化に反応が速い</para>
+</listitem><listitem><para>目標値に近く機能がないため，単体では機能しない</para>
+</listitem><listitem><para>急な変化に対してふらつきをなくすことができる</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>ゲイン調整ポイント<itemizedlist>
+<listitem><para>Pゲイン，Iゲインは機体が暴れない程度の範囲で大きく</para>
+</listitem><listitem><para>Iゲインはとても小さいことが多い(0.001 &lt; I Gain &lt; 0.003)</para>
+</listitem><listitem><para>Dゲインは機体が小刻みに震えない程度に大きくする(10&lt;D gain&lt;30)</para>
+</listitem><listitem><para>PIDは互いに影響し合うため随時調整が必要</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<sect1 id="db/dfb/md_docs_markdown_robot_education_1autotoc_md1">
+<title>PWM(Pulse Width Modulation)の役割</title>
+<para><ulink url="https://monoist.atmarkit.co.jp/mn/articles/0706/06/news132.html">参考1</ulink> <ulink url="http://www.sist.ac.jp/club/mcf/Umeta_lecture/PWM.html">参考2</ulink></para>
+<para><itemizedlist>
+<listitem><para>モータの回転数を制御するのに使う方法</para>
+</listitem><listitem><para>PWMは一定の時間内でどの程度Highを出力するかをコントロールする制御方式</para>
+</listitem><listitem><para>ON・OFFを繰り返す周期に対するONの時間の割合を，デューティー比と呼びます．<itemizedlist>
+<listitem><para>デューティー比が大きいとONの時間が長い</para>
+</listitem><listitem><para>デューティー比が$1$だと最大速で前進し$-1$だと最大速で後退する． </para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

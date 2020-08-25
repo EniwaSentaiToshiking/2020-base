@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dir_7f182ce065ebb979a6eac5f35d4b560c" kind="dir">
+    <compoundname>RunMethods/Commanders</compoundname>
+    <innerfile refid="de/d93/_arm_commander_8cpp">ArmCommander.cpp</innerfile>
+    <innerfile refid="d8/d01/_arm_commander_8h">ArmCommander.h</innerfile>
+    <innerfile refid="db/d4c/_run_commander_8cpp">RunCommander.cpp</innerfile>
+    <innerfile refid="d9/d5d/_run_commander_8h">RunCommander.h</innerfile>
+    <innerfile refid="d6/d85/_tail_commander_8cpp">TailCommander.cpp</innerfile>
+    <innerfile refid="d8/d47/_tail_commander_8h">TailCommander.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="RunMethods/Commanders/"/>
+  </compounddef>
+</doxygen>

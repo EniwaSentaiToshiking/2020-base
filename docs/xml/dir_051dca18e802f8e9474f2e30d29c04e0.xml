@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="dir_051dca18e802f8e9474f2e30d29c04e0" kind="dir">
+    <compoundname>Detectors</compoundname>
+    <innerfile refid="d5/d83/_adaptive_direction_detector_8cpp">AdaptiveDirectionDetector.cpp</innerfile>
+    <innerfile refid="d4/d6f/_adaptive_direction_detector_8h">AdaptiveDirectionDetector.h</innerfile>
+    <innerfile refid="db/dc7/_black_line_detector_8cpp">BlackLineDetector.cpp</innerfile>
+    <innerfile refid="d0/dda/_black_line_detector_8h">BlackLineDetector.h</innerfile>
+    <innerfile refid="da/d34/_brightness_detector_8cpp">BrightnessDetector.cpp</innerfile>
+    <innerfile refid="db/d82/_brightness_detector_8h">BrightnessDetector.h</innerfile>
+    <innerfile refid="da/d34/_clock_detector_8cpp">ClockDetector.cpp</innerfile>
+    <innerfile refid="dd/d46/_clock_detector_8h">ClockDetector.h</innerfile>
+    <innerfile refid="da/d5c/_color_detector_8cpp">ColorDetector.cpp</innerfile>
+    <innerfile refid="d2/d42/_color_detector_8h">ColorDetector.h</innerfile>
+    <innerfile refid="d0/d46/_detector_8h">Detector.h</innerfile>
+    <innerfile refid="d6/de5/_detect_type_8h">DetectType.h</innerfile>
+    <innerfile refid="d4/d0a/_direction_detector_8cpp">DirectionDetector.cpp</innerfile>
+    <innerfile refid="de/d6f/_direction_detector_8h">DirectionDetector.h</innerfile>
+    <innerfile refid="d9/d3a/_distance_detector_8cpp">DistanceDetector.cpp</innerfile>
+    <innerfile refid="d3/db5/_distance_detector_8h">DistanceDetector.h</innerfile>
+    <innerfile refid="df/d13/_gray_line_detector_8cpp">GrayLineDetector.cpp</innerfile>
+    <innerfile refid="df/dac/_gray_line_detector_8h">GrayLineDetector.h</innerfile>
+    <innerfile refid="d5/d7b/_object_detector_8cpp">ObjectDetector.cpp</innerfile>
+    <innerfile refid="dc/d87/_object_detector_8h">ObjectDetector.h</innerfile>
+    <innerfile refid="d7/d4f/_point_detector_8cpp">PointDetector.cpp</innerfile>
+    <innerfile refid="d3/dcd/_point_detector_8h">PointDetector.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Detectors/"/>
+  </compounddef>
+</doxygen>

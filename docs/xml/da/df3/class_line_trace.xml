@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="da/df3/class_line_trace" kind="class" language="C++" prot="public">
+    <compoundname>LineTrace</compoundname>
+    <basecompoundref refid="de/d78/class_run_style" prot="public" virt="non-virtual">RunStyle</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="da/df3/class_line_trace_1aa5f78685d9eedfe363bee90ad42146b1" prot="private" static="no" mutable="no">
+        <type><ref refid="de/dc2/class_course_monitor" kindref="compound">CourseMonitor</ref> *</type>
+        <definition>CourseMonitor* LineTrace::courseMonitor</definition>
+        <argsstring></argsstring>
+        <name>courseMonitor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/LineTrace.h" line="17" column="19" bodyfile="RunStyles/LineTrace.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/df3/class_line_trace_1a60662bfbf273f789b082817f3dfb9d99" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int LineTrace::targetBrightness</definition>
+        <argsstring></argsstring>
+        <name>targetBrightness</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/LineTrace.h" line="18" column="9" bodyfile="RunStyles/LineTrace.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/df3/class_line_trace_1a3857e4312e8c39b86f4b00f219c96571" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int LineTrace::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/LineTrace.h" line="19" column="9" bodyfile="RunStyles/LineTrace.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/df3/class_line_trace_1a4e4faacf0d9bb46cd4d822d39b150587" prot="private" static="no" mutable="no">
+        <type>Edge</type>
+        <definition>Edge LineTrace::edge</definition>
+        <argsstring></argsstring>
+        <name>edge</name>
+        <initializer>= LEFT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/LineTrace.h" line="20" column="10" bodyfile="RunStyles/LineTrace.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/df3/class_line_trace_1a8ecd323c4c1e77f2d5b151a1ed0f8381" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LineTrace::LineTrace</definition>
+        <argsstring>(PID *pid, int targetBrightness, Edge edge)</argsstring>
+        <name>LineTrace</name>
+        <param>
+          <type><ref refid="d6/d5a/class_p_i_d" kindref="compound">PID</ref> *</type>
+          <declname>pid</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>targetBrightness</declname>
+        </param>
+        <param>
+          <type>Edge</type>
+          <declname>edge</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/LineTrace.h" line="23" column="5" bodyfile="RunStyles/LineTrace.cpp" bodystart="3" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="da/df3/class_line_trace_1a667a7e8091ad510b768975129257263a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void LineTrace::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="de/d78/class_run_style_1a05e6e416432e8ffe700d126e2961d9eb">init</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/LineTrace.h" line="24" column="10" bodyfile="RunStyles/LineTrace.h" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="da/df3/class_line_trace_1a96b8de743d2c4b20c623e23a8062fde2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int LineTrace::getTurnValue</definition>
+        <argsstring>()</argsstring>
+        <name>getTurnValue</name>
+        <reimplements refid="de/d78/class_run_style_1afe583b1acb7f65a3b8e51d2311b821ef">getTurnValue</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getTurnValue - ライントレース時(PID制御)の操作量を取得</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{int} 操作量 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/LineTrace.h" line="32" column="9" bodyfile="RunStyles/LineTrace.cpp" bodystart="16" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="da/df3/class_line_trace_1a6d8743bc2a7cedf5ba5ef819494f95dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int LineTrace::getTurnValueByOnOFF</definition>
+        <argsstring>()</argsstring>
+        <name>getTurnValueByOnOFF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getTurnValue - ライントレース時(OnOff制御)の操作量を取得</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>{void}</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>{int} 操作量 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/LineTrace.h" line="40" column="9" bodyfile="RunStyles/LineTrace.cpp" bodystart="26" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="da/df3/class_line_trace_1ae5631d44e272235e0eed07dd3d80b21b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>LineTrace::~LineTrace</definition>
+        <argsstring>()</argsstring>
+        <name>~LineTrace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="RunStyles/LineTrace.h" line="41" column="13" bodyfile="RunStyles/LineTrace.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>RunStyle</label>
+        <link refid="de/d78/class_run_style"/>
+      </node>
+      <node id="1">
+        <label>LineTrace</label>
+        <link refid="da/df3/class_line_trace"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>PID</label>
+        <link refid="d6/d5a/class_p_i_d"/>
+      </node>
+      <node id="2">
+        <label>RunStyle</label>
+        <link refid="de/d78/class_run_style"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>pid</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>pidController</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>LineTrace</label>
+        <link refid="da/df3/class_line_trace"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>PIDController</label>
+        <link refid="d4/d73/class_p_i_d_controller"/>
+      </node>
+    </collaborationgraph>
+    <location file="RunStyles/LineTrace.h" line="13" column="1" bodyfile="RunStyles/LineTrace.h" bodystart="14" bodyend="42"/>
+    <listofallmembers>
+      <member refid="da/df3/class_line_trace_1aa5f78685d9eedfe363bee90ad42146b1" prot="private" virt="non-virtual"><scope>LineTrace</scope><name>courseMonitor</name></member>
+      <member refid="da/df3/class_line_trace_1a4e4faacf0d9bb46cd4d822d39b150587" prot="private" virt="non-virtual"><scope>LineTrace</scope><name>edge</name></member>
+      <member refid="da/df3/class_line_trace_1a96b8de743d2c4b20c623e23a8062fde2" prot="public" virt="virtual"><scope>LineTrace</scope><name>getTurnValue</name></member>
+      <member refid="da/df3/class_line_trace_1a6d8743bc2a7cedf5ba5ef819494f95dd" prot="public" virt="non-virtual"><scope>LineTrace</scope><name>getTurnValueByOnOFF</name></member>
+      <member refid="da/df3/class_line_trace_1a667a7e8091ad510b768975129257263a" prot="public" virt="virtual"><scope>LineTrace</scope><name>init</name></member>
+      <member refid="da/df3/class_line_trace_1a8ecd323c4c1e77f2d5b151a1ed0f8381" prot="public" virt="non-virtual"><scope>LineTrace</scope><name>LineTrace</name></member>
+      <member refid="de/d78/class_run_style_1a0bae5789b759b2f828becea96c48e679" prot="protected" virt="non-virtual"><scope>LineTrace</scope><name>pid</name></member>
+      <member refid="de/d78/class_run_style_1a5dfb21129af182d5e120a023059f3151" prot="protected" virt="non-virtual"><scope>LineTrace</scope><name>pidController</name></member>
+      <member refid="de/d78/class_run_style_1ac2aef7e8a7618b02c2c83a45b5256a2c" prot="public" virt="non-virtual"><scope>LineTrace</scope><name>RunStyle</name></member>
+      <member refid="da/df3/class_line_trace_1a3857e4312e8c39b86f4b00f219c96571" prot="private" virt="non-virtual"><scope>LineTrace</scope><name>speed</name></member>
+      <member refid="da/df3/class_line_trace_1a60662bfbf273f789b082817f3dfb9d99" prot="private" virt="non-virtual"><scope>LineTrace</scope><name>targetBrightness</name></member>
+      <member refid="da/df3/class_line_trace_1ae5631d44e272235e0eed07dd3d80b21b" prot="public" virt="virtual"><scope>LineTrace</scope><name>~LineTrace</name></member>
+      <member refid="de/d78/class_run_style_1a17bc88d4beb9afc2700da9d99b54d3eb" prot="public" virt="virtual"><scope>LineTrace</scope><name>~RunStyle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

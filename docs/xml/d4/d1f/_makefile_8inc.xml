@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d4/d1f/_makefile_8inc" kind="file" language="PHP">
+    <compoundname>Makefile.inc</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">mkfile_path<sp/>:=<sp/>$(dir<sp/>$(lastword<sp/>$(MAKEFILE_LIST)))</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">APPL_COBJS<sp/>+=</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">APPL_CXXOBJS<sp/>+=<sp/>\</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d1/d90/class_object_detector" kindref="compound">ObjectDetector</ref>.o<sp/>\
+<sp/><sp/><sp/><sp/>GrayLineDetector.o<sp/>\
+<sp/><sp/><sp/><sp/>PointDetector.o<sp/>\
+<sp/><sp/><sp/><sp/>DistanceDetector.o<sp/>\
+<sp/><sp/><sp/><sp/>DirectionDetector.o<sp/>\
+<sp/><sp/><sp/><sp/>ColorDetector.o<sp/>\
+<sp/><sp/><sp/><sp/>BlackLineDetector.o<sp/>\
+<sp/><sp/><sp/><sp/>BrightnessDetector.o<sp/>\
+<sp/><sp/><sp/><sp/>ClockDetector.o<sp/>\
+<sp/><sp/><sp/><sp/>AdaptiveDirectionDetector.o<sp/>\
+<sp/><sp/><sp/><sp/>SonarSensorDriver.o<sp/>\
+<sp/><sp/><sp/><sp/>TouchSensorDriver.o<sp/>\
+<sp/><sp/><sp/><sp/>ColorSensorDriver.o<sp/>\
+<sp/><sp/><sp/><sp/>WheelMotorDriver.o<sp/>\
+<sp/><sp/><sp/><sp/>ArmMotorDriver.o<sp/>\
+<sp/><sp/><sp/><sp/>TailMotorDriver.o<sp/>\
+<sp/><sp/><sp/><sp/>RunCommander.o<sp/>\
+<sp/><sp/><sp/><sp/>ArmCommander.o<sp/>\
+<sp/><sp/><sp/><sp/>TailCommander.o<sp/>\
+<sp/><sp/><sp/><sp/>WheelInfo.o<sp/>\
+<sp/><sp/><sp/><sp/>Localization.o<sp/>\
+<sp/><sp/><sp/><sp/>CourseMonitor.o<sp/>\
+<sp/><sp/><sp/><sp/>Lot.o<sp/>\
+<sp/><sp/><sp/><sp/>SpeedCal.o<sp/>\
+<sp/><sp/><sp/><sp/>UI.o<sp/>\
+<sp/><sp/><sp/><sp/>PID.o<sp/>\
+<sp/><sp/><sp/><sp/>PIDController.o<sp/>\
+<sp/><sp/><sp/><sp/>Filter.o<sp/>\
+<sp/><sp/><sp/><sp/>Logger.o<sp/>\
+<sp/><sp/><sp/><sp/>RunStatus.o<sp/>\
+<sp/><sp/><sp/><sp/>CourseRun.o<sp/>\
+<sp/><sp/><sp/><sp/>SampleCourseRun.o<sp/>\
+<sp/><sp/><sp/><sp/>Parking.o<sp/>\
+<sp/><sp/><sp/><sp/>Stop.o<sp/>\
+<sp/><sp/><sp/><sp/>RunStyle.o<sp/>\
+<sp/><sp/><sp/><sp/>LineTrace.o<sp/>\
+<sp/><sp/><sp/><sp/>Grid.o<sp/>\
+<sp/><sp/><sp/><sp/>Straight.o<sp/>\
+<sp/><sp/><sp/><sp/>Turning.o<sp/>\
+<sp/><sp/><sp/><sp/>Spin.o<sp/>\
+<sp/><sp/><sp/><sp/>Clothoid.o<sp/>\
+<sp/><sp/><sp/><sp/>RunPattern.o<sp/>\
+<sp/><sp/><sp/><sp/>RunManager.o<sp/>\
+
+
+SRCLANG<sp/>:=<sp/>c++</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">ifdef<sp/>CONFIG_EV3RT_APPLICATION</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">#<sp/>Include<sp/>libraries</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">include<sp/>$(EV3RT_SDK_LIB_DIR)/libcpp-ev3/Makefile</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">endif</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">APPL_DIR<sp/>+=<sp/>\</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>$(mkfile_path)/Detectors<sp/>\</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>$(mkfile_path)/Devices<sp/>\</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>$(mkfile_path)/Observer<sp/>\</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>$(mkfile_path)/<ref refid="d8/de6/class_u_i" kindref="compound">UI</ref><sp/>\</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>$(mkfile_path)/Utils<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>$(mkfile_path)/RunStyles<sp/>\</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>$(mkfile_path)/RunMethods<sp/>\</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>$(mkfile_path)/RunMethods/Commanders<sp/>\</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>$(mkfile_path)/RunMethods/Status<sp/>\</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">INCLUDES<sp/>+=<sp/>\</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>-I$(mkfile_path)/Detectors<sp/>\</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>-I$(mkfile_path)/Devices<sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>-I$(mkfile_path)/Observer<sp/>\</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>-I$(mkfile_path)/<ref refid="d8/de6/class_u_i" kindref="compound">UI</ref><sp/>\</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>-I$(mkfile_path)/Utils<sp/>\</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>-I$(mkfile_path)/RunStyles<sp/>\</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>-I$(mkfile_path)/RunMethods<sp/>\</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>-I$(mkfile_path)/RunMethods/Commanders<sp/>\</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>-I$(mkfile_path)/RunMethods/Status<sp/>\</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Makefile.inc"/>
+  </compounddef>
+</doxygen>

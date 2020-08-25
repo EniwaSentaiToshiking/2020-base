@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="d1/de6/robot__education_8md" kind="file" language="Markdown">
+    <compoundname>robot_education.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>PID制御の基本</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>ラインの目標値設定</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>当日にカラーセンサーを使って黒と白の輝度値を取得する</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>PID制御</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>光センサーの輝度値：カラーセンサーで反射光の強さを測る</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>目標の輝度値：ロボットが通りたい道．道は自分たちで決める</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>ズレ：光センサーの輝度値と目標の輝度値の差．目標とした道からどっちにどれだけ離れているか．</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>ステアリングの値：どっちにどれだけ曲がるかを設定する．</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>ゲイン</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>P:ズレが大きいほどステアリングの値を大きくする．ステアリングの強さはゲインで調整</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>$[ステアリング値]<sp/>=<sp/>([光センサーの輝度値]<sp/>-<sp/>[目標の輝度値])*[ゲイン]$</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>滑らかに動く</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>急カーブは機体がふらつく</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>安定走行までに時間がかかる</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>速度をあげると目標にたどり着けないことがある</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>I:ズレを足し合わせた面積が大きほどステアリング値を大きくする(積分)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>$[ステアリング値]<sp/>=<sp/>integral([光センサーの輝度値]<sp/>-<sp/>[目標の輝度値])dt*[ゲイン](tは時間)$</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Pよりも少し遅れてステアリングの値が更新される</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>ゲインを大きくすると急な変化になる</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Iだけでは目標に戻れなくなる</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>PIとすると急カーブなどで目標に戻れなくなることを防ぐ</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>D:直前のズレと現在のズレの差(ズレの変化)が大きいほどステアリング値を大きくする(微分)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>$[ステアリング値]<sp/>=<sp/>d/dt([光センサーの輝度値]<sp/>-<sp/>[目標の輝度値])*[ゲイン](tは時間)$</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>ズレの変化に反応が速い</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>目標値に近く機能がないため，単体では機能しない</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>急な変化に対してふらつきをなくすことができる</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>ゲイン調整ポイント</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Pゲイン，Iゲインは機体が暴れない程度の範囲で大きく</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Iゲインはとても小さいことが多い(0.001<sp/>&lt;<sp/>I<sp/>Gain<sp/>&lt;<sp/>0.003)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Dゲインは機体が小刻みに震えない程度に大きくする(10&lt;D<sp/>gain&lt;30)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>PIDは互いに影響し合うため随時調整が必要</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>PWM(Pulse<sp/>Width<sp/>Modulation)の役割</highlight></codeline>
+<codeline><highlight class="normal">[参考1](https://monoist.atmarkit.co.jp/mn/articles/0706/06/news132.html)</highlight></codeline>
+<codeline><highlight class="normal">[参考2](http://www.sist.ac.jp/club/mcf/Umeta_lecture/PWM.html)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>モータの回転数を制御するのに使う方法</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>PWMは一定の時間内でどの程度Highを出力するかをコントロールする制御方式</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>ON・OFFを繰り返す周期に対するONの時間の割合を，デューティー比と呼びます．</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>デューティー比が大きいとONの時間が長い</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>デューティー比が$1$だと最大速で前進し$-1$だと最大速で後退する．</highlight></codeline>
+    </programlisting>
+    <location file="docs/markdown/robot_education.md"/>
+  </compounddef>
+</doxygen>
