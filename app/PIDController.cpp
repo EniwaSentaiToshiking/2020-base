@@ -11,7 +11,6 @@ PIDController::~PIDController()
 int PIDController::calc_pid_control_pwm_value(PID *pid, unsigned int sensor_val, unsigned int target_val, int absMax)
 {
   // absMax = (Motor::PWM_MAX) = 100
-  int p, i, d;
   float KP, KI, KD;
 
   KP = pid->k_p;
@@ -22,11 +21,13 @@ int PIDController::calc_pid_control_pwm_value(PID *pid, unsigned int sensor_val,
   current_diff = sensor_val - target_val;
   integral += (current_diff + previous_diff) / 2.0 * DELTA_T;
 
-  k_p = KP * current_diff;
-  k_i = KI * integral;
-  k_d = KD * (current_diff - previous_diff) / DELTA_T;
+  int _p = KP * current_diff;
+  int _i = KI * integral;
+  int _d = KD * (current_diff - previous_diff) / DELTA_T;
 
-  return pwm_controller_limit(p + i + d, absMax);
+  int pid_control_pwm_value = _p + _i + _d;
+
+  return pwm_controller_limit(pid_control_pwm_value, absMax);
 }
 
 int PIDController::pwm_controller_limit(int pid_value, int absMax)

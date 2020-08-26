@@ -4,7 +4,9 @@ APPL_COBJS +=
 
 APPL_CXXOBJS += \
 util.o \
-Tracer.o
+Tracer.o \
+PID.o \
+PIDController.o
 
 SRCLANG := c++
 
@@ -15,7 +17,10 @@ include $(EV3RT_SDK_LIB_DIR)/libcpp-ev3/Makefile
 
 endif
 
-APPL_DIRS += $(mkfile_path)app $(mkfile_path)unit
+APPL_DIRS += \
+$(mkfile_path)app \
+$(mkfile_path)unit \
+
 
 
 INCLUDES += \
