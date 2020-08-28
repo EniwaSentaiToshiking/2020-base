@@ -8,10 +8,8 @@
 class PIDController
 {
 private:
-	int current_diff;
-	int previous_diff;
+	int diff[2];
 	int integral; /* 積分 */
-	int differential; /* 微分 */
 
 public:
 	PIDController();

@@ -19,12 +19,15 @@ endif
 
 APPL_DIRS += \
 $(mkfile_path)app \
-$(mkfile_path)unit \
+$(mkfile_path)util \
+$(mkfile_path)device_drivers \
 
 
 
 INCLUDES += \
 	-I$(mkfile_path)app \
-	-I$(mkfile_path)unit
+	-I$(mkfile_path)util \
+	-I$(mkfile_path)device_drivers \
+
 
 #COPTS += -fno-use-cxa-atexit
