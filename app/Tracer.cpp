@@ -1,35 +1,31 @@
 #include "Tracer.h"
 
-Tracer::Tracer():
-  leftWheel(PORT_C), rightWheel(PORT_B),
-  colorSensor(PORT_3) {
+Tracer::Tracer() : leftWheel(PORT_C), rightWheel(PORT_B),
+                   colorSensor(PORT_3)
+{
 }
 
-void Tracer::init() {
+void Tracer::init()
+{
   init_f("Tracer");
 }
 
-void Tracer::terminate() {
+void Tracer::terminate()
+{
   msg_f("Stopped.", 1);
   leftWheel.stop();
   rightWheel.stop();
 }
 
-float Tracer::calc_prop_value() {
-  const float Kp = 0.83;        // <1>
-  const int target = 10;        // <2>
-  const int bias = 0;
-
-  int diff = colorSensor.getBrightness() - target; // <3>
-  return (Kp * diff + bias);                       // <4>
-}
-
-void Tracer::run() {
+void Tracer::run()
+{
   msg_f("running...", 1);
-  float turn = calc_prop_value(); // <1>
-  int pwm_l = pwm - turn;      // <2>
-  int pwm_r = pwm + turn;      // <2>
-  leftWheel.setPWM(pwm_l);
-  rightWheel.setPWM(pwm_r);
+  const int m_target_color_value = 18;
+  float m_control_value = pidController.calc_pid_control_pwm_value(2.0, 0.03, 0.2, colorSensor.getBrightness(), m_target_color_value); // <1>
+  int m_left_pwm = pwm - m_control_value;                                                                                              // <2>
+  int m_right_pwm = pwm + m_control_value;                                                                                             // <2>
+  leftWheel.setPWM(m_left_pwm);
+  rightWheel.setPWM(m_right_pwm);
+  // printf("sensor, %d, left_pwm, %d, right_pwm, %d\n",
+  //        int(colorSensor.getBrightness()), m_left_pwm, m_right_pwm);
 }
-

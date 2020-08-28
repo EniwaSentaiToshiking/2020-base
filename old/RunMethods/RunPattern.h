@@ -59,7 +59,7 @@ public:
     //旋回走行
     RunPattern(Pattern pattern, int speed, DetectType type, float threshold, TurningDirection direction);
     //アームのみ移動
-    RunPattern(Pattern Pattern, int arm, int threshold); //threshold???
+    RunPattern(Pattern Pattern, int arm, int threshold);
 
     void init();
 

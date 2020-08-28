@@ -18,7 +18,7 @@ typedef enum
 class BlackLineDetector : public Detector
 {
 private:
-  CourseMonitor *courseMonitor; /* courseやろがい！*/
+  CourseMonitor *courseMonitor; 
   int threshold;
   discernLine_enum discernLine_state = DISCERN_WHITE1;
 

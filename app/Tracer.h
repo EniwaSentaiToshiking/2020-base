@@ -1,10 +1,12 @@
 #include "Motor.h"
 #include "ColorSensor.h"
 #include "util.h"
+#include "pid_controller.h"
 
 using namespace ev3api;
 
-class Tracer {
+class Tracer
+{
 public:
   Tracer();
   void run();
@@ -15,8 +17,6 @@ private:
   Motor leftWheel;
   Motor rightWheel;
   ColorSensor colorSensor;
-  const int8_t mThreshold = 20;
-  const int8_t pwm = (Motor::PWM_MAX) / 6;
-
-  float calc_prop_value();      // <1>
+  PIDController pidController;
+  const int8_t pwm = (Motor::PWM_MAX) / 2 + 10;
 };

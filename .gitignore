@@ -765,3 +765,5 @@ healthchecksdb
 MigrationBackup/
 
 # End of https://www.gitignore.io/api/c,vim,c++,linux,macos,emacs,python,pycharm,windows,visualstudio,visualstudiocode
+
+*.lock

@@ -8,7 +8,8 @@ PIDController::~PIDController()
 {
 }
 
-int PIDController::getTurn(PID *pid, unsigned int sensor_val, unsigned int target_val, int absMax)
+// absMax = (Motor::PWM_MAX) = 100
+int PIDController::calc_pid_control_pwm_value(PID *pid, unsigned int sensor_val, unsigned int target_val, int absMax)
 {
   int p, i, d;
   float KP, KI, KD;
@@ -28,7 +29,7 @@ int PIDController::getTurn(PID *pid, unsigned int sensor_val, unsigned int targe
   return math_limit(p + i + d, absMax);
 }
 
-int PIDController::math_limit(int pid_value, int absMax)
+int PIDController::pwm_controller_limit(int pid_value, int absMax)
 {
   if (pid_value > absMax)
     pid_value = absMax;
