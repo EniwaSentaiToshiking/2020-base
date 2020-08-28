@@ -1,15 +1,15 @@
 #ifndef PIDController_H
 #define PIDController_H
 
-#define DELTA_T 0.001 /* TRACER_TASKのハンドラ周期<sec>と同じ */
-
 class PIDController
 {
 private:
-	int previous_error;
-  	int current_error;
-	float integral; /* 積分 */
+	int previous_error = 0;
+	int current_error = 0;
+	double integral;
+	double differential;
 	const float absMax = 100;
+	const float dt = 0.001; /* TRACER_TASKのハンドラ周期<sec>と同じ */
 
 public:
 	PIDController();

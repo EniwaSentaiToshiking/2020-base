@@ -1,8 +1,7 @@
 #include "Motor.h"
 #include "ColorSensor.h"
 #include "util.h"
-#include "PID.h"
-#include "PIDController.h"
+#include "pid_controller.h"
 
 using namespace ev3api;
 
@@ -18,12 +17,6 @@ private:
   Motor leftWheel;
   Motor rightWheel;
   ColorSensor colorSensor;
-  const int8_t pwm = (Motor::PWM_MAX) / 4 * 3;
-  float previous_error;
-  float current_error;
-  float integral;
-
-  float calc_proportional_control_pwm_value(); // <1>
-  float calc_pid_control_pwm_value();
-  int pwm_controller_limit(int pid_value, int absMax);
+  PIDController pidController;
+  const int8_t pwm = (Motor::PWM_MAX) / 2 + 10;
 };

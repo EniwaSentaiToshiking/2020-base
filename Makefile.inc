@@ -5,8 +5,7 @@ APPL_COBJS +=
 APPL_CXXOBJS += \
 util.o \
 Tracer.o \
-PID.o \
-PIDController.o
+pid_controller.o
 
 SRCLANG := c++
 
