@@ -4,7 +4,7 @@ RunCommander::RunCommander()
 {
 	leftMotor = new WheelMotorDriver(PORT_C);
 	rightMotor = new WheelMotorDriver(PORT_B);
-	steering = new Steering(*leftMotor->motor, *rightMotor->motor);
+	// steering = new Steering(*leftMotor->motor, *rightMotor->motor);
 	grid = new Grid();
 }
 

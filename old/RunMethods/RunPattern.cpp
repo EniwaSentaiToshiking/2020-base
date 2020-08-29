@@ -1,5 +1,6 @@
 #include "RunPattern.h"
 
+// ライントレースや通常走行のときに使用する
 RunPattern::RunPattern(Pattern pattern, int speed, DetectType type, float threshold, float p, float i, float d, int brightness, Edge edge)
 {
     this->pattern = pattern;
@@ -12,6 +13,7 @@ RunPattern::RunPattern(Pattern pattern, int speed, DetectType type, float thresh
     init();
 }
 
+// 開始点と終了点の座標(x0,y0,x1,x2)を決めて走行するモードGrid走行とは何が違うのかよくわかっていない
 RunPattern::RunPattern(Pattern pattern, int speed, Lot *threshold, float p, float i, float d, int brightness)
 {
     this->pattern = pattern;
@@ -23,6 +25,10 @@ RunPattern::RunPattern(Pattern pattern, int speed, Lot *threshold, float p, floa
     init();
 }
 
+/*
+その場での旋回やターンをするときに使用する
+Spin, Turning, Clothoidが使えるかな
+*/
 RunPattern::RunPattern(Pattern pattern, int speed, DetectType type, float threshold, TurningDirection direction)
 {
     this->pattern = pattern;
@@ -41,6 +47,7 @@ RunPattern::RunPattern(Pattern pattern, int speed, DetectType type, float thresh
     init();
 }
 
+//走行体の腕を上下する際に使用する
 RunPattern::RunPattern(Pattern pattern, int arm, int threshold)
 {
     this->pattern = pattern;
@@ -70,6 +77,7 @@ RunPattern::~RunPattern()
     delete nextLot;
 }
 
+// 走行スタイルを定義する場所
 void RunPattern::createRunStyle()
 {
     switch (this->pattern)
@@ -98,6 +106,7 @@ void RunPattern::createRunStyle()
     }
 }
 
+//検知する方法を定義する場所：閾値が大事
 void RunPattern::createDetector()
 {
     switch (this->detectType)
@@ -166,6 +175,7 @@ bool RunPattern::run()
         armCommander->rotateDefault();
     }
 
+    // 検知条件を達成しているかどうかを判断している
     if (detector->detect())
         return true;
 

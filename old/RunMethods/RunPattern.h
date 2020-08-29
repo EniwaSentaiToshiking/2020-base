@@ -2,6 +2,7 @@
 #define RUNPATTERN_H
 
 #include <typeinfo>
+/* 参考： https://cpprefjp.github.io/reference/typeinfo.html */
 #include "LineTrace.h"
 #include "Straight.h"
 #include "Turning.h"

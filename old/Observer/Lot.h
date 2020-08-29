@@ -3,6 +3,7 @@
 
 #include "PID.h"
 
+// 2次元座標の2点を表している
 class Lot
 {
 public:

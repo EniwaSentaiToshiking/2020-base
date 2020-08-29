@@ -18,7 +18,8 @@ CourseRun::CourseRun(Course course)
 
 CourseRun::~CourseRun()
 {
-    for_each(lots.begin(), lots.end(), DeleteObject());
+    std::for_each(lots.begin(), lots.end(), DeleteObject());
+    /* 参考： https://cpprefjp.github.io/reference/algorithm/for_each.html */
     lots.clear();
     ev3_speaker_play_tone(480, 100);
 }

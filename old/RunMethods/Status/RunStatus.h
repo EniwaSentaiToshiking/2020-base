@@ -1,6 +1,7 @@
 #include "RunPattern.h"
 #include <vector>
-#include <algorithm>
+// #include <algorithm>
+/*参考： https://cpprefjp.github.io/reference/algorithm.html*/
 
 using namespace std;
 
@@ -27,12 +28,13 @@ enum RunState
 };
 
 // なんだこれ？
-class RunManager;
+// class RunManager;
 
 class RunStatus
 {
 protected:
-  vector<RunPattern *> patterns;
+  vector<RunPattern *> patterns; /* 高速で動作する配列で管理したいため，vectorを使っている*/
+  /* 参考: https://cpprefjp.github.io/reference/vector/vector.html */
   unsigned int currentPattern = 0;
   RunState nextState;
 
