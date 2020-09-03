@@ -18,5 +18,5 @@ private:
   Motor rightWheel;
   ColorSensor colorSensor;
   PIDController pidController;
-  const int8_t pwm = (Motor::PWM_MAX) / 2 + 10;
+  static const int8_t pwm = (Motor::PWM_MAX) / 2 + 10;
 };

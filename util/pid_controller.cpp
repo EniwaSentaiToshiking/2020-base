@@ -2,6 +2,10 @@
 
 PIDController::PIDController()
 {
+  previous_error = 0;
+  current_error = 0;
+  integral = 0;
+  differential = 0;
 }
 
 PIDController::~PIDController()
@@ -11,6 +15,8 @@ PIDController::~PIDController()
 int PIDController::calc_pid_control_pwm_value(float k_p, float k_i, float k_d, unsigned int sensor_val, unsigned int target_val)
 {
   int p, i, d;
+  const float dt = 0.001; /* TRACER_TASKのハンドラ周期<sec>と同じ */
+
 
   previous_error = current_error;
   current_error = sensor_val - target_val;
@@ -26,9 +32,10 @@ int PIDController::calc_pid_control_pwm_value(float k_p, float k_i, float k_d, u
 
 int PIDController::pwm_controller_limit(int pid_value)
 {
-  if (pid_value > absMax)
-    pid_value = absMax;
-  else if (pid_value < absMax * -1)
-    pid_value = absMax * -1;
+  static const int abs_max = 100;
+  if (pid_value > abs_max)
+    pid_value = abs_max;
+  else if (pid_value < abs_max * -1)
+    pid_value = abs_max * -1;
   return pid_value;
 }

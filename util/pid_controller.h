@@ -4,12 +4,10 @@
 class PIDController
 {
 private:
-	int previous_error = 0;
-	int current_error = 0;
-	double integral;
-	double differential;
-	const float absMax = 100;
-	const float dt = 0.001; /* TRACER_TASKのハンドラ周期<sec>と同じ */
+	int previous_error;
+	int current_error;
+	float integral;
+	float differential;
 
 public:
 	PIDController();
