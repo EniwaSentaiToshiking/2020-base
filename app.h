@@ -19,8 +19,8 @@ extern void tracer_task(intptr_t exinf);
 extern void tracer_cyc(intptr_t exinf);
 extern void straight_task(intptr_t exinf);
 extern void straight_cyc(intptr_t exinf);
-extern void wait_start_task(intptr_t exinf);
-extern void wait_start_cyc(intptr_t exinf);
+// extern void wait_start_task(intptr_t exinf);
+// extern void wait_start_cyc(intptr_t exinf);
 
 
 #endif /* TOPPERS_MACRO_ONLY */
