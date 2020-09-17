@@ -3,10 +3,11 @@ mkfile_path := $(dir $(lastword $(MAKEFILE_LIST)))
 APPL_COBJS +=
 
 APPL_CXXOBJS += \
-util.o \
-Tracer.o \
-pid_controller.o \
-Straight.o
+	util.o \
+	Tracer.o \
+	pid_controller.o \
+	Straight.o \
+	WaitStart.o
 
 SRCLANG := c++
 
