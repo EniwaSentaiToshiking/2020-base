@@ -5,7 +5,8 @@ APPL_COBJS +=
 APPL_CXXOBJS += \
 util.o \
 Tracer.o \
-pid_controller.o
+pid_controller.o \
+Straight.o
 
 SRCLANG := c++
 
@@ -17,16 +18,14 @@ include $(EV3RT_SDK_LIB_DIR)/libcpp-ev3/Makefile
 endif
 
 APPL_DIRS += \
-$(mkfile_path)app \
-$(mkfile_path)util \
-$(mkfile_path)device_drivers \
-
+	$(mkfile_path)app \
+	$(mkfile_path)util \
+	$(mkfile_path)Playground \
 
 
 INCLUDES += \
 	-I$(mkfile_path)app \
 	-I$(mkfile_path)util \
-	-I$(mkfile_path)device_drivers \
-
+	-I$(mkfile_path)Playground \
 
 #COPTS += -fno-use-cxa-atexit
