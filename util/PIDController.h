@@ -1,5 +1,4 @@
-#ifndef PIDController_H
-#define PIDController_H
+#pragma once
 
 class PIDController
 {
@@ -18,4 +17,3 @@ public:
 
 	virtual ~PIDController();
 };
-#endif

@@ -1,30 +1,29 @@
 #include "app.h" // <1>
-#include "Tracer.h" // <2>
+#include "GameState.h"
+#include "SetupGame.h"
+#include "RunningGame.h" // <2>
 #include "Clock.h"  // <3>
 #include "Straight.h"
-#include "WaitStart.h"
 #include "TouchSensor.h"
-#include "GameStates.h"
 
 using namespace ev3api;
 
-Tracer tracer;  // <4>
+SetupGame setupGame;
+RunningGame runningGame; // <4>
 Clock clock;    // <5>
-Straight straight;
-WaitStart waitStart;
 
-int nowState = WAIT_START_STATE;
-void tracer_task(intptr_t exinf) 
+int nowState = SETUP_GAME_STATE;
+void game_states_manager_task(intptr_t exinf) 
 { // <1>
   switch (nowState)
   {
-  case WAIT_START_STATE:
-    if (waitStart.isStarted()) {
-      nowState = TRACER_STATE;
+  case SETUP_GAME_STATE:
+    if (setupGame.isStarted()) {
+      nowState = RUNNING_GAME_STATE;
     }
     break;
-  case TRACER_STATE:
-    tracer.run(); // <2>
+  case RUNNING_GAME_STATE:
+    runningGame.run(); // <2>
     break;
   default:
     break;
@@ -32,44 +31,20 @@ void tracer_task(intptr_t exinf)
   ext_tsk();
 }
 
-void straight_task(intptr_t exinf) 
-{
-  const uint32_t duration = 2000;
-  straight.forward();
-  clock.sleep(duration);
-  straight.backward();
-  clock.sleep(duration);
-}
-
-// void wait_start_task(intptr_t exinf) 
-// {
-//   sta_cyc(WAIT_START_CYC);
-//   ev3_led_set_color(LED_GREEN);
-//   if (ev3_button_is_pressed(LEFT_BUTTON))
-//   {
-//     ev3_led_set_color(LED_RED);
-//     // act_tsk(MAIN_TASK);
-//     // stp_cyc(WAIT_START_CYC);
-//   }
-// }
 
 void main_task(intptr_t unused) { // <1>
   const uint32_t duration = 100; // <2>
   
 
-  tracer.init(); // <3>
-  straight.init();
-  sta_cyc(TRACER_CYC); // <4>
-  // sta_cyc(STRAIGHT_CYC);
+  runningGame.init(); // <3>
+  sta_cyc(GAME_STATES_MANAGER_CYC); // <4>
 
   while (!ev3_button_is_pressed(LEFT_BUTTON)) { // <1>
       clock.sleep(duration);   // <2>
   }
 
-  stp_cyc(TRACER_CYC); // <3>
-  // stp_cyc(STRAIGHT_CYC); // <3>
-  straight.terminate();
-  tracer.terminate(); // <4>
+  stp_cyc(GAME_STATES_MANAGER_CYC); // <3>
+  runningGame.terminate();
   ext_tsk(); // <5>
 }
 

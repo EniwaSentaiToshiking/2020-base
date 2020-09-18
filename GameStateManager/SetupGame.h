@@ -1,14 +1,16 @@
 #pragma once
 
 #include "TouchSensor.h"
+#include "util.h"
 using namespace ev3api;
 
-class WaitStart
+class SetupGame
 {
 public:
-    WaitStart();
+    SetupGame();
+    void init();
     bool isStarted();
-    virtual ~WaitStart();
+    virtual ~SetupGame();
 private:
     TouchSensor touchSensor;
 };
