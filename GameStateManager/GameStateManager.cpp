@@ -11,7 +11,7 @@ void GameStateManager::manageGameState()
     {
     case SETUP_GAME_STATE:
         if (setupGame.isStarted()) {
-        nowState = RUNNING_GAME_STATE;
+            nowState = RUNNING_GAME_STATE;
         }
         break;
     case RUNNING_GAME_STATE:

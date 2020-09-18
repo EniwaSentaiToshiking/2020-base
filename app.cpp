@@ -11,8 +11,8 @@ using namespace ev3api;
 
 GameStateManager gameStateManager;
 Clock clock; // <5>
-
 int nowState = SETUP_GAME_STATE;
+
 void game_state_manager_task(intptr_t exinf) 
 { // <1>
   gameStateManager.manageGameState();

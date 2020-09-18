@@ -3,11 +3,11 @@
 RunningGame::RunningGame() : leftWheel(PORT_C), rightWheel(PORT_B),
                    colorSensor(PORT_3)
 {
+  init_f("RunningGame");
 }
 
 void RunningGame::init()
 {
-  init_f("RunningGame");
 }
 
 void RunningGame::terminate()

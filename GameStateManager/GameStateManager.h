@@ -1,6 +1,10 @@
+#pragma once
+
 #include "GameState.h"
 #include "SetupGame.h"
 #include "RunningGame.h"
+
+extern int nowState;
 
 class GameStateManager
 {
@@ -10,7 +14,6 @@ public:
     void terminate();
 
 private:
-    int nowState = SETUP_GAME_STATE;
     SetupGame setupGame;
     RunningGame runningGame;
 };
