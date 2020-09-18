@@ -10,7 +10,6 @@ public:
     SetupGame();
     void init();
     bool isStarted();
-    virtual ~SetupGame();
 private:
     TouchSensor touchSensor;
 };

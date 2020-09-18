@@ -15,6 +15,7 @@ void RunningGame::terminate()
   msg_f("Stopped.", 1);
   leftWheel.stop();
   rightWheel.stop();
+  ev3_led_set_color(LED_RED);
 }
 
 void RunningGame::run()
