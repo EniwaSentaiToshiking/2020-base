@@ -4,10 +4,10 @@ APPL_COBJS +=
 
 APPL_CXXOBJS += \
 	util.o \
-	Tracer.o \
-	pid_controller.o \
+	PIDController.o \
 	Straight.o \
-	WaitStart.o
+	SetupGame.o \
+	RunningGame.o \
 
 SRCLANG := c++
 
@@ -21,12 +21,14 @@ endif
 APPL_DIRS += \
 	$(mkfile_path)app \
 	$(mkfile_path)util \
+	$(mkfile_path)GameStateManager \
 	$(mkfile_path)Playground \
 
 
 INCLUDES += \
 	-I$(mkfile_path)app \
 	-I$(mkfile_path)util \
+	-I$(mkfile_path)GameStateManager \
 	-I$(mkfile_path)Playground \
 
 #COPTS += -fno-use-cxa-atexit

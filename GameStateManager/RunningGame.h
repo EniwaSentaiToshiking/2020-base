@@ -1,14 +1,14 @@
 #include "Motor.h"
 #include "ColorSensor.h"
 #include "util.h"
-#include "pid_controller.h"
+#include "PIDController.h"
 
 using namespace ev3api;
 
-class Tracer
+class RunningGame
 {
 public:
-  Tracer();
+  RunningGame();
   void run();
   void init();
   void terminate();

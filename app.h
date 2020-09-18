@@ -6,7 +6,6 @@ extern "C" {
 
 #define MAIN_PRIORITY    (TMIN_APP_TPRI + 1)
 #define TRACER_PRIORITY  (TMIN_APP_TPRI + 2)
-#define STRAIGHT_PRIORITY (TMIN_APP_TPRI + 3)
 
 #ifndef STACK_SIZE
 #define STACK_SIZE      (4096)
@@ -15,12 +14,8 @@ extern "C" {
 #ifndef TOPPERS_MACRO_ONLY
 
 extern void main_task(intptr_t exinf);
-extern void tracer_task(intptr_t exinf);
-extern void tracer_cyc(intptr_t exinf);
-extern void straight_task(intptr_t exinf);
-extern void straight_cyc(intptr_t exinf);
-extern void wait_start_task(intptr_t exinf);
-extern void wait_start_cyc(intptr_t exinf);
+extern void game_states_manager_task(intptr_t exinf);
+extern void game_states_manager_cyc(intptr_t exinf);
 
 
 #endif /* TOPPERS_MACRO_ONLY */

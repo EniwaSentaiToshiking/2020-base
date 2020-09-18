@@ -1,23 +1,23 @@
-#include "Tracer.h"
+#include "RunningGame.h"
 
-Tracer::Tracer() : leftWheel(PORT_C), rightWheel(PORT_B),
+RunningGame::RunningGame() : leftWheel(PORT_C), rightWheel(PORT_B),
                    colorSensor(PORT_3)
 {
 }
 
-void Tracer::init()
+void RunningGame::init()
 {
-  init_f("Tracer");
+  init_f("RunningGame");
 }
 
-void Tracer::terminate()
+void RunningGame::terminate()
 {
   msg_f("Stopped.", 1);
   leftWheel.stop();
   rightWheel.stop();
 }
 
-void Tracer::run()
+void RunningGame::run()
 {
   msg_f("running...", 1);
   const int m_target_color_value = 18;
@@ -26,6 +26,4 @@ void Tracer::run()
   int m_right_pwm = pwm + m_control_value;                                                                                             // <2>
   leftWheel.setPWM(m_left_pwm);
   rightWheel.setPWM(m_right_pwm);
-  // printf("sensor, %d, left_pwm, %d, right_pwm, %d\n",
-  //        int(colorSensor.getBrightness()), m_left_pwm, m_right_pwm);
 }
