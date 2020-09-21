@@ -3,11 +3,11 @@
 RunningGame::RunningGame() : leftWheel(PORT_C), rightWheel(PORT_B),
                    colorSensor(PORT_3)
 {
+  init_f("RunningGame");
 }
 
 void RunningGame::init()
 {
-  init_f("RunningGame");
 }
 
 void RunningGame::terminate()
@@ -15,6 +15,7 @@ void RunningGame::terminate()
   msg_f("Stopped.", 1);
   leftWheel.stop();
   rightWheel.stop();
+  ev3_led_set_color(LED_RED);
 }
 
 void RunningGame::run()

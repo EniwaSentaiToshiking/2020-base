@@ -8,6 +8,7 @@ APPL_CXXOBJS += \
 	Straight.o \
 	SetupGame.o \
 	RunningGame.o \
+	GameStateManager.o \
 
 SRCLANG := c++
 
