@@ -9,13 +9,12 @@ void GameStateManager::manageGameState()
 {
     switch (nowState)
     {
-    case SETUP_GAME_STATE:
-        if (setupGame.isStarted()) {
-            nowState = RUNNING_GAME_STATE;
-        }
-        break;
     case RUNNING_GAME_STATE:
         runningGame.run(); // <2>
+        break;
+    case BLOCK_BINGO_GAME_STATE:
+        break;
+    case GARAGE_GAME_STATE:
         break;
     default:
         break;

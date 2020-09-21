@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Motor.h"
 #include "ColorSensor.h"
 #include "util.h"
