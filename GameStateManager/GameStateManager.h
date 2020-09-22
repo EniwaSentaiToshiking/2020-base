@@ -2,6 +2,7 @@
 
 #include "GameState.h"
 #include "RunningGame.h"
+#include "PlaygroundGame.h"
 
 extern int nowState;
 
@@ -14,4 +15,5 @@ public:
 
 private:
     RunningGame runningGame;
+    PlaygroundGame playgroundGame;
 };
