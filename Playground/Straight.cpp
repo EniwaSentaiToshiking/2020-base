@@ -4,10 +4,6 @@ Straight::Straight() : leftWheel(PORT_B), rightWheel(PORT_C)
 {
 }
 
-Straight::~Straight()
-{
-}
-
 void Straight::init()
 {
 }
@@ -20,16 +16,12 @@ void Straight::terminate()
 
 void Straight::forward()
 {
-    int left_pwm = pwm;
-    int right_pwm = pwm;
-    leftWheel.setPWM(left_pwm);
-    rightWheel.setPWM(right_pwm);
+    leftWheel.setPWM(pwm);
+    rightWheel.setPWM(pwm);
 }
 
 void Straight::backward()
 {
-    int left_pwm = -pwm;
-    int right_pwm = -pwm;
-    leftWheel.setPWM(left_pwm);
-    rightWheel.setPWM(right_pwm);
+    leftWheel.setPWM(-pwm);
+    rightWheel.setPWM(-pwm);
 }

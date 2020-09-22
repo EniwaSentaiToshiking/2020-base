@@ -7,14 +7,13 @@ class Straight
 {
     public:
         Straight();
-        void forward();
-        void backward();
         void init();
         void terminate();
-        virtual ~Straight();
+        void forward();
+        void backward();
 
     private:
         Motor leftWheel;
         Motor rightWheel;
-        const int8_t pwm = (Motor::PWM_MAX);
+        const int8_t pwm = (Motor::PWM_MAX)/2;
 };
