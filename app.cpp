@@ -8,7 +8,7 @@ using namespace ev3api;
 SetupGame setupGame;
 GameStateManager gameStateManager;
 Clock clock;
-int nowState = PLAYGROUND_GAME_STATE;
+int nowState = RUNNING_GAME_STATE;
 
 void game_state_manager_task(intptr_t exinf)
 {

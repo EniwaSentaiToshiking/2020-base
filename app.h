@@ -13,7 +13,6 @@ extern "C" {
 
 #ifndef TOPPERS_MACRO_ONLY
 
-// extern void main_task(intptr_t exinf);
 extern void game_state_manager_task(intptr_t exinf);
 extern void game_state_manager_cyc(intptr_t exinf);
 extern void setup_game_task(intptr_t exinf);
