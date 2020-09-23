@@ -1,7 +1,7 @@
 #pragma once
 
 #include "TouchSensor.h"
-#include "util.h"
+#include "DebugUtil.h"
 using namespace ev3api;
 
 class SetupGame
@@ -14,4 +14,5 @@ public:
 
 private:
     TouchSensor touchSensor;
+    DebugUtil debugUtil;
 };

@@ -1,31 +1,31 @@
 #include "PlaygroundGameState.h"
 
-PlaygroundGameState::PlaygroundGameState()
+PlaygroundGameState::PlaygroundGameState():colorSensor(PORT_3)
 {
 }
 
 void PlaygroundGameState::init()
 {
-  init_f("PlaygroundGameState");
-  straight.init();
+  debugUtil.init("PlaygroundGameState");
 }
 
 void PlaygroundGameState::run()
 {
-  straight.forward();
-  if (ev3_button_is_pressed(RIGHT_BUTTON)) {
-    straight.backward();
-  }
+  debugUtil.lcd_num_debug(colorSensor.getColorNumber(), 2);
+  debugUtil.lcd_num_debug(colorSensor.getBrightness(), 3);
 }
 
 bool PlaygroundGameState::isChanged()
 {
+  if (colorSensor.getColorNumber() == COLOR_BLUE)
+  {
+    return true;
+  }
+  return false;
 }
 
 void PlaygroundGameState::terminate()
 {
-  msg_f("Stopped.", 1);
-  straight.terminate();
-  ev3_led_set_color(LED_RED);
+  debugUtil.lcd_msg_debug("Stopped.", 1);
+  debugUtil.led_debug(LED_RED);
 }
-
