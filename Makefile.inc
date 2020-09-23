@@ -7,8 +7,8 @@ APPL_CXXOBJS += \
 	PIDController.o \
 	Straight.o \
 	SetupGame.o \
-	RunningGame.o \
-	PlaygroundGame.o \
+	RunningGameState.o \
+	PlaygroundGameState.o \
 	GameStateManager.o \
 
 SRCLANG := c++

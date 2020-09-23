@@ -1,8 +1,8 @@
 #pragma once
 
 #include "GameState.h"
-#include "RunningGame.h"
-#include "PlaygroundGame.h"
+#include "RunningGameState.h"
+#include "PlaygroundGameState.h"
 
 extern int nowState;
 
@@ -14,6 +14,6 @@ public:
     void terminate();
 
 private:
-    RunningGame runningGame;
-    PlaygroundGame playgroundGame;
+    RunningGameState runningGameState;
+    PlaygroundGameState playgroundGameState;
 };

@@ -10,6 +10,8 @@ public:
     SetupGame();
     void init();
     bool isStarted();
+    void terminate();
+
 private:
     TouchSensor touchSensor;
 };
