@@ -5,12 +5,13 @@
 
 using namespace ev3api;
 
-class PlaygroundGame
+class PlaygroundGameState
 {
 public:
-  PlaygroundGame();
-  void run();
+  PlaygroundGameState();
   void init();
+  void run();
+  bool isChanged();
   void terminate();
 
 private:

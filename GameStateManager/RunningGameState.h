@@ -7,12 +7,13 @@
 
 using namespace ev3api;
 
-class RunningGame
+class RunningGameState
 {
 public:
-  RunningGame();
-  void run();
+  RunningGameState();
   void init();
+  void run();
+  bool isChanged();
   void terminate();
 
 private:
@@ -20,5 +21,5 @@ private:
   Motor rightWheel;
   ColorSensor colorSensor;
   PIDController pidController;
-  const int8_t pwm = (Motor::PWM_MAX) / 2 + 10;
+  const int8_t pwm = (Motor::PWM_MAX) / 2 + 20;
 };
