@@ -2,7 +2,6 @@
 
 #include "DebugUtil.h"
 #include "ColorSensor.h"
-#include <stdio.h>
 
 using namespace ev3api;
 
