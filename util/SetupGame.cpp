@@ -16,3 +16,7 @@ bool SetupGame::isStarted()
     }
     return false;
 }
+
+void SetupGame::terminate()
+{
+}

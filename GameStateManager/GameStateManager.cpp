@@ -2,6 +2,10 @@
 
 GameStateManager::GameStateManager()
 {
+}
+
+void GameStateManager::init()
+{
     init_f("GameStateManager");
 }
 
