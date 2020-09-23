@@ -1,7 +1,8 @@
 #pragma once
 
-#include "util.h"
-#include "Straight.h"
+#include "DebugUtil.h"
+#include "ColorSensor.h"
+#include <stdio.h>
 
 using namespace ev3api;
 
@@ -15,5 +16,6 @@ public:
   void terminate();
 
 private:
-  Straight straight;
+  ColorSensor colorSensor;
+  DebugUtil debugUtil;
 };

@@ -2,7 +2,7 @@
 
 #include "Motor.h"
 #include "ColorSensor.h"
-#include "util.h"
+#include "DebugUtil.h"
 #include "PIDController.h"
 
 using namespace ev3api;
@@ -21,5 +21,6 @@ private:
   Motor rightWheel;
   ColorSensor colorSensor;
   PIDController pidController;
+  DebugUtil debugUtil;
   const int8_t pwm = (Motor::PWM_MAX) / 2 + 20;
 };

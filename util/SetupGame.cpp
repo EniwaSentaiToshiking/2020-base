@@ -6,12 +6,14 @@ SetupGame::SetupGame() : touchSensor(PORT_4)
 
 void SetupGame::init()
 {
-    init_f("SetupGame");
+    debugUtil.init("SetupGame");
 }
 
 bool SetupGame::isStarted()
 {
-    if (touchSensor.isPressed()) {
+    debugUtil.lcd_msg_debug("Ready", 1);
+    if (touchSensor.isPressed())
+    {
             return true;
     }
     return false;
