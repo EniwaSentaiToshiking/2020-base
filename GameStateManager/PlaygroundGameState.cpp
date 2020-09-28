@@ -1,6 +1,6 @@
 #include "PlaygroundGameState.h"
 
-PlaygroundGameState::PlaygroundGameState():colorSensor(PORT_3)
+PlaygroundGameState::PlaygroundGameState()
 {
 }
 
@@ -12,7 +12,7 @@ void PlaygroundGameState::init()
 void PlaygroundGameState::run()
 {
   debugUtil.lcd_num_debug(colorSensor.getColorNumber(), 2);
-  debugUtil.lcd_num_debug(colorSensor.getBrightness(), 3);
+  // debugUtil.lcd_num_debug(colorSensor.getBrightness(), 3);
 }
 
 bool PlaygroundGameState::isChanged()
