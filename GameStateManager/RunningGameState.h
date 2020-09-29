@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Motor.h"
-#include "ColorSensor.h"
+#include "ColorSensorDeviceDriver.h"
 #include "DebugUtil.h"
 #include "PIDController.h"
 
@@ -19,7 +19,7 @@ public:
 private:
   Motor leftWheel;
   Motor rightWheel;
-  ColorSensor colorSensor;
+  ColorSensorDeviceDriver colorSensorDeviceDriver;
   PIDController pidController;
   DebugUtil debugUtil;
   const int8_t pwm = (Motor::PWM_MAX) / 2 + 20;

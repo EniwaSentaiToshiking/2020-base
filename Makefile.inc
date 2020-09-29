@@ -10,7 +10,7 @@ APPL_CXXOBJS += \
 	RunningGameState.o \
 	PlaygroundGameState.o \
 	GameStateManager.o \
-	ColorDeviceDriver.o \
+	ColorSensorDeviceDriver.o \
 
 SRCLANG := c++
 

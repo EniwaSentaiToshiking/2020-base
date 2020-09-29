@@ -2,12 +2,14 @@
 
 #include "ColorSensor.h"
 #include "DebugUtil.h"
+#include <stdlib.h>
 using namespace ev3api;
 
-class ColorDeviceDriver
+class ColorSensorDeviceDriver
 {
 public:
-    ColorDeviceDriver();
+    ColorSensorDeviceDriver();
+    void init();
     /**
      * カラーセンサーからRGBを取得する
      * 
@@ -36,10 +38,12 @@ public:
      * @return 識別した色
      */
     colorid_t getColorNumber(void);
+    void terminate();
 
 private:
     rgb_raw_t rgb;
     ColorSensor colorSensor;
     DebugUtil d;
+    FILE *loggingFile;
     // int calcHSV(int red, int green, int blue);
 };

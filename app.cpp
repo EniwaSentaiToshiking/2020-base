@@ -7,7 +7,7 @@ using namespace ev3api;
 SetupGame setupGame;
 GameStateManager gameStateManager;
 
-int nowState = PLAYGROUND_GAME_STATE;
+int nowState = RUNNING_GAME_STATE;
 void setup_game_task(intptr_t exinf)
 {
   if (setupGame.isStarted())
