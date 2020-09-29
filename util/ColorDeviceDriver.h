@@ -41,5 +41,5 @@ private:
     rgb_raw_t rgb;
     ColorSensor colorSensor;
     DebugUtil d;
-    // int calcMaxBrightness(int red, int green, int blue);
+    // int calcHSV(int red, int green, int blue);
 };

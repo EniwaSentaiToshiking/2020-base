@@ -2,6 +2,7 @@
 
 #include "DebugUtil.h"
 #include "ColorDeviceDriver.h"
+#include <stdlib.h>
 
 using namespace ev3api;
 
@@ -15,6 +16,7 @@ public:
   void terminate();
 
 private:
-  ColorDeviceDriver colorSensor;
+  ColorDeviceDriver colorDeviceDriver;
   DebugUtil debugUtil;
+  FILE *file;
 };

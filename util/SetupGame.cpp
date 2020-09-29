@@ -11,7 +11,7 @@ void SetupGame::init()
 
 bool SetupGame::isStarted()
 {
-    debugUtil.lcd_msg_debug("Ready", 1);
+    // debugUtil.lcd_msg_debug("Ready", 1);
     if (touchSensor.isPressed())
     {
             return true;

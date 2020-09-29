@@ -7,6 +7,8 @@ GameStateManager::GameStateManager()
 void GameStateManager::init()
 {
     debugUtil.init("GameStateManager");
+    runningGameState.init();
+    playgroundGameState.init();
 }
 
 void GameStateManager::manageGameState() 
