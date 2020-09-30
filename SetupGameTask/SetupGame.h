@@ -2,6 +2,7 @@
 
 #include "TouchSensor.h"
 #include "DebugUtil.h"
+#include "GameStateManager.h"
 using namespace ev3api;
 
 class SetupGame
@@ -13,6 +14,8 @@ public:
     void terminate();
 
 private:
+
     TouchSensor touchSensor;
+
     DebugUtil debugUtil;
 };

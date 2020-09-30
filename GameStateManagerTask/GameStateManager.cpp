@@ -19,11 +19,11 @@ void GameStateManager::manageGameState()
         runningGameState.run();
         if (runningGameState.isChanged())
         {
+            runningGameState.terminate();
             nowState = BLOCK_BINGO_GAME_STATE;
         }
         break;
     case BLOCK_BINGO_GAME_STATE:
-        runningGameState.terminate();
         break;
     case GARAGE_GAME_STATE:
         break;

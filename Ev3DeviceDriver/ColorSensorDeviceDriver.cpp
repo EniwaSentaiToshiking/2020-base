@@ -17,7 +17,7 @@ void ColorSensorDeviceDriver::init()
 
 void ColorSensorDeviceDriver::getRawColor() 
 {
-    colorSensor.getRawColor(rgb);
+    colorSensor.getRawColor(rawrgb);
 }
 
 int8_t ColorSensorDeviceDriver::getBrightness()
@@ -33,7 +33,7 @@ int8_t ColorSensorDeviceDriver::getAmbient()
 colorid_t ColorSensorDeviceDriver::getColorNumber()
 {
     getRawColor();
-    hsv = calcHSV(rgb);
+    hsv = calcHSV(rawrgb);
     bool isRed = ((0 <= hsv.h && hsv.h < 30) || (270 <= hsv.h && hsv.h <= 359)) && (20 <= hsv.s);
     bool isYellow = (30 <= hsv.h && hsv.h < 90) && (50 <= hsv.s);
     bool isGreen = (90 <= hsv.h && hsv.h < 150) && (20 <= hsv.s);
