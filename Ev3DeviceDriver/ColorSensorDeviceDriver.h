@@ -5,6 +5,14 @@
 #include <stdlib.h>
 using namespace ev3api;
 
+// 六角錐モデル(HSV)
+typedef struct
+{
+    int16_t h; //　Hue 色相 (0~359)
+    int16_t s; //  Saturation 彩度 (0~255)
+    int16_t v; //  Value 明度(0~255)
+} hsv_t;
+
 class ColorSensorDeviceDriver
 {
 public:
@@ -42,8 +50,12 @@ public:
 
 private:
     rgb_raw_t rgb;
+    hsv_t hsv;
+    colorid_t colorId = COLOR_NONE;
     ColorSensor colorSensor;
+    hsv_t calcHSV(rgb_raw_t rgb);
+
+    /* debug */
     DebugUtil d;
     FILE *loggingFile;
-    // int calcHSV(int red, int green, int blue);
 };

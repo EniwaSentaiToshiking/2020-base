@@ -6,7 +6,7 @@ ColorSensorDeviceDriver::ColorSensorDeviceDriver(): colorSensor(PORT_3)
 
 void ColorSensorDeviceDriver::init()
 {
-    loggingFile = fopen("logging_file.csv", "a");
+    loggingFile = fopen("logging_file_yellow_stop.csv", "a");
     if (loggingFile == NULL)
     {
         d.lcd_msg_debug("error: cannot open file", 2);
@@ -33,13 +33,47 @@ int8_t ColorSensorDeviceDriver::getAmbient()
 colorid_t ColorSensorDeviceDriver::getColorNumber()
 {
     getRawColor();
+    hsv = calcHSV(rgb);
+    bool isRed = ((0 <= hsv.h && hsv.h < 30) || (270 <= hsv.h && hsv.h <= 359)) && (20 <= hsv.s);
+    bool isYellow = (30 <= hsv.h && hsv.h < 90) && (50 <= hsv.s);
+    bool isGreen = (90 <= hsv.h && hsv.h < 150) && (20 <= hsv.s);
+    bool isBlue = (150 <= hsv.h && hsv.h < 270) && (20 <= hsv.s);
+    bool isBlack = (hsv.v <= 100) && (hsv.s < 50);
+    bool isWhite = (100 < hsv.v) && (hsv.s < 50);
+    if (isRed)
+    {
+        colorId = COLOR_RED;
+    }
+    if (isBlue)
+    {
+        colorId = COLOR_BLUE;
+    }
+    if (isYellow)
+    {
+        colorId = COLOR_YELLOW;
+    }
+    if (isGreen)
+    {
+        colorId = COLOR_GREEN;
+    }
+    if (isBlack)
+    {
+        colorId = COLOR_BLACK;
+    }
+    if (isWhite)
+    {
+        colorId = COLOR_WHITE;
+    }
+
+    fprintf(loggingFile, "%d,%d,%d,%d,%d,%d,%d,%d\n",getBrightness(),rgb.r,rgb.g,rgb.b,hsv.h,hsv.s,hsv.v,colorId);
+    return colorId;
+}
+
+hsv_t ColorSensorDeviceDriver::calcHSV(rgb_raw_t rgb)
+{
     int red = rgb.r;
     int green = rgb.g;
     int blue = rgb.b;
-    // 六角錐モデル(HSV)
-    int H = 0; // (0~359)
-    int S = 0; // (0~255)
-    int V = 0; // (0~255)
     int colorBrightnessMax = 0; // (0~255)
     int colorBrightnessMin = 0; // (0~255)
     colorid_t max_rgb = COLOR_NONE;
@@ -92,75 +126,35 @@ colorid_t ColorSensorDeviceDriver::getColorNumber()
     switch (max_rgb)
     {
     case COLOR_RED:
-        H = ((60 * (green - blue) / (colorBrightnessMax - colorBrightnessMin)) + 360);
-        H = H % 360; // scaling(0~359)
+        hsv.h = ((60 * (green - blue) / (colorBrightnessMax - colorBrightnessMin)) + 360);
+        hsv.h = hsv.h % 360; // scaling(0~359)
         break;
     case COLOR_GREEN:
-        H = ((60 * (blue - red) / (colorBrightnessMax - colorBrightnessMin)) + 120);
-        H = H % 360;
+        hsv.h = ((60 * (blue - red) / (colorBrightnessMax - colorBrightnessMin)) + 120);
+        hsv.h = hsv.h % 360;
         break;
     case COLOR_BLUE:
-        H = ((60 * (red - green) / (colorBrightnessMax - colorBrightnessMin)) + 240);
-        H = H % 360;
+        hsv.h = ((60 * (red - green) / (colorBrightnessMax - colorBrightnessMin)) + 240);
+        hsv.h = hsv.h % 360;
         break;
     case COLOR_NONE:
-        H = 0;
+        hsv.h = 0;
     default:
         break;
     }
 
     // 彩度(Saturation)の計算
-    S = colorBrightnessMax - colorBrightnessMin;
+    hsv.s = colorBrightnessMax - colorBrightnessMin;
 
     // 明度(Value)の計算
-    V = colorBrightnessMax;
+    hsv.v = colorBrightnessMax;
 
-    // printf("H: %d, S: %d, max color id %d\n", H, S, max_rgb);
     snprintf(buffer, sizeof(buffer), "max, %d, min,%d,", colorBrightnessMax, colorBrightnessMin);
     d.lcd_msg_debug(buffer, 4);
-    snprintf(buffer, sizeof(buffer), "H,%d, S,%d, V,%d, maxc,%d, ", H, S, V, max_rgb);
+    snprintf(buffer, sizeof(buffer), "H,%d, S,%d, V,%d, maxc,%d, ", hsv.h, hsv.s, hsv.v, max_rgb);
     d.lcd_msg_debug(buffer, 5);
-    //閾値で色判定
-    bool isRed = ((0 <= H && H < 30) || (270 <= H && H <= 359)) && (20 <= S);
-    bool isYellow = (30 <= H && H < 90) && (50 <= S);
-    bool isGreen = (90 <= H && H < 150) && (20 <= S);
-    bool isBlue = (150 <= H && H < 270) && (20 <= S);
-    bool isBlack = (V <= 100) && (S < 50);
-    bool isWhite = (100 < V) && (S < 50);
-    colorid_t colorId = COLOR_NONE;
-    if (isRed)
-    {
-        colorId = COLOR_RED;
-        // return COLOR_RED;
-    }
-    if (isBlue)
-    {
-        colorId = COLOR_BLUE;
-        // return COLOR_BLUE;
-    }
-    if (isYellow)
-    {
-        colorId = COLOR_YELLOW;
-        // return COLOR_YELLOW;
-    }
-    if (isGreen)
-    {
-        colorId = COLOR_GREEN;
-        // return COLOR_GREEN;
-    }
-    if (isBlack)
-    {
-        colorId = COLOR_BLACK;
-        // return COLOR_BLACK;
-    }
-    if (isWhite)
-    {
-        colorId = COLOR_WHITE;
-        // return COLOR_WHITE;
-    }
 
-    fprintf(loggingFile, "%d,%d,%d,%d,%d,%d,%d,%d\n",getBrightness(),red,green,blue,H,S,V,colorId);
-    return colorId;
+    return hsv;
 }
 
 void ColorSensorDeviceDriver::terminate()
