@@ -1,9 +1,9 @@
 #pragma once
 
 #include "Motor.h"
-#include "ColorSensor.h"
+#include "ColorSensorDeviceDriver.h"
 #include "DebugUtil.h"
-#include "PIDController.h"
+#include "PIDCalculator.h"
 
 using namespace ev3api;
 
@@ -19,8 +19,8 @@ public:
 private:
   Motor leftWheel;
   Motor rightWheel;
-  ColorSensor colorSensor;
-  PIDController pidController;
+  ColorSensorDeviceDriver colorSensorDeviceDriver;
+  PIDCalculator pidCalculator;
   DebugUtil debugUtil;
   const int8_t pwm = (Motor::PWM_MAX) / 2 + 20;
 };

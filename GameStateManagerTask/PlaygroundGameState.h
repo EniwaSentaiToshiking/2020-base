@@ -1,7 +1,7 @@
 #pragma once
 
 #include "DebugUtil.h"
-#include "ColorSensor.h"
+#include "ColorSensorDeviceDriver.h"
 
 using namespace ev3api;
 
@@ -15,6 +15,6 @@ public:
   void terminate();
 
 private:
-  ColorSensor colorSensor;
+  ColorSensorDeviceDriver colorSensorDeviceDriver;
   DebugUtil debugUtil;
 };
