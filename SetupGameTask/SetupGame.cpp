@@ -13,7 +13,7 @@ bool SetupGame::isStarted()
 {
     if (touchSensor.isPressed())
     {
-            return true;
+        return true;
     }
     return false;
 }
