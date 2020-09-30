@@ -65,7 +65,7 @@ colorid_t ColorSensorDeviceDriver::getColorNumber()
         colorId = COLOR_WHITE;
     }
 
-    fprintf(loggingFile, "%d,%d,%d,%d,%d,%d,%d,%d\n",getBrightness(),rgb.r,rgb.g,rgb.b,hsv.h,hsv.s,hsv.v,colorId);
+    fprintf(loggingFile, "%d,%d,%d,%d,%d,%d,%d,%d\n",getBrightness(),rawrgb.r,rawrgb.g,rawrgb.b,hsv.h,hsv.s,hsv.v,colorId);
     return colorId;
 }
 
