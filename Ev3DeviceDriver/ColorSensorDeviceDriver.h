@@ -49,7 +49,7 @@ public:
     void terminate();
 
 private:
-    rgb_raw_t rgb;
+    rgb_raw_t rawrgb;
     hsv_t hsv;
     colorid_t colorId = COLOR_NONE;
     ColorSensor colorSensor;
