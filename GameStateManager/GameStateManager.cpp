@@ -8,6 +8,7 @@ void GameStateManager::init()
 {
     debugUtil.init("GameStateManager");
     runningGameState.init();
+    blockBingoGameState.init();
     playgroundGameState.init();
 }
 
@@ -24,8 +25,16 @@ void GameStateManager::manageGameState()
         }
         break;
     case BLOCK_BINGO_GAME_STATE:
+        debugUtil.led_debug(LED_ORANGE);
+        blockBingoGameState.run();
+        if (blockBingoGameState.isChanged())
+        {
+            blockBingoGameState.terminate();
+            nowState = GARAGE_GAME_STATE;
+        }
         break;
     case GARAGE_GAME_STATE:
+        debugUtil.led_debug(LED_RED);
         break;
     case PLAYGROUND_GAME_STATE:
         playgroundGameState.run();

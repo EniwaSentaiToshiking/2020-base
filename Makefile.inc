@@ -8,6 +8,7 @@ APPL_CXXOBJS += \
 	Straight.o \
 	SetupGame.o \
 	RunningGameState.o \
+	BlockBingoGameState.o \
 	PlaygroundGameState.o \
 	GameStateManager.o \
 	ColorSensorDeviceDriver.o \
@@ -24,7 +25,7 @@ endif
 APPL_DIRS += \
 	$(mkfile_path)app \
 	$(mkfile_path)util \
-	$(mkfile_path)GameStateManagerTask \
+	$(mkfile_path)GameStateManager \
 	$(mkfile_path)SetupGameTask \
 	$(mkfile_path)Playground \
 	$(mkfile_path)Ev3DeviceDriver \
@@ -33,7 +34,7 @@ APPL_DIRS += \
 INCLUDES += \
 	-I$(mkfile_path)app \
 	-I$(mkfile_path)util \
-	-I$(mkfile_path)GameStateManagerTask \
+	-I$(mkfile_path)GameStateManager \
 	-I$(mkfile_path)SetupGameTask \
 	-I$(mkfile_path)Playground \
 	-I$(mkfile_path)Ev3DeviceDriver \

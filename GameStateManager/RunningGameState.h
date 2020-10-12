@@ -22,5 +22,6 @@ private:
   ColorSensorDeviceDriver colorSensorDeviceDriver;
   PIDCalculator pidCalculator;
   DebugUtil debugUtil;
-  const int8_t pwm = (Motor::PWM_MAX) / 2 + 20;
+  // const int8_t pwm = (Motor::PWM_MAX) / 2;
+  const int8_t pwm = 75;
 };

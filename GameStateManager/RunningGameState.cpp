@@ -23,7 +23,7 @@ void RunningGameState::run()
 
 bool RunningGameState::isChanged()
 {
-  if (colorSensorDeviceDriver.getColorNumber() == COLOR_YELLOW)
+  if (colorSensorDeviceDriver.getColorNumber() == COLOR_BLUE)
   {
     return true;
   }

@@ -6,7 +6,7 @@ ColorSensorDeviceDriver::ColorSensorDeviceDriver(): colorSensor(PORT_3)
 
 void ColorSensorDeviceDriver::init()
 {
-    loggingFile = fopen("logging_file_yellow_stop.csv", "a");
+    loggingFile = fopen("logging_file_yellow_stop.csv", "rw");
     if (loggingFile == NULL)
     {
         d.lcd_msg_debug("error: cannot open file", 2);

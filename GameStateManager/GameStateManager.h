@@ -2,6 +2,7 @@
 
 #include "GameState.h"
 #include "RunningGameState.h"
+#include "BlockBingoGameState.h"
 #include "PlaygroundGameState.h"
 #include "DebugUtil.h"
 
@@ -18,5 +19,6 @@ public:
 private:
     RunningGameState runningGameState;
     PlaygroundGameState playgroundGameState;
+    BlockBingoGameState blockBingoGameState;
     DebugUtil debugUtil;
 };
