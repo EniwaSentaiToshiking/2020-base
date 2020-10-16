@@ -6,19 +6,18 @@
 #include "PlaygroundGameState.h"
 #include "DebugUtil.h"
 
-extern int nowState;
+extern int nowGameState;
 
 class GameStateManager
 {
+    RunningGameState runningGameState;
+    PlaygroundGameState playgroundGameState;
+    BlockBingoGameState blockBingoGameState;
+    DebugUtil debugUtil;
+
 public:
     GameStateManager();
     void init();
     void manageGameState();
     void terminate();
-
-private:
-    RunningGameState runningGameState;
-    PlaygroundGameState playgroundGameState;
-    BlockBingoGameState blockBingoGameState;
-    DebugUtil debugUtil;
 };

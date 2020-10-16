@@ -1,6 +1,8 @@
 #include "app.h" 
 #include "SetupGame.h"
 #include "GameStateManager.h"
+// #include "Ev3StateManager.h"
+// #include "Ev3State.h"
 #include "DebugUtil.h"
 
 using namespace ev3api;
@@ -9,7 +11,9 @@ SetupGame setupGame;
 GameStateManager gameStateManager;
 DebugUtil d;
 
-int nowState = RUNNING_GAME_STATE;
+int nowGameState = RUNNING_GAME_STATE;
+// int nowEv3State = PRE_GAME_STATE;
+
 void setup_game_task(intptr_t exinf)
 {
   d.init("Ready");

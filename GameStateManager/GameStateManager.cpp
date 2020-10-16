@@ -14,14 +14,14 @@ void GameStateManager::init()
 
 void GameStateManager::manageGameState() 
 {
-    switch (nowState)
+    switch (nowGameState)
     {
     case RUNNING_GAME_STATE:
         runningGameState.run();
-        if (runningGameState.isChanged())
+        if (runningGameState.isFinished())
         {
             runningGameState.terminate();
-            nowState = BLOCK_BINGO_GAME_STATE;
+            nowGameState = BLOCK_BINGO_GAME_STATE;
         }
         break;
     case BLOCK_BINGO_GAME_STATE:
@@ -30,7 +30,7 @@ void GameStateManager::manageGameState()
         if (blockBingoGameState.isChanged())
         {
             blockBingoGameState.terminate();
-            nowState = GARAGE_GAME_STATE;
+            nowGameState = GARAGE_GAME_STATE;
         }
         break;
     case GARAGE_GAME_STATE:

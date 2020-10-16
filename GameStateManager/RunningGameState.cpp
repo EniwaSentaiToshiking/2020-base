@@ -2,6 +2,7 @@
 
 RunningGameState::RunningGameState() : leftWheel(PORT_C), rightWheel(PORT_B)
 {
+  this->init();
 }
 
 void RunningGameState::init()
@@ -21,7 +22,7 @@ void RunningGameState::run()
   rightWheel.setPWM(m_right_pwm);
 }
 
-bool RunningGameState::isChanged()
+bool RunningGameState::isFinished()
 {
   if (colorSensorDeviceDriver.getColorNumber() == COLOR_BLUE)
   {
@@ -37,5 +38,10 @@ void RunningGameState::terminate()
   rightWheel.stop();
   colorSensorDeviceDriver.terminate();
   debugUtil.led_debug(LED_RED);
+}
+
+RunningGameState::~RunningGameState()
+{
+  this->terminate();
 }
 

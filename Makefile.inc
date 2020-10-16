@@ -7,6 +7,7 @@ APPL_CXXOBJS += \
 	PIDCalculator.o \
 	Straight.o \
 	SetupGame.o \
+	TemplateGameState.o \
 	RunningGameState.o \
 	BlockBingoGameState.o \
 	PlaygroundGameState.o \
