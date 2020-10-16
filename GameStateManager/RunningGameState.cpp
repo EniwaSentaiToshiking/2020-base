@@ -24,11 +24,7 @@ void RunningGameState::run()
 
 bool RunningGameState::isFinished()
 {
-  if (colorSensorDeviceDriver.getColorNumber() == COLOR_BLUE)
-  {
-    return true;
-  }
-  return false;
+  return interfaceDeterminationModel.selectColor(COLOR_BLUE);
 }
 
 void RunningGameState::terminate()
