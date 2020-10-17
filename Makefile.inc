@@ -15,7 +15,9 @@ APPL_CXXOBJS += \
 	InterfaceDeterminationModel.o \
 	TemplateDeterminationModel.o \
 	ColorDeterminationModel.o \
+	DistanceDeterminationModel.o \
 	ColorSensorDeviceDriver.o \
+	WheelDeviceDriver.o \
 
 SRCLANG := c++
 

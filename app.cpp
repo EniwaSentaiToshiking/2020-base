@@ -11,7 +11,7 @@ SetupGame setupGame;
 GameStateManager gameStateManager;
 DebugUtil d;
 
-int nowGameState = RUNNING_GAME_STATE;
+int nowGameState = PLAYGROUND_GAME_STATE;
 // int nowEv3State = PRE_GAME_STATE;
 
 void setup_game_task(intptr_t exinf)

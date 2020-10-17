@@ -6,5 +6,7 @@ class TouchDeterminationModel : public TemplateDeterminationModel
 {
 
 public:
+    void init();
     bool determine();
+    void terminate();
 };

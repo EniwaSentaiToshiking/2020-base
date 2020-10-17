@@ -6,13 +6,14 @@ ColorSensorDeviceDriver::ColorSensorDeviceDriver(): colorSensor(PORT_3)
 
 void ColorSensorDeviceDriver::init()
 {
-    loggingFile = fopen("logging_file_yellow_stop.csv", "rw");
-    if (loggingFile == NULL)
-    {
-        d.lcd_msg_debug("error: cannot open file", 2);
-        exit(1);
-    }
-    fprintf(loggingFile, "Brightness,R,G,B,H,S,V,ColorNum\n");
+    d.init("ColorSensorDeviceDriver");
+    // loggingFile = fopen("logging_file_yellow_stop.csv", "rw");
+    // if (loggingFile == NULL)
+    // {
+    //     d.lcd_msg_debug("error: cannot open file", 2);
+    //     exit(1);
+    // }
+    // fprintf(loggingFile, "Brightness,R,G,B,H,S,V,ColorNum\n");
 }
 
 void ColorSensorDeviceDriver::getRawColor() 
@@ -65,7 +66,7 @@ colorid_t ColorSensorDeviceDriver::getColorNumber()
         colorId = COLOR_WHITE;
     }
 
-    fprintf(loggingFile, "%d,%d,%d,%d,%d,%d,%d,%d\n",getBrightness(),rawrgb.r,rawrgb.g,rawrgb.b,hsv.h,hsv.s,hsv.v,colorId);
+    // fprintf(loggingFile, "%d,%d,%d,%d,%d,%d,%d,%d\n",getBrightness(),rawrgb.r,rawrgb.g,rawrgb.b,hsv.h,hsv.s,hsv.v,colorId);
     return colorId;
 }
 
@@ -149,15 +150,15 @@ hsv_t ColorSensorDeviceDriver::calcHSV(rgb_raw_t rgb)
     // 明度(Value)の計算
     hsv.v = colorBrightnessMax;
 
-    snprintf(buffer, sizeof(buffer), "max, %d, min,%d,", colorBrightnessMax, colorBrightnessMin);
-    d.lcd_msg_debug(buffer, 4);
-    snprintf(buffer, sizeof(buffer), "H,%d, S,%d, V,%d, maxc,%d, ", hsv.h, hsv.s, hsv.v, max_rgb);
-    d.lcd_msg_debug(buffer, 5);
+    // snprintf(buffer, sizeof(buffer), "max, %d, min,%d,", colorBrightnessMax, colorBrightnessMin);
+    // d.lcd_msg_debug(buffer, 4);
+    // snprintf(buffer, sizeof(buffer), "H,%d, S,%d, V,%d, maxc,%d, ", hsv.h, hsv.s, hsv.v, max_rgb);
+    // d.lcd_msg_debug(buffer, 5);
 
     return hsv;
 }
 
 void ColorSensorDeviceDriver::terminate()
 {
-    fclose(loggingFile);
+    // fclose(loggingFile);
 }

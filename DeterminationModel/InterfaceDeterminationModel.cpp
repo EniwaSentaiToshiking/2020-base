@@ -9,3 +9,8 @@ bool InterfaceDeterminationModel::selectColor(colorid_t color)
 {
     return colorDeterminationModel.determine(color);
 }
+
+bool InterfaceDeterminationModel::selectDistance(float distance)
+{
+    return distanceDeterminationModel.determine(distance);
+}

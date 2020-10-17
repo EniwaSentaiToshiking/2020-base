@@ -13,7 +13,7 @@ class GameStateManager
     RunningGameState runningGameState;
     PlaygroundGameState playgroundGameState;
     BlockBingoGameState blockBingoGameState;
-    DebugUtil debugUtil;
+    DebugUtil d;
 
 public:
     GameStateManager();

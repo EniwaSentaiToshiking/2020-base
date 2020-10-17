@@ -26,5 +26,5 @@ public:
 
 private:
   // const int8_t pwm = (Motor::PWM_MAX) / 2;
-  const int8_t pwm = 70;
+  int8_t pwm = 70;
 };

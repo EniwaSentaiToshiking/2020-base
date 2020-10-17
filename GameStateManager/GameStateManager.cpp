@@ -6,7 +6,7 @@ GameStateManager::GameStateManager()
 
 void GameStateManager::init()
 {
-    debugUtil.init("GameStateManager");
+    d.init("GameStateManager");
     runningGameState.init();
     blockBingoGameState.init();
     playgroundGameState.init();
@@ -25,7 +25,7 @@ void GameStateManager::manageGameState()
         }
         break;
     case BLOCK_BINGO_GAME_STATE:
-        debugUtil.led_debug(LED_ORANGE);
+        d.led_debug(LED_ORANGE);
         blockBingoGameState.run();
         if (blockBingoGameState.isChanged())
         {
@@ -34,13 +34,14 @@ void GameStateManager::manageGameState()
         }
         break;
     case GARAGE_GAME_STATE:
-        debugUtil.led_debug(LED_RED);
+        d.led_debug(LED_RED);
         break;
     case PLAYGROUND_GAME_STATE:
-        playgroundGameState.run();
-        if (playgroundGameState.isChanged())
+        if (playgroundGameState.isFinished())
         {
-            debugUtil.led_debug(LED_RED);
+            playgroundGameState.terminate();
+        } else {
+            playgroundGameState.run();
         }
         break;
     default:

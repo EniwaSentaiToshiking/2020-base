@@ -9,6 +9,12 @@ using namespace ev3api;
 
 class BlockBingoGameState
 {
+  Motor leftWheel;
+  Motor rightWheel;
+  ColorSensorDeviceDriver colorSensorDeviceDriver;
+  PIDCalculator pidCalculator;
+  DebugUtil debugUtil;
+
 public:
   BlockBingoGameState();
   void init();
@@ -17,10 +23,5 @@ public:
   void terminate();
 
 private:
-  Motor leftWheel;
-  Motor rightWheel;
-  ColorSensorDeviceDriver colorSensorDeviceDriver;
-  PIDCalculator pidCalculator;
-  DebugUtil debugUtil;
   const int8_t pwm = (Motor::PWM_MAX) / 3;
 };

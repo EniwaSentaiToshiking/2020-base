@@ -15,6 +15,13 @@ typedef struct
 
 class ColorSensorDeviceDriver
 {
+    rgb_raw_t rawrgb;
+    hsv_t hsv;
+    ColorSensor colorSensor;
+    /* debug */
+    DebugUtil d;
+    // FILE *loggingFile;
+
 public:
     ColorSensorDeviceDriver();
     void init();
@@ -49,13 +56,6 @@ public:
     void terminate();
 
 private:
-    rgb_raw_t rawrgb;
-    hsv_t hsv;
     colorid_t colorId = COLOR_NONE;
-    ColorSensor colorSensor;
     hsv_t calcHSV(rgb_raw_t rgb);
-
-    /* debug */
-    DebugUtil d;
-    FILE *loggingFile;
 };
