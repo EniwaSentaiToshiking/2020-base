@@ -9,8 +9,9 @@
 
 class RunningGameState : public TemplateGameState
 {
-  Motor leftWheel;
-  Motor rightWheel;
+  // Motor leftWheel;
+  // Motor rightWheel;
+  WheelDeviceDriver wheelDeviceDriver;
   InterfaceDeterminationModel interfaceDeterminationModel;
   ColorSensorDeviceDriver colorSensorDeviceDriver;
   PIDCalculator pidCalculator;

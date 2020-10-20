@@ -37,26 +37,38 @@ void WheelDeviceDriver::updateDistance()
     previousAngleR = currentAngleR;
 }
 
+
+// int t = 0;
+// char buffer[30];
+
 float WheelDeviceDriver::getDistance()
 {
     this->updateDistance();
+    // if (t > 200)
+    // {
+    //     // syslog(LOG_NOTICE, "Distance %f", currentDistance);
+    //     snprintf(buffer, sizeof(buffer), "Distance %f", currentDistance);
+    //     syslog(LOG_NOTICE, buffer);
+    //     t = 0;
+    // }
+    // t++;
     return currentDistance;
 }
 
-void WheelDeviceDriver::setLeftPWM(int8_t leftPWM)
+void WheelDeviceDriver::setLeftPWM(int leftPWM)
 {
     leftWheel.setPWM(leftPWM);
 }
 
-void WheelDeviceDriver::setRightPWM(int8_t rightPWM)
+void WheelDeviceDriver::setRightPWM(int rightPWM)
 {
     rightWheel.setPWM(rightPWM);
 }
 
 void WheelDeviceDriver::terminate()
 {
-    this->setLeftPWM(0);
-    this->setRightPWM(0);
+  leftWheel.stop();
+  rightWheel.stop();
 }
 
 WheelDeviceDriver::~WheelDeviceDriver()

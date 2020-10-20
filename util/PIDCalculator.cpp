@@ -12,7 +12,7 @@ void PIDCalculator::init()
 	differential = 0;
 }
 
-int PIDCalculator::calc_pid_control_pwm_value(float k_p, float k_i, float k_d, int sensor_val, int target_val)
+int PIDCalculator::calcPID(float k_p, float k_i, float k_d, int sensor_val, int target_val)
 {
   int p, i, d;
 
@@ -25,10 +25,10 @@ int PIDCalculator::calc_pid_control_pwm_value(float k_p, float k_i, float k_d, i
   i = k_i * integral;
   d = k_d * differential;
 
-  return pwm_controller_limit(p + i + d);
+  return pwmLimit(p + i + d);
 }
 
-int PIDCalculator::pwm_controller_limit(int pidValue)
+int PIDCalculator::pwmLimit(int pidValue)
 {
   if (pidValue > absMax)
     pidValue = absMax;
@@ -39,5 +39,4 @@ int PIDCalculator::pwm_controller_limit(int pidValue)
 
 void PIDCalculator::terminate()
 {
-
 }

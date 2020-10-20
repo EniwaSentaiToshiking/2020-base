@@ -19,8 +19,8 @@ public:
     WheelDeviceDriver();
     void init();
     float getDistance();
-    void setLeftPWM(int8_t leftPWM);
-    void setRightPWM(int8_t rightPWM);
+    void setLeftPWM(int leftPWM);
+    void setRightPWM(int rightPWM);
     void terminate();
     ~WheelDeviceDriver();
 

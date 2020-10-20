@@ -1,5 +1,6 @@
 #include "app.h" 
 #include "SetupGame.h"
+#include "Edge.h"
 #include "GameStateManager.h"
 // #include "Ev3StateManager.h"
 // #include "Ev3State.h"
@@ -13,6 +14,7 @@ DebugUtil d;
 
 int nowGameState = PLAYGROUND_GAME_STATE;
 // int nowEv3State = PRE_GAME_STATE;
+int edge = RIGHT_EDGE;
 
 void setup_game_task(intptr_t exinf)
 {

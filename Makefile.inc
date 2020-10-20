@@ -7,15 +7,22 @@ APPL_CXXOBJS += \
 	PIDCalculator.o \
 	Straight.o \
 	SetupGame.o \
+	\
 	TemplateGameState.o \
 	RunningGameState.o \
 	BlockBingoGameState.o \
 	PlaygroundGameState.o \
 	GameStateManager.o \
+	\
+	InterfaceBehaviorModel.o \
+	TemplateBehaviorModel.o \
+	LineTraceBehaviorModel.o \
 	InterfaceDeterminationModel.o \
+	\
 	TemplateDeterminationModel.o \
 	ColorDeterminationModel.o \
 	DistanceDeterminationModel.o \
+	\
 	ColorSensorDeviceDriver.o \
 	WheelDeviceDriver.o \
 

@@ -2,6 +2,7 @@
 
 ColorSensorDeviceDriver::ColorSensorDeviceDriver(): colorSensor(PORT_3)
 {
+    this->init();
 }
 
 void ColorSensorDeviceDriver::init()
@@ -79,9 +80,9 @@ hsv_t ColorSensorDeviceDriver::calcHSV(rgb_raw_t rgb)
     int colorBrightnessMin = 0; // (0~255)
     colorid_t max_rgb = COLOR_NONE;
 
-    char buffer[30];
-    snprintf(buffer, sizeof(buffer), "R %d, G %d, B %d", red, green, blue);
-    d.lcd_msg_debug(buffer, 3);
+    // char buffer[30];
+    // snprintf(buffer, sizeof(buffer), "R %d, G %d, B %d", red, green, blue);
+    // d.lcd_msg_debug(buffer, 3);
 
     //rgbの最小値計算
     if (red <= green && red <= blue)
