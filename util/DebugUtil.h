@@ -12,6 +12,6 @@ public:
     void led_debug(ledcolor_t ledColor);
 
 private:
-    const int8_t line_height = 20;
+    static const int8_t line_height = 20;
     char lcd_buffer[30];
 };
