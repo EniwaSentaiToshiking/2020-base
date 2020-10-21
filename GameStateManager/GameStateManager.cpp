@@ -37,7 +37,7 @@ void GameStateManager::manageGameState()
         d.led_debug(LED_RED);
         break;
     case PLAYGROUND_GAME_STATE:
-        if (playgroundGameState.isFinished())
+        if (playgroundGameState.isFinishedFlag)
         {
             playgroundGameState.terminate();
             stp_cyc(SETUP_GAME_CYC);

@@ -11,10 +11,16 @@ using namespace ev3api;
 SetupGame setupGame;
 GameStateManager gameStateManager;
 DebugUtil d;
+// syslog
+char syslogBuf[50] = "syslog";
+/*
+  snprintf(syslogBuf, sizeof(syslogBuf), "section, %d, Distance %f", runSection, wheelDeviceDriver.getDistance());
+  syslog(LOG_NOTICE, syslogBuf);
+*/
 
 int nowGameState = PLAYGROUND_GAME_STATE;
 // int nowEv3State = PRE_GAME_STATE;
-int edge = RIGHT_EDGE;
+int edge = LEFT_EDGE;
 
 void setup_game_task(intptr_t exinf)
 {

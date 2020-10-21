@@ -3,18 +3,18 @@
 ColorSensorDeviceDriver::ColorSensorDeviceDriver(): colorSensor(PORT_3)
 {
     this->init();
+    loggingFile = fopen("logging_file_yellow_stop.csv", "rw");
+    if (loggingFile == NULL)
+    {
+        d.lcd_msg_debug("error: cannot open file", 2);
+        exit(1);
+    }
+    fprintf(loggingFile, "Brightness,R,G,B,H,S,V,ColorNum\n");
 }
 
 void ColorSensorDeviceDriver::init()
 {
     d.init("ColorSensorDeviceDriver");
-    // loggingFile = fopen("logging_file_yellow_stop.csv", "rw");
-    // if (loggingFile == NULL)
-    // {
-    //     d.lcd_msg_debug("error: cannot open file", 2);
-    //     exit(1);
-    // }
-    // fprintf(loggingFile, "Brightness,R,G,B,H,S,V,ColorNum\n");
 }
 
 void ColorSensorDeviceDriver::getRawColor() 
@@ -161,5 +161,5 @@ hsv_t ColorSensorDeviceDriver::calcHSV(rgb_raw_t rgb)
 
 void ColorSensorDeviceDriver::terminate()
 {
-    // fclose(loggingFile);
+    fclose(loggingFile);
 }

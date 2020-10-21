@@ -43,7 +43,6 @@ void WheelDeviceDriver::updateDistance()
     previousAngleR = currentAngleR;
 }
 
-extern char syslogBuf[50];
 float WheelDeviceDriver::getDistance()
 {
     this->updateDistance();

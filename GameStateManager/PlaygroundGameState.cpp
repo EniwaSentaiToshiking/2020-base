@@ -2,34 +2,48 @@
 
 PlaygroundGameState::PlaygroundGameState()
 {
-  this->init();
 }
 
 void PlaygroundGameState::init()
 {
   d.init("PlaygroundGameState");
+  // runSection = 0;
+  isFinishedFlag = false;
+  /*distance, pwm, kp, ki, kd, targetVal*/
+  runSectionParamVector.push_back({800.0, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({1200.0, 80, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({400.0, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({1200.0, 70, 2.0, 0.03, 0.2, 18});
+  /* Gate 1*/
+  runSectionParamVector.push_back({600.0, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({500.0, 70, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({600.0, 80, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({1700.0, 70, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({500.0, 80, 2.0, 0.03, 0.2, 18});
+  /* Gate 2*/
+  runSectionParamVector.push_back({800.0, 80, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({1550.0, 100, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({550.0, 70, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({900.0, 90, 2.0, 0.03, 0.2, 18});
 }
 
 void PlaygroundGameState::run()
 {
-  // const int m_target_color_value = 18;
-  // float m_control_value = pidCalculator.calc_pid_control_pwm_value(2.0, 0.03, 0.2, colorSensorDeviceDriver.getBrightness(), m_target_color_value);
-  // int m_left_pwm = pwm - m_control_value;
-  // int m_right_pwm = pwm + m_control_value;
-  // wheelDeviceDriver.setLeftPWM(m_left_pwm);
-  // wheelDeviceDriver.setRightPWM(m_right_pwm);
-  interfaceBehaviorModel.selectLineTrace(70, 2.0f, 0.03f, 0.2f, 18);
-}
+  RunSectionParam currentRunSectionParam = runSectionParamVector.front();
+  iBehaviorModel.selectLineTrace(currentRunSectionParam.pwm, currentRunSectionParam.kP,
+                                 currentRunSectionParam.kI, currentRunSectionParam.kD, currentRunSectionParam.targetVal);
 
-bool PlaygroundGameState::isFinished()
-{
-  // return interfaceDeterminationModel.selectDistance(600.0);
-  return interfaceDeterminationModel.selectColor(COLOR_YELLOW);
+  if (iDeterminationModel.selectDistance(currentRunSectionParam.distance))
+  {
+    iDeterminationModel.terminate();
+    runSectionParamVector.erase(runSectionParamVector.begin());
+    isFinishedFlag = runSectionParamVector.empty();
+  }
 }
 
 void PlaygroundGameState::terminate()
 {
   d.lcd_msg_debug("Stopped.", 1);
   d.led_debug(LED_RED);
-  interfaceBehaviorModel.selectLineTrace(0,0,0,0,0);
+  iBehaviorModel.selectLineTrace(0,0,0,0,0);
 }

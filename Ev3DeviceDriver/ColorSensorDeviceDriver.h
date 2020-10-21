@@ -18,9 +18,6 @@ class ColorSensorDeviceDriver
     rgb_raw_t rawrgb;
     hsv_t hsv;
     ColorSensor colorSensor;
-    /* debug */
-    DebugUtil d;
-    // FILE *loggingFile;
 
 public:
     ColorSensorDeviceDriver();
@@ -58,4 +55,8 @@ public:
 private:
     colorid_t colorId = COLOR_NONE;
     hsv_t calcHSV(rgb_raw_t rgb);
+
+    /* debug */
+    DebugUtil d;
+    FILE *loggingFile;
 };
