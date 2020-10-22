@@ -18,7 +18,7 @@ char syslogBuf[50] = "syslog";
   syslog(LOG_NOTICE, syslogBuf);
 */
 
-int nowGameState = PLAYGROUND_GAME_STATE;
+int nowGameState = RUNNING_GAME_STATE;
 // int nowEv3State = PRE_GAME_STATE;
 int edge = RIGHT_EDGE;
 

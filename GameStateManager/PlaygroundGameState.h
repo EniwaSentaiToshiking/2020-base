@@ -4,23 +4,13 @@
 #include "InterfaceDeterminationModel.h"
 #include "InterfaceBehaviorModel.h"
 #include "BehaviorDetermination.h"
+#include "RunSectionParam.h"
 #include <vector>
 
 #include "DebugUtil.h"
 
 using namespace ev3api;
 using namespace std;
-
-
-typedef struct 
-{
-  float distance;
-  int pwm;
-  float kP;
-  float kI;
-  float kD;
-  int targetVal;
-}RunSectionParam;
 
 class PlaygroundGameState : public TemplateGameState
 {
