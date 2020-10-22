@@ -1,50 +1,53 @@
 #include "RunningGameState.h"
 
-// RunningGameState::RunningGameState() : leftWheel(PORT_C), rightWheel(PORT_B)
-// {
-//   this->init();
-// }
-
 RunningGameState::RunningGameState()
 {
-  this->init();
 }
 
 void RunningGameState::init()
 {
-  debugUtil.init("RunningGameState");
-  colorSensorDeviceDriver.init();
-  wheelDeviceDriver.init();
+  d.init("RunningGameState");
+  /*distance, pwm, kp, ki, kd, targetVal*/
+  runSectionParamVector.push_back({800.0, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({1200.0, 80, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({400.0, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({1200.0, 70, 2.0, 0.03, 0.2, 18});
+  /* Gate 1*/
+  runSectionParamVector.push_back({600.0, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({500.0, 70, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({600.0, 80, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({1700.0, 70, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({500.0, 80, 2.0, 0.03, 0.2, 18});
+  /* Gate 2*/
+  runSectionParamVector.push_back({800.0, 80, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({1550.0, 100, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({550.0, 70, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({1100.0, 90, 2.0, 0.03, 0.2, 18});
 }
 
 void RunningGameState::run()
 {
-  debugUtil.lcd_msg_debug("running...", 1);
-  const int m_target_color_value = 18;
-  float m_control_value = pidCalculator.calcPID(2.0, 0.03, 0.2, colorSensorDeviceDriver.getBrightness(), m_target_color_value);
-  int m_left_pwm = pwm - m_control_value;                                                                                             
-  int m_right_pwm = pwm + m_control_value;                                                                                            
-  // leftWheel.setPWM(m_left_pwm);
-  // rightWheel.setPWM(m_right_pwm);
-  wheelDeviceDriver.setLeftPWM(m_left_pwm);
-  wheelDeviceDriver.setRightPWM(m_right_pwm);
+  d.lcd_msg_debug("running...", 1);
+  RunSectionParam currentRunSectionParam = runSectionParamVector.front();
+  interfaceBehaviorModel.selectLineTrace(currentRunSectionParam.pwm, currentRunSectionParam.kP,
+                                         currentRunSectionParam.kI, currentRunSectionParam.kD, currentRunSectionParam.targetVal);
+
+  if (interfaceDeterminationModel.selectDistance(currentRunSectionParam.distance))
+  {
+    interfaceDeterminationModel.terminate();
+    runSectionParamVector.erase(runSectionParamVector.begin());
+  }
 }
 
 bool RunningGameState::isFinished()
 {
-  // return interfaceDeterminationModel.selectColor(COLOR_BLUE);
-  // return interfaceDeterminationModel.selectDistance(800.0);
-  return false;
+  return runSectionParamVector.empty();
 }
 
 void RunningGameState::terminate()
 {
-  debugUtil.lcd_msg_debug("Stopped.", 1);
-  // leftWheel.stop();
-  // rightWheel.stop();
-  colorSensorDeviceDriver.terminate();
-  wheelDeviceDriver.terminate();
-  debugUtil.led_debug(LED_RED);
+  d.lcd_msg_debug("Stopped.", 1);
+  d.led_debug(LED_RED);
 }
 
 RunningGameState::~RunningGameState()

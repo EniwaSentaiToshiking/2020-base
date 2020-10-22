@@ -7,8 +7,6 @@ PlaygroundGameState::PlaygroundGameState()
 void PlaygroundGameState::init()
 {
   d.init("PlaygroundGameState");
-  // runSection = 0;
-
   /*distance, pwm, kp, ki, kd, targetVal*/
   runSectionParamVector.push_back({800.0, 90, 2.0, 0.03, 0.2, 18});
   runSectionParamVector.push_back({1200.0, 80, 2.0, 0.03, 0.2, 18});
