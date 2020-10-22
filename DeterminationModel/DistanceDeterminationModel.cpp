@@ -5,6 +5,7 @@ void DistanceDeterminationModel::init()
     wheelDeviceDriver.init();
 }
 
+
 bool DistanceDeterminationModel::determine(float distance)
 {
     if (wheelDeviceDriver.getDistance() >= distance) {
@@ -15,5 +16,5 @@ bool DistanceDeterminationModel::determine(float distance)
 
 void DistanceDeterminationModel::terminate()
 {
-    wheelDeviceDriver.terminate();
+    wheelDeviceDriver.resetDistance();
 }

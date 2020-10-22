@@ -11,13 +11,11 @@ class WheelDeviceDriver
 {
     Motor leftWheel;
     Motor rightWheel;
-    /* debug */
-    DebugUtil d;
-    // FILE *loggingFile;
 
 public:
     WheelDeviceDriver();
     void init();
+    void resetDistance();
     float getDistance();
     void setLeftPWM(int leftPWM);
     void setRightPWM(int rightPWM);
@@ -25,7 +23,6 @@ public:
     ~WheelDeviceDriver();
 
 private:
-    void resetDistance();
     void updateDistance();
     float tireRadius = 50.0f; //50mm
 
@@ -41,4 +38,8 @@ private:
     float currentAngleR;
     float diffAngleL;
     float diffAngleR;
+
+    /* debug */
+    DebugUtil d;
+    FILE *file;
 };

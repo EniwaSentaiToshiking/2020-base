@@ -14,20 +14,24 @@ void LineTraceBehaviorModel::run(int pwm, float kP, float kI, float kD, int targ
 {
     sensorVal = colorSensorDeviceDriver.getBrightness();
     int controlValue = pidCalculator.calcPID(kP,kI,kD,targetVal,sensorVal);
+    int leftPWM = 0;
+    int rightPWM = 0;
     switch (edge)
     {
     case RIGHT_EDGE:
-        wheelDeviceDriver.setLeftPWM(pwm + controlValue);
-        wheelDeviceDriver.setRightPWM(pwm - controlValue);
+        leftPWM = pwm + controlValue;
+        rightPWM = pwm - controlValue;
         break;
     
     case LEFT_EDGE:
-        wheelDeviceDriver.setLeftPWM(pwm - controlValue);
-        wheelDeviceDriver.setRightPWM(pwm + controlValue);
+        leftPWM = pwm - controlValue;
+        rightPWM = pwm + controlValue;
         break;
     default:
         break;
     }
+    wheelDeviceDriver.setLeftPWM(leftPWM);
+    wheelDeviceDriver.setRightPWM(rightPWM);
 }
 
 void LineTraceBehaviorModel::terminate()

@@ -1,25 +1,34 @@
 #pragma once
 
 #include "TemplateGameState.h"
-#include "DebugUtil.h"
 #include "InterfaceDeterminationModel.h"
 #include "InterfaceBehaviorModel.h"
-#include "PIDCalculator.h"
+#include "BehaviorDetermination.h"
+#include <vector>
 
-#include "ColorSensorDeviceDriver.h"
-#include "WheelDeviceDriver.h"
+#include "DebugUtil.h"
 
 using namespace ev3api;
+using namespace std;
+
+
+typedef struct 
+{
+  float distance;
+  int pwm;
+  float kP;
+  float kI;
+  float kD;
+  int targetVal;
+}RunSectionParam;
 
 class PlaygroundGameState : public TemplateGameState
 {
+  InterfaceDeterminationModel iDeterminationModel;
+  InterfaceBehaviorModel iBehaviorModel;
+  vector<RunSectionParam> runSectionParamVector;
+
   DebugUtil d;
-  InterfaceDeterminationModel interfaceDeterminationModel;
-  InterfaceBehaviorModel interfaceBehaviorModel;
-  
-  // PIDCalculator pidCalculator;
-  // ColorSensorDeviceDriver colorSensorDeviceDriver;
-  // WheelDeviceDriver wheelDeviceDriver;
 
 public:
   PlaygroundGameState();
@@ -27,7 +36,4 @@ public:
   void run();
   bool isFinished();
   void terminate();
-
-private:
-  // const int8_t pwm = 50;
 };

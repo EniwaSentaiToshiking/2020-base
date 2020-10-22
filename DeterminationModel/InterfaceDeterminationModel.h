@@ -12,7 +12,9 @@ class InterfaceDeterminationModel
     DistanceDeterminationModel distanceDeterminationModel;
     
 public:
+    void init();
     // bool selectTouch();
     bool selectColor(colorid_t color);
     bool selectDistance(float distance);
+    void terminate();
 };

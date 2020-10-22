@@ -33,7 +33,8 @@ void RunningGameState::run()
 bool RunningGameState::isFinished()
 {
   // return interfaceDeterminationModel.selectColor(COLOR_BLUE);
-  return interfaceDeterminationModel.selectDistance(800.0);
+  // return interfaceDeterminationModel.selectDistance(800.0);
+  return false;
 }
 
 void RunningGameState::terminate()

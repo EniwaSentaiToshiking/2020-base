@@ -1,8 +1,11 @@
 #include "WheelDeviceDriver.h"
 
+
 WheelDeviceDriver::WheelDeviceDriver() : leftWheel(PORT_C), rightWheel(PORT_B)
 {
-    this->init();
+    this->resetDistance();
+    // file = fopen("logging_distance.csv", "w");
+    // fprintf(file, "Distance,difL,curL,preL,difR,curR,preR\n");
 }
 
 void WheelDeviceDriver::init()
@@ -22,7 +25,7 @@ void WheelDeviceDriver::resetDistance()
 void WheelDeviceDriver::updateDistance()
 {
     currentAngleL = leftWheel.getCount();
-    currentAngleR = leftWheel.getCount();
+    currentAngleR = rightWheel.getCount();
     handlerCycleDistance = 0.0;
 
     diffAngleL = currentAngleL - previousAngleL;
@@ -37,21 +40,9 @@ void WheelDeviceDriver::updateDistance()
     previousAngleR = currentAngleR;
 }
 
-
-// int t = 0;
-// char buffer[30];
-
 float WheelDeviceDriver::getDistance()
 {
     this->updateDistance();
-    // if (t > 200)
-    // {
-    //     // syslog(LOG_NOTICE, "Distance %f", currentDistance);
-    //     snprintf(buffer, sizeof(buffer), "Distance %f", currentDistance);
-    //     syslog(LOG_NOTICE, buffer);
-    //     t = 0;
-    // }
-    // t++;
     return currentDistance;
 }
 
@@ -67,11 +58,12 @@ void WheelDeviceDriver::setRightPWM(int rightPWM)
 
 void WheelDeviceDriver::terminate()
 {
-  leftWheel.stop();
-  rightWheel.stop();
+    leftWheel.stop();
+    rightWheel.stop();
 }
 
 WheelDeviceDriver::~WheelDeviceDriver()
 {
     this->terminate();
+    // fclose(file);
 }
