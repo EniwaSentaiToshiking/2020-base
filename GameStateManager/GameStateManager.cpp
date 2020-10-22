@@ -27,7 +27,7 @@ void GameStateManager::manageGameState()
     case BLOCK_BINGO_GAME_STATE:
         d.led_debug(LED_ORANGE);
         blockBingoGameState.run();
-        if (blockBingoGameState.isChanged())
+        if (blockBingoGameState.isFinished())
         {
             blockBingoGameState.terminate();
             nowGameState = GARAGE_GAME_STATE;

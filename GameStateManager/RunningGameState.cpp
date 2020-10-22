@@ -7,22 +7,22 @@ RunningGameState::RunningGameState()
 void RunningGameState::init()
 {
   d.init("RunningGameState");
-  /*distance, pwm, kp, ki, kd, targetVal*/
-  runSectionParamVector.push_back({800.0, 90, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({1200.0, 80, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({400.0, 90, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({1200.0, 70, 2.0, 0.03, 0.2, 18});
+  /*determination, determinationParam, pwm, kp, ki, kd, targetVal*/
+  runSectionParamVector.push_back({DISTANCE,800, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,1200, 80, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,400, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,1200, 70, 2.0, 0.03, 0.2, 18});
   /* Gate 1*/
-  runSectionParamVector.push_back({600.0, 90, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({500.0, 70, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({600.0, 80, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({1700.0, 70, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({500.0, 80, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,600, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,500, 70, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,600, 80, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,1700, 70, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,500, 80, 2.0, 0.03, 0.2, 18});
   /* Gate 2*/
-  runSectionParamVector.push_back({800.0, 80, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({1550.0, 100, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({550.0, 70, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({1100.0, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,800, 80, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,1550, 100, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,550, 70, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({DISTANCE,1100, 85, 2.0, 0.03, 0.2, 18});
 }
 
 void RunningGameState::run()
@@ -32,10 +32,25 @@ void RunningGameState::run()
   interfaceBehaviorModel.selectLineTrace(currentRunSectionParam.pwm, currentRunSectionParam.kP,
                                          currentRunSectionParam.kI, currentRunSectionParam.kD, currentRunSectionParam.targetVal);
 
-  if (interfaceDeterminationModel.selectDistance(currentRunSectionParam.distance))
+  switch (currentRunSectionParam.determinationActionList)
   {
-    interfaceDeterminationModel.terminate();
-    runSectionParamVector.erase(runSectionParamVector.begin());
+  case COLOR:
+    if (interfaceDeterminationModel.selectColor((colorid_t)currentRunSectionParam.determinationParam))
+    {
+      interfaceDeterminationModel.terminate();
+      runSectionParamVector.erase(runSectionParamVector.begin());
+    }
+    break;
+  
+  case DISTANCE:
+    if (interfaceDeterminationModel.selectDistance(currentRunSectionParam.determinationParam))
+    {
+      interfaceDeterminationModel.terminate();
+      runSectionParamVector.erase(runSectionParamVector.begin());
+    }
+    break;
+  default:
+    break;
   }
 }
 

@@ -1,27 +1,29 @@
 #pragma once
 
-#include "Motor.h"
-#include "ColorSensorDeviceDriver.h"
+#include "TemplateGameState.h"
+#include "InterfaceDeterminationModel.h"
+#include "InterfaceBehaviorModel.h"
+#include "BehaviorDetermination.h"
+#include "RunSectionParam.h"
+#include <vector>
+
 #include "DebugUtil.h"
-#include "PIDCalculator.h"
 
 using namespace ev3api;
+using namespace std;
 
 class BlockBingoGameState
 {
-  Motor leftWheel;
-  Motor rightWheel;
-  ColorSensorDeviceDriver colorSensorDeviceDriver;
-  PIDCalculator pidCalculator;
-  DebugUtil debugUtil;
+  InterfaceDeterminationModel interfaceDeterminationModel;
+  InterfaceBehaviorModel interfaceBehaviorModel;
+  vector<RunSectionParam> runSectionParamVector;
+
+  DebugUtil d;
 
 public:
   BlockBingoGameState();
   void init();
   void run();
-  bool isChanged();
+  bool isFinished();
   void terminate();
-
-private:
-  const int8_t pwm = (Motor::PWM_MAX) / 3;
 };
