@@ -9,7 +9,7 @@ void LineTraceBehaviorModel::init()
     colorSensorDeviceDriver.init();
     sensorVal = 0;
 }
-// extern char syslogBuf[50];
+
 void LineTraceBehaviorModel::run(int pwm, float kP, float kI, float kD, int targetVal)
 {
     sensorVal = colorSensorDeviceDriver.getBrightness();
@@ -32,8 +32,6 @@ void LineTraceBehaviorModel::run(int pwm, float kP, float kI, float kD, int targ
     }
     wheelDeviceDriver.setLeftPWM(leftPWM);
     wheelDeviceDriver.setRightPWM(rightPWM);
-    // snprintf(syslogBuf, sizeof(syslogBuf), "leftPWM, %d, rightPWM %d", leftPWM, rightPWM);
-    // syslog(LOG_NOTICE, syslogBuf);
 }
 
 void LineTraceBehaviorModel::terminate()

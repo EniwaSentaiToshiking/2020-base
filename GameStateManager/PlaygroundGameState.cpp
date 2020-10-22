@@ -8,7 +8,7 @@ void PlaygroundGameState::init()
 {
   d.init("PlaygroundGameState");
   // runSection = 0;
-  isFinishedFlag = false;
+
   /*distance, pwm, kp, ki, kd, targetVal*/
   runSectionParamVector.push_back({800.0, 90, 2.0, 0.03, 0.2, 18});
   runSectionParamVector.push_back({1200.0, 80, 2.0, 0.03, 0.2, 18});
@@ -24,7 +24,7 @@ void PlaygroundGameState::init()
   runSectionParamVector.push_back({800.0, 80, 2.0, 0.03, 0.2, 18});
   runSectionParamVector.push_back({1550.0, 100, 2.0, 0.03, 0.2, 18});
   runSectionParamVector.push_back({550.0, 70, 2.0, 0.03, 0.2, 18});
-  runSectionParamVector.push_back({900.0, 90, 2.0, 0.03, 0.2, 18});
+  runSectionParamVector.push_back({1100.0, 90, 2.0, 0.03, 0.2, 18});
 }
 
 void PlaygroundGameState::run()
@@ -37,9 +37,14 @@ void PlaygroundGameState::run()
   {
     iDeterminationModel.terminate();
     runSectionParamVector.erase(runSectionParamVector.begin());
-    isFinishedFlag = runSectionParamVector.empty();
   }
 }
+
+bool PlaygroundGameState::isFinished()
+{
+  return runSectionParamVector.empty();
+}
+
 
 void PlaygroundGameState::terminate()
 {

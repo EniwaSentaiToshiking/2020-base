@@ -3,9 +3,9 @@
 
 WheelDeviceDriver::WheelDeviceDriver() : leftWheel(PORT_C), rightWheel(PORT_B)
 {
-    this->init();
-    file = fopen("logging_distance.csv", "w");
-    fprintf(file, "Distance,difL,curL,preL,difR,curR,preR\n");
+    this->resetDistance();
+    // file = fopen("logging_distance.csv", "w");
+    // fprintf(file, "Distance,difL,curL,preL,difR,curR,preR\n");
 }
 
 void WheelDeviceDriver::init()
@@ -36,9 +36,6 @@ void WheelDeviceDriver::updateDistance()
     handlerCycleDistance = (handlerCycleDistanceL + handlerCycleDistanceR) / 2.0; //タイヤの中央の軌跡を測る
     currentDistance += handlerCycleDistance;
 
-    // fprintf(file, "%f,%f,%f,%f,%f,%f,%f\n",
-    //         currentDistance, diffAngleL, currentAngleL, previousAngleL, diffAngleR, currentAngleR, previousAngleR);
-
     previousAngleL = currentAngleL;
     previousAngleR = currentAngleR;
 }
@@ -68,5 +65,5 @@ void WheelDeviceDriver::terminate()
 WheelDeviceDriver::~WheelDeviceDriver()
 {
     this->terminate();
-    fclose(file);
+    // fclose(file);
 }
