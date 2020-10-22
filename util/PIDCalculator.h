@@ -24,5 +24,5 @@ private:
 	float integral;
 	float differential;
 	static const int absMax = 100;
-	float dt = 10 / 1000.0f; /* TRACER_TASKのハンドラ周期<msec>と同じ */
+	float dt = 10 / 1000.0; /* TRACER_TASKのハンドラ周期<msec>と同じ */
 };

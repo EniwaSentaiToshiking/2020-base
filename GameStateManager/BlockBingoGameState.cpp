@@ -1,41 +1,52 @@
 #include "BlockBingoGameState.h"
 
-BlockBingoGameState::BlockBingoGameState() : leftWheel(PORT_C), rightWheel(PORT_B)
+BlockBingoGameState::BlockBingoGameState()
 {
 }
 
 void BlockBingoGameState::init()
 {
-  debugUtil.init("BlockBingoGameState");
-  colorSensorDeviceDriver.init();
+  d.init("BlockBingoGameState");
+  runSectionParamVector.push_back({COLOR, COLOR_YELLOW, 40, 2.0, 0.03, 0.2, 18});
 }
 
 void BlockBingoGameState::run()
 {
-  debugUtil.lcd_msg_debug("running...", 1);
-  const int m_target_color_value = 18;
-  float m_control_value = pidCalculator.calcPID(2.0, 0.03, 0.2, colorSensorDeviceDriver.getBrightness(), m_target_color_value);
-  int m_left_pwm = pwm - m_control_value;                                                                                             
-  int m_right_pwm = pwm + m_control_value;                                                                                            
-  leftWheel.setPWM(m_left_pwm);
-  rightWheel.setPWM(m_right_pwm);
+  d.lcd_msg_debug("running...", 1);
+  RunSectionParam currentRunSectionParam = runSectionParamVector.front();
+  interfaceBehaviorModel.selectLineTrace(currentRunSectionParam.pwm, currentRunSectionParam.kP,
+                                         currentRunSectionParam.kI, currentRunSectionParam.kD, currentRunSectionParam.targetVal);
+  
+  switch (currentRunSectionParam.determinationActionList)
+  {
+  case COLOR:
+    if (interfaceDeterminationModel.selectColor((colorid_t)currentRunSectionParam.determinationParam))
+    {
+      interfaceDeterminationModel.terminate();
+      runSectionParamVector.erase(runSectionParamVector.begin());
+    }
+    break;
+
+  case DISTANCE:
+    if (interfaceDeterminationModel.selectDistance(currentRunSectionParam.determinationParam))
+    {
+      interfaceDeterminationModel.terminate();
+      runSectionParamVector.erase(runSectionParamVector.begin());
+    }
+    break;
+  default:
+    break;
+  }
 }
 
-bool BlockBingoGameState::isChanged()
+bool BlockBingoGameState::isFinished()
 {
-  if (colorSensorDeviceDriver.getColorNumber() == COLOR_YELLOW)
-  {
-    return true;
-  }
-  return false;
+  return runSectionParamVector.empty();
 }
 
 void BlockBingoGameState::terminate()
 {
-  debugUtil.lcd_msg_debug("Stopped.", 1);
-  leftWheel.stop();
-  rightWheel.stop();
-  colorSensorDeviceDriver.terminate();
-  debugUtil.led_debug(LED_RED);
+  d.lcd_msg_debug("Stopped.", 1);
+  interfaceBehaviorModel.selectLineTrace(0, 0, 0, 0, 0);
 }
 
