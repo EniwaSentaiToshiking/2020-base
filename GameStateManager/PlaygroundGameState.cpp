@@ -25,8 +25,10 @@ void PlaygroundGameState::init()
   // runSectionParamVector.push_back({1100.0, 90, 2.0, 0.03, 0.2, 18});
 }
 
+extern char syslogBuf[50];
 void PlaygroundGameState::run()
 {
+  iBehaviorModel.selectSpinTrun(40, LEFTWARD);
   // RunSectionParam currentRunSectionParam = runSectionParamVector.front();
   // iBehaviorModel.selectLineTrace(currentRunSectionParam.pwm, currentRunSectionParam.kP,
   //                                currentRunSectionParam.kI, currentRunSectionParam.kD, currentRunSectionParam.targetVal);
@@ -40,7 +42,15 @@ void PlaygroundGameState::run()
 
 bool PlaygroundGameState::isFinished()
 {
-  return runSectionParamVector.empty();
+  return iDeterminationModel.selectAngle(DEGREE135);
+  // float dis = wheelDeviceDriver.getDistance();
+  // snprintf(syslogBuf, sizeof(syslogBuf), "Distance %f", dis);
+  // syslog(LOG_NOTICE, syslogBuf);
+  // if (dis >= 204)
+  // {
+  //   return true;
+  // }
+  //   return false;
 }
 
 
