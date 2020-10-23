@@ -36,5 +36,5 @@ void LineTraceBehaviorModel::run(int pwm, float kP, float kI, float kD, int targ
 
 void LineTraceBehaviorModel::terminate()
 {
-    
+    wheelDeviceDriver.terminate();
 }

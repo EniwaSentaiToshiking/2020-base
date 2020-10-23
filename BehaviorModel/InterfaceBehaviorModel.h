@@ -2,6 +2,7 @@
 
 #include "LineTraceBehaviorModel.h"
 #include "SpinTurnBehaviorModel.h"
+#include "RunSectionParam.h"
 
 class InterfaceBehaviorModel
 {
@@ -9,6 +10,7 @@ class InterfaceBehaviorModel
     SpinTurnBehaviorModel spinTurnBehaviorModel;
 
 public:
-    void selectLineTrace(int pwm, float kP, float kI, float kD, int targetVal);
-    void selectSpinTrun(int pwm, SpinTurnLeftOrRight spinTurnLeftOrRight);
+    void init();
+    void run(RunSectionParam currentRunSectionParam);
+    void terminate();
 };

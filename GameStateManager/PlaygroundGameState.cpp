@@ -28,7 +28,7 @@ void PlaygroundGameState::init()
 extern char syslogBuf[50];
 void PlaygroundGameState::run()
 {
-  iBehaviorModel.selectSpinTrun(40, LEFTWARD);
+  // iBehaviorModel.selectSpinTrun(40, LEFTWARD);
   // RunSectionParam currentRunSectionParam = runSectionParamVector.front();
   // iBehaviorModel.selectLineTrace(currentRunSectionParam.pwm, currentRunSectionParam.kP,
   //                                currentRunSectionParam.kI, currentRunSectionParam.kD, currentRunSectionParam.targetVal);
@@ -42,7 +42,7 @@ void PlaygroundGameState::run()
 
 bool PlaygroundGameState::isFinished()
 {
-  return iDeterminationModel.selectAngle(DEGREE135);
+  // return iDeterminationModel.selectAngle(DEGREE135);
   // float dis = wheelDeviceDriver.getDistance();
   // snprintf(syslogBuf, sizeof(syslogBuf), "Distance %f", dis);
   // syslog(LOG_NOTICE, syslogBuf);
@@ -50,7 +50,7 @@ bool PlaygroundGameState::isFinished()
   // {
   //   return true;
   // }
-  //   return false;
+    return false;
 }
 
 
@@ -58,5 +58,5 @@ void PlaygroundGameState::terminate()
 {
   d.lcd_msg_debug("Stopped.", 1);
   d.led_debug(LED_RED);
-  iBehaviorModel.selectLineTrace(0,0,0,0,0);
+  // iBehaviorModel.selectLineTrace(0,0,0,0,0);
 }

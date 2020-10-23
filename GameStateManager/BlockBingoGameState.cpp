@@ -7,27 +7,15 @@ BlockBingoGameState::BlockBingoGameState()
 void BlockBingoGameState::init()
 {
   d.init("BlockBingoGameState");
-
+  interfaceBehaviorModel.init();
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 70, 2.0, 0.03, 0.2, 18, NONE});
 }
 
 void BlockBingoGameState::run()
 {
   d.lcd_msg_debug("running...", 1);
   RunSectionParam currentRunSectionParam = runSectionParamVector.front();
-
-  switch (currentRunSectionParam.behavior)
-  {
-  case LINE_TRAICE:
-    interfaceBehaviorModel.selectLineTrace(currentRunSectionParam.pwm, currentRunSectionParam.kP,
-                                           currentRunSectionParam.kI, currentRunSectionParam.kD, currentRunSectionParam.targetVal);
-    break;
-  case SPIN_TURN:
-    interfaceBehaviorModel.selectSpinTrun(currentRunSectionParam.pwm, currentRunSectionParam.spinTurnLeftOrRight);
-    break;
-
-  default:
-    break;
-  }
+  interfaceBehaviorModel.run(currentRunSectionParam);
 
   switch (currentRunSectionParam.determination)
   {
@@ -67,6 +55,6 @@ bool BlockBingoGameState::isFinished()
 void BlockBingoGameState::terminate()
 {
   d.lcd_msg_debug("Stopped.", 1);
-  interfaceBehaviorModel.selectLineTrace(0, 0, 0, 0, 0);
+  interfaceBehaviorModel.terminate();
 }
 

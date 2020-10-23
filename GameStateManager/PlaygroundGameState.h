@@ -3,7 +3,6 @@
 #include "TemplateGameState.h"
 #include "InterfaceDeterminationModel.h"
 #include "InterfaceBehaviorModel.h"
-#include "BehaviorDetermination.h"
 #include "RunSectionParam.h"
 #include <vector>
 
