@@ -30,7 +30,7 @@ void RunningGameState::init()
   // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 550, 70, 2.0, 0.03, 0.2, 18, NONE});
   // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1100, 85, 2.0, 0.03, 0.2, 18, NONE});
 }
-extern char syslogBuf[50];
+
 void RunningGameState::run()
 {
   d.lcd_msg_debug("running...", 1);
@@ -41,9 +41,6 @@ void RunningGameState::run()
   {
     interfaceDeterminationModel.terminate();
     runSectionParamVector.erase(runSectionParamVector.begin());
-    snprintf(syslogBuf, sizeof(syslogBuf), "%d,%d,%d,%d,%f,%f,%f,", currentRunSectionParam.behavior, currentRunSectionParam.determination,
-             currentRunSectionParam.determinationParam, currentRunSectionParam.pwm, currentRunSectionParam.kP, currentRunSectionParam.kI, currentRunSectionParam.kD);
-    syslog(LOG_NOTICE, syslogBuf);
   }
 }
 
@@ -55,8 +52,8 @@ bool RunningGameState::isFinished()
 void RunningGameState::terminate()
 {
   d.lcd_msg_debug("Stopped.", 1);
-  d.led_debug(LED_RED);
   interfaceBehaviorModel.terminate();
+  interfaceDeterminationModel.terminate();
 }
 
 RunningGameState::~RunningGameState()

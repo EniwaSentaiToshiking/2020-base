@@ -14,7 +14,7 @@ void BlockBingoGameState::init()
   runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 60, 2.0, 0.03, 0.2, 18, NONE});
 }
 
-extern char syslogBuf[50];
+
 void BlockBingoGameState::run()
 {
   d.lcd_msg_debug("running...", 1);
@@ -25,9 +25,6 @@ void BlockBingoGameState::run()
   {
     interfaceDeterminationModel.terminate();
     runSectionParamVector.erase(runSectionParamVector.begin());
-    snprintf(syslogBuf, sizeof(syslogBuf), "%d,%d,%d,%d,%f,%f,%f,", currentRunSectionParam.behavior, currentRunSectionParam.determination,
-             currentRunSectionParam.determinationParam, currentRunSectionParam.pwm, currentRunSectionParam.kP, currentRunSectionParam.kI, currentRunSectionParam.kD);
-    syslog(LOG_NOTICE, syslogBuf);
   }
 
 }
