@@ -58,6 +58,7 @@ void GameStateManager::manageGameState()
         if (playgroundGameState.isFinished())
         {
             playgroundGameState.terminate();
+            this->terminate();
             stp_cyc(SETUP_GAME_CYC);
             stp_cyc(GAME_STATE_MANAGER_CYC);
         }

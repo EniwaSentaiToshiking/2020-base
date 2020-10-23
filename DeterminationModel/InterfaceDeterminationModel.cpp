@@ -5,6 +5,7 @@ void InterfaceDeterminationModel::init()
     colorDeterminationModel.init();
     distanceDeterminationModel.init();
     spinTurnAngleDeterminationModel.init();
+    waitTimeDterminationModel.init();
 }
 
 bool InterfaceDeterminationModel::determine(RunSectionParam currentRunSectionParam)
@@ -23,6 +24,10 @@ bool InterfaceDeterminationModel::determine(RunSectionParam currentRunSectionPar
         return spinTurnAngleDeterminationModel.determine((SpinTurnAngleList)currentRunSectionParam.determinationParam);
         break;
         
+    case WAIT_TIME:
+        return waitTimeDterminationModel.determine((uint64_t)currentRunSectionParam.determinationParam);
+        break;
+
     case STOP_DETERMINATION:
         return true;
         break;
@@ -38,4 +43,5 @@ void InterfaceDeterminationModel::terminate()
     colorDeterminationModel.terminate();
     distanceDeterminationModel.terminate();
     spinTurnAngleDeterminationModel.terminate();
+    waitTimeDterminationModel.terminate();
 }
