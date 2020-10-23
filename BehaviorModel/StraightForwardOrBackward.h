@@ -2,7 +2,7 @@
 
 enum StraightForwardOrBackward
 {
-    NONE = 0,
+    NONE_F_B = 0,
     FORWARD,
     BACKWARD,
 };
