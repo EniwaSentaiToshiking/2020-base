@@ -6,6 +6,17 @@
 // #include "Ev3State.h"
 #include "DebugUtil.h"
 
+/**
+ * 左コース/右コース向けの設定を定義します
+ * デフォルトは左コース(ラインの右エッジをトレース)です
+ */
+
+#if defined(MAKE_RIGHT)
+  int edge = LEFT_EDGE;
+#else
+  int edge = RIGHT_EDGE;
+#endif
+
 using namespace ev3api;
 
 SetupGame setupGame;
@@ -20,7 +31,6 @@ char syslogBuf[50] = "syslog";
 
 int nowGameState = RUNNING_GAME_STATE;
 // int nowEv3State = PRE_GAME_STATE;
-int edge = LEFT_EDGE;
 
 void setup_game_task(intptr_t exinf)
 {
