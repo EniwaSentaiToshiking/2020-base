@@ -24,7 +24,7 @@ void InterfaceBehaviorModel::run(RunSectionParam currentRunSectionParam)
         spinTurnBehaviorModel.run(currentRunSectionParam.pwm, currentRunSectionParam.spinTurnLeftOrRight);
         break;
     
-    case STOP_DETERMINATION:
+    case STOP:
         stopBehaviorModel.run(currentRunSectionParam.pwm);
         break;
 

@@ -23,7 +23,7 @@ bool InterfaceDeterminationModel::determine(RunSectionParam currentRunSectionPar
         return spinTurnAngleDeterminationModel.determine((SpinTurnAngleList)currentRunSectionParam.determinationParam);
         break;
         
-    case STOP:
+    case STOP_DETERMINATION:
         return true;
         break;
 
