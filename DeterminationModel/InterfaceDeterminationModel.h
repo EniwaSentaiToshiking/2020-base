@@ -4,6 +4,7 @@
 #include "ColorDeterminationModel.h"
 #include "DistanceDeterminationModel.h"
 #include "SpinTurnAngleDeterminationModel.h"
+#include "WaitTimeDterminationModel.h"
 #include "RunSectionParam.h"
 
 using namespace ev3api;
@@ -13,6 +14,7 @@ class InterfaceDeterminationModel
     ColorDeterminationModel colorDeterminationModel;
     DistanceDeterminationModel distanceDeterminationModel;
     SpinTurnAngleDeterminationModel spinTurnAngleDeterminationModel;
+    WaitTimeDterminationModel waitTimeDterminationModel;
 
     
 public:

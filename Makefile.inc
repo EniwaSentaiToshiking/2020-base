@@ -27,6 +27,7 @@ APPL_CXXOBJS += \
 	ColorDeterminationModel.o \
 	DistanceDeterminationModel.o \
 	SpinTurnAngleDeterminationModel.o \
+	WaitTimeDterminationModel.o \
 	\
 	ColorSensorDeviceDriver.o \
 	WheelDeviceDriver.o \
