@@ -4,8 +4,9 @@
 WheelDeviceDriver::WheelDeviceDriver() : leftWheel(PORT_C), rightWheel(PORT_B)
 {
     this->resetDistance();
-    // file = fopen("logging_distance.csv", "w");
+    // file = fopen("logging_spin_turn_distance.csv", "w");
     // fprintf(file, "Distance,difL,curL,preL,difR,curR,preR\n");
+    // fprintf(file, "dis,\n");
 }
 
 void WheelDeviceDriver::init()
@@ -28,13 +29,15 @@ void WheelDeviceDriver::updateDistance()
     currentAngleR = rightWheel.getCount();
     handlerCycleDistance = 0.0;
 
-    diffAngleL = currentAngleL - previousAngleL;
-    diffAngleR = currentAngleR - previousAngleR;
+    diffAngleL = abs(currentAngleL - previousAngleL);
+    diffAngleR = abs(currentAngleR - previousAngleR);
 
     handlerCycleDistanceL = 2 * M_PI * tireRadius * diffAngleL / 360.0;
     handlerCycleDistanceR = 2 * M_PI * tireRadius * diffAngleR / 360.0;
     handlerCycleDistance = (handlerCycleDistanceL + handlerCycleDistanceR) / 2.0; //タイヤの中央の軌跡を測る
     currentDistance += handlerCycleDistance;
+
+    // fprintf(file, "%f,\n", currentDistance);
 
     previousAngleL = currentAngleL;
     previousAngleR = currentAngleR;

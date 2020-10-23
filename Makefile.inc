@@ -17,11 +17,13 @@ APPL_CXXOBJS += \
 	InterfaceBehaviorModel.o \
 	TemplateBehaviorModel.o \
 	LineTraceBehaviorModel.o \
-	InterfaceDeterminationModel.o \
+	SpinTurnBehaviorModel.o \
 	\
+	InterfaceDeterminationModel.o \
 	TemplateDeterminationModel.o \
 	ColorDeterminationModel.o \
 	DistanceDeterminationModel.o \
+	SpinTurnAngleDeterminationModel.o \
 	\
 	ColorSensorDeviceDriver.o \
 	WheelDeviceDriver.o \

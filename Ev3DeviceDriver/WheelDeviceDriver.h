@@ -24,7 +24,7 @@ public:
 
 private:
     void updateDistance();
-    float tireRadius = 50.0f; //50mm
+    float tireRadius = 45.0f; //45mm
 
     float currentDistance;
     
