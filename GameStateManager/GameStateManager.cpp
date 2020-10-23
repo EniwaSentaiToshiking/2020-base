@@ -20,7 +20,7 @@ void GameStateManager::manageGameState()
         runningGameState.run();
         if (runningGameState.isFinished())
         {
-            runningGameState.terminate();
+            // runningGameState.terminate();
             nowGameState = BLOCK_BINGO_GAME_STATE;
         }
         break;
@@ -29,12 +29,13 @@ void GameStateManager::manageGameState()
         blockBingoGameState.run();
         if (blockBingoGameState.isFinished())
         {
-            blockBingoGameState.terminate();
+            // blockBingoGameState.terminate();
             nowGameState = GARAGE_GAME_STATE;
         }
         break;
     case GARAGE_GAME_STATE:
         d.led_debug(LED_RED);
+        this->terminate();
         break;
     case PLAYGROUND_GAME_STATE:
         if (playgroundGameState.isFinished())

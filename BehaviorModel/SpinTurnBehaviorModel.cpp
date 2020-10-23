@@ -30,4 +30,5 @@ void SpinTurnBehaviorModel::run(int pwm, SpinTurnLeftOrRight spinTurnLeftOrRight
 
 void SpinTurnBehaviorModel::terminate()
 {
+    wheelDeviceDriver.terminate();
 }

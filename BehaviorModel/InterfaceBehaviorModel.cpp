@@ -1,11 +1,30 @@
 #include "InterfaceBehaviorModel.h"
 
-void InterfaceBehaviorModel::selectLineTrace(int pwm, float kP, float kI, float kD, int targetVal)
+void InterfaceBehaviorModel::init()
 {
-    lineTraceBehaviorModel.run(pwm, kP, kI, kD, targetVal);
+    lineTraceBehaviorModel.init();
+    spinTurnBehaviorModel.init();
 }
 
-void InterfaceBehaviorModel::selectSpinTrun(int pwm, SpinTurnLeftOrRight spinTurnLeftOrRight)
+void InterfaceBehaviorModel::run(RunSectionParam currentRunSectionParam)
 {
-    spinTurnBehaviorModel.run(pwm, spinTurnLeftOrRight);
+    switch (currentRunSectionParam.behavior)
+    {
+    case LINE_TRAICE:
+        lineTraceBehaviorModel.run(currentRunSectionParam.pwm, currentRunSectionParam.kP,
+                                               currentRunSectionParam.kI, currentRunSectionParam.kD, currentRunSectionParam.targetVal);
+        break;
+    case SPIN_TURN:
+        spinTurnBehaviorModel.run(currentRunSectionParam.pwm, currentRunSectionParam.spinTurnLeftOrRight);
+        break;
+
+    default:
+        break;
+    }
+}
+
+void InterfaceBehaviorModel::terminate()
+{
+    lineTraceBehaviorModel.terminate();
+    spinTurnBehaviorModel.terminate();
 }
