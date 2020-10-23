@@ -20,7 +20,7 @@ char syslogBuf[50] = "syslog";
 
 int nowGameState = RUNNING_GAME_STATE;
 // int nowEv3State = PRE_GAME_STATE;
-int edge = RIGHT_EDGE;
+int edge = LEFT_EDGE;
 
 void setup_game_task(intptr_t exinf)
 {
