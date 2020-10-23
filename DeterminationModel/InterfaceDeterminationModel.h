@@ -17,6 +17,6 @@ class InterfaceDeterminationModel
     
 public:
     void init();
-    void terminate();
     bool determine(RunSectionParam currentRunSectionParam);
+    void terminate();
 };

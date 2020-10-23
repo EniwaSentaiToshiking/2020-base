@@ -1,7 +1,6 @@
 #pragma once
 
 #include "TemplateBehaviorModel.h"
-#include "SpinTurnAngleList.h"
 #include "SpinTurnLeftOrRight.h"
 #include "WheelDeviceDriver.h"
 

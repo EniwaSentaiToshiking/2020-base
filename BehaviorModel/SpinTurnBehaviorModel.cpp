@@ -10,7 +10,7 @@ void SpinTurnBehaviorModel::run(int pwm, SpinTurnLeftOrRight spinTurnLeftOrRight
 {
     switch (spinTurnLeftOrRight)
     {
-    case NONE:
+    case NONE_L_R:
         break;
 
     case LEFTWARD:

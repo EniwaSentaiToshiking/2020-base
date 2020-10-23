@@ -10,8 +10,8 @@ void BlockBingoGameState::init()
   interfaceBehaviorModel.init();
   interfaceDeterminationModel.init();
   
-  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 300, 20, 2.0, 0.03, 0.2, 18, NONE});
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 60, 2.0, 0.03, 0.2, 18, NONE});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 300, 20, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 60, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
 }
 
 

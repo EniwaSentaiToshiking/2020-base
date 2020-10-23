@@ -18,6 +18,7 @@ APPL_CXXOBJS += \
 	TemplateBehaviorModel.o \
 	LineTraceBehaviorModel.o \
 	SpinTurnBehaviorModel.o \
+	StraightBehaviorModel.o \
 	\
 	InterfaceDeterminationModel.o \
 	TemplateDeterminationModel.o \
