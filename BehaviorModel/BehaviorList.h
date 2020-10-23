@@ -1,6 +1,7 @@
 #pragma once
 
-enum BehaviorActionList
+enum BehaviorList
 {
     LINE_TRAICE = 0,
+    SPIN_TURN,
 };

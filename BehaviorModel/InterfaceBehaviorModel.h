@@ -2,8 +2,6 @@
 
 #include "LineTraceBehaviorModel.h"
 #include "SpinTurnBehaviorModel.h"
-// #include "SpinTurnLeftOrRight.h"
-// #include "StraightBehaviorModel.h"
 
 class InterfaceBehaviorModel
 {

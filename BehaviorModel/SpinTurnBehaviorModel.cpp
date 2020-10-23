@@ -10,6 +10,9 @@ void SpinTurnBehaviorModel::run(int pwm, SpinTurnLeftOrRight spinTurnLeftOrRight
 {
     switch (spinTurnLeftOrRight)
     {
+    case NONE:
+        break;
+
     case LEFTWARD:
         wheelDeviceDriver.setLeftPWM(-pwm);
         wheelDeviceDriver.setRightPWM(pwm);
@@ -19,7 +22,7 @@ void SpinTurnBehaviorModel::run(int pwm, SpinTurnLeftOrRight spinTurnLeftOrRight
         wheelDeviceDriver.setLeftPWM(pwm);
         wheelDeviceDriver.setRightPWM(-pwm);
         break;
-
+        
     default:
         break;
     }
