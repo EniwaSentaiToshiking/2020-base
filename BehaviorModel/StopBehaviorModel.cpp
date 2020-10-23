@@ -7,9 +7,10 @@ void StopBehaviorModel::init()
 
 void StopBehaviorModel::run(int pwm)
 {
-    pwm = 0;
-    wheelDeviceDriver.setLeftPWM(pwm);
-    wheelDeviceDriver.setRightPWM(pwm);
+    wheelDeviceDriver.terminate();
+    // pwm = 0;
+    // wheelDeviceDriver.setLeftPWM(pwm);
+    // wheelDeviceDriver.setRightPWM(pwm);
 }
 
 void StopBehaviorModel::terminate()
