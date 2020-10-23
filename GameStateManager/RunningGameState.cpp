@@ -10,8 +10,8 @@ void RunningGameState::init()
   interfaceBehaviorModel.init();
   interfaceDeterminationModel.init();
   /*behavior, determination, determinationParam, pwm, kp, ki, kd, targetVal, spinturnLorR*/
-  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 100, 10, 0, 0, 0, 0, NONE_L_R, FORWARD});
-  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 100, 10, 0, 0, 0, 0, NONE_L_R, BACKWARD});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 800, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({STOP, DISTANCE, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 50, 10, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, LEFTWARD, NONE_F_B});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});

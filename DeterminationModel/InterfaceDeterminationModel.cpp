@@ -22,6 +22,11 @@ bool InterfaceDeterminationModel::determine(RunSectionParam currentRunSectionPar
     case SPIN_TURN_ANGLE:
         return spinTurnAngleDeterminationModel.determine((SpinTurnAngleList)currentRunSectionParam.determinationParam);
         break;
+        
+    case STOP:
+        return true;
+        break;
+
     default:
         return false;
         break;
