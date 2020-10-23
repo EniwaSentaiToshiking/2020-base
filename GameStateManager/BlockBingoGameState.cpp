@@ -8,43 +8,28 @@ void BlockBingoGameState::init()
 {
   d.init("BlockBingoGameState");
   interfaceBehaviorModel.init();
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 70, 2.0, 0.03, 0.2, 18, NONE});
+  interfaceDeterminationModel.init();
+  
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 300, 20, 2.0, 0.03, 0.2, 18, NONE});
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 60, 2.0, 0.03, 0.2, 18, NONE});
 }
 
+extern char syslogBuf[50];
 void BlockBingoGameState::run()
 {
   d.lcd_msg_debug("running...", 1);
   RunSectionParam currentRunSectionParam = runSectionParamVector.front();
   interfaceBehaviorModel.run(currentRunSectionParam);
 
-  switch (currentRunSectionParam.determination)
+  if (interfaceDeterminationModel.determine(currentRunSectionParam))
   {
-  case COLOR:
-    if (interfaceDeterminationModel.selectColor((colorid_t)currentRunSectionParam.determinationParam))
-    {
-      interfaceDeterminationModel.terminate();
-      runSectionParamVector.erase(runSectionParamVector.begin());
-    }
-    break;
-
-  case DISTANCE:
-    if (interfaceDeterminationModel.selectDistance(currentRunSectionParam.determinationParam))
-    {
-      interfaceDeterminationModel.terminate();
-      runSectionParamVector.erase(runSectionParamVector.begin());
-    }
-    break;
-
-  case SPIN_TURN_ANGLE:
-    if (interfaceDeterminationModel.selectAngle((SpinTurnAngleList)currentRunSectionParam.determinationParam))
-    {
-      interfaceDeterminationModel.terminate();
-      runSectionParamVector.erase(runSectionParamVector.begin());
-    }
-    break;
-  default:
-    break;
+    interfaceDeterminationModel.terminate();
+    runSectionParamVector.erase(runSectionParamVector.begin());
+    snprintf(syslogBuf, sizeof(syslogBuf), "%d,%d,%d,%d,%f,%f,%f,", currentRunSectionParam.behavior, currentRunSectionParam.determination,
+             currentRunSectionParam.determinationParam, currentRunSectionParam.pwm, currentRunSectionParam.kP, currentRunSectionParam.kI, currentRunSectionParam.kD);
+    syslog(LOG_NOTICE, syslogBuf);
   }
+
 }
 
 bool BlockBingoGameState::isFinished()
@@ -56,5 +41,6 @@ void BlockBingoGameState::terminate()
 {
   d.lcd_msg_debug("Stopped.", 1);
   interfaceBehaviorModel.terminate();
+  interfaceDeterminationModel.terminate();
 }
 

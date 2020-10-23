@@ -17,10 +17,6 @@ class InterfaceDeterminationModel
     
 public:
     void init();
-    // bool selectTouch();
-    bool selectColor(colorid_t color);
-    bool selectDistance(float distance);
-    bool selectAngle(SpinTurnAngleList spinTurnAngle);
     void terminate();
-    // void run();
+    bool determine(RunSectionParam currentRunSectionParam);
 };

@@ -8,8 +8,10 @@ void RunningGameState::init()
 {
   d.init("RunningGameState");
   interfaceBehaviorModel.init();
+  interfaceDeterminationModel.init();
   /*behavior, determination, determinationParam, pwm, kp, ki, kd, targetVal, spinturnLorR*/
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 800, 50, 2.0, 0.03, 0.2, 18, NONE});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 400, 20, 2.0, 0.03, 0.2, 18, NONE});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 50, 10, 2.0, 0.03, 0.2, 18, NONE});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, LEFTWARD});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, RIGHTWARD});
   runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 800, 90, 2.0, 0.03, 0.2, 18, NONE});
@@ -28,40 +30,20 @@ void RunningGameState::init()
   // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 550, 70, 2.0, 0.03, 0.2, 18, NONE});
   // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1100, 85, 2.0, 0.03, 0.2, 18, NONE});
 }
-
+extern char syslogBuf[50];
 void RunningGameState::run()
 {
   d.lcd_msg_debug("running...", 1);
   RunSectionParam currentRunSectionParam = runSectionParamVector.front();
   interfaceBehaviorModel.run(currentRunSectionParam);
 
-  switch (currentRunSectionParam.determination)
+  if (interfaceDeterminationModel.determine(currentRunSectionParam))
   {
-  case COLOR:
-    if (interfaceDeterminationModel.selectColor((colorid_t)currentRunSectionParam.determinationParam))
-    {
-      interfaceDeterminationModel.terminate();
-      runSectionParamVector.erase(runSectionParamVector.begin());
-    }
-    break;
-
-  case DISTANCE:
-    if (interfaceDeterminationModel.selectDistance(currentRunSectionParam.determinationParam))
-    {
-      interfaceDeterminationModel.terminate();
-      runSectionParamVector.erase(runSectionParamVector.begin());
-    }
-    break;
-
-  case SPIN_TURN_ANGLE:
-    if (interfaceDeterminationModel.selectAngle((SpinTurnAngleList)currentRunSectionParam.determinationParam))
-    {
-      interfaceDeterminationModel.terminate();
-      runSectionParamVector.erase(runSectionParamVector.begin());
-    }
-    break;
-  default:
-    break;
+    interfaceDeterminationModel.terminate();
+    runSectionParamVector.erase(runSectionParamVector.begin());
+    snprintf(syslogBuf, sizeof(syslogBuf), "%d,%d,%d,%d,%f,%f,%f,", currentRunSectionParam.behavior, currentRunSectionParam.determination,
+             currentRunSectionParam.determinationParam, currentRunSectionParam.pwm, currentRunSectionParam.kP, currentRunSectionParam.kI, currentRunSectionParam.kD);
+    syslog(LOG_NOTICE, syslogBuf);
   }
 }
 
