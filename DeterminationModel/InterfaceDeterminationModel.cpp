@@ -1,10 +1,5 @@
 #include "InterfaceDeterminationModel.h"
 
-// bool InterfaceDeterminationModel::selectTouch()
-// {
-//     return touchDeterminationModel.determine();
-// }
-
 void InterfaceDeterminationModel::init()
 {
     colorDeterminationModel.init();
@@ -12,20 +7,25 @@ void InterfaceDeterminationModel::init()
     spinTurnAngleDeterminationModel.init();
 }
 
-
-bool InterfaceDeterminationModel::selectColor(colorid_t color)
+bool InterfaceDeterminationModel::determine(RunSectionParam currentRunSectionParam)
 {
-    return colorDeterminationModel.determine(color);
-}
+    switch (currentRunSectionParam.determination)
+    {
+    case COLOR:
+        return colorDeterminationModel.determine((colorid_t)currentRunSectionParam.determinationParam);
+        break;
 
-bool InterfaceDeterminationModel::selectDistance(float distance)
-{
-    return distanceDeterminationModel.determine(distance);
-}
+    case DISTANCE:
+        return distanceDeterminationModel.determine(currentRunSectionParam.determinationParam);
+        break;
 
-bool InterfaceDeterminationModel::selectAngle(SpinTurnAngleList spinTurnAngletance)
-{
-    return distanceDeterminationModel.determine(spinTurnAngletance);
+    case SPIN_TURN_ANGLE:
+        return spinTurnAngleDeterminationModel.determine((SpinTurnAngleList)currentRunSectionParam.determinationParam);
+        break;
+    default:
+        return false;
+        break;
+    }
 }
 
 void InterfaceDeterminationModel::terminate()
