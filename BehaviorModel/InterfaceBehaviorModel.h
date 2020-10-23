@@ -1,17 +1,15 @@
 #pragma once
 
-#include "RunSectionParam.h"
 #include "LineTraceBehaviorModel.h"
 #include "SpinTurnBehaviorModel.h"
 #include "StraightBehaviorModel.h"
-#include "StopBehaviorModel.h"
+#include "RunSectionParam.h"
 
 class InterfaceBehaviorModel
 {
     LineTraceBehaviorModel lineTraceBehaviorModel;
     StraightBehaviorModel straightBehaviorModel;
     SpinTurnBehaviorModel spinTurnBehaviorModel;
-    StopBehaviorModel stopBehaviorModel;
 
 public:
     void init();
