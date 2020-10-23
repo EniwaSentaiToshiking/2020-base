@@ -5,6 +5,7 @@ void InterfaceBehaviorModel::init()
     lineTraceBehaviorModel.init();
     straightBehaviorModel.init();
     spinTurnBehaviorModel.init();
+    stopBehaviorModel.init();
 }
 
 void InterfaceBehaviorModel::run(RunSectionParam currentRunSectionParam)
@@ -22,6 +23,10 @@ void InterfaceBehaviorModel::run(RunSectionParam currentRunSectionParam)
     case SPIN_TURN:
         spinTurnBehaviorModel.run(currentRunSectionParam.pwm, currentRunSectionParam.spinTurnLeftOrRight);
         break;
+    
+    case STOP_DETERMINATION:
+        stopBehaviorModel.run(currentRunSectionParam.pwm);
+        break;
 
     default:
         break;
@@ -33,4 +38,5 @@ void InterfaceBehaviorModel::terminate()
     lineTraceBehaviorModel.terminate();
     straightBehaviorModel.terminate();
     spinTurnBehaviorModel.terminate();
+    stopBehaviorModel.terminate();
 }
