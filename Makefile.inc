@@ -9,10 +9,11 @@ APPL_CXXOBJS += \
 	SetupGame.o \
 	\
 	TemplateGameState.o \
+	GameStateManager.o \
 	RunningGameState.o \
 	BlockBingoGameState.o \
+	GarageGameState.o \
 	PlaygroundGameState.o \
-	GameStateManager.o \
 	\
 	InterfaceBehaviorModel.o \
 	TemplateBehaviorModel.o \

@@ -9,30 +9,27 @@ void RunningGameState::init()
   d.init("RunningGameState");
   interfaceBehaviorModel.init();
   interfaceDeterminationModel.init();
-  /*behavior, determination, determinationParam, pwm, kp, ki, kd, targetVal, spinturnLorR*/
-  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 800, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({STOP, STOP_DETERMINATION, 0, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 50, 10, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, LEFTWARD, NONE_F_B});
-  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
-  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 20, 30, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 800, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1200, 80, 2.0, 0.03, 0.2, 18, NONE});
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 400, 90, 2.0, 0.03, 0.2, 18, NONE});
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1200, 70, 2.0, 0.03, 0.2, 18, NONE});
-  // /* Gate 1*/
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 600, 90, 2.0, 0.03, 0.2, 18, NONE});
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 500, 70, 2.0, 0.03, 0.2, 18, NONE});
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 600, 80, 2.0, 0.03, 0.2, 18, NONE});
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1700, 70, 2.0, 0.03, 0.2, 18, NONE});
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 500, 80, 2.0, 0.03, 0.2, 18, NONE});
-  // /* Gate 2*/
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 800, 80, 2.0, 0.03, 0.2, 18, NONE});
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1550, 100, 2.0, 0.03, 0.2, 18, NONE});
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 550, 70, 2.0, 0.03, 0.2, 18, NONE});
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1100, 85, 2.0, 0.03, 0.2, 18, NONE});
+  /* behavior, determination, determinationParam, pwm, kP, kI, kD, targetVal, spinTurnLeftOrRight, straightForwardOrBackward */
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 776, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 942, 80, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 500, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1000, 75, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 700, 85, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  /* Passed Gate 1*/
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 350, 65, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 550, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 582, 80, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 251, 80, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 582, 80, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 547, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  /* Passed Gate 2*/
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 574, 80, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1552, 100, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 425, 75, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1100, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
 }
 
+// extern char syslogBuf[50];
 void RunningGameState::run()
 {
   d.lcd_msg_debug("running...", 1);
@@ -42,6 +39,9 @@ void RunningGameState::run()
   if (interfaceDeterminationModel.determine(currentRunSectionParam))
   {
     interfaceDeterminationModel.terminate();
+    // snprintf(syslogBuf, sizeof(syslogBuf), "dis, %d, pwm, %d", 
+    //   currentRunSectionParam.determinationParam, currentRunSectionParam.pwm);
+    // syslog(LOG_NOTICE, syslogBuf);
     runSectionParamVector.erase(runSectionParamVector.begin());
   }
 }

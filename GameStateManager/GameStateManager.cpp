@@ -9,9 +9,12 @@ void GameStateManager::init()
     d.init("GameStateManager");
     runningGameState.init();
     blockBingoGameState.init();
+    garageGameState.init();
+
     playgroundGameState.init();
 }
 
+// extern char syslogBuf[50];
 void GameStateManager::manageGameState() 
 {
     switch (nowGameState)
@@ -20,33 +23,46 @@ void GameStateManager::manageGameState()
         runningGameState.run();
         if (runningGameState.isFinished())
         {
-            // runningGameState.terminate();
             nowGameState = BLOCK_BINGO_GAME_STATE;
+            // snprintf(syslogBuf, sizeof(syslogBuf), "End RunningGameState");
+            // syslog(LOG_NOTICE, syslogBuf);
         }
         break;
+
     case BLOCK_BINGO_GAME_STATE:
         d.led_debug(LED_ORANGE);
         blockBingoGameState.run();
         if (blockBingoGameState.isFinished())
         {
-            // blockBingoGameState.terminate();
             nowGameState = GARAGE_GAME_STATE;
+            // snprintf(syslogBuf, sizeof(syslogBuf), "End BlockBingoGameState");
+            // syslog(LOG_NOTICE, syslogBuf);
         }
         break;
+
     case GARAGE_GAME_STATE:
         d.led_debug(LED_RED);
-        this->terminate();
+        garageGameState.run();
+        if (garageGameState.isFinished())
+        {
+            // snprintf(syslogBuf, sizeof(syslogBuf), "End GarageGameState");
+            // syslog(LOG_NOTICE, syslogBuf);
+            this->terminate();
+            stp_cyc(SETUP_GAME_CYC);
+            stp_cyc(GAME_STATE_MANAGER_CYC);
+        }
         break;
+
     case PLAYGROUND_GAME_STATE:
+        playgroundGameState.run();
         if (playgroundGameState.isFinished())
         {
             playgroundGameState.terminate();
             stp_cyc(SETUP_GAME_CYC);
             stp_cyc(GAME_STATE_MANAGER_CYC);
-        } else {
-            playgroundGameState.run();
         }
         break;
+
     default:
         break;
     }
@@ -55,5 +71,8 @@ void GameStateManager::manageGameState()
 void GameStateManager::terminate()
 {
     runningGameState.terminate();
+    blockBingoGameState.terminate();
+    garageGameState.terminate();
+    
     playgroundGameState.terminate();
 }

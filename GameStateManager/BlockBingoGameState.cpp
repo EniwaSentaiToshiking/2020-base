@@ -9,12 +9,12 @@ void BlockBingoGameState::init()
   d.init("BlockBingoGameState");
   interfaceBehaviorModel.init();
   interfaceDeterminationModel.init();
-  
-  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 300, 20, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 60, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 40, 2.0, 0.03, 0.03, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_YELLOW, 30, 0.8, 0.01, 0, 18, NONE_L_R, NONE_F_B});
 }
 
-
+// extern char syslogBuf[50];
 void BlockBingoGameState::run()
 {
   d.lcd_msg_debug("running...", 1);
@@ -24,6 +24,9 @@ void BlockBingoGameState::run()
   if (interfaceDeterminationModel.determine(currentRunSectionParam))
   {
     interfaceDeterminationModel.terminate();
+    // snprintf(syslogBuf, sizeof(syslogBuf), "dis, %d, pwm, %d",
+    //          currentRunSectionParam.determinationParam, currentRunSectionParam.pwm);
+    // syslog(LOG_NOTICE, syslogBuf);
     runSectionParamVector.erase(runSectionParamVector.begin());
   }
 

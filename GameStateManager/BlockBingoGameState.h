@@ -11,7 +11,7 @@
 using namespace ev3api;
 using namespace std;
 
-class BlockBingoGameState
+class BlockBingoGameState : public TemplateGameState
 {
   InterfaceDeterminationModel interfaceDeterminationModel;
   InterfaceBehaviorModel interfaceBehaviorModel;
