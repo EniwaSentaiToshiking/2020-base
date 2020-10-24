@@ -8,7 +8,8 @@ class TemplateGameState
     
 public:
     virtual void init();
-    virtual void createRunSection();
+    virtual void createRunSectionL();
+    virtual void createRunSectionR();
     virtual void run();
     virtual bool isFinished();
     virtual void terminate();

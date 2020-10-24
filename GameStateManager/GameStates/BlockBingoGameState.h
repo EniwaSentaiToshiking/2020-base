@@ -22,7 +22,8 @@ class BlockBingoGameState : public TemplateGameState
 public:
   BlockBingoGameState();
   void init();
-  void createRunSection();
+  void createRunSectionL();
+  void createRunSectionR();
   void run();
   bool isFinished();
   void terminate();
