@@ -5,6 +5,11 @@ void TemplateGameState::init()
     d.init("TemplateGameState");
 }
 
+void TemplateGameState::createRunSection()
+{
+
+}
+
 void TemplateGameState::run()
 {
 

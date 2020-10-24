@@ -9,6 +9,11 @@ void PlaygroundGameState::init()
   d.init("PlaygroundGameState");
   interfaceBehaviorModel.init();
   interfaceDeterminationModel.init();
+  this->createRunSection();
+}
+
+void PlaygroundGameState::createRunSection()
+{
   /* behavior, determination, determinationParam, pwm, kP, kI, kD, targetVal, spinTurnLeftOrRight, straightForwardOrBackward */
   runSectionParamVector.push_back({STOP, WAIT_TIME, 10*1000, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 776, 50, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});

@@ -19,6 +19,7 @@ class RunningGameState : public TemplateGameState
 public:
   RunningGameState();
   void init();
+  void createRunSection();
   void run();
   bool isFinished();
   void terminate();

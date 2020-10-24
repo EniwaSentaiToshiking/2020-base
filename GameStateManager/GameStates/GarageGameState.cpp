@@ -10,7 +10,12 @@ void GarageGameState::init()
   d.init("BlockBingoGameState");
   interfaceBehaviorModel.init();
   interfaceDeterminationModel.init();
+  this->createRunSection();
+}
 
+extern int edge;
+void GarageGameState::createRunSection()
+{
   switch (edge)
   {
   case RIGHT_EDGE:
@@ -40,8 +45,8 @@ void GarageGameState::init()
   runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 20, 2.0, 0.03, 0.03, 18, NONE_L_R, FORWARD});
   runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_WHITE, 20, 2.0, 0.03, 0, 18, NONE_L_R, FORWARD});
   /* ガレージへ進入・停止 */
-  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 181, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
-  runSectionParamVector.push_back({STOP, STOP_DETERMINATION, 0, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 200, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 3500, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
 }
 
 // extern char syslogBuf[50];
