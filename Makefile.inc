@@ -28,6 +28,7 @@ APPL_CXXOBJS += \
 	DistanceDeterminationModel.o \
 	SpinTurnAngleDeterminationModel.o \
 	WaitTimeDterminationModel.o \
+	ColorCircleDeterminationModel.o \
 	\
 	ColorSensorDeviceDriver.o \
 	WheelDeviceDriver.o \
@@ -54,6 +55,8 @@ APPL_DIRS += \
 	$(mkfile_path)BehaviorModel \
 	\
 	$(mkfile_path)DeterminationModel \
+	$(mkfile_path)DeterminationModel/DeterminationList \
+	$(mkfile_path)DeterminationModel/DeterminationList/Template \
 	\
 	$(mkfile_path)Ev3DeviceDriver \
 	\
@@ -74,6 +77,8 @@ INCLUDES += \
 	-I$(mkfile_path)BehaviorModel \
 	\
 	-I$(mkfile_path)DeterminationModel \
+	-I$(mkfile_path)DeterminationModel/DeterminationList \
+	-I$(mkfile_path)DeterminationModel/DeterminationList/Template \
 	\
 	-I$(mkfile_path)Ev3DeviceDriver \
 	\

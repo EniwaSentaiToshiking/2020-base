@@ -28,6 +28,10 @@ bool InterfaceDeterminationModel::determine(RunSectionParam currentRunSectionPar
         return waitTimeDterminationModel.determine((uint64_t)currentRunSectionParam.determinationParam);
         break;
 
+    case COLOR_CIRCLE:
+        return colorCircleDeterminationModel.determine();
+        break;
+
     case STOP_DETERMINATION:
         return true;
         break;
