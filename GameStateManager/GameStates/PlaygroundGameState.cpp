@@ -42,48 +42,61 @@ void PlaygroundGameState::createRunSectionL()
   // runSectionParamVector.push_back({STRAIGHT, DISTANCE, 425, 20, 0, 0, 0, 0, NONE_L_R, BACKWARD});
 
 
-  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 170, 10, 2.0, 0.03, 0.02, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 150, 25, 2.0, 0.03, 0.02, 18, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
   // runSectionParamVector.push_back({STRAIGHT, DISTANCE, 650, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
-  runSectionParamVector.push_back({STRAIGHT, COLOR, COLOR_BLACK, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STRAIGHT, COLOR, COLOR_BLACK, 40, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 20, 0, 0, 0, 0, LEFTWARD, NONE_F_B});
 
- /* ブロックビンゴエリア内 */
 
-
-  /* サークル間ライントレース */
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_YELLOW, 10, 2.0, 0.03, 0, 18, NONE_L_R, NONE_F_B});
-
-  /* サークル直進&ブロック確保*/
+  /* ブロックビンゴエリア内 */
+  /* 1つめ搬入 直進搬入 */
+  this->lineTraceBetweenCircles();
   this->straightCircle();
-  
-  /* 右45度搬入*/
   this->rightCarryInBlock45Degree();
-
-  /* 右45度ライン復帰 */
   this->rightReturnLine45Degree();
 
-  /* サークル間ライントレース */
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_RED, 10, 2.0, 0.03, 0, 18, NONE_L_R, NONE_F_B});
-
-  /* サークル直進&ブロック確保 */
+  /* 2つめ搬入 旋回搬入 */
+  this->lineTraceBetweenCircles();
   this->straightCircle();
-
-  /* サークル間ライントレース */
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_RED, 10, 2.0, 0.03, 0, 18, NONE_L_R, NONE_F_B});
-
-  /* サークル 右90度旋回 & ブロック確保*/
+  this->lineTraceBetweenCircles();
   this->rightTurnCircle90Degree();
-  
-  /* 右45度搬入*/
   this->rightCarryInBlock45Degree();
-
-  
-  /* 右45度ライン復帰 */
   this->rightReturnLine45Degree();
 
-  /* サークル間ライントレース */
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_RED, 10, 2.0, 0.03, 0, 18, NONE_L_R, NONE_F_B});
+  /* 回送 直進*/
+  this->lineTraceBetweenCircles();
+  this->straightCircle();
+
+  /* 3つめ搬入 直進搬入 */
+  this->lineTraceBetweenCircles();
+  this->straightCircle();
+  this->rightCarryInBlock45Degree();
+  this->rightReturnLine45Degree();
+
+  /* 回送 右90*/
+  this->lineTraceBetweenCircles();
+  this->rightTurnCircle90Degree();
+
+  /* 4つめ 直進搬入 */
+  this->lineTraceBetweenCircles();
+  this->straightCircle();
+  this->rightCarryInBlock45Degree();
+  this->rightReturnLine45Degree();
+
+  /* 回送 直進*/
+  this->lineTraceBetweenCircles();
+  this->straightCircle();
+
+  /* 5つめ搬入 旋回搬入 */
+  this->lineTraceBetweenCircles();
+  this->straightCircle();
+  this->lineTraceBetweenCircles();
+  this->rightTurnCircle90Degree();
+  this->rightCarryInBlock45Degree();
+  this->rightReturnLine45Degree();
 
 
 
@@ -107,12 +120,12 @@ void PlaygroundGameState::createRunSectionR()
 
 void PlaygroundGameState::lineTraceBetweenCircles()
 {
-
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR_CIRCLE, 0, 15, 1.3, 0.06, 0, 18, NONE_L_R, NONE_F_B});
 }
 
 void PlaygroundGameState::straightCircle()
 {
-  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 100, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 106, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
 }
 
 // void PlaygroundGameState::straightHoldBlock()
@@ -123,8 +136,9 @@ void PlaygroundGameState::straightCircle()
 void PlaygroundGameState::rightTurnCircle90Degree()
 {
   runSectionParamVector.push_back({STRAIGHT, DISTANCE, 50, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
-  runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, 90, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({STRAIGHT, DISTANCE, 50, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
 }
 
@@ -135,7 +149,7 @@ void PlaygroundGameState::rightTurnCircle90Degree()
 
 void PlaygroundGameState::rightCarryInBlock45Degree()
 {
-  runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, FORWARD});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
   runSectionParamVector.push_back({STRAIGHT, DISTANCE, 200, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
 }
@@ -143,7 +157,7 @@ void PlaygroundGameState::rightCarryInBlock45Degree()
 void PlaygroundGameState::rightReturnLine45Degree()
 {
   runSectionParamVector.push_back({STRAIGHT, DISTANCE, 150, 20, 0, 0, 0, 0, NONE_L_R, BACKWARD});
-  runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 20, 0, 0, 0, 0, LEFTWARD, NONE_F_B});
 }
 
