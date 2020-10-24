@@ -4,21 +4,53 @@ BlockBingoGameState::BlockBingoGameState()
 {
 }
 
+extern int edge;
 void BlockBingoGameState::init()
 {
   d.init("BlockBingoGameState");
   interfaceBehaviorModel.init();
   interfaceDeterminationModel.init();
-  this->createRunSection();
+  switch (edge)
+  {
+  case RIGHT_EDGE:
+    this->createRunSectionL();
+    break;
+  
+  case LEFT_EDGE:
+    this->createRunSectionR();
+    break;
+  
+  default:
+    break;
+  }
 }
 
-void BlockBingoGameState::createRunSection()
+void BlockBingoGameState::createRunSectionL()
 {
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 40, 2.0, 0.03, 0.03, 18, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_YELLOW, 30, 0.8, 0.01, 0, 18, NONE_L_R, NONE_F_B});
+  /* ガレージ前のラインに復帰する */
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 300, 20, 0, 0, 0, 0, NONE_L_R, BACKWARD});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 100, 10, 2.0, 0.03, 0.02, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 425, 20, 0, 0, 0, 0, NONE_L_R, BACKWARD});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
+  // runSectionParamVector.push_back({STRAIGHT, DISTANCE, 650, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STRAIGHT, COLOR, COLOR_BLACK, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_YELLOW, 10, 2.0, 0.03, 0.02, 18, NONE_L_R, NONE_F_B});
+  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 300, 20, 2.0, 0.03, 0.03, 18, NONE_L_R, NONE_F_B});
+  // runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_WHITE, 20, 1.3, 0.03, 0, 18, NONE_L_R, NONE_F_B});
+  /* ブロックビンゴエリアに向かう */
+  // runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+  // runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, LEFTWARD, NONE_F_B});
+  // runSectionParamVector.push_back({STRAIGHT, COLOR, COLOR_BLACK, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STOP, STOP_DETERMINATION, 0, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
 }
 
-// extern char syslogBuf[50];
+void BlockBingoGameState::createRunSectionR()
+{
+  runSectionParamVector.push_back({STOP, STOP_DETERMINATION, 0, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+}
+
+extern char syslogBuf[50];
 void BlockBingoGameState::run()
 {
   d.lcd_msg_debug("running...", 1);
@@ -28,9 +60,9 @@ void BlockBingoGameState::run()
   if (interfaceDeterminationModel.determine(currentRunSectionParam))
   {
     interfaceDeterminationModel.terminate();
-    // snprintf(syslogBuf, sizeof(syslogBuf), "dis, %d, pwm, %d",
-    //          currentRunSectionParam.determinationParam, currentRunSectionParam.pwm);
-    // syslog(LOG_NOTICE, syslogBuf);
+    snprintf(syslogBuf, sizeof(syslogBuf), "bhavior, %d, pwm, %d",
+             currentRunSectionParam.behavior, currentRunSectionParam.pwm);
+    syslog(LOG_NOTICE, syslogBuf);
     runSectionParamVector.erase(runSectionParamVector.begin());
   }
 

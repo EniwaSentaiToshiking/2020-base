@@ -22,7 +22,8 @@ class PlaygroundGameState : public TemplateGameState
 public:
   PlaygroundGameState();
   void init();
-  void createRunSection();
+  void createRunSectionL();
+  void createRunSectionR();
   void run();
   bool isFinished();
   void terminate();

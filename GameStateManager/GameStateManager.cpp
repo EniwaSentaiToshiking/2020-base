@@ -23,19 +23,8 @@ void GameStateManager::manageGameState()
         runningGameState.run();
         if (runningGameState.isFinished())
         {
-            nowGameState = BLOCK_BINGO_GAME_STATE;
-            // snprintf(syslogBuf, sizeof(syslogBuf), "End RunningGameState");
-            // syslog(LOG_NOTICE, syslogBuf);
-        }
-        break;
-
-    case BLOCK_BINGO_GAME_STATE:
-        d.led_debug(LED_ORANGE);
-        blockBingoGameState.run();
-        if (blockBingoGameState.isFinished())
-        {
             nowGameState = GARAGE_GAME_STATE;
-            // snprintf(syslogBuf, sizeof(syslogBuf), "End BlockBingoGameState");
+            // snprintf(syslogBuf, sizeof(syslogBuf), "End RunningGameState");
             // syslog(LOG_NOTICE, syslogBuf);
         }
         break;
@@ -45,11 +34,23 @@ void GameStateManager::manageGameState()
         garageGameState.run();
         if (garageGameState.isFinished())
         {
+            nowGameState = BLOCK_BINGO_GAME_STATE;
             // snprintf(syslogBuf, sizeof(syslogBuf), "End GarageGameState");
             // syslog(LOG_NOTICE, syslogBuf);
             this->terminate();
+        }
+        break;
+
+    case BLOCK_BINGO_GAME_STATE:
+        d.led_debug(LED_ORANGE);
+        blockBingoGameState.run();
+        if (blockBingoGameState.isFinished())
+        {
+            this->terminate();
             stp_cyc(SETUP_GAME_CYC);
             stp_cyc(GAME_STATE_MANAGER_CYC);
+            // snprintf(syslogBuf, sizeof(syslogBuf), "End BlockBingoGameState");
+            // syslog(LOG_NOTICE, syslogBuf);
         }
         break;
 

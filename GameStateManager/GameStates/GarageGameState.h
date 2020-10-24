@@ -22,7 +22,8 @@ class GarageGameState
 public:
     GarageGameState();
     void init();
-    void createRunSection();
+    void createRunSectionL();
+    void createRunSectionR();
     void run();
     bool isFinished();
     void terminate();
