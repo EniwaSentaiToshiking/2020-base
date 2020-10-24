@@ -9,7 +9,11 @@ void BlockBingoGameState::init()
   d.init("BlockBingoGameState");
   interfaceBehaviorModel.init();
   interfaceDeterminationModel.init();
+  this->createRunSection();
+}
 
+void BlockBingoGameState::createRunSection()
+{
   runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 40, 2.0, 0.03, 0.03, 18, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_YELLOW, 30, 0.8, 0.01, 0, 18, NONE_L_R, NONE_F_B});
 }
