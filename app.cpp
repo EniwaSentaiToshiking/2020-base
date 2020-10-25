@@ -43,6 +43,8 @@ void setup_game_task(intptr_t exinf)
 
   if (ev3_button_is_pressed(LEFT_BUTTON))
   {
+    snprintf(syslogBuf, sizeof(syslogBuf), "push left button:stop ev3");
+    syslog(LOG_NOTICE, syslogBuf);
     stp_cyc(SETUP_GAME_CYC);
     stp_cyc(GAME_STATE_MANAGER_CYC);
     gameStateManager.terminate();
