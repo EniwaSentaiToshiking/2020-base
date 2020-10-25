@@ -29,5 +29,5 @@ private:
     const int PWM_ABS_MAX = 60;
     /* debug */
     DebugUtil d;
-    FILE *file;
+    // FILE *file;
 };

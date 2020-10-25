@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "DebugUtil.h"
+#include "ArmDeviceDriver.h"
 
 using namespace ev3api;
 using namespace std;

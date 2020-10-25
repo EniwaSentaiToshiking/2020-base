@@ -22,7 +22,7 @@ void PlaygroundGameState::init()
     break;
   
   case LEFT_EDGE:
-    // this->createRunSectionR();
+    this->createRunSectionR();
     break;
   
   default:

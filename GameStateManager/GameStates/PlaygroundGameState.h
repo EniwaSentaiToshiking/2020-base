@@ -20,7 +20,7 @@ class PlaygroundGameState : public TemplateGameState
   vector<RunSectionParam> runSectionParamVector;
 
   DebugUtil d;
-  FILE *logfile;
+  // FILE *logfile;
   ArmDeviceDriver armDeviceDriver;
 
 public:

@@ -21,5 +21,5 @@ public:
 
     /* debug */
     DebugUtil d;
-    FILE *file;
+    // FILE *file;
 };

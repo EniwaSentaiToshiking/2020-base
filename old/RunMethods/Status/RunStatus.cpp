@@ -22,7 +22,7 @@ bool RunStatus::run()
 bool RunStatus::changeNextPattern()
 {
     // RunPatternが全て正しく動作しきったら 次のstateに移す
-    if (currentPattern < patterns.size() - 1)
+    if (patterns.empty())
     {
         currentPattern++;
         ev3_speaker_play_tone(480, 100);

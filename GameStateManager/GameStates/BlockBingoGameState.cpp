@@ -85,11 +85,6 @@ void BlockBingoGameState::createRunSectionL()
 
 void BlockBingoGameState::createRunSectionR()
 {
-  runSectionParamVector.push_back({STOP, STOP_DETERMINATION, 0, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
-}
-
-void BlockBingoGameState::createRunSectionR()
-{
   /* behavior, determination, determinationParam, pwm, kP, kI, kD, targetVal, spinTurnLeftOrRight, straightForwardOrBackward */
   runSectionParamVector.push_back({STOP, STOP_DETERMINATION, 0, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
 }
