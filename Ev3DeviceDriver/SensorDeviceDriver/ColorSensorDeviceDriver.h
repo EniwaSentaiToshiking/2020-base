@@ -58,5 +58,5 @@ private:
 
     /* debug */
     DebugUtil d;
-    FILE *loggingFile;
+    // FILE *loggingFile;
 };

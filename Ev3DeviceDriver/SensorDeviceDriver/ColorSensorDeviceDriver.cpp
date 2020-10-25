@@ -2,7 +2,7 @@
 
 ColorSensorDeviceDriver::ColorSensorDeviceDriver(): colorSensor(PORT_3)
 {
-    loggingFile = fopen("logging_block_bingo.csv", "a");
+    // loggingFile = fopen("logging_block_bingo.csv", "w");
     // if (loggingFile == NULL)
     // {
     //     d.lcd_msg_debug("error: cannot open file", 2);
@@ -152,5 +152,5 @@ hsv_t ColorSensorDeviceDriver::calcHSV(rgb_raw_t rgb)
 
 void ColorSensorDeviceDriver::terminate()
 {
-    fclose(loggingFile);
+    // fclose(loggingFile);
 }
