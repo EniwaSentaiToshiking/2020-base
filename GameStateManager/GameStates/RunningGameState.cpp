@@ -29,21 +29,21 @@ void RunningGameState::createRunSectionL()
 {
     /* behavior, determination, determinationParam, pwm, kP, kI, kD, targetVal, spinTurnLeftOrRight, straightForwardOrBackward */
     runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 776, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 942, 80, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 942, 90, 2.0, 0.03, 0.2, 13, NONE_L_R, NONE_F_B});
     runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 500, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1000, 75, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1000, 90, 2.0, 0.03, 0.2, 23, NONE_L_R, NONE_F_B});
     runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 700, 85, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
     /* Passed Gate 1*/
-    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 350, 65, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 350, 80, 2.0, 0.03, 0.2, 23, NONE_L_R, NONE_F_B});
     runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 550, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 582, 80, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 251, 80, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 582, 80, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 582, 85, 2.0, 0.03, 0.2, 13, NONE_L_R, NONE_F_B});
+    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 251, 85, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 582, 85, 2.0, 0.03, 0.2, 13, NONE_L_R, NONE_F_B});
     runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 547, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
     /* Passed Gate 2*/
-    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 574, 80, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1552, 100, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
-    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 425, 75, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 574, 85, 2.0, 0.03, 0.2, 13, NONE_L_R, NONE_F_B});
+    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1552, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
+    runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 500, 85, 2.0, 0.03, 0.2, 23, NONE_L_R, NONE_F_B});
     runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 1100, 90, 2.0, 0.03, 0.2, 18, NONE_L_R, NONE_F_B});
 }
 
