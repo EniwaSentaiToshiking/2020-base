@@ -38,13 +38,13 @@ private:
   void rightTurnCircle90Degree();
   void rightCarryInBlock45Degree();
   void rightReturnLine45Degree();
+  /* もしブロックビンゴエリアの情報を保持していたらブロックの有無で動作を変えたかった要求の関数*/
+  void straightHoldBlock();
+  void rightTurnRHoldBlock90Degree();
 
   void straightHoldCarryInBlock();
   void straightPassThroughCircle();
   void rightTurnHoldCarryInBlock();
   void rightTurnPassThroughCircle();
   
-  /* もしブロックビンゴエリアの情報を保持していたらブロックの有無で動作を変えたかった要求の関数*/
-  // void straightHoldBlock();
-  // void rightTurnRHoldBlock90Degree();
 };
