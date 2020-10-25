@@ -34,6 +34,7 @@ void BlockBingoGameState::createRunSectionL()
   runSectionParamVector.push_back({STOP, WAIT_TIME, 150, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 30, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
   runSectionParamVector.push_back({STOP, WAIT_TIME, 150, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 100, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
   runSectionParamVector.push_back({STRAIGHT, COLOR, COLOR_BLACK, 50, 0, 0, 0, 0, NONE_L_R, FORWARD});
   runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 30, 0, 0, 0, 0, LEFTWARD, NONE_F_B});
