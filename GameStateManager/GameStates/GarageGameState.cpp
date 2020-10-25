@@ -27,22 +27,21 @@ void GarageGameState::init()
 
 void GarageGameState::createRunSectionL()
 {
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 50, 2.0, 0.03, 0.03, 18, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_YELLOW, 40, 0.8, 0.01, 0, 18, NONE_L_R, NONE_F_B});
-  // runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_YELLOW, 40, 1.5, 0.01, 0, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 80, 2.0, 0.03, 0.02, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_YELLOW, 40, 1.5, 0.05, 0.01, 18, NONE_L_R, NONE_F_B});
   /* ガレージ前のラインまで向かう */
   runSectionParamVector.push_back({STOP, STOP_DETERMINATION, 0, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 600, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
-  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 10, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
-  runSectionParamVector.push_back({STRAIGHT, COLOR, COLOR_BLACK, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 600, 50, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 30, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
+  runSectionParamVector.push_back({STRAIGHT, COLOR, COLOR_BLACK, 40, 0, 0, 0, 0, NONE_L_R, FORWARD});
   runSectionParamVector.push_back({STOP, WAIT_TIME, 60, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
+  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 25, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
   /* ラインからガレージ入口へ向かう */
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 20, 2.0, 0.03, 0.03, 18, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 220, 20, 2.0, 0.03, 0.03, 18, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_WHITE, 20, 2.0, 0.03, 0, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_BLUE, 40, 2.0, 0.03, 0.03, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 220, 40, 2.0, 0.03, 0.03, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_WHITE, 30, 2.0, 0.03, 0, 18, NONE_L_R, NONE_F_B});
   /* ガレージへ進入・停止 */
-  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 200, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 200, 30, 0, 0, 0, 0, NONE_L_R, FORWARD});
   runSectionParamVector.push_back({STOP, WAIT_TIME, 6000, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
 }
 
