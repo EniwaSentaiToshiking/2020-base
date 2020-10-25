@@ -2,7 +2,7 @@
 
 ColorSensorDeviceDriver::ColorSensorDeviceDriver(): colorSensor(PORT_3)
 {
-    // loggingFile = fopen("logging_file_yellow_stop.csv", "rw");
+    loggingFile = fopen("logging_block_bingo.csv", "a");
     // if (loggingFile == NULL)
     // {
     //     d.lcd_msg_debug("error: cannot open file", 2);
@@ -35,12 +35,12 @@ colorid_t ColorSensorDeviceDriver::getColorNumber()
 {
     getRawColor();
     hsv = calcHSV(rawrgb);
-    bool isRed = ((0 <= hsv.h && hsv.h < 30) || (270 <= hsv.h && hsv.h <= 359)) && (20 <= hsv.s);
-    bool isYellow = (30 <= hsv.h && hsv.h < 90) && (50 <= hsv.s);
-    bool isGreen = (90 <= hsv.h && hsv.h < 150) && (20 <= hsv.s);
-    bool isBlue = (150 <= hsv.h && hsv.h < 270) && (20 <= hsv.s);
-    bool isBlack = (hsv.v <= 100) && (hsv.s < 50);
-    bool isWhite = (100 < hsv.v) && (hsv.s < 50);
+    bool isRed = ((0 <= hsv.h && hsv.h < 30) || (270 <= hsv.h && hsv.h <= 359)) && (60 <= hsv.s);
+    bool isYellow = (30 <= hsv.h && hsv.h < 90) && (60 <= hsv.s);
+    bool isGreen = (90 <= hsv.h && hsv.h < 150) && (60 <= hsv.s);
+    bool isBlue = (150 <= hsv.h && hsv.h < 270) && (60 <= hsv.s);
+    bool isBlack = (hsv.v <= 100) && (hsv.s < 60);
+    bool isWhite = (100 < hsv.v) && (hsv.s < 60);
     if (isRed)
     {
         colorId = COLOR_RED;
@@ -66,6 +66,8 @@ colorid_t ColorSensorDeviceDriver::getColorNumber()
         colorId = COLOR_WHITE;
     }
 
+    fprintf(loggingFile, "brig, %d,R,%d,G,%d,B,%d,H,%d,S,%d,V,%d,colorN,%d,\n",
+    this->getBrightness(), rawrgb.r, rawrgb.g, rawrgb.b, hsv.h, hsv.s,hsv.v, colorId);
     return colorId;
 }
 
@@ -150,5 +152,5 @@ hsv_t ColorSensorDeviceDriver::calcHSV(rgb_raw_t rgb)
 
 void ColorSensorDeviceDriver::terminate()
 {
-    // fclose(loggingFile);
+    fclose(loggingFile);
 }
