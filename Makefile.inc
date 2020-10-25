@@ -32,6 +32,7 @@ APPL_CXXOBJS += \
 	\
 	ColorSensorDeviceDriver.o \
 	WheelDeviceDriver.o \
+	ArmDeviceDriver.o \
 
 SRCLANG := c++
 
@@ -59,6 +60,8 @@ APPL_DIRS += \
 	$(mkfile_path)DeterminationModel/DeterminationList/Template \
 	\
 	$(mkfile_path)Ev3DeviceDriver \
+	$(mkfile_path)Ev3DeviceDriver/SensorDeviceDriver \
+	$(mkfile_path)Ev3DeviceDriver/MotorDeviceDriver \
 	\
 	$(mkfile_path)Playground \
 	$(mkfile_path)SetupGameTask \
@@ -81,6 +84,8 @@ INCLUDES += \
 	-I$(mkfile_path)DeterminationModel/DeterminationList/Template \
 	\
 	-I$(mkfile_path)Ev3DeviceDriver \
+	-I$(mkfile_path)Ev3DeviceDriver/SensorDeviceDriver \
+	-I$(mkfile_path)Ev3DeviceDriver/MotorDeviceDriver \
 	\
 	-I$(mkfile_path)Playground \
 	-I$(mkfile_path)SetupGameTask \
