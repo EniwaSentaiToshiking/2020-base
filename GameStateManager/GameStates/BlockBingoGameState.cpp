@@ -50,7 +50,7 @@ void BlockBingoGameState::createRunSectionR()
   runSectionParamVector.push_back({STOP, STOP_DETERMINATION, 0, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
 }
 
-extern char syslogBuf[50];
+// extern char syslogBuf[50];
 void BlockBingoGameState::run()
 {
   d.lcd_msg_debug("running...", 1);
@@ -60,9 +60,9 @@ void BlockBingoGameState::run()
   if (interfaceDeterminationModel.determine(currentRunSectionParam))
   {
     interfaceDeterminationModel.terminate();
-    snprintf(syslogBuf, sizeof(syslogBuf), "bhavior, %d, pwm, %d",
-             currentRunSectionParam.behavior, currentRunSectionParam.pwm);
-    syslog(LOG_NOTICE, syslogBuf);
+    // snprintf(syslogBuf, sizeof(syslogBuf), "bhavior, %d, pwm, %d",
+    //          currentRunSectionParam.behavior, currentRunSectionParam.pwm);
+    // syslog(LOG_NOTICE, syslogBuf);
     runSectionParamVector.erase(runSectionParamVector.begin());
   }
 

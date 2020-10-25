@@ -2,16 +2,16 @@
 
 PlaygroundGameState::PlaygroundGameState()
 {
+    // logfile = fopen("logging_block_bingo.csv", "a");
 }
 
-extern int edge;
 extern char syslogBuf[50];
+
+extern int edge;
 void PlaygroundGameState::init()
 {
   d.init("PlaygroundGameState");
   armDeviceDriver.init();
-  snprintf(syslogBuf, sizeof(syslogBuf), "init arm");
-  syslog(LOG_NOTICE, syslogBuf);
 
   interfaceBehaviorModel.init();
   interfaceDeterminationModel.init();
@@ -47,75 +47,60 @@ void PlaygroundGameState::createRunSectionL()
   // runSectionParamVector.push_back({STRAIGHT, DISTANCE, 425, 20, 0, 0, 0, 0, NONE_L_R, BACKWARD});
 
 
-  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 190, 25, 2.0, 0.03, 0.02, 18, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 160, 25, 0, 0, 0, 18, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
   // runSectionParamVector.push_back({STRAIGHT, DISTANCE, 650, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({STRAIGHT, COLOR, COLOR_BLACK, 40, 0, 0, 0, 0, NONE_L_R, FORWARD});
-  runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 20, 0, 0, 0, 0, LEFTWARD, NONE_F_B});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
 
 
   /* ブロックビンゴエリア内 */
   /* 1つめ搬入 直進搬入 */
-  this->lineTraceBetweenCircles();
-  this->straightCircle();
-  this->rightCarryInBlock45Degree();
-  this->rightReturnLine45Degree();
-
-  /* 2つめ搬入 旋回搬入 */
-  this->lineTraceBetweenCircles();
-  this->straightCircle();
-  this->lineTraceBetweenCircles();
-  this->rightTurnCircle90Degree();
-  this->rightCarryInBlock45Degree();
-  this->rightReturnLine45Degree();
+  this->straightHoldCarryInBlock();
 
   /* 回送 直進*/
-  this->lineTraceBetweenCircles();
-  this->straightCircle();
+  this->straightPassThroughCircle();
+  
+  /* 2つめ搬入 旋回搬入 */
+  this->rightTurnHoldCarryInBlock();
+
+  /* 回送 直進*/
+  this->straightPassThroughCircle();
 
   /* 3つめ搬入 直進搬入 */
-  this->lineTraceBetweenCircles();
-  this->straightCircle();
-  this->rightCarryInBlock45Degree();
-  this->rightReturnLine45Degree();
+  this->straightHoldCarryInBlock();
 
   /* 回送 右90*/
-  this->lineTraceBetweenCircles();
-  this->rightTurnCircle90Degree();
+  this->rightTurnPassThroughCircle();
 
   /* 4つめ 直進搬入 */
-  this->lineTraceBetweenCircles();
-  this->straightCircle();
-  this->rightCarryInBlock45Degree();
-  this->rightReturnLine45Degree();
+  this->straightHoldCarryInBlock();
 
   /* 回送 直進*/
-  this->lineTraceBetweenCircles();
-  this->straightCircle();
+  this->straightPassThroughCircle();
 
   /* 5つめ搬入 旋回搬入 */
-  this->lineTraceBetweenCircles();
-  this->straightCircle();
-  this->lineTraceBetweenCircles();
-  this->rightTurnCircle90Degree();
-  this->rightCarryInBlock45Degree();
-  this->rightReturnLine45Degree();
+  this->rightTurnHoldCarryInBlock();
 
+  this->straightPassThroughCircle();
+  this->rightTurnHoldCarryInBlock();
 
+  this->straightPassThroughCircle();
+  this->straightHoldCarryInBlock();
 
+  this->rightTurnPassThroughCircle();
+  this->rightTurnPassThroughCircle();
+  this->straightPassThroughCircle();
+  this->straightHoldCarryInBlock();
 
-
-
-  // runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 300, 20, 2.0, 0.03, 0.03, 18, NONE_L_R, NONE_F_B});
-  // runSectionParamVector.push_back({LINE_TRAICE, COLOR, COLOR_WHITE, 20, 1.3, 0.03, 0, 18, NONE_L_R, NONE_F_B});
-  /* ブロックビンゴエリアに向かう */
-  // runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
-  // runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, LEFTWARD, NONE_F_B});
-  // runSectionParamVector.push_back({STRAIGHT, COLOR, COLOR_BLACK, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
   runSectionParamVector.push_back({STOP, STOP_DETERMINATION, 0, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
 }
+
+
 
 void PlaygroundGameState::createRunSectionR()
 {
@@ -125,12 +110,12 @@ void PlaygroundGameState::createRunSectionR()
 
 void PlaygroundGameState::lineTraceBetweenCircles()
 {
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR_CIRCLE, 0, 15, 2.0, 0.03, 0.02, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR_CIRCLE, 0, 15, 2.0, 0.03, 0, 18, NONE_L_R, NONE_F_B});
 }
 
 void PlaygroundGameState::straightCircle()
 {
-  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 106, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 110, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
 }
 
 // void PlaygroundGameState::straightHoldBlock()
@@ -142,9 +127,9 @@ void PlaygroundGameState::rightTurnCircle90Degree()
 {
   runSectionParamVector.push_back({STRAIGHT, DISTANCE, 50, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
   runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, 90, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
+  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 10, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
   runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 50, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 53, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
 }
 
 // void PlaygroundGameState::rightTurnRHoldBlock90Degree()
@@ -156,14 +141,45 @@ void PlaygroundGameState::rightCarryInBlock45Degree()
 {
   runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, FORWARD});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
-  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 200, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 150, 15, 0, 0, 0, 0, NONE_L_R, FORWARD});
 }
 
 void PlaygroundGameState::rightReturnLine45Degree()
 {
-  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 150, 20, 0, 0, 0, 0, NONE_L_R, BACKWARD});
+  runSectionParamVector.push_back({STRAIGHT, DISTANCE, 140, 20, 0, 0, 0, 0, NONE_L_R, BACKWARD});
   runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
-  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 20, 0, 0, 0, 0, LEFTWARD, NONE_F_B});
+  runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE45, 15, 0, 0, 0, 0, LEFTWARD, NONE_F_B});
+  runSectionParamVector.push_back({STOP, WAIT_TIME, 50, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
+}
+
+
+void PlaygroundGameState::straightHoldCarryInBlock()
+{
+  this->lineTraceBetweenCircles();
+  this->straightCircle();
+  this->rightCarryInBlock45Degree();
+  this->rightReturnLine45Degree();
+}
+
+void PlaygroundGameState::straightPassThroughCircle()
+{
+  this->lineTraceBetweenCircles();
+  this->straightCircle();
+}
+
+void PlaygroundGameState::rightTurnHoldCarryInBlock()
+{
+  this->lineTraceBetweenCircles();
+  this->rightTurnCircle90Degree();
+  this->rightCarryInBlock45Degree();
+  this->rightReturnLine45Degree();
+}
+
+void PlaygroundGameState::rightTurnPassThroughCircle()
+{
+  this->lineTraceBetweenCircles();
+  this->rightTurnCircle90Degree();
 }
 
 
@@ -178,9 +194,10 @@ void PlaygroundGameState::run()
   if (interfaceDeterminationModel.determine(currentRunSectionParam))
   {
     interfaceDeterminationModel.terminate();
-    snprintf(syslogBuf, sizeof(syslogBuf), "bhavior, %d, pwm, %d",
-             currentRunSectionParam.behavior, currentRunSectionParam.pwm);
-    syslog(LOG_NOTICE, syslogBuf);
+    // fprintf(logfile, "behav,%d,determ,%d,determ_pram,%d,pwm,%d,targetVal,%d\n",
+    //          currentRunSectionParam.behavior, currentRunSectionParam.determination,
+    //           currentRunSectionParam.determinationParam, currentRunSectionParam.pwm, currentRunSectionParam.targetVal);
+    // syslog(LOG_NOTICE, syslogBuf);
     runSectionParamVector.erase(runSectionParamVector.begin());
   }
 }
@@ -198,4 +215,5 @@ void PlaygroundGameState::terminate()
   d.lcd_msg_debug("Stopped.", 1);
   interfaceBehaviorModel.terminate();
   interfaceDeterminationModel.terminate();
+  // fclose(logfile);
 }
