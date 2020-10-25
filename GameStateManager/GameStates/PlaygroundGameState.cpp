@@ -5,9 +5,14 @@ PlaygroundGameState::PlaygroundGameState()
 }
 
 extern int edge;
+extern char syslogBuf[50];
 void PlaygroundGameState::init()
 {
   d.init("PlaygroundGameState");
+  armDeviceDriver.init();
+  snprintf(syslogBuf, sizeof(syslogBuf), "init arm");
+  syslog(LOG_NOTICE, syslogBuf);
+
   interfaceBehaviorModel.init();
   interfaceDeterminationModel.init();
   switch (edge)
@@ -17,7 +22,7 @@ void PlaygroundGameState::init()
     break;
   
   case LEFT_EDGE:
-    this->createRunSectionR();
+    // this->createRunSectionR();
     break;
   
   default:
@@ -42,7 +47,7 @@ void PlaygroundGameState::createRunSectionL()
   // runSectionParamVector.push_back({STRAIGHT, DISTANCE, 425, 20, 0, 0, 0, 0, NONE_L_R, BACKWARD});
 
 
-  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 150, 25, 2.0, 0.03, 0.02, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, DISTANCE, 190, 25, 2.0, 0.03, 0.02, 18, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({STOP, WAIT_TIME, 100, 0, 0, 0, 0, 0, NONE_L_R, NONE_F_B});
   runSectionParamVector.push_back({SPIN_TURN, SPIN_TURN_ANGLE, DEGREE90, 20, 0, 0, 0, 0, RIGHTWARD, NONE_F_B});
   // runSectionParamVector.push_back({STRAIGHT, DISTANCE, 650, 20, 0, 0, 0, 0, NONE_L_R, FORWARD});
@@ -120,7 +125,7 @@ void PlaygroundGameState::createRunSectionR()
 
 void PlaygroundGameState::lineTraceBetweenCircles()
 {
-  runSectionParamVector.push_back({LINE_TRAICE, COLOR_CIRCLE, 0, 15, 1.3, 0.06, 0, 18, NONE_L_R, NONE_F_B});
+  runSectionParamVector.push_back({LINE_TRAICE, COLOR_CIRCLE, 0, 15, 2.0, 0.03, 0.02, 18, NONE_L_R, NONE_F_B});
 }
 
 void PlaygroundGameState::straightCircle()
@@ -166,6 +171,7 @@ extern char syslogBuf[50];
 void PlaygroundGameState::run()
 {
   d.lcd_msg_debug("running...", 1);
+  armDeviceDriver.rotateDefault();
   RunSectionParam currentRunSectionParam = runSectionParamVector.front();
   interfaceBehaviorModel.run(currentRunSectionParam);
 
@@ -182,6 +188,7 @@ void PlaygroundGameState::run()
 bool PlaygroundGameState::isFinished()
 {
   return runSectionParamVector.empty();
+  // return false;
 }
 
 

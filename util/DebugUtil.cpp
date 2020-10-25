@@ -33,3 +33,8 @@ void DebugUtil::led_debug(ledcolor_t ledColor)
 {
   ev3_led_set_color(ledColor);
 }
+
+void DebugUtil::syslog_debug(const char *str)
+{
+  syslog(LOG_NOTICE, str);
+}

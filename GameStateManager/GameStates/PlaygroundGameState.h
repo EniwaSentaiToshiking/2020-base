@@ -8,6 +8,8 @@
 
 #include "DebugUtil.h"
 
+#include "ArmDeviceDriver.h"
+
 using namespace ev3api;
 using namespace std;
 
@@ -18,6 +20,7 @@ class PlaygroundGameState : public TemplateGameState
   vector<RunSectionParam> runSectionParamVector;
 
   DebugUtil d;
+  ArmDeviceDriver armDeviceDriver;
 
 public:
   PlaygroundGameState();
